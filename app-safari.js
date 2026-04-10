@@ -301,7 +301,7 @@
             modal.style.right = '0';
             modal.style.bottom = '0';
             modal.style.background = 'rgba(0, 0, 0, 0.8)';
-            modal.style.zIndex = '9999';
+            modal.style.zIndex = '99999';
             
             // Force modal-content visibility
             const modalContent = modal.querySelector('.modal-content');
@@ -318,7 +318,7 @@
                 modalContent.style.overflowY = 'auto';
                 modalContent.style.boxShadow = '0 10px 40px rgba(0,0,0,0.3)';
                 modalContent.style.padding = '20px';
-                modalContent.style.zIndex = '10000';
+                modalContent.style.zIndex = '100000';
                 modalContent.style.display = 'block';
             }
             
@@ -326,6 +326,10 @@
             
             console.log('Modal classes:', modal.className);
             console.log('Modal inline styles:', modal.style.cssText);
+            console.log('Modal z-index:', modal.style.zIndex);
+            if (modalContent) {
+                console.log('Modal-content z-index:', modalContent.style.zIndex);
+            }
             console.log('Modal should be visible now');
             
             // Force repaint
