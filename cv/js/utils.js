@@ -1,6 +1,6 @@
 /* ============================================================
    CV App - Utility Functions
-   Helper functions used across components
+   Reusable helper functions and DOM utilities
    ============================================================ */
 
 (function () {
@@ -110,20 +110,352 @@
         return text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
     }
 
+    /* ---------- HTML Template Generators ---------- */
+    function createListItem(config) {
+        return `
+            <a href="${config.href}" ${config.external ? 'target="_blank"' : ''} ${config.download ? `download="${config.download}"` : ''} class="list-item">
+                <span class="list-icon ${config.color}">
+                    ${getIcon(config.icon)}
+                </span>
+                <span class="list-content">
+                    <strong>${config.title}</strong>
+                    <small>${config.desc}</small>
+                </span>
+                <svg class="list-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m9 18 6-6-6-6"/>
+                </svg>
+            </a>
+        `;
+    }
+
+    function createMessage(msg) {
+        return `
+            <div class="message ${msg.type}">
+                <p>${msg.text}</p>
+                <span class="message-time">${msg.time}</span>
+            </div>
+        `;
+    }
+
+    function createTagCloud(tags, compact = false) {
+        const className = compact ? 'tag-cloud compact' : 'tag-cloud';
+        return `
+            <div class="${className}">
+                ${tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+            </div>
+        `;
+    }
+
+    function createSkillRow(skill) {
+        return `
+            <div class="skill-row">
+                <span class="skill-name">${skill.name}</span>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="width: ${skill.level}%"></div>
+                </div>
+                <span class="skill-pct">${skill.level}%</span>
+            </div>
+        `;
+    }
+
+    function createCard(title, content) {
+        return `
+            <div class="card">
+                <h3 class="card-title">${title}</h3>
+                ${content}
+            </div>
+        `;
+    }
+
+    function createProjectCard(project) {
+        return `
+            <div class="project-card" data-project="${project.id || project.name}">
+                <div class="project-header">
+                    <span class="project-icon">${project.icon || '??'}</span>
+                    <div>
+                        <h4 class="project-name">${project.name}</h4>
+                        <small class="project-type">${project.type}</small>
+                    </div>
+                    <svg class="list-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="m9 18 6-6-6-6"/>
+                    </svg>
+                </div>
+                <p class="project-desc">${project.desc}</p>
+                ${createTagCloud(project.tech?.slice(0, 4) || [], true)}
+            </div>
+        `;
+    }
+
+    function createExperienceCard(exp) {
+        return `
+            <div class="exp-item">
+                <div class="exp-dot ${exp.current ? 'current' : ''}"></div>
+                <div class="exp-body">
+                    <span class="exp-date">${exp.date}</span>
+                    <h4 class="exp-title">${exp.title}</h4>
+                    <p class="exp-company">${exp.company}</p>
+                    <p class="exp-desc">${exp.description}</p>
+                    ${createTagCloud(exp.tags || [], true)}
+                </div>
+            </div>
+        `;
+    }
+
+    /* ---------- Animation Helpers ---------- */
+    function animateSkillBars() {
+        $$('.skill-fill').forEach((bar) => {
+            const target = bar.style.width;
+            bar.style.width = '0';
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    bar.style.width = target;
+                });
+            });
+        });
+    }
+
+    function animateOnScroll(elements, animationClass) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add(animationClass);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        elements.forEach(el => observer.observe(el));
+    }
+
+    /* ---------- DOM Manipulation ---------- */
+    function createElement(tag, className = '', innerHTML = '') {
+        const element = document.createElement(tag);
+        if (className) element.className = className;
+        if (innerHTML) element.innerHTML = innerHTML;
+        return element;
+    }
+
+    function replaceElement(selector, newContent) {
+        const element = $(selector);
+        if (element) {
+            element.innerHTML = newContent;
+            return element;
+        }
+        return null;
+    }
+
+    function addClass(selector, className) {
+        const element = $(selector);
+        if (element) element.classList.add(className);
+    }
+
+    function removeClass(selector, className) {
+        const element = $(selector);
+        if (element) element.classList.remove(className);
+    }
+
+    function toggleClass(selector, className, force) {
+        const element = $(selector);
+        if (element) element.classList.toggle(className, force);
+    }
+
+    /* ---------- Event Handlers ---------- */
+    function addEvent(selector, event, handler) {
+        const element = $(selector);
+        if (element) element.addEventListener(event, handler);
+    }
+
+    function addEventToAll(selector, event, handler) {
+        const elements = $$(selector);
+        elements.forEach(element => element.addEventListener(event, handler));
+    }
+
+    function delegate(parentSelector, childSelector, event, handler) {
+        const parent = $(parentSelector);
+        if (parent) {
+            parent.addEventListener(event, (e) => {
+                if (e.target.matches(childSelector)) {
+                    handler(e);
+                }
+            });
+        }
+    }
+
+    /* ---------- Validation ---------- */
+    function isValidEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    function isValidPhone(phone) {
+        return /^[\d\s\-\+\(\)]+$/.test(phone);
+    }
+
+    function isValidUrl(url) {
+        try {
+            new URL(url);
+            return true;
+        } catch {
+            return false;
+        }
+    }
+
+    /* ---------- Format Helpers ---------- */
+    function formatDate(dateString, options = {}) {
+        const date = new Date(dateString);
+        const defaultOptions = { 
+            year: 'numeric', 
+            month: 'short' 
+        };
+        return date.toLocaleDateString('en-US', { ...defaultOptions, ...options });
+    }
+
+    function formatFileSize(bytes) {
+        if (bytes === 0) return '0 Bytes';
+        const k = 1024;
+        const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+        const i = Math.floor(Math.log(bytes) / Math.log(k));
+        return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    }
+
+    function truncateText(text, maxLength, suffix = '...') {
+        return text.length > maxLength ? text.substring(0, maxLength) + suffix : text;
+    }
+
+    function capitalizeFirst(str) {
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
+    function camelToKebab(str) {
+        return str.replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g, '$1-$2').toLowerCase();
+    }
+
+    /* ---------- Storage Helpers ---------- */
+    function setStorage(key, value) {
+        try {
+            localStorage.setItem(key, JSON.stringify(value));
+        } catch (e) {
+            console.warn('Storage not available:', e);
+        }
+    }
+
+    function getStorage(key, defaultValue = null) {
+        try {
+            const item = localStorage.getItem(key);
+            return item ? JSON.parse(item) : defaultValue;
+        } catch (e) {
+            console.warn('Storage not available:', e);
+            return defaultValue;
+        }
+    }
+
+    function removeStorage(key) {
+        try {
+            localStorage.removeItem(key);
+        } catch (e) {
+            console.warn('Storage not available:', e);
+        }
+    }
+
+    /* ---------- Performance Helpers ---------- */
+    function debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }
+
+    function throttle(func, limit) {
+        let inThrottle;
+        return function(...args) {
+            if (!inThrottle) {
+                func.apply(this, args);
+                inThrottle = true;
+                setTimeout(() => inThrottle = false, limit);
+            }
+        };
+    }
+
+    /* ---------- Array Helpers ---------- */
+    function chunk(array, size) {
+        const chunks = [];
+        for (let i = 0; i < array.length; i += size) {
+            chunks.push(array.slice(i, i + size));
+        }
+        return chunks;
+    }
+
+    function unique(array) {
+        return [...new Set(array)];
+    }
+
+    function groupBy(array, key) {
+        return array.reduce((groups, item) => {
+            const group = key(item);
+            groups[group] = groups[group] || [];
+            groups[group].push(item);
+            return groups;
+        }, {});
+    }
+
     /* ---------- Export ---------- */
     window.Utils = {
+        // DOM
         $,
         $$,
+        createElement,
+        replaceElement,
+        addClass,
+        removeClass,
+        toggleClass,
+        
+        // Templates
         getIcon,
         createListItem,
         createMessage,
         createTagCloud,
         createSkillRow,
+        createCard,
+        createProjectCard,
+        createExperienceCard,
+        
+        // Animations
         animateSkillBars,
+        animateOnScroll,
+        
+        // Events
+        addEvent,
+        addEventToAll,
+        delegate,
+        
+        // Validation
         isValidEmail,
         isValidPhone,
+        isValidUrl,
+        
+        // Format
         formatDate,
-        truncateText
+        formatFileSize,
+        truncateText,
+        capitalizeFirst,
+        camelToKebab,
+        
+        // Storage
+        setStorage,
+        getStorage,
+        removeStorage,
+        
+        // Performance
+        debounce,
+        throttle,
+        
+        // Array
+        chunk,
+        unique,
+        groupBy
     };
 
 })();
