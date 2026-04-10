@@ -29,20 +29,20 @@
             highlights: 'Developed enterprise-grade smart lock system with military-grade encryption and seamless mobile integration.'
         },
         beleen: {
-            name: 'Beleen',
-            type: 'On-Demand Services',
-            icon: 'Clean',
-            description: 'On-demand cleaning and home services platform featuring real-time provider tracking, secure payments, and comprehensive service management with Google Maps integration.',
+            name: 'Saand',
+            type: 'Delivery System',
+            icon: 'Package',
+            description: 'Advanced delivery optimization system featuring route optimization algorithms, real-time driver tracking, and performance-based rewards system with token/bonus incentives.',
             features: [
-                'Real-time Provider Tracking',
-                'Secure Payment Processing',
-                'Service Scheduling',
-                'Google Maps Integration',
-                'Rating System',
-                'Push Notifications'
+                'Route Optimization Algorithms',
+                'Real-time Driver Tracking',
+                'Performance Scoring System',
+                'Token/Bonus Rewards',
+                'Gamification Elements',
+                'Analytics Dashboard'
             ],
-            tech: ['Swift', 'Stripe', 'Google Maps', 'Push Notifications', 'Core Location'],
-            highlights: 'Built scalable on-demand platform processing 1000+ daily transactions with 99.9% uptime.'
+            tech: ['Swift', 'Core Location', 'MapKit', 'Core Data', 'Algorithms', 'Analytics'],
+            highlights: 'Developed intelligent delivery system that reduced delivery times by 35% and increased driver efficiency through gamification and performance incentives.'
         },
         footballerista: {
             name: 'Footballerista',
