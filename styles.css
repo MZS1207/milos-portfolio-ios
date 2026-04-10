@@ -1043,8 +1043,17 @@ button { font: inherit; border: none; background: none; cursor: pointer; -webkit
 }
 
 .modal-overlay.active {
-    opacity: 1;
-    visibility: visible;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: flex !important;
+}
+
+/* Debug: Force modal visibility for testing */
+.modal-overlay.debug-active {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: flex !important;
+    background: rgba(255, 0, 0, 0.5) !important;
 }
 
 .modal-content {

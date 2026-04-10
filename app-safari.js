@@ -290,8 +290,18 @@
         if (modal) {
             console.log('Adding active class to modal');
             modal.classList.add('active');
+            
+            // Debug: Force visibility with debug class
+            modal.classList.add('debug-active');
+            
             document.body.style.overflow = 'hidden';
+            
+            console.log('Modal classes:', modal.className);
+            console.log('Modal styles:', window.getComputedStyle(modal));
             console.log('Modal should be visible now');
+            
+            // Force repaint
+            modal.offsetHeight;
         } else {
             console.error('Modal element not found!');
         }
