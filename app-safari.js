@@ -142,19 +142,19 @@
         },
         vquarter: {
             name: 'Vquarter',
-            type: 'Real Estate Platform',
+            type: 'Service Provider Platform',
             icon: 'Home',
-            description: 'Property listing and real estate marketplace featuring map-based property search, virtual tours, mortgage calculator, agent communication, and favorites management.',
+            description: 'Platform connecting property renters with service providers including cleaning, transportation, and other essential services for rental properties with booking and payment management.',
             features: [
-                'Map-Based Property Search',
-                'Virtual Tours Integration',
-                'Mortgage Calculator',
-                'Agent Communication',
-                'Favorites Management',
-                'Property Analytics'
+                'Service Provider Matching',
+                'Booking & Scheduling System',
+                'Secure Payment Processing',
+                'Service Rating System',
+                'Real-time Communication',
+                'Service History Tracking'
             ],
-            tech: ['Swift', 'MapKit', 'Core Location', 'WebSocket', 'Core Data'],
-            highlights: 'Integrated AR virtual tours and advanced property search algorithms improving user engagement by 80%.'
+            tech: ['Swift', 'Core Data', 'WebSocket', 'Stripe', 'Core Location', 'Push Notifications'],
+            highlights: 'Developed service marketplace platform connecting 500+ service providers with property renters, processing 2000+ monthly service bookings with integrated payment system.'
         },
         endava: {
             name: 'Endava Projects',
