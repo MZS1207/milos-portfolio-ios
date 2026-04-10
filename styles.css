@@ -1012,21 +1012,164 @@ button { font: inherit; border: none; background: none; cursor: pointer; -webkit
     }
 }
 
-/* ---------- Desktop (> 480px) ---------- */
-@media (min-width: 481px) {
+/* ---------- Responsive Design ---------- */
+
+/* Small Mobile (< 375px) */
+@media (max-width: 374px) {
     .app {
+        width: 100vw;
+        height: 100vh;
+        max-width: 100vw;
+        max-height: 100vh;
+        border-radius: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform: none;
+    }
+    
+    .geo-shape,
+    .triangle {
+        display: none;
+    }
+}
+
+/* Standard Mobile (375px - 414px) */
+@media (min-width: 375px) and (max-width: 414px) {
+    .app {
+        width: 100vw;
+        height: 100vh;
+        max-width: 100vw;
+        max-height: 100vh;
+        border-radius: 20px;
         position: fixed;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+    }
+}
+
+/* Large Mobile (415px - 480px) */
+@media (min-width: 415px) and (max-width: 480px) {
+    .app {
         width: 390px;
         height: 844px;
-        border-radius: 40px;
-        box-shadow: var(--shadow-float), 0 0 0 8px #1C1C1E;
-        overflow: hidden;
-        z-index: 100;
+        max-width: 90vw;
+        max-height: 90vh;
+        border-radius: 30px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.9);
     }
+}
 
+/* Tablet Small (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .app {
+        width: 390px;
+        height: 844px;
+        max-width: 80vw;
+        max-height: 80vh;
+        border-radius: 35px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.85);
+    }
+    
+    .geo-shape,
+    .triangle {
+        opacity: 0.3;
+    }
+}
+
+/* Tablet Large (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .app {
+        width: 390px;
+        height: 844px;
+        max-width: 60vw;
+        max-height: 70vh;
+        border-radius: 38px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+}
+
+/* Desktop Small (1025px - 1366px) */
+@media (min-width: 1025px) and (max-width: 1366px) {
+    .app {
+        width: 390px;
+        height: 844px;
+        max-width: 50vw;
+        max-height: 60vh;
+        border-radius: 40px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.75);
+    }
+}
+
+/* Desktop Large (1367px+) */
+@media (min-width: 1367px) {
+    .app {
+        width: 390px;
+        height: 844px;
+        max-width: 45vw;
+        max-height: 55vh;
+        border-radius: 40px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.7);
+    }
+}
+
+/* Ultra-wide screens (1920px+) */
+@media (min-width: 1920px) {
+    .app {
+        width: 390px;
+        height: 844px;
+        max-width: 40vw;
+        max-height: 50vh;
+        border-radius: 40px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.6);
+    }
+}
+
+/* ---------- Safari Responsive Fixes ---------- */
+@media (min-width: 481px) {
+    @supports (-webkit-appearance: none) {
+        .app {
+            max-width: 80vw !important;
+            max-height: 80vh !important;
+            -webkit-transform: translate(-50%, -50%) scale(0.85) !important;
+            transform: translate(-50%, -50%) scale(0.85) !important;
+        }
+        
+        body {
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            min-height: 100vh !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow: hidden;
+            position: relative;
+        }
+    }
+}
+
+/* ---------- Desktop Background ---------- */
+@media (min-width: 481px) {
     body {
         min-height: 100vh;
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
