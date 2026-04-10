@@ -201,8 +201,16 @@
 
     /* ---------- Modal Functions ---------- */
     function showModal(projectId) {
+        console.log('showModal called with:', projectId);
         const project = PROJECTS[projectId];
-        if (!project) return;
+        console.log('Project data:', project);
+        
+        if (!project) {
+            console.error('Project not found:', projectId);
+            return;
+        }
+        
+        console.log('Modal element:', modal);
         
         const modalIcon = $('#modalProjectIcon');
         const modalName = $('#modalProjectName');
@@ -211,6 +219,16 @@
         const modalFeatures = $('#modalFeatures');
         const modalTech = $('#modalTech');
         const modalHighlights = $('#modalHighlights');
+        
+        console.log('Modal elements found:', {
+            modalIcon: !!modalIcon,
+            modalName: !!modalName,
+            modalType: !!modalType,
+            modalDescription: !!modalDescription,
+            modalFeatures: !!modalFeatures,
+            modalTech: !!modalTech,
+            modalHighlights: !!modalHighlights
+        });
         
         if (modalIcon) modalIcon.textContent = project.icon;
         if (modalName) modalName.textContent = project.name;
@@ -238,8 +256,12 @@
         
         // Show modal
         if (modal) {
+            console.log('Adding active class to modal');
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
+            console.log('Modal should be visible now');
+        } else {
+            console.error('Modal element not found!');
         }
     }
     
@@ -251,11 +273,17 @@
     }
     
     function handleProjectClick(e) {
+        console.log('Project card clicked:', e.currentTarget);
         const card = e.currentTarget;
         const projectId = card.getAttribute('data-project');
+        console.log('Project ID:', projectId);
+        
         if (projectId) {
             e.preventDefault();
+            console.log('Calling showModal for:', projectId);
             showModal(projectId);
+        } else {
+            console.error('No project ID found on card');
         }
     }
 
@@ -304,10 +332,18 @@
         modal = $('#projectModal');
         modalClose = $('#modalClose');
         
+        console.log('Modal initialization:', {
+            modal: !!modal,
+            modalClose: !!modalClose
+        });
+        
         // Project card click handlers
         const projectCards = $$('.project-card');
-        projectCards.forEach(card => {
+        console.log('Project cards found:', projectCards.length);
+        
+        projectCards.forEach((card, index) => {
             if (card) {
+                console.log(`Adding click handler to card ${index}:`, card.getAttribute('data-project'));
                 card.addEventListener('click', handleProjectClick);
                 card.style.cursor = 'pointer';
             }
