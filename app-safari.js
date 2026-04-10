@@ -291,49 +291,51 @@
             console.log('Adding active class to modal');
             modal.classList.add('active');
             
-            // Force visibility with inline styles
-            modal.style.display = 'block';
-            modal.style.opacity = '1';
-            modal.style.visibility = 'visible';
-            modal.style.position = 'fixed';
-            modal.style.top = '0';
-            modal.style.left = '0';
-            modal.style.right = '0';
-            modal.style.bottom = '0';
-            modal.style.background = 'rgba(0, 0, 0, 0.8)';
-            modal.style.zIndex = '99999';
+            // Create simple test modal
+            const testDiv = document.createElement('div');
+            testDiv.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(255, 0, 0, 0.9);
+                z-index: 999999;
+                display: block;
+                opacity: 1;
+                visibility: visible;
+            `;
+            testDiv.innerHTML = `
+                <div style="
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: white;
+                    padding: 20px;
+                    border-radius: 10px;
+                    max-width: 400px;
+                    z-index: 1000000;
+                ">
+                    <h3>${project.name}</h3>
+                    <p>${project.type}</p>
+                    <p>${project.description}</p>
+                    <button onclick="this.closest('div').parentElement.remove()" style="
+                        background: #007AFF;
+                        color: white;
+                        border: none;
+                        padding: 10px 20px;
+                        border-radius: 5px;
+                        cursor: pointer;
+                    ">Close</button>
+                </div>
+            `;
             
-            // Force modal-content visibility
-            const modalContent = modal.querySelector('.modal-content');
-            if (modalContent) {
-                modalContent.style.position = 'fixed';
-                modalContent.style.top = '50%';
-                modalContent.style.left = '50%';
-                modalContent.style.transform = 'translate(-50%, -50%)';
-                modalContent.style.background = 'white';
-                modalContent.style.borderRadius = '12px';
-                modalContent.style.width = '90%';
-                modalContent.style.maxWidth = '500px';
-                modalContent.style.maxHeight = '80vh';
-                modalContent.style.overflowY = 'auto';
-                modalContent.style.boxShadow = '0 10px 40px rgba(0,0,0,0.3)';
-                modalContent.style.padding = '20px';
-                modalContent.style.zIndex = '100000';
-                modalContent.style.display = 'block';
-            }
-            
+            document.body.appendChild(testDiv);
             document.body.style.overflow = 'hidden';
             
-            console.log('Modal classes:', modal.className);
-            console.log('Modal inline styles:', modal.style.cssText);
-            console.log('Modal z-index:', modal.style.zIndex);
-            if (modalContent) {
-                console.log('Modal-content z-index:', modalContent.style.zIndex);
-            }
-            console.log('Modal should be visible now');
-            
-            // Force repaint
-            modal.offsetHeight;
+            console.log('Test modal added to body');
+            console.log('Test modal should be visible now');
         } else {
             console.error('Modal element not found!');
         }
