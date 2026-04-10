@@ -12,6 +12,38 @@
 
     /* ---------- Project Data ---------- */
     const PROJECTS = {
+        schueco: {
+            name: 'Schueco SmartTouch',
+            type: 'Smart Door Control',
+            icon: 'Building',
+            description: 'Advanced smart door control system for Schueco featuring Bluetooth connectivity, Touch ID authentication, and remote access capabilities with real-time monitoring.',
+            features: [
+                'Bluetooth Smart Lock Integration',
+                'Touch ID Authentication',
+                'Remote Door Control',
+                'Real-time Monitoring',
+                'Push Notifications',
+                'Security Analytics'
+            ],
+            tech: ['Swift', 'Core Bluetooth', 'Touch ID', 'Push Notifications', 'Security'],
+            highlights: 'Developed enterprise-grade smart lock system with military-grade encryption and seamless mobile integration.'
+        },
+        beleen: {
+            name: 'Beleen',
+            type: 'On-Demand Services',
+            icon: 'Clean',
+            description: 'On-demand cleaning and home services platform featuring real-time provider tracking, secure payments, and comprehensive service management with Google Maps integration.',
+            features: [
+                'Real-time Provider Tracking',
+                'Secure Payment Processing',
+                'Service Scheduling',
+                'Google Maps Integration',
+                'Rating System',
+                'Push Notifications'
+            ],
+            tech: ['Swift', 'Stripe', 'Google Maps', 'Push Notifications', 'Core Location'],
+            highlights: 'Built scalable on-demand platform processing 1000+ daily transactions with 99.9% uptime.'
+        },
         footballerista: {
             name: 'Footballerista',
             type: 'Social Sports Platform',
