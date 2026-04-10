@@ -322,12 +322,9 @@
                     box-shadow: 0 10px 40px rgba(0,0,0,0.3);
                 ">
                     <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #eee;">
-                        <div style="display: flex; align-items: center; gap: 15px;">
-                            <div style="font-size: 24px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: #f5f5f5; border-radius: 8px;">${project.icon}</div>
-                            <div>
-                                <h3 style="font-size: 18px; font-weight: 600; color: #333; margin: 0;">${project.name}</h3>
-                                <small style="color: #666; font-size: 14px;">${project.type}</small>
-                            </div>
+                        <div>
+                            <h3 style="font-size: 18px; font-weight: 600; color: #333; margin: 0;">${project.name}</h3>
+                            <small style="color: #666; font-size: 14px;">${project.type}</small>
                         </div>
                         <button onclick="this.closest('div').parentElement.parentElement.remove()" style="background: none; border: none; color: #666; cursor: pointer; padding: 5px; border-radius: 5px; font-size: 20px;">×</button>
                     </div>
