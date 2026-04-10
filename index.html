@@ -630,6 +630,54 @@
         </nav>
 
     </div>
+    
+    <!-- Project Detail Modal -->
+    <div class="modal-overlay" id="projectModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-project-info">
+                    <span class="modal-project-icon" id="modalProjectIcon">-</span>
+                    <div>
+                        <h3 class="modal-project-name" id="modalProjectName">-</h3>
+                        <small class="modal-project-type" id="modalProjectType">-</small>
+                    </div>
+                </div>
+                <button class="modal-close" id="modalClose" aria-label="Close modal">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 6L6 18M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="modal-description" id="modalDescription">
+                    -
+                </div>
+                
+                <div class="modal-section">
+                    <h4>Key Features</h4>
+                    <ul class="modal-features" id="modalFeatures">
+                        <!-- Features will be populated dynamically -->
+                    </ul>
+                </div>
+                
+                <div class="modal-section">
+                    <h4>Technologies</h4>
+                    <div class="modal-tech" id="modalTech">
+                        <!-- Tech tags will be populated dynamically -->
+                    </div>
+                </div>
+                
+                <div class="modal-section">
+                    <h4>Project Highlights</h4>
+                    <div class="modal-highlights" id="modalHighlights">
+                        <!-- Highlights will be populated dynamically -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <script src="app-safari.js"></script>
 </body>
 </html>
