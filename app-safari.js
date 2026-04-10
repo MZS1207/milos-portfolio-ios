@@ -188,6 +188,22 @@
             tech: ['Swift', 'Core Data', 'Core Location', 'Security', 'PDF Generation', 'Push Notifications'],
             highlights: 'Developed leading UK insurance management app serving millions of customers with comprehensive policy management, emergency assistance, and innovative journey tracking features.'
         },
+        catchase: {
+            name: 'CatChase',
+            type: 'Mobile Game',
+            icon: 'Cat',
+            description: 'Private mobile game where players control a cat chasing balloons through various levels with increasing difficulty and fun animations.',
+            features: [
+                'Cat Character Control',
+                'Balloon Chasing Mechanics',
+                'Progressive Difficulty Levels',
+                'Fun Animations & Effects',
+                'Score Tracking System',
+                'Level Progression'
+            ],
+            tech: ['Swift', 'SpriteKit', 'Core Animation', 'Game Physics', 'Sound Effects', 'Game Center'],
+            highlights: 'Developed entertaining mobile game with smooth cat animations, engaging balloon-chasing gameplay, and progressive difficulty system for casual gaming enjoyment.'
+        },
         endava: {
             name: 'Endava Projects',
             type: 'Enterprise Solutions',
