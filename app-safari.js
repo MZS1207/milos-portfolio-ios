@@ -291,13 +291,22 @@
             console.log('Adding active class to modal');
             modal.classList.add('active');
             
-            // Debug: Force visibility with debug class
-            modal.classList.add('debug-active');
+            // Force visibility with inline styles
+            modal.style.display = 'block';
+            modal.style.opacity = '1';
+            modal.style.visibility = 'visible';
+            modal.style.position = 'fixed';
+            modal.style.top = '0';
+            modal.style.left = '0';
+            modal.style.right = '0';
+            modal.style.bottom = '0';
+            modal.style.background = 'rgba(0, 0, 0, 0.8)';
+            modal.style.zIndex = '9999';
             
             document.body.style.overflow = 'hidden';
             
             console.log('Modal classes:', modal.className);
-            console.log('Modal styles:', window.getComputedStyle(modal));
+            console.log('Modal inline styles:', modal.style.cssText);
             console.log('Modal should be visible now');
             
             // Force repaint
