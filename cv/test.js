@@ -232,11 +232,23 @@
     /* ---------- Run Tests ---------- */
     async function runTests() {
         // Wait for app to initialize
+        let attempts = 0;
+        const maxAttempts = 10;
+        
+        while (!window.CVApp && attempts < maxAttempts) {
+            console.log(`Waiting for CV app to initialize... (${attempts + 1}/${maxAttempts})`);
+            await new Promise(resolve => setTimeout(resolve, 500));
+            attempts++;
+        }
+        
         if (!window.CVApp) {
-            console.log('Waiting for CV app to initialize...');
-            setTimeout(runTests, 1000);
+            console.error('CV App failed to initialize, skipping tests');
+            showTestResults({ passed: 0, failed: 1, errors: [{ name: 'Initialization', error: new Error('CV App not found') }] });
             return;
         }
+        
+        // Wait additional time for DOM to be ready
+        await new Promise(resolve => setTimeout(resolve, 1000));
         
         const results = await tests.run();
         
@@ -290,10 +302,16 @@
     };
 
     /* ---------- Auto-run on load ---------- */
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', runTests);
-    } else {
-        setTimeout(runTests, 1000);
+    function startTests() {
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                document.addEventListener('cvAppReady', runTests);
+            });
+        } else {
+            document.addEventListener('cvAppReady', runTests);
+        }
     }
+    
+    startTests();
 
 })();

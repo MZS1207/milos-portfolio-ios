@@ -89,9 +89,17 @@
     /* ---------- Initialize ---------- */
     function init() {
         try {
+            console.log('CV App: Starting initialization...');
+            
             track = $('#screensTrack');
             tabs = $$('.tab');
             header = $('#headerTitle');
+            
+            console.log('CV App: DOM elements found:', {
+                track: !!track,
+                tabs: tabs?.length || 0,
+                header: !!header
+            });
             
             if (!track || !tabs?.length || !header) {
                 throw new Error('Required DOM elements not found');
@@ -99,9 +107,13 @@
             
             initEvents();
             switchTab(0);
-            console.log('CV App initialized successfully');
+            console.log('CV App: Initialized successfully, starting on tab 0');
+            
+            // Signal that app is ready
+            document.dispatchEvent(new CustomEvent('cvAppReady'));
             
         } catch (error) {
+            console.error('CV App: Initialization failed', error);
             handleError(error, 'Initialization');
         }
     }
@@ -115,10 +127,14 @@
     };
 
     /* ---------- Auto-start ---------- */
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
-    } else {
-        init();
+    function autoStart() {
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            setTimeout(init, 100); // Small delay to ensure DOM is ready
+        }
     }
+    
+    autoStart();
 
 })();
