@@ -68,8 +68,31 @@
     }
 }
 
+/* ---------- Safari Fixes ---------- */
+@supports (-webkit-appearance: none) {
+    .tab-bar {
+        -webkit-backdrop-filter: blur(20px);
+        backdrop-filter: blur(20px);
+    }
+    
+    .app {
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+    
+    .screens-track {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
 /* ---------- Reset ---------- */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+    -webkit-tap-highlight-color: transparent;
+}
 
 html {
     font-size: 16px;
