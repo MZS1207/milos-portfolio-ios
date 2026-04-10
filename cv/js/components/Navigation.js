@@ -15,9 +15,13 @@
     let currentIndex = 0;
 
     /* ---------- DOM refs ---------- */
-    const track = Utils.$('#screensTrack');
-    const tabs = Utils.$$('.tab');
-    const header = Utils.$('#headerTitle');
+    let track, tabs, header;
+
+    function getDOMRefs() {
+        track = Utils.$('#screensTrack');
+        tabs = Utils.$$('.tab');
+        header = Utils.$('#headerTitle');
+    }
 
     /* ---------- Tab Switching ---------- */
     function switchTab(index) {
@@ -92,8 +96,19 @@
 
     /* ---------- Tab Event Listeners ---------- */
     function initTabListeners() {
+        console.log('Navigation: Initializing tab listeners, tabs found:', tabs?.length || 0);
+        
+        if (!tabs || tabs.length === 0) {
+            console.error('Navigation: No tabs found!');
+            return;
+        }
+        
         tabs.forEach((tab, i) => {
-            tab.addEventListener('click', () => switchTab(i));
+            console.log(`Navigation: Adding click listener to tab ${i}`);
+            tab.addEventListener('click', () => {
+                console.log(`Navigation: Tab ${i} clicked`);
+                switchTab(i);
+            });
         });
     }
 
@@ -107,6 +122,10 @@
 
     /* ---------- Initialize Navigation ---------- */
     function init() {
+        // Get DOM references after Utils is available
+        getDOMRefs();
+        
+        // Initialize all features
         initTabListeners();
         initSwipeGestures();
         initKeyboardNavigation();
