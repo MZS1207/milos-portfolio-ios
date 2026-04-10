@@ -78,11 +78,39 @@
     .app {
         -webkit-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
+        position: fixed;
+        top: 50%;
+        left: 50%;
     }
     
     .screens-track {
         -webkit-transform: translateX(0);
         transform: translateX(0);
+    }
+}
+
+/* ---------- Safari Desktop Centring Fix ---------- */
+@media (min-width: 481px) {
+    @supports (-webkit-appearance: none) {
+        .app {
+            position: fixed !important;
+            top: 50% !important;
+            left: 50% !important;
+            -webkit-transform: translate(-50%, -50%) !important;
+            transform: translate(-50%, -50%) !important;
+            margin: 0 !important;
+            right: auto !important;
+            bottom: auto !important;
+        }
+        
+        body {
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            min-height: 100vh !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
     }
 }
 
