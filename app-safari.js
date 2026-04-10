@@ -291,21 +291,21 @@
             console.log('Adding active class to modal');
             modal.classList.add('active');
             
-            // Create simple test modal
-            const testDiv = document.createElement('div');
-            testDiv.style.cssText = `
+            // Create proper modal with working approach
+            const modalDiv = document.createElement('div');
+            modalDiv.style.cssText = `
                 position: fixed;
                 top: 0;
                 left: 0;
                 right: 0;
                 bottom: 0;
-                background: rgba(255, 0, 0, 0.9);
+                background: rgba(0, 0, 0, 0.8);
                 z-index: 999999;
                 display: block;
                 opacity: 1;
                 visibility: visible;
             `;
-            testDiv.innerHTML = `
+            modalDiv.innerHTML = `
                 <div style="
                     position: fixed;
                     top: 50%;
@@ -313,25 +313,44 @@
                     transform: translate(-50%, -50%);
                     background: white;
                     padding: 20px;
-                    border-radius: 10px;
-                    max-width: 400px;
+                    border-radius: 12px;
+                    width: 90%;
+                    max-width: 500px;
+                    max-height: 80vh;
+                    overflow-y: auto;
                     z-index: 1000000;
+                    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
                 ">
-                    <h3>${project.name}</h3>
-                    <p>${project.type}</p>
-                    <p>${project.description}</p>
-                    <button onclick="this.closest('div').parentElement.remove()" style="
-                        background: #007AFF;
-                        color: white;
-                        border: none;
-                        padding: 10px 20px;
-                        border-radius: 5px;
-                        cursor: pointer;
-                    ">Close</button>
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #eee;">
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <div style="font-size: 24px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: #f5f5f5; border-radius: 8px;">${project.icon}</div>
+                            <div>
+                                <h3 style="font-size: 18px; font-weight: 600; color: #333; margin: 0;">${project.name}</h3>
+                                <small style="color: #666; font-size: 14px;">${project.type}</small>
+                            </div>
+                        </div>
+                        <button onclick="this.closest('div').parentElement.parentElement.remove()" style="background: none; border: none; color: #666; cursor: pointer; padding: 5px; border-radius: 5px; font-size: 20px;">×</button>
+                    </div>
+                    <div style="color: #333; line-height: 1.6; margin-bottom: 20px; font-size: 16px;">${project.description}</div>
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="font-size: 16px; font-weight: 600; color: #333; margin-bottom: 10px;">Key Features</h4>
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            ${project.features.map(feature => `<li style="color: #333; padding: 5px 0; position: relative; padding-left: 20px; font-size: 15px;">· ${feature}</li>`).join('')}
+                        </ul>
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="font-size: 16px; font-weight: 600; color: #333; margin-bottom: 10px;">Technologies</h4>
+                        <div style="display: flex; flex-wrap: wrap; gap: 5px;">
+                            ${project.tech.map(tech => `<span style="background: #f5f5f5; color: #333; padding: 5px 10px; border-radius: 5px; font-size: 13px; font-weight: 500;">${tech}</span>`).join('')}
+                        </div>
+                    </div>
+                    <div style="background: #f5f5f5; padding: 15px; border-radius: 8px; border-left: 3px solid #007AFF;">
+                        <p style="color: #333; margin: 0; font-size: 15px; font-style: italic;">${project.highlights}</p>
+                    </div>
                 </div>
             `;
             
-            document.body.appendChild(testDiv);
+            document.body.appendChild(modalDiv);
             document.body.style.overflow = 'hidden';
             
             console.log('Test modal added to body');
