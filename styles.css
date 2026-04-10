@@ -1024,56 +1024,34 @@ button { font: inherit; border: none; background: none; cursor: pointer; -webkit
 
 /* ---------- Project Detail Modal ---------- */
 .modal-overlay {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    background: rgba(0, 0, 0, 0.5) !important;
-    backdrop-filter: blur(10px) !important;
-    -webkit-backdrop-filter: blur(10px) !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    z-index: 1000 !important;
-    opacity: 0 !important;
-    visibility: hidden !important;
-    transition: opacity 0.3s ease, visibility 0.3s ease !important;
-    padding: var(--sp-4) !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    display: none;
 }
 
-.modal-overlay.active,
-.modal-overlay.debug-active {
-    opacity: 1 !important;
-    visibility: visible !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-}
-
-/* Debug: Force modal visibility for testing */
-.modal-overlay.debug-active {
-    background: rgba(255, 0, 0, 0.5) !important;
-}
-
-/* Additional override for stubborn browsers */
-body .modal-overlay.active {
-    opacity: 1 !important;
-    visibility: visible !important;
-    display: flex !important;
+.modal-overlay.active {
+    display: block !important;
 }
 
 .modal-content {
-    background: var(--color-surface);
-    border-radius: var(--r-xl);
-    width: 100%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border-radius: 12px;
+    width: 90%;
     max-width: 500px;
-    max-height: 85vh;
-    overflow: hidden;
-    box-shadow: var(--shadow-float);
-    transform: scale(0.9) translateY(20px);
-    transition: transform 0.3s ease;
-    -webkit-transform: scale(0.9) translateY(20px);
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    padding: 20px;
+    z-index: 10000;
 }
 
 .modal-overlay.active .modal-content {
@@ -1085,15 +1063,15 @@ body .modal-overlay.active {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: var(--sp-6);
-    border-bottom: 1px solid var(--color-separator);
-    background: var(--color-surface);
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
 }
 
 .modal-project-info {
     display: flex;
     align-items: center;
-    gap: var(--sp-4);
+    gap: 15px;
 }
 
 .modal-project-icon {
@@ -1103,33 +1081,30 @@ body .modal-overlay.active {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--color-fill);
-    border-radius: var(--r-md);
+    background: #f5f5f5;
+    border-radius: 8px;
 }
 
 .modal-project-name {
     font-size: 18px;
     font-weight: 600;
-    color: var(--color-text);
+    color: #333;
     margin: 0;
 }
 
 .modal-project-type {
-    color: var(--color-secondary);
+    color: #666;
     font-size: 14px;
 }
 
 .modal-close {
     background: none;
     border: none;
-    color: var(--color-secondary);
+    color: #666;
     cursor: pointer;
-    padding: var(--sp-2);
-    border-radius: var(--r-md);
-    transition: all 0.2s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 20px;
 }
 
 .modal-close:hover {
