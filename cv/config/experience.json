@@ -1,0 +1,40 @@
+{
+  "experience": [
+    {
+      "id": "endava-senior",
+      "date": "2022 - Present",
+      "title": "Senior iOS Developer & AI Champion",
+      "company": "Endava",
+      "description": "Driving technical excellence and AI innovation across enterprise mobile solutions. Leading cross-functional teams, implementing AI-powered features, and delivering high-impact iOS applications for global clients.",
+      "tags": ["Swift", "SwiftUI", "AI/ML", "Leadership"],
+      "current": true
+    },
+    {
+      "id": "endava-coach",
+      "date": "2022 - Present", 
+      "title": "Career Coach",
+      "company": "Endava",
+      "description": "Mentoring and coaching iOS developers across the organization. Establishing coding standards, conducting technical interviews, and fostering talent development within the mobile engineering community.",
+      "tags": ["Mentoring", "Career Development", "Technical Leadership", "Team Building"],
+      "current": true
+    },
+    {
+      "id": "darwin",
+      "date": "2019 - 2022",
+      "title": "Senior iOS Developer",
+      "company": "DarwinDigital",
+      "description": "Pioneered healthcare technology solutions. Transformed complex medical requirements into intuitive mobile experiences with HIPAA compliance and secure data handling.",
+      "tags": ["Healthcare", "HealthKit", "HIPAA", "Core Data"],
+      "current": false
+    },
+    {
+      "id": "comit",
+      "date": "2015 - 2019",
+      "title": "iOS Developer", 
+      "company": "Comit International",
+      "description": "Built foundational expertise across diverse mobile verticals including fintech, social, and gaming. Demonstrated rapid growth through consistent delivery of high-quality solutions.",
+      "tags": ["Objective-C", "Swift", "UIKit", "Firebase"],
+      "current": false
+    }
+  ]
+}

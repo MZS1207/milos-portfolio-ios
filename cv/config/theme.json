@@ -1,0 +1,81 @@
+{
+  "theme": {
+    "name": "iOS Light",
+    "colors": {
+      "primary": "#007AFF",
+      "background": "#F2F2F7",
+      "surface": "#FFFFFF",
+      "text": "#1C1C1E",
+      "secondary": "#8E8E93",
+      "tertiary": "#C7C7CC",
+      "separator": "rgba(60, 60, 67, 0.12)",
+      "fill": "rgba(120, 120, 128, 0.12)",
+      "blue": "#007AFF",
+      "green": "#34C759",
+      "orange": "#FF9500",
+      "red": "#FF3B30",
+      "indigo": "#5856D6",
+      "dark": "#1C1C1E"
+    },
+    "spacing": {
+      "1": "4px",
+      "2": "8px", 
+      "3": "12px",
+      "4": "16px",
+      "5": "20px",
+      "6": "24px",
+      "8": "32px",
+      "10": "40px"
+    },
+    "radii": {
+      "sm": "8px",
+      "md": "12px", 
+      "lg": "16px",
+      "xl": "20px",
+      "full": "9999px"
+    },
+    "shadows": {
+      "card": "0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04)",
+      "float": "0 8px 30px rgba(0,0,0,0.08)"
+    },
+    "layout": {
+      "headerHeight": "52px",
+      "tabHeight": "82px",
+      "safeBottom": "env(safe-area-inset-bottom, 0px)",
+      "safeTop": "env(safe-area-inset-top, 0px)"
+    },
+    "typography": {
+      "fontFamily": "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+      "scale": {
+        "xs": "11px",
+        "sm": "12px", 
+        "base": "14px",
+        "lg": "15px",
+        "xl": "16px",
+        "2xl": "17px",
+        "3xl": "18px",
+        "4xl": "22px",
+        "5xl": "24px"
+      }
+    }
+  },
+  "animations": {
+    "duration": {
+      "fast": "0.15s",
+      "normal": "0.3s", 
+      "slow": "0.35s"
+    },
+    "easing": {
+      "ease": "ease",
+      "easeIn": "ease-in",
+      "easeOut": "ease-out",
+      "easeInOut": "ease-in-out",
+      "ios": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+    }
+  },
+  "breakpoints": {
+    "mobile": "480px",
+    "tablet": "768px",
+    "desktop": "1024px"
+  }
+}

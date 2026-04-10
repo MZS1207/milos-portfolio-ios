@@ -1,0 +1,215 @@
+{
+  "categories": [
+    {
+      "id": "enterprise",
+      "title": "Enterprise & Client",
+      "projects": ["schueco", "beleen", "vquarter", "endava"]
+    },
+    {
+      "id": "healthcare", 
+      "title": "Healthcare",
+      "projects": ["paincheck", "caregiver"]
+    },
+    {
+      "id": "fintech",
+      "title": "Fintech & Social",
+      "projects": ["fss", "footballerista", "chaty", "openjobs"]
+    }
+  ],
+  "projects": {
+    "schueco": {
+      "icon": "??",
+      "name": "Schueco SmartTouch",
+      "type": "Smart Door Control",
+      "desc": "Mobile control app for Schueco SmartTouch door systems with fingerprint access, remote control, and real-time security monitoring.",
+      "tech": ["Swift", "Core Bluetooth", "Touch ID", "Core Data", "Push Notifications", "Security"],
+      "details": {
+        "overview": "Mobile control application for Schueco SmartTouch door systems. Developed comprehensive smart door management app allowing users to control, monitor, and configure SmartTouch doors remotely with fingerprint access, real-time status updates, and advanced security features.",
+        "features": [
+          "SmartTouch fingerprint access control",
+          "Remote door lock/unlock via app",
+          "Real-time door status & battery monitoring", 
+          "Multiple user access management",
+          "Security breach instant notifications",
+          "SmartTouch configuration & settings"
+        ],
+        "role": "Led iOS development as sole mobile developer. Implemented secure Bluetooth communication with SmartTouch hardware and integrated Touch ID for enhanced security. Designed offline-first architecture for reliable door control."
+      }
+    },
+    "beleen": {
+      "icon": "??",
+      "name": "Beleen",
+      "type": "On-Demand Services",
+      "desc": "On-demand cleaning and home services platform. Real-time booking, provider tracking, in-app payments, ratings & review system with push notification support.",
+      "tech": ["Swift", "Stripe", "Google Maps SDK", "Push Notifications", "REST API", "Alamofire"],
+      "details": {
+        "overview": "Full-featured on-demand cleaning and home services platform connecting customers with vetted service providers. Built both the customer-facing and provider-facing iOS applications with real-time tracking and seamless payment integration.",
+        "features": [
+          "Real-time booking & scheduling",
+          "Live provider GPS tracking",
+          "In-app payments via Stripe",
+          "Ratings & review system",
+          "Push notification reminders",
+          "Service history & rebooking"
+        ],
+        "role": "Developed both customer and provider apps from scratch. Implemented real-time location tracking with optimized battery usage. Integrated Stripe for secure payment processing."
+      }
+    },
+    "vquarter": {
+      "icon": "??",
+      "name": "Vquarter",
+      "type": "Real Estate Platform",
+      "desc": "Property listing and real estate marketplace. Map-based property search, virtual tours, mortgage calculator, agent communication, and favorites management.",
+      "tech": ["Swift", "MapKit", "Core Location", "WebSocket", "AVFoundation", "Core Data"],
+      "details": {
+        "overview": "Property listing and real estate marketplace enabling users to search, view, and save properties. Features include interactive map-based search, virtual property tours, mortgage calculations, and direct agent communication channels.",
+        "features": [
+          "Map-based property search with filters",
+          "Virtual property tours & galleries",
+          "Mortgage & affordability calculator",
+          "Direct agent messaging",
+          "Saved searches & favorites",
+          "Price change notifications"
+        ],
+        "role": "Architected and built the full iOS app. Implemented custom map clustering for 50k+ listings with smooth 60fps scrolling. Designed offline-capable favorites system."
+      }
+    },
+    "endava": {
+      "icon": "??",
+      "name": "Endava Projects",
+      "type": "Enterprise Solutions",
+      "desc": "Multiple enterprise mobile solutions for global clients. Team collaboration, project management, real-time communication, and performance analytics platforms.",
+      "tech": ["Swift", "SwiftUI", "Combine", "Core Data", "GraphQL", "Fastlane", "CI/CD"],
+      "details": {
+        "overview": "Multiple enterprise-grade mobile solutions delivered for Endava's global client portfolio. Projects spanned team collaboration, project management, and real-time communication platforms serving thousands of daily active users across multiple continents.",
+        "features": [
+          "Team collaboration & communication",
+          "Real-time project tracking dashboards",
+          "Performance analytics & reporting",
+          "Secure document sharing",
+          "Biometric authentication",
+          "CI/CD pipeline integration"
+        ],
+        "role": "Senior developer & technical coach. Led architecture decisions across multiple projects. Mentored 5+ junior developers. Established coding standards and review processes adopted across the iOS chapter."
+      }
+    },
+    "paincheck": {
+      "icon": "??",
+      "name": "PainCheck",
+      "type": "Healthcare App",
+      "desc": "HIPAA-compliant healthcare app for pain tracking, medication reminders, doctor appointments, and health analytics with secure data storage.",
+      "tech": ["Swift", "HealthKit", "Core Data", "Charts", "CryptoKit", "UserNotifications"],
+      "details": {
+        "overview": "HIPAA-compliant healthcare application enabling patients to track pain levels, manage medications, schedule doctor appointments, and view personal health analytics. Integrates with Apple HealthKit for comprehensive health data aggregation.",
+        "features": [
+          "Visual pain scale tracking",
+          "Medication schedule & reminders",
+          "Doctor appointment management",
+          "Health analytics & trend charts",
+          "HealthKit integration",
+          "HIPAA-compliant data encryption"
+        ],
+        "role": "Sole iOS developer responsible for full app lifecycle. Implemented HIPAA-compliant data storage and transmission. Achieved 4.7 App Store rating."
+      }
+    },
+    "caregiver": {
+      "icon": "??",
+      "name": "Caregiver",
+      "type": "Elder Care App",
+      "desc": "Comprehensive caregiving app for elderly care. Medication schedules, emergency alerts, activity monitoring, family coordination, GPS tracking & fall detection.",
+      "tech": ["Swift", "Core Location", "HealthKit", "Push Notifications", "CoreMotion", "CloudKit"],
+      "details": {
+        "overview": "Comprehensive caregiving app designed for families managing elderly care. Features include medication management, emergency alerts with automatic location sharing, activity monitoring, and multi-family coordination with role-based access.",
+        "features": [
+          "Medication schedules & tracking",
+          "SOS emergency alerts with GPS",
+          "Activity & wellness monitoring",
+          "Family coordination dashboard",
+          "Fall detection integration",
+          "Care report generation"
+        ],
+        "role": "Led mobile development team of 3. Implemented background location tracking with minimal battery impact. Designed the family coordination system supporting up to 10 caregivers per patient."
+      }
+    },
+    "fss": {
+      "icon": "??",
+      "name": "FSS",
+      "type": "Financial Services",
+      "desc": "Enterprise financial management system. Real-time analytics, automated reporting, multi-currency support, and regulatory compliance.",
+      "tech": ["Swift", "Core Data", "Charts", "Security", "CryptoKit", "Keychain"],
+      "details": {
+        "overview": "Enterprise financial management platform providing real-time portfolio analytics, automated compliance reporting, and multi-currency transaction support. Built for institutional clients handling high-volume financial operations.",
+        "features": [
+          "Real-time portfolio analytics",
+          "Automated regulatory reporting",
+          "Multi-currency support (40+ currencies)",
+          "Secure transaction processing",
+          "Biometric authentication",
+          "Audit trail & compliance logging"
+        ],
+        "role": "Senior developer focused on security-critical modules. Implemented certificate pinning and end-to-end encryption. Passed 3 independent security audits with zero critical findings."
+      }
+    },
+    "footballerista": {
+      "icon": "??",
+      "name": "Footballerista",
+      "type": "Social Sports",
+      "desc": "Social networking platform for athletes. Player profiles, highlights sharing, real-time messaging, and community feed with Firebase integration.",
+      "tech": ["Swift", "Firebase", "Push Notifications", "Core Data", "AVFoundation", "Kingfisher"],
+      "details": {
+        "overview": "Social networking platform built for athletes and football enthusiasts. Features include player profiles with stats, highlight video sharing, real-time team messaging, community feed, and match event tracking powered by Firebase.",
+        "features": [
+          "Player profiles & statistics",
+          "Highlight video sharing & feed",
+          "Real-time team messaging",
+          "Community social feed",
+          "Match event tracking",
+          "Push notification system"
+        ],
+        "role": "Full-stack mobile developer. Built the entire iOS app from concept to App Store launch. Implemented video compression pipeline reducing upload size by 70% while maintaining quality."
+      }
+    },
+    "chaty": {
+      "icon": "??",
+      "name": "Chaty",
+      "type": "Messaging",
+      "desc": "Real-time messaging with E2E encryption, group chats, file sharing, and voice/video calling via WebRTC and Socket.io.",
+      "tech": ["Swift", "Socket.io", "WebRTC", "Core Data", "CryptoKit", "CallKit"],
+      "details": {
+        "overview": "Real-time messaging application with end-to-end encryption, supporting individual and group conversations, file sharing, and voice/video calling. Built on WebRTC for peer-to-peer communication with Socket.io signaling.",
+        "features": [
+          "End-to-end encrypted messaging",
+          "Group chats (up to 256 members)",
+          "File & media sharing",
+          "Voice & video calls via WebRTC",
+          "Read receipts & typing indicators",
+          "Message search & archiving"
+        ],
+        "role": "Lead iOS developer. Implemented the E2E encryption protocol and WebRTC integration. Optimized real-time message delivery achieving <100ms latency."
+      }
+    },
+    "openjobs": {
+      "icon": "??",
+      "name": "Open Jobs",
+      "type": "Job Platform",
+      "desc": "Job search platform connecting seekers with employers. Advanced filters, real-time notifications, application tracking, and profile management.",
+      "tech": ["Swift", "SQLite", "REST API", "Push Notifications", "PDFKit", "Alamofire"],
+      "details": {
+        "overview": "Mobile job search and recruitment platform connecting job seekers with employers. Features advanced multi-criteria search, real-time job alerts, one-tap application flow, and a comprehensive applicant tracking system.",
+        "features": [
+          "Advanced multi-criteria job search",
+          "Real-time job alert notifications",
+          "One-tap application flow",
+          "Resume builder & manager",
+          "Application status tracking",
+          "Saved searches & bookmarks"
+        ],
+        "role": "iOS developer responsible for search and application modules. Built the offline-capable job bookmarking system. Optimized search performance handling 100k+ listings."
+      }
+    }
+  },
+  "summary": {
+    "badge": "25+ Apps Delivered",
+    "text": "Enterprise, Healthcare, Fintech, Social & more"
+  }
+}

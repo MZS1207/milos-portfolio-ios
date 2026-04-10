@@ -1,0 +1,39 @@
+{
+  "personal": {
+    "name": "Milos Stevanovic",
+    "role": "Senior iOS Developer & Technical Leader",
+    "location": "Belgrade, Serbia",
+    "email": "milosstevanovic12@yahoo.com",
+    "phone": "+381 60 316 1917",
+    "linkedIn": "https://www.linkedin.com/in/milo%C5%A1-stevanovi%C4%87-a8b932ba/",
+    "github": "https://github.com",
+    "gitlab": "https://gitlab.com",
+    "bitbucket": "https://bitbucket.org",
+    "stackoverflow": "https://stackoverflow.com/users",
+    "dockerHub": "https://hub.docker.com",
+    "codepen": "https://codepen.io",
+    "devto": "https://dev.to"
+  },
+  "stats": {
+    "years": "10+",
+    "apps": "25+",
+    "satisfaction": "100%"
+  },
+  "about": [
+    {
+      "type": "received",
+      "text": "Senior iOS Developer with 10+ years crafting enterprise-grade solutions. Delivered 25+ apps across healthcare, fintech, sports and enterprise domains.",
+      "time": "Read"
+    },
+    {
+      "type": "received", 
+      "text": "Currently leading mobile innovation at Endava, mentoring developers and driving technical excellence across cross-functional teams.",
+      "time": "Read"
+    },
+    {
+      "type": "sent",
+      "text": "Specialized in Swift, SwiftUI, and scalable iOS architectures. Passionate about clean code, performance and exceptional UX.",
+      "time": "Delivered"
+    }
+  ]
+}

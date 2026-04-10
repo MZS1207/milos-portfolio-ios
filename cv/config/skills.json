@@ -1,0 +1,37 @@
+{
+  "categories": [
+    {
+      "title": "Languages & Frameworks",
+      "skills": [
+        { "name": "Swift", "level": 95 },
+        { "name": "SwiftUI", "level": 85 },
+        { "name": "UIKit", "level": 90 },
+        { "name": "Objective-C", "level": 80 }
+      ]
+    },
+    {
+      "title": "Architecture & Patterns",
+      "skills": [
+        { "name": "MVVM / Clean", "level": 95 },
+        { "name": "VIPER / VIP", "level": 88 },
+        { "name": "Combine / Rx", "level": 85 }
+      ]
+    },
+    {
+      "title": "Tools & Services",
+      "tags": [
+        "Xcode", "Git", "Firebase", "Core Data", "REST API", "GraphQL", 
+        "CI/CD", "Fastlane", "CocoaPods", "SPM", "TestFlight", "Instruments",
+        "HealthKit", "Core Location", "Push Notifications", "WebSocket"
+      ]
+    },
+    {
+      "title": "Performance & Quality",
+      "skills": [
+        { "name": "Performance", "level": 92 },
+        { "name": "Unit Testing", "level": 85 },
+        { "name": "Code Review", "level": 95 }
+      ]
+    }
+  ]
+}
