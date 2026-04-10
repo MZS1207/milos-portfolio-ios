@@ -156,6 +156,22 @@
             tech: ['Swift', 'Core Data', 'WebSocket', 'Stripe', 'Core Location', 'Push Notifications'],
             highlights: 'Developed service marketplace platform connecting 500+ service providers with property renters, processing 2000+ monthly service bookings with integrated payment system.'
         },
+        ding: {
+            name: 'Ding',
+            type: 'Mobile Top-Up Platform',
+            icon: 'Phone',
+            description: 'International mobile top-up platform enabling users to send prepaid mobile recharge to friends and family worldwide with secure payment processing and multi-network support.',
+            features: [
+                'International Mobile Top-Up',
+                'Multi-Network Support',
+                'Secure Payment Processing',
+                'Real-time Delivery',
+                'Multi-Currency Support',
+                'Transaction History'
+            ],
+            tech: ['Swift', 'Stripe', 'Core Data', 'Network APIs', 'Security', 'Push Notifications'],
+            highlights: 'Built leading international mobile recharge platform processing millions of transactions across 150+ countries with 3-second delivery times and 99.9% uptime.'
+        },
         endava: {
             name: 'Endava Projects',
             type: 'Enterprise Solutions',
