@@ -1024,36 +1024,43 @@ button { font: inherit; border: none; background: none; cursor: pointer; -webkit
 
 /* ---------- Project Detail Modal ---------- */
 .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    padding: var(--sp-4);
-}
-
-.modal-overlay.active {
-    opacity: 1 !important;
-    visibility: visible !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background: rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
     display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    z-index: 1000 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: opacity 0.3s ease, visibility 0.3s ease !important;
+    padding: var(--sp-4) !important;
 }
 
-/* Debug: Force modal visibility for testing */
+.modal-overlay.active,
 .modal-overlay.debug-active {
     opacity: 1 !important;
     visibility: visible !important;
     display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* Debug: Force modal visibility for testing */
+.modal-overlay.debug-active {
     background: rgba(255, 0, 0, 0.5) !important;
+}
+
+/* Additional override for stubborn browsers */
+body .modal-overlay.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: flex !important;
 }
 
 .modal-content {
