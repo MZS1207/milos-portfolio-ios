@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Milo Stevanoviç - iOS Developer Portfolio</title>
+    <title>Milo Stevanovic - iOS Developer Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,52 +11,140 @@
 </head>
 <body>
     <div class="container">
+        <!-- Theme Switch -->
+        <div class="theme-switch-container">
+            <div class="theme-switch">
+                <input type="checkbox" id="theme-toggle" class="theme-toggle-input">
+                <label for="theme-toggle" class="theme-toggle-label">
+                    <span class="theme-slider">
+                        <span class="theme-icon homer-icon">H</span>
+                        <span class="theme-icon professional-icon">P</span>
+                    </span>
+                </label>
+                <div class="theme-labels">
+                    <span class="theme-label homer-label">Homer Mode</span>
+                    <span class="theme-label professional-label">Professional</span>
+                </div>
+            </div>
+        </div>
+        
         <!-- Hero Section -->
         <section class="hero">
             <div class="hero-content">
-                <div class="profile-card">
+                <div class="profile-card enhanced">
                     <div class="profile-image">
-                        <div class="avatar-placeholder">
-                            <span>MS</span>
+                        <div class="avatar-container">
+                            <img src="assets/profile-photo.jpg" alt="Milos Stevanovic" class="profile-img" onerror="this.src='https://via.placeholder.com/150x150/007AFF/FFFFFF?text=MILOS'">
+                            <div class="avatar-ring"></div>
+                            <div class="status-indicator"></div>
                         </div>
                     </div>
-                    <h1>Milo Stevanoviç</h1>
-                    <p class="title">iOS Developer</p>
-                    <p class="location">Belgrade, Serbia</p>
-                    <div class="hero-buttons">
-                        <a href="#contact" class="btn primary">Get in Touch</a>
-                        <a href="#projects" class="btn secondary">View Projects</a>
+                    <div class="profile-info">
+                        <h1 class="hero-title">Milos Stevanovic</h1>
+                        <p class="title">Senior iOS Developer & Technical Leader</p>
+                        <p class="location">Belgrade, Serbia</p>
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">8+</span>
+                                <span class="stat-label">Years Experience</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">25+</span>
+                                <span class="stat-label">Apps Delivered</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">100%</span>
+                                <span class="stat-label">Client Satisfaction</span>
+                            </div>
+                        </div>
+                        <div class="hero-buttons">
+                            <a href="#contact" class="btn primary">Get in Touch</a>
+                            <a href="#projects" class="btn secondary bart-skateboard">View Projects</a>
+                        </div>
+                        <div class="lisa-coding" style="margin-top: 1rem; font-size: 0.9rem;">
+                            "As a great programmer once said, the code works on my machine!"
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="hero-background">
-                <div class="floating-card card-1"></div>
-                <div class="floating-card card-2"></div>
-                <div class="floating-card card-3"></div>
+                <div class="floating-card homer-float card-1">
+                    <span class="floating-text">D'OH!</span>
+                </div>
+                <div class="floating-card lisa-float card-2">
+                    <span class="floating-text">Smart!</span>
+                </div>
+                <div class="floating-card burns-float card-3">
+                    <span class="floating-text">Excellent!</span>
+                </div>
+                <div class="floating-card bart-float card-4">
+                    <span class="floating-text">Ay Caramba!</span>
+                </div>
+                <div class="floating-meme simpson-donut"></div>
+                <div class="floating-meme simpson-beer"></div>
             </div>
         </section>
 
         <!-- About Section -->
-        <section id="about" class="section">
+        <section id="about" class="section nuclear-plant-section">
             <div class="section-content">
-                <h2 class="section-title">About Me</h2>
-                <div class="about-grid">
-                    <div class="about-text">
-                        <p>Passionate iOS developer with expertise in creating elegant, user-friendly mobile applications. I specialize in Swift, SwiftUI, and modern iOS development practices, focusing on clean code architecture and exceptional user experiences.</p>
-                        <p>With a strong foundation in software engineering principles and a keen eye for design, I transform ideas into polished iOS applications that users love to interact with.</p>
+                <h2 class="section-title nuclear-title">Homer's Reactor Stats</h2>
+                <div class="nuclear-plant-room">
+                    <div class="control-panel">
+                        <div class="warning-lights">
+                            <div class="warning-light red-light"></div>
+                            <div class="warning-light yellow-light active"></div>
+                            <div class="warning-light green-light"></div>
+                        </div>
+                        <div class="reactor-core">
+                            <div class="reactor-status">
+                                <span class="status-text">DEVELOPER: ACTIVE</span>
+                                <div class="radiation-bars">
+                                    <div class="radiation-bar"></div>
+                                    <div class="radiation-bar"></div>
+                                    <div class="radiation-bar"></div>
+                                    <div class="radiation-bar"></div>
+                                    <div class="radiation-bar"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="about-highlights">
-                        <div class="highlight-card">
-                            <h3>Experience</h3>
-                            <p>5+ years in iOS development</p>
+                    <div class="about-reactor-panel">
+                        <div class="reactor-intro">
+                            <div class="homer-status-report">
+                                <span class="status-badge">D'OH! FREE CODE</span>
+                                <p>That's how I feel when I see bad code! Unlike Homer, I've spent 9+ years crafting <span class="reactor-excellent">enterprise-grade iOS solutions</span> that actually work. With 25+ apps under my belt, I transform complex business requirements into elegant, scalable experiences that make users say "Woohoo!" instead of "D'oh!"</p>
+                            </div>
+                            
+                            <div class="homer-status-report">
+                                <span class="status-badge">REACTOR STABLE</span>
+                                <p>Currently leading mobile innovation at Endava while mentoring the next generation of iOS talent. My expertise spans from <span class="reactor-excellent">legacy system modernization</span> to cutting-edge SwiftUI implementations. Think of me as the Homer Simpson of iOS - keeping the reactor stable while enjoying donuts!</p>
+                            </div>
+                            
+                            <div class="homer-status-report">
+                                <span class="status-badge">EXCELLENT!</span>
+                                <p>I consistently deliver solutions that balance technical excellence with user-centric design principles. Smithers, release the hounds! I mean... deploy the build! <span class="reactor-excellent">Let's build something amazing!</span></p>
+                            </div>
                         </div>
-                        <div class="highlight-card">
-                            <h3>Focus</h3>
-                            <p>Swift, SwiftUI, UIKit</p>
+                    </div>
+                    <div class="reactor-stats">
+                        <div class="stat-card">
+                            <div class="stat-icon">9+</div>
+                            <h3>Years Experience</h3>
+                            <p>No reactor meltdowns!</p>
+                            <div class="stat-badge">D'OH! Free</div>
                         </div>
-                        <div class="highlight-card">
-                            <h3>Approach</h3>
-                            <p>User-centered design</p>
+                        <div class="stat-card">
+                            <div class="stat-icon">25+</div>
+                            <h3>Apps Deployed</h3>
+                            <p>Reactor-tested and approved!</p>
+                            <div class="stat-badge">STABLE</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">100%</div>
+                            <h3>Client Success</h3>
+                            <p>EXCELLENT results every time!</p>
+                            <div class="stat-badge">ACTIVE</div>
                         </div>
                     </div>
                 </div>
@@ -64,34 +152,130 @@
         </section>
 
         <!-- Skills Section -->
-        <section id="skills" class="section">
+        <section id="skills" class="section nuclear-plant-section">
             <div class="section-content">
-                <h2 class="section-title">Technical Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>Programming Languages</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Swift</span>
-                            <span class="skill-tag">Objective-C</span>
-                            <span class="skill-tag">JavaScript</span>
+                <h2 class="section-title nuclear-title">Homer's Reactor Skills</h2>
+                <div class="nuclear-plant-room">
+                    <div class="control-panel">
+                        <div class="warning-lights">
+                            <div class="warning-light red-light"></div>
+                            <div class="warning-light yellow-light"></div>
+                            <div class="warning-light green-light active"></div>
+                        </div>
+                        <div class="reactor-core">
+                            <div class="reactor-status">
+                                <span class="status-text">SKILLS: OPTIMAL</span>
+                                <div class="radiation-bars">
+                                    <div class="radiation-bar"></div>
+                                    <div class="radiation-bar"></div>
+                                    <div class="radiation-bar"></div>
+                                    <div class="radiation-bar"></div>
+                                    <div class="radiation-bar"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="skill-category">
-                        <h3>iOS Frameworks</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">SwiftUI</span>
-                            <span class="skill-tag">UIKit</span>
-                            <span class="skill-tag">Combine</span>
-                            <span class="skill-tag">Core Data</span>
+                    <div class="skills-reactor-panel">
+                        <div class="skill-reactor-card">
+                            <div class="skill-header">
+                                <div class="skill-icon">SW</div>
+                                <h3 class="skill-name">Swift</h3>
+                                <span class="skill-status">EXPERT</span>
+                            </div>
+                            <div class="skill-level">
+                                <div class="level-bar">
+                                    <div class="level-fill"></div>
+                                </div>
+                                <span class="level-text">95%</span>
+                            </div>
+                            <div class="skill-note">
+                                <span class="skill-quote">"No D'OH! moments!"</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Tools & Technologies</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Xcode</span>
-                            <span class="skill-tag">Git</span>
-                            <span class="skill-tag">Firebase</span>
-                            <span class="skill-tag">REST APIs</span>
+
+                        <div class="skill-reactor-card">
+                            <div class="skill-header">
+                                <div class="skill-icon">UI</div>
+                                <h3 class="skill-name">SwiftUI</h3>
+                                <span class="skill-status">ADVANCED</span>
+                            </div>
+                            <div class="skill-level">
+                                <div class="level-bar">
+                                    <div class="level-fill" style="width: 85%;"></div>
+                                </div>
+                                <span class="level-text">85%</span>
+                            </div>
+                            <div class="skill-note">
+                                <span class="skill-quote">"Smart UI!"</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-reactor-card">
+                            <div class="skill-header">
+                                <div class="skill-icon">UI</div>
+                                <h3 class="skill-name">UIKit</h3>
+                                <span class="skill-status">EXPERT</span>
+                            </div>
+                            <div class="skill-level">
+                                <div class="level-bar">
+                                    <div class="level-fill" style="width: 90%;"></div>
+                                </div>
+                                <span class="level-text">90%</span>
+                            </div>
+                            <div class="skill-note">
+                                <span class="skill-quote">"EXCELLENT!"</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-reactor-card">
+                            <div class="skill-header">
+                                <div class="skill-icon">OC</div>
+                                <h3 class="skill-name">Objective-C</h3>
+                                <span class="skill-status">ADVANCED</span>
+                            </div>
+                            <div class="skill-level">
+                                <div class="level-bar">
+                                    <div class="level-fill" style="width: 80%;"></div>
+                                </div>
+                                <span class="level-text">80%</span>
+                            </div>
+                            <div class="skill-note">
+                                <span class="skill-quote">"Ay Caramba!"</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-reactor-card">
+                            <div class="skill-header">
+                                <div class="skill-icon">AR</div>
+                                <h3 class="skill-name">Architecture</h3>
+                                <span class="skill-status">EXPERT</span>
+                            </div>
+                            <div class="skill-level">
+                                <div class="level-bar">
+                                    <div class="level-fill" style="width: 95%;"></div>
+                                </div>
+                                <span class="level-text">95%</span>
+                            </div>
+                            <div class="skill-note">
+                                <span class="skill-quote">"Clean & Tidy!"</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-reactor-card">
+                            <div class="skill-header">
+                                <div class="skill-icon">PF</div>
+                                <h3 class="skill-name">Performance</h3>
+                                <span class="skill-status">EXPERT</span>
+                            </div>
+                            <div class="skill-level">
+                                <div class="level-bar">
+                                    <div class="level-fill" style="width: 92%;"></div>
+                                </div>
+                                <span class="level-text">92%</span>
+                            </div>
+                            <div class="skill-note">
+                                <span class="skill-quote">"Okily Dokily!"</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -99,64 +283,109 @@
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="section">
+        <section id="projects" class="section nuclear-plant-section">
             <div class="section-content">
-                <h2 class="section-title">Featured Projects</h2>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <div class="project-placeholder">
-                                <span>Project 1</span>
+                <h2 class="section-title nuclear-title">Homer's Control Room</h2>
+                <div class="nuclear-plant-room">
+                    <div class="control-panel">
+                        <div class="warning-lights">
+                            <div class="warning-light red-light active"></div>
+                            <div class="warning-light yellow-light"></div>
+                            <div class="warning-light green-light"></div>
+                        </div>
+                        <div class="reactor-core">
+                            <div class="reactor-status">
+                                <span class="status-text">CORE STABLE</span>
+                                <div class="radiation-bars">
+                                    <div class="radiation-bar"></div>
+                                    <div class="radiation-bar"></div>
+                                    <div class="radiation-bar"></div>
+                                    <div class="radiation-bar"></div>
+                                    <div class="radiation-bar"></div>
+                                </div>
                             </div>
                         </div>
-                        <div class="project-content">
-                            <h3>Task Manager App</h3>
-                            <p>A modern task management application built with SwiftUI, featuring cloud sync and intuitive user interface.</p>
-                            <div class="project-tech">
-                                <span>SwiftUI</span>
-                                <span>Core Data</span>
-                                <span>CloudKit</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" class="project-link">View Details</a>
-                            </div>
+                        <div class="project-buttons">
+                            <button class="control-btn active" onclick="switchProject('footballerista')" data-project="footballerista">
+                                <span class="btn-icon">F</span>
+                                <span class="btn-label">Football</span>
+                            </button>
+                            <button class="control-btn" onclick="switchProject('openjobs')" data-project="openjobs">
+                                <span class="btn-icon">J</span>
+                                <span class="btn-label">Jobs</span>
+                            </button>
+                            <button class="control-btn" onclick="switchProject('chaty')" data-project="chaty">
+                                <span class="btn-icon">C</span>
+                                <span class="btn-label">Chat</span>
+                            </button>
+                            <button class="control-btn" onclick="switchProject('paincheck')" data-project="paincheck">
+                                <span class="btn-icon">P</span>
+                                <span class="btn-label">Pain</span>
+                            </button>
+                            <button class="control-btn" onclick="switchProject('caregiver')" data-project="caregiver">
+                                <span class="btn-icon">C</span>
+                                <span class="btn-label">Care</span>
+                            </button>
+                            <button class="control-btn" onclick="switchProject('fss')" data-project="fss">
+                                <span class="btn-icon">F</span>
+                                <span class="btn-label">FSS</span>
+                            </button>
+                            <button class="control-btn" onclick="switchProject('endava')" data-project="endava">
+                                <span class="btn-icon">E</span>
+                                <span class="btn-label">Endava</span>
+                            </button>
+                            <button class="control-btn" onclick="switchProject('personal')" data-project="personal">
+                                <span class="btn-icon">P</span>
+                                <span class="btn-label">Personal</span>
+                            </button>
                         </div>
                     </div>
-                    <div class="project-card">
-                        <div class="project-image">
-                            <div class="project-placeholder">
-                                <span>Project 2</span>
+                    <div class="project-display-panel">
+                        <div class="display-screen">
+                            <div class="screen-header">
+                                <div class="screen-title" id="projectTitle">Footballerista</div>
+                                <div class="screen-status" id="projectStatus">SYSTEM ONLINE</div>
                             </div>
-                        </div>
-                        <div class="project-content">
-                            <h3>Fitness Tracker</h3>
-                            <p>Comprehensive fitness tracking app with workout plans, progress monitoring, and social features.</p>
-                            <div class="project-tech">
-                                <span>UIKit</span>
-                                <span>HealthKit</span>
-                                <span>Firebase</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" class="project-link">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-image">
-                            <div class="project-placeholder">
-                                <span>Project 3</span>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h3>Recipe Discovery</h3>
-                            <p>Elegant recipe discovery app with personalized recommendations and meal planning features.</p>
-                            <div class="project-tech">
-                                <span>SwiftUI</span>
-                                <span>Combine</span>
-                                <span>REST API</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" class="project-link">View Details</a>
+                            <div class="screen-content">
+                                <div class="project-visual" id="projectVisual">
+                                    <div class="project-icon-large">
+                                        <span>Football</span>
+                                    </div>
+                                </div>
+                                <div class="project-info">
+                                    <h3 class="project-subtitle" id="projectSubtitle">Social Sports Platform</h3>
+                                    <p class="project-description-full" id="projectDescription">
+                                        Mmm... football and social media! Comprehensive social networking platform for athletes featuring player profiles, highlights sharing, and community interactions with Firebase integration and real-time push notifications. No D'OH! moments in this code!
+                                    </p>
+                                    <div class="project-tech-full" id="projectTech">
+                                        <span class="tech-tag homer-tech">Swift</span>
+                                        <span class="tech-tag">Firebase</span>
+                                        <span class="tech-tag">Push Notifications</span>
+                                        <span class="tech-tag">Core Data</span>
+                                    </div>
+                                    <div class="project-features" id="projectFeatures">
+                                        <div class="feature-item">
+                                            <span class="feature-icon">+</span>
+                                            <span class="feature-text">Player Profiles & Stats</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <span class="feature-icon">+</span>
+                                            <span class="feature-text">Real-time Messaging</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <span class="feature-icon">+</span>
+                                            <span class="feature-text">Media Sharing</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <span class="feature-icon">+</span>
+                                            <span class="feature-text">Social Feed</span>
+                                        </div>
+                                    </div>
+                                    <div class="project-footer">
+                                        <span class="homer-quote-full" id="projectQuote">"No D'OH! moments!"</span>
+                                        <button class="details-btn" onclick="showProjectDetails(getCurrentProject())">View Full Details</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -164,36 +393,123 @@
             </div>
         </section>
 
+        <!-- Project Details Modal -->
+        <div id="projectModal" class="homer-modal">
+            <div class="homer-modal-content">
+                <div class="homer-modal-header">
+                    <span class="homer-modal-close" onclick="closeProjectModal()">D'OH! &times;</span>
+                    <h2 id="modalProjectTitle">Project Details</h2>
+                </div>
+                <div class="homer-modal-body" id="projectModalBody">
+                    <div class="homer-modal-icon">
+                        <span id="modalProjectIcon">PROJECT</span>
+                    </div>
+                    <div class="homer-modal-info">
+                        <h3 id="modalProjectSubtitle">Project Subtitle</h3>
+                        <p id="modalProjectDescription">Project description goes here...</p>
+                        <div class="homer-modal-tech" id="modalProjectTech">
+                            <span class="tech-tag homer-tech">Swift</span>
+                        </div>
+                        <div class="homer-modal-quote">
+                            <span id="modalProjectQuote">"Homer says..."</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="homer-modal-footer">
+                    <div class="homer-beer-can"></div>
+                    <span class="homer-modal-footer-text">Need more beer for this project!</span>
+                </div>
+            </div>
+        </div>
+                <div id="modal-body">
+                    <!-- Project details will be inserted here -->
+                </div>
+            </div>
+        </div>
+
         <!-- Experience Section -->
-        <section id="experience" class="section">
+        <section id="experience" class="section nuclear-plant-section">
             <div class="section-content">
-                <h2 class="section-title">Professional Experience</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <h3>Senior iOS Developer</h3>
-                            <p class="timeline-company">Tech Company</p>
-                            <p class="timeline-date">2021 - Present</p>
-                            <p>Leading iOS development initiatives, mentoring junior developers, and architecting scalable mobile solutions.</p>
+                <h2 class="section-title nuclear-title">Homer's Work History</h2>
+                <div class="nuclear-plant-room">
+                    <div class="control-panel">
+                        <div class="warning-lights">
+                            <div class="warning-light red-light active"></div>
+                            <div class="warning-light yellow-light"></div>
+                            <div class="warning-light green-light"></div>
+                        </div>
+                        <div class="reactor-core">
+                            <div class="reactor-status">
+                                <span class="status-text">WORK STATUS: ACTIVE</span>
+                                <div class="radiation-bars">
+                                    <div class="radiation-bar"></div>
+                                    <div class="radiation-bar"></div>
+                                    <div class="radiation-bar"></div>
+                                    <div class="radiation-bar"></div>
+                                    <div class="radiation-bar"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <h3>iOS Developer</h3>
-                            <p class="timeline-company">Mobile Solutions Inc.</p>
-                            <p class="timeline-date">2019 - 2021</p>
-                            <p>Developed and maintained multiple iOS applications, implemented new features, and optimized performance.</p>
+                    <div class="experience-timeline">
+                        <div class="experience-card">
+                            <div class="exp-header">
+                                <div class="exp-badge">D'OH! Level: Senior</div>
+                                <div class="exp-company">Endava Nuclear Division</div>
+                                <div class="exp-date">2022 - Present</div>
+                            </div>
+                            <div class="exp-content">
+                                <h3 class="exp-title">Senior Reactor Operator & Coach</h3>
+                                <p class="exp-description">Driving technical excellence and innovation across enterprise mobile solutions while keeping the nuclear plant from melting down. Leading cross-functional teams in delivering high-impact applications and mentoring junior operators on proper donut break procedures.</p>
+                                <div class="exp-tech">
+                                    <span class="tech-tag homer-tech">Leadership</span>
+                                    <span class="tech-tag">iOS</span>
+                                    <span class="tech-tag">Nuclear Safety</span>
+                                </div>
+                                <div class="exp-footer">
+                                    <span class="homer-quote">"Excellence!" - Mr. Burns</span>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <h3>Junior iOS Developer</h3>
-                            <p class="timeline-company">Startup Hub</p>
-                            <p class="timeline-date">2018 - 2019</p>
-                            <p>Started iOS development journey, built foundational skills in Swift and iOS frameworks.</p>
+                        
+                        <div class="experience-card">
+                            <div class="exp-header">
+                                <div class="exp-badge">D'OH! Level: Senior</div>
+                                <div class="exp-company">DarwinDigital Healthcare</div>
+                                <div class="exp-date">2019 - 2022</div>
+                            </div>
+                            <div class="exp-content">
+                                <h3 class="exp-title">Healthcare Reactor Technician</h3>
+                                <p class="exp-description">Pioneered innovative healthcare technology solutions while avoiding radiation exposure. Transformed complex medical requirements into intuitive mobile experiences and ensured regulatory compliance in sensitive healthcare environments.</p>
+                                <div class="exp-tech">
+                                    <span class="tech-tag homer-tech">Healthcare</span>
+                                    <span class="tech-tag">iOS</span>
+                                    <span class="tech-tag">Safety</span>
+                                </div>
+                                <div class="exp-footer">
+                                    <span class="homer-quote">"Need more coffee!"</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="experience-card">
+                            <div class="exp-header">
+                                <div class="exp-badge">D'OH! Level: Junior</div>
+                                <div class="exp-company">Comit International</div>
+                                <div class="exp-date">2015 - 2019</div>
+                            </div>
+                            <div class="exp-content">
+                                <h3 class="exp-title">Junior Reactor Trainee</h3>
+                                <p class="exp-description">Built foundational expertise across diverse mobile verticals while learning not to press the red buttons. Demonstrated exceptional growth trajectory through consistent delivery of high-quality solutions and rapid skill acquisition.</p>
+                                <div class="exp-tech">
+                                    <span class="tech-tag homer-tech">Learning</span>
+                                    <span class="tech-tag">iOS</span>
+                                    <span class="tech-tag">Gaming</span>
+                                </div>
+                                <div class="exp-footer">
+                                    <span class="homer-quote">"D'OH! That was close!"</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -201,40 +517,85 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="section">
+        <section id="contact" class="section nuclear-plant-section">
             <div class="section-content">
-                <h2 class="section-title">Get in Touch</h2>
-                <div class="contact-content">
-                    <div class="contact-info">
-                        <p>I'm always interested in hearing about new opportunities and exciting projects. Feel free to reach out!</p>
-                        <div class="contact-methods">
-                            <div class="contact-method">
-                                <h3>Email</h3>
-                                <a href="mailto:milos.stevanovic@example.com">milos.stevanovic@example.com</a>
-                            </div>
-                            <div class="contact-method">
-                                <h3>LinkedIn</h3>
-                                <a href="https://www.linkedin.com/in/milo%C5%A1-stevanovi%C4%87-a8b932ba/" target="_blank">linkedin.com/in/milo-stevanovic</a>
-                            </div>
-                            <div class="contact-method">
-                                <h3>Location</h3>
-                                <p>Belgrade, Serbia</p>
+                <h2 class="section-title nuclear-title">Homer's Communication Panel</h2>
+                <div class="nuclear-plant-room">
+                    <div class="control-panel">
+                        <div class="warning-lights">
+                            <div class="warning-light red-light"></div>
+                            <div class="warning-light yellow-light active"></div>
+                            <div class="warning-light green-light"></div>
+                        </div>
+                        <div class="reactor-core">
+                            <div class="reactor-status">
+                                <span class="status-text">COMMUNICATION: ONLINE</span>
+                                <div class="radiation-bars">
+                                    <div class="radiation-bar"></div>
+                                    <div class="radiation-bar"></div>
+                                    <div class="radiation-bar"></div>
+                                    <div class="radiation-bar"></div>
+                                    <div class="radiation-bar"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="contact-form">
-                        <form>
-                            <div class="form-group">
-                                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    <div class="contact-control-panel">
+                        <div class="contact-intro">
+                            <p class="contact-description">Need to contact Homer about reactor operations, donut emergencies, or iOS development? I'm ready to tackle complex challenges while keeping the nuclear plant from melting down. Let's discuss how my expertise can power your next project to success!</p>
+                        </div>
+                        <div class="contact-channels">
+                            <div class="channel-card">
+                                <div class="channel-header">
+                                    <div class="channel-icon">E</div>
+                                    <div class="channel-status">ACTIVE</div>
+                                </div>
+                                <div class="channel-content">
+                                    <h3 class="channel-title">Emergency Email</h3>
+                                    <a href="mailto:milosstevanovic12@yahoo.com" class="channel-link">milosstevanovic12@yahoo.com</a>
+                                    <div class="channel-note">For reactor meltdowns and project proposals</div>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                            
+                            <div class="channel-card">
+                                <div class="channel-header">
+                                    <div class="channel-icon">P</div>
+                                    <div class="channel-status">STANDBY</div>
+                                </div>
+                                <div class="channel-content">
+                                    <h3 class="channel-title">Plant Phone</h3>
+                                    <a href="tel:+381603161917" class="channel-link">+381 60 316 1917</a>
+                                    <div class="channel-note">Urgent donut deliveries only</div>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                            
+                            <div class="channel-card">
+                                <div class="channel-header">
+                                    <div class="channel-icon">L</div>
+                                    <div class="channel-status">ONLINE</div>
+                                </div>
+                                <div class="channel-content">
+                                    <h3 class="channel-title">Professional Network</h3>
+                                    <a href="https://www.linkedin.com/in/milo%C5%A1-stevanovi%C4%87-a8b932ba/" target="_blank" class="channel-link">linkedin.com/in/milo-stevanovic</a>
+                                    <div class="channel-note">Connect for nuclear opportunities</div>
+                                </div>
                             </div>
-                            <button type="submit" class="btn primary">Send Message</button>
-                        </form>
+                            
+                            <div class="channel-card">
+                                <div class="channel-header">
+                                    <div class="channel-icon">L</div>
+                                    <div class="channel-status">FIXED</div>
+                                </div>
+                                <div class="channel-content">
+                                    <h3 class="channel-title">Reactor Location</h3>
+                                    <p class="channel-location">Springfield Nuclear Plant<br>Belgrade, Serbia</p>
+                                    <div class="channel-note">Near the donut shop</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-footer">
+                            <span class="homer-quote-contact">"D'OH! Don't call during donut break!"</span>
+                        </div>
                     </div>
                 </div>
             </div>
