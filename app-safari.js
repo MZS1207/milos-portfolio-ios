@@ -142,6 +142,12 @@
         try {
             console.log('CV App: Starting Safari-compatible initialization...');
             
+            // Safari-specific DOM ready check
+            if (document.readyState !== 'complete') {
+                setTimeout(init, 100);
+                return;
+            }
+            
             track = $('#screensTrack');
             tabs = $$('.tab');
             header = $('#headerTitle');
@@ -156,9 +162,12 @@
                 throw new Error('Required DOM elements not found');
             }
             
-            initEvents();
-            switchTab(0);
-            console.log('CV App: Safari-compatible initialization successful');
+            // Safari-specific initialization delay
+            setTimeout(function() {
+                initEvents();
+                switchTab(0);
+                console.log('CV App: Safari-compatible initialization successful');
+            }, 50);
             
         } catch (error) {
             console.error('CV App: Initialization failed', error);
