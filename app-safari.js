@@ -303,6 +303,25 @@
             modal.style.background = 'rgba(0, 0, 0, 0.8)';
             modal.style.zIndex = '9999';
             
+            // Force modal-content visibility
+            const modalContent = modal.querySelector('.modal-content');
+            if (modalContent) {
+                modalContent.style.position = 'fixed';
+                modalContent.style.top = '50%';
+                modalContent.style.left = '50%';
+                modalContent.style.transform = 'translate(-50%, -50%)';
+                modalContent.style.background = 'white';
+                modalContent.style.borderRadius = '12px';
+                modalContent.style.width = '90%';
+                modalContent.style.maxWidth = '500px';
+                modalContent.style.maxHeight = '80vh';
+                modalContent.style.overflowY = 'auto';
+                modalContent.style.boxShadow = '0 10px 40px rgba(0,0,0,0.3)';
+                modalContent.style.padding = '20px';
+                modalContent.style.zIndex = '10000';
+                modalContent.style.display = 'block';
+            }
+            
             document.body.style.overflow = 'hidden';
             
             console.log('Modal classes:', modal.className);
