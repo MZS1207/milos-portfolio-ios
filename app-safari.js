@@ -172,6 +172,22 @@
             tech: ['Swift', 'Stripe', 'Core Data', 'Network APIs', 'Security', 'Push Notifications'],
             highlights: 'Built leading international mobile recharge platform processing millions of transactions across 150+ countries with 3-second delivery times and 99.9% uptime.'
         },
+        admiral: {
+            name: 'Admiral Insurance',
+            type: 'Insurance Management Platform',
+            icon: 'Shield',
+            description: 'Comprehensive insurance management app for UK customers enabling policy viewing, document management, emergency assistance, and journey tracking with data control features.',
+            features: [
+                'Policy Management',
+                'Document Storage & Printing',
+                'Emergency Assistance',
+                'MyTrips Journey Tracking',
+                'Data Control & Privacy',
+                'Customer Support Integration'
+            ],
+            tech: ['Swift', 'Core Data', 'Core Location', 'Security', 'PDF Generation', 'Push Notifications'],
+            highlights: 'Developed leading UK insurance management app serving millions of customers with comprehensive policy management, emergency assistance, and innovative journey tracking features.'
+        },
         endava: {
             name: 'Endava Projects',
             type: 'Enterprise Solutions',
