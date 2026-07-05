@@ -1055,8 +1055,8 @@ button { font: inherit; border: none; background: none; cursor: pointer; -webkit
 }
 
 .modal-overlay.active .modal-content {
-    transform: scale(1) translateY(0);
-    -webkit-transform: scale(1) translateY(0);
+    transform: translate(-50%, -50%) scale(1);
+    -webkit-transform: translate(-50%, -50%) scale(1);
 }
 
 .modal-header {
@@ -1298,13 +1298,13 @@ button { font: inherit; border: none; background: none; cursor: pointer; -webkit
     }
     
     .modal-content {
-        -webkit-transform: scale(0.9) translateY(20px);
-        transform: scale(0.9) translateY(20px);
+        -webkit-transform: translate(-50%, -50%) scale(0.9);
+        transform: translate(-50%, -50%) scale(0.9);
     }
-    
+
     .modal-overlay.active .modal-content {
-        -webkit-transform: scale(1) translateY(0);
-        transform: scale(1) translateY(0);
+        -webkit-transform: translate(-50%, -50%) scale(1);
+        transform: translate(-50%, -50%) scale(1);
     }
 }
 

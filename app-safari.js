@@ -15,7 +15,7 @@
         schueco: {
             name: 'Schueco SmartTouch',
             type: 'Smart Door Control',
-            icon: 'Building',
+            icon: '🏢',
             description: 'Advanced smart door control system for Schueco featuring Bluetooth connectivity, Touch ID authentication, and remote access capabilities with real-time monitoring.',
             features: [
                 'Bluetooth Smart Lock Integration',
@@ -31,7 +31,7 @@
         beleen: {
             name: 'Saand',
             type: 'Delivery System',
-            icon: 'Package',
+            icon: '📦',
             description: 'Advanced delivery optimization system featuring route optimization algorithms, real-time driver tracking, and performance-based rewards system with token/bonus incentives.',
             features: [
                 'Route Optimization Algorithms',
@@ -47,7 +47,7 @@
         footballerista: {
             name: 'Footballerista',
             type: 'Social Sports Platform',
-            icon: 'Football',
+            icon: '⚽',
             description: 'Comprehensive social networking platform for athletes featuring player profiles, highlights sharing, and community interactions with Firebase integration and real-time push notifications.',
             features: [
                 'Player Profiles & Stats Tracking',
@@ -63,7 +63,7 @@
         openjobs: {
             name: 'Open Jobs',
             type: 'Job Search Platform',
-            icon: 'Jobs',
+            icon: '💼',
             description: 'Mobile application connecting job seekers with employers, featuring advanced search filters, real-time notifications, and streamlined application process with SQLite database integration.',
             features: [
                 'Advanced Search Filters',
@@ -79,7 +79,7 @@
         chaty: {
             name: 'Chaty',
             type: 'Messaging Platform',
-            icon: 'Chat',
+            icon: '💬',
             description: 'Real-time messaging application with end-to-end encryption, group chats, file sharing, and voice/video calling capabilities using WebRTC and Socket.io integration.',
             features: [
                 'End-to-End Encryption',
@@ -95,7 +95,7 @@
         paincheck: {
             name: 'PainCheck',
             type: 'Healthcare App',
-            icon: 'Pain',
+            icon: '🏥',
             description: 'HIPAA-compliant healthcare tracking application for pain management and medication reminders, featuring symptom tracking, doctor appointments, and health analytics.',
             features: [
                 'Pain Tracking & Analytics',
@@ -111,7 +111,7 @@
         caregiver: {
             name: 'Caregiver',
             type: 'Elder Care App',
-            icon: 'Care',
+            icon: '🤝',
             description: 'Comprehensive caregiving application for elderly care management, featuring medication schedules, emergency alerts, activity monitoring, and family coordination.',
             features: [
                 'Medication Schedules',
@@ -127,7 +127,7 @@
         fss: {
             name: 'FSS',
             type: 'Financial System',
-            icon: 'FSS',
+            icon: '🏦',
             description: 'Enterprise financial management system with real-time analytics, automated reporting, and multi-currency support for businesses requiring comprehensive financial tracking.',
             features: [
                 'Real-time Financial Analytics',
@@ -143,7 +143,7 @@
         vquarter: {
             name: 'Vquarter',
             type: 'Service Provider Platform',
-            icon: 'Home',
+            icon: '🏠',
             description: 'Platform connecting property renters with service providers including cleaning, transportation, and other essential services for rental properties with booking and payment management.',
             features: [
                 'Service Provider Matching',
@@ -159,7 +159,7 @@
         ding: {
             name: 'Ding',
             type: 'Mobile Top-Up Platform',
-            icon: 'Phone',
+            icon: '📱',
             description: 'International mobile top-up platform enabling users to send prepaid mobile recharge to friends and family worldwide with secure payment processing and multi-network support.',
             features: [
                 'International Mobile Top-Up',
@@ -175,7 +175,7 @@
         admiral: {
             name: 'Admiral Insurance',
             type: 'Insurance Management Platform',
-            icon: 'Shield',
+            icon: '🛡️',
             description: 'Comprehensive insurance management app for UK customers enabling policy viewing, document management, emergency assistance, and journey tracking with data control features.',
             features: [
                 'Policy Management',
@@ -191,7 +191,7 @@
         catchase: {
             name: 'CatChase',
             type: 'Mobile Game',
-            icon: 'Cat',
+            icon: '🐱',
             description: 'Private mobile game where players control a cat chasing balloons through various levels with increasing difficulty and fun animations.',
             features: [
                 'Cat Character Control',
@@ -207,7 +207,7 @@
         endava: {
             name: 'Endava Projects',
             type: 'Enterprise Solutions',
-            icon: 'Building',
+            icon: '🏢',
             description: 'Multiple enterprise mobile solutions for global clients including team collaboration, project management, real-time communication, and performance analytics platforms.',
             features: [
                 'Team Collaboration Tools',
@@ -219,6 +219,54 @@
             ],
             tech: ['Swift', 'SwiftUI', 'Combine', 'Core Data', 'CI/CD'],
             highlights: 'Led development of enterprise solutions serving Fortune 500 companies with 99.9% uptime and scalability.'
+        },
+        thehive: {
+            name: 'The Hive',
+            type: 'Multi-Agent Orchestration Framework',
+            icon: '🐝',
+            description: 'Custom multi-agent development framework built on Claude Code: an architect/delegate/worker agent hierarchy that builds complete multi-platform products from a single frozen contract.',
+            features: [
+                'Architect / Delegate / Worker agent hierarchy',
+                'Frozen JSON Schema contract as source of truth',
+                'Type generation for Swift, Kotlin, TypeScript & Python',
+                'Parallel task dispatch with disjoint file ownership',
+                'Automated build & test gates per wave',
+                'Deterministic conflict resolution'
+            ],
+            tech: ['Claude Code', 'Python', 'JSON Schema', 'Codegen', 'AI Agents'],
+            highlights: 'Personal framework used to deliver several complete products end-to-end with fleets of AI agents working in parallel.'
+        },
+        bugcorpduel: {
+            name: 'Bug Corp Duel',
+            type: 'iOS P2P Card Game',
+            icon: '🃏',
+            description: 'Yu-Gi-Oh-style card duel game with an IT-office parody theme: deterministic seeded game engine, 100-card catalogue with reaction/trap windows, and serverless peer-to-peer multiplayer.',
+            features: [
+                'Deterministic seeded game engine',
+                '100-card catalogue & trap/reaction windows',
+                'Serverless P2P multiplayer (MultipeerConnectivity)',
+                'Simulation-driven balance tuning (400 auto-matches)',
+                '100+ unit & integration tests',
+                'Swift 6 strict concurrency'
+            ],
+            tech: ['SwiftUI', 'SpriteKit', 'MultipeerConnectivity', 'Network.framework', 'SwiftPM', 'XcodeGen'],
+            highlights: 'Built end-to-end through The Hive: 116 orchestrated AI-agent tasks, full green build & test gate.'
+        },
+        beambike: {
+            name: 'BeamBike',
+            type: 'E-Bike Sharing Platform MVP',
+            icon: '🚲',
+            description: 'Full-stack mobility MVP: native iOS and Android apps with a realtime map of bikes and geofenced zones, phone/OTP and social sign-in, admin dashboard, and an IoT device simulator.',
+            features: [
+                'Native iOS (SwiftUI) & Android (Jetpack Compose)',
+                'Node.js/TypeScript backend with PostgreSQL & Redis',
+                'Realtime fleet state over WebSocket',
+                'Geofenced zones on MapLibre / OpenStreetMap',
+                'React admin dashboard & IoT simulator',
+                'i18n across 7 languages incl. full RTL'
+            ],
+            tech: ['SwiftUI', 'Kotlin', 'Node.js', 'PostgreSQL', 'Redis', 'WebSocket', 'MapLibre'],
+            highlights: 'Contract-first monorepo: 101 endpoints and 114 models generated for 4 platforms from one frozen schema.'
         }
     };
 
@@ -281,17 +329,9 @@
 
     /* ---------- Modal Functions ---------- */
     function showModal(projectId) {
-        console.log('showModal called with:', projectId);
         const project = PROJECTS[projectId];
-        console.log('Project data:', project);
-        
-        if (!project) {
-            console.error('Project not found:', projectId);
-            return;
-        }
-        
-        console.log('Modal element:', modal);
-        
+        if (!project || !modal) return;
+
         const modalIcon = $('#modalProjectIcon');
         const modalName = $('#modalProjectName');
         const modalType = $('#modalProjectType');
@@ -299,131 +339,44 @@
         const modalFeatures = $('#modalFeatures');
         const modalTech = $('#modalTech');
         const modalHighlights = $('#modalHighlights');
-        
-        console.log('Modal elements found:', {
-            modalIcon: !!modalIcon,
-            modalName: !!modalName,
-            modalType: !!modalType,
-            modalDescription: !!modalDescription,
-            modalFeatures: !!modalFeatures,
-            modalTech: !!modalTech,
-            modalHighlights: !!modalHighlights
-        });
-        
+
         if (modalIcon) modalIcon.textContent = project.icon;
         if (modalName) modalName.textContent = project.name;
         if (modalType) modalType.textContent = project.type;
         if (modalDescription) modalDescription.textContent = project.description;
-        
-        // Populate features
+
         if (modalFeatures) {
-            modalFeatures.innerHTML = project.features.map(feature => 
+            modalFeatures.innerHTML = project.features.map(feature =>
                 `<li>${feature}</li>`
             ).join('');
         }
-        
-        // Populate tech tags
+
         if (modalTech) {
-            modalTech.innerHTML = project.tech.map(tech => 
+            modalTech.innerHTML = project.tech.map(tech =>
                 `<span class="tag">${tech}</span>`
             ).join('');
         }
-        
-        // Populate highlights
+
         if (modalHighlights) {
             modalHighlights.innerHTML = `<p>${project.highlights}</p>`;
         }
-        
-        // Show modal
-        if (modal) {
-            console.log('Adding active class to modal');
-            modal.classList.add('active');
-            
-            // Create proper modal with working approach
-            const modalDiv = document.createElement('div');
-            modalDiv.style.cssText = `
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: rgba(0, 0, 0, 0.8);
-                z-index: 999999;
-                display: block;
-                opacity: 1;
-                visibility: visible;
-            `;
-            modalDiv.innerHTML = `
-                <div style="
-                    position: fixed;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    background: white;
-                    padding: 20px;
-                    border-radius: 12px;
-                    width: 90%;
-                    max-width: 500px;
-                    max-height: 80vh;
-                    overflow-y: auto;
-                    z-index: 1000000;
-                    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-                ">
-                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #eee;">
-                        <div>
-                            <h3 style="font-size: 18px; font-weight: 600; color: #333; margin: 0;">${project.name}</h3>
-                            <small style="color: #666; font-size: 14px;">${project.type}</small>
-                        </div>
-                        <button onclick="this.closest('div').parentElement.parentElement.remove()" style="background: none; border: none; color: #666; cursor: pointer; padding: 5px; border-radius: 5px; font-size: 20px;">×</button>
-                    </div>
-                    <div style="color: #333; line-height: 1.6; margin-bottom: 20px; font-size: 16px;">${project.description}</div>
-                    <div style="margin-bottom: 20px;">
-                        <h4 style="font-size: 16px; font-weight: 600; color: #333; margin-bottom: 10px;">Key Features</h4>
-                        <ul style="list-style: none; padding: 0; margin: 0;">
-                            ${project.features.map(feature => `<li style="color: #333; padding: 5px 0; position: relative; padding-left: 20px; font-size: 15px;">· ${feature}</li>`).join('')}
-                        </ul>
-                    </div>
-                    <div style="margin-bottom: 20px;">
-                        <h4 style="font-size: 16px; font-weight: 600; color: #333; margin-bottom: 10px;">Technologies</h4>
-                        <div style="display: flex; flex-wrap: wrap; gap: 5px;">
-                            ${project.tech.map(tech => `<span style="background: #f5f5f5; color: #333; padding: 5px 10px; border-radius: 5px; font-size: 13px; font-weight: 500;">${tech}</span>`).join('')}
-                        </div>
-                    </div>
-                    <div style="background: #f5f5f5; padding: 15px; border-radius: 8px; border-left: 3px solid #007AFF;">
-                        <p style="color: #333; margin: 0; font-size: 15px; font-style: italic;">${project.highlights}</p>
-                    </div>
-                </div>
-            `;
-            
-            document.body.appendChild(modalDiv);
-            document.body.style.overflow = 'hidden';
-            
-            console.log('Test modal added to body');
-            console.log('Test modal should be visible now');
-        } else {
-            console.error('Modal element not found!');
-        }
+
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
     }
-    
+
     function hideModal() {
         if (modal) {
             modal.classList.remove('active');
             document.body.style.overflow = '';
         }
     }
-    
+
     function handleProjectClick(e) {
-        console.log('Project card clicked:', e.currentTarget);
-        const card = e.currentTarget;
-        const projectId = card.getAttribute('data-project');
-        console.log('Project ID:', projectId);
-        
+        const projectId = e.currentTarget.getAttribute('data-project');
         if (projectId) {
             e.preventDefault();
-            console.log('Calling showModal for:', projectId);
             showModal(projectId);
-        } else {
-            console.error('No project ID found on card');
         }
     }
 
@@ -471,19 +424,10 @@
         // Modal initialization
         modal = $('#projectModal');
         modalClose = $('#modalClose');
-        
-        console.log('Modal initialization:', {
-            modal: !!modal,
-            modalClose: !!modalClose
-        });
-        
+
         // Project card click handlers
-        const projectCards = $$('.project-card');
-        console.log('Project cards found:', projectCards.length);
-        
-        projectCards.forEach((card, index) => {
+        $$('.project-card').forEach(card => {
             if (card) {
-                console.log(`Adding click handler to card ${index}:`, card.getAttribute('data-project'));
                 card.addEventListener('click', handleProjectClick);
                 card.style.cursor = 'pointer';
             }
@@ -535,35 +479,26 @@
     /* ---------- Initialize ---------- */
     function init() {
         try {
-            console.log('CV App: Starting Safari-compatible initialization...');
-            
             // Safari-specific DOM ready check
             if (document.readyState !== 'complete') {
                 setTimeout(init, 100);
                 return;
             }
-            
+
             track = $('#screensTrack');
             tabs = $$('.tab');
             header = $('#headerTitle');
-            
-            console.log('CV App: DOM elements found:', {
-                track: !!track,
-                tabs: tabs ? tabs.length : 0,
-                header: !!header
-            });
-            
+
             if (!track || !tabs || tabs.length === 0 || !header) {
                 throw new Error('Required DOM elements not found');
             }
-            
+
             // Safari-specific initialization delay
             setTimeout(function() {
                 initEvents();
                 switchTab(0);
-                console.log('CV App: Safari-compatible initialization successful');
             }, 50);
-            
+
         } catch (error) {
             console.error('CV App: Initialization failed', error);
             handleError(error, 'Initialization');
