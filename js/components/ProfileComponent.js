@@ -80,7 +80,7 @@
                 color: 'orange',
                 href: 'MilosStevanovicResume.pdf',
                 title: 'Download CV',
-                desc: 'PDF Resume 2025',
+                desc: 'PDF Resume 2026',
                 download: 'MilosStevanovicResume.pdf'
             }
         ];
