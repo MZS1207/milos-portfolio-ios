@@ -633,6 +633,14 @@ button { font: inherit; border: none; background: none; cursor: pointer; -webkit
 
 .soft-pill .emoji { font-size: 16px; }
 
+/* Tappable skill rows */
+.skill-tappable { cursor: pointer; transition: opacity 0.15s; }
+.skill-tappable:active { opacity: 0.6; }
+.skill-chevron { flex-shrink: 0; color: var(--color-tertiary); margin-left: 2px; }
+@media (hover: hover) {
+    .skill-tappable:hover .skill-chevron { color: var(--color-primary); }
+}
+
 /* ---------- Tag Cloud ---------- */
 .tag-cloud {
     display: flex;
@@ -1081,6 +1089,7 @@ button { font: inherit; border: none; background: none; cursor: pointer; -webkit
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 12px;
     margin-bottom: 20px;
     padding-bottom: 15px;
     border-bottom: 1px solid #eee;
@@ -1088,8 +1097,14 @@ button { font: inherit; border: none; background: none; cursor: pointer; -webkit
 
 .modal-project-info {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 15px;
+    flex: 1;
+    min-width: 0;
+}
+
+.modal-project-info > div {
+    min-width: 0;
 }
 
 .modal-project-icon {
@@ -1123,6 +1138,8 @@ button { font: inherit; border: none; background: none; cursor: pointer; -webkit
     padding: 5px;
     border-radius: 5px;
     font-size: 20px;
+    flex-shrink: 0;
+    align-self: flex-start;
 }
 
 .modal-close:hover {
@@ -1331,17 +1348,8 @@ button { font: inherit; border: none; background: none; cursor: pointer; -webkit
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
     }
-    
-    .modal-header {
-        -webkit-box-align: center;
-        -webkit-box-pack: justify;
-        display: -webkit-box;
-    }
-    
-    .modal-project-info {
-        -webkit-box-align: center;
-        display: -webkit-box;
-    }
+    /* Modal header/info intentionally use modern flexbox (see base rules) —
+       the legacy -webkit-box model ignores flex:1 and forces icon centering. */
 }
 
 /* ---------- Print Styles ---------- */

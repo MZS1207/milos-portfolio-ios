@@ -270,6 +270,58 @@
         }
     };
 
+    /* ---------- Skill Data ---------- */
+    const SKILLS = {
+        swift: {
+            name: 'Swift', type: 'Primary language · 10+ years', icon: '🟠',
+            description: 'My primary language since 2015, across every production iOS app I have shipped. Comfortable from low-level performance work to modern, expressive API design.',
+            usedIn: ['Every iOS app in the last decade', 'Swift 6 with strict concurrency on recent work', 'Both greenfield builds and legacy rescues'],
+            related: ['SwiftUI', 'UIKit', 'Combine', 'Swift Concurrency']
+        },
+        swiftui: {
+            name: 'SwiftUI', type: 'Modern declarative UI', icon: '🔷',
+            description: 'Declarative UI framework I reach for on new features and greenfield products, combined with UIKit where fine-grained control is needed.',
+            usedIn: ['DXP hybrid insurance platform at Endava', 'Personal apps — Bug Corp Duel, BeamBike', 'New feature modules in mixed UIKit/SwiftUI apps'],
+            related: ['Combine', 'Swift Concurrency', 'MVVM']
+        },
+        uikit: {
+            name: 'UIKit', type: 'Deep custom UI & legacy expertise', icon: '🟣',
+            description: 'Years of imperative UI work — custom controls, complex animations, and performance-critical screens. My go-to for pixel-perfect and legacy codebases.',
+            usedIn: ['Most production apps 2015–2022', 'Custom components & advanced animations', 'Refactoring and stabilising inherited UI'],
+            related: ['Core Animation', 'Auto Layout', 'Objective-C']
+        },
+        objc: {
+            name: 'Objective-C', type: 'Legacy codebases & interop', icon: '⚫',
+            description: 'Fluent in Objective-C for maintaining and modernising older codebases, and for bridging cleanly with Swift in mixed-language projects.',
+            usedIn: ['Inherited codebases at Comit International', 'Swift ↔ Objective-C interop & bridging', 'Incremental migration of legacy apps to Swift'],
+            related: ['Swift', 'UIKit']
+        },
+        mvvm: {
+            name: 'MVVM / Clean Architecture', type: 'Default for greenfield products', icon: '🏛️',
+            description: 'My default architecture: clear separation of concerns, testable view models, and a domain layer independent of frameworks. Keeps large apps maintainable as teams grow.',
+            usedIn: ['Greenfield products at Endava', 'Testable, mockable business logic', 'Onboarding new team members quickly'],
+            related: ['Combine', 'Dependency Injection', 'Unit Testing']
+        },
+        concurrency: {
+            name: 'Swift Concurrency', type: 'async/await, actors, strict concurrency', icon: '⚡',
+            description: 'Modern structured concurrency — async/await, actors and task isolation — for safe, readable asynchronous code without callback pyramids or data races.',
+            usedIn: ['Bug Corp Duel — Swift 6 strict concurrency', 'Modernising callback- and closure-heavy code', 'Actor-isolated networking & game state'],
+            related: ['Swift', 'Combine']
+        },
+        combine: {
+            name: 'Combine / RxSwift', type: 'Reactive data flow', icon: '🔗',
+            description: 'Reactive frameworks for binding data through the app — network streams, form state and UI updates — pairing naturally with MVVM.',
+            usedIn: ['Data binding in MVVM view models', 'Network and event streams', 'Debounced search & form validation'],
+            related: ['SwiftUI', 'MVVM']
+        },
+        viper: {
+            name: 'VIPER / VIP', type: 'Large modular codebases', icon: '🧩',
+            description: 'Highly modular architectures with strict boundaries between components — useful on large apps with multiple teams where clear ownership matters.',
+            usedIn: ['Large multi-team enterprise codebases', 'Strict module boundaries & routing', 'Independently testable components'],
+            related: ['MVVM', 'Clean Architecture']
+        }
+    };
+
     /* ---------- State ---------- */
     let current = 0;
     let track, tabs, header, modal, modalClose;
@@ -328,41 +380,81 @@
     }
 
     /* ---------- Modal Functions ---------- */
+    function setText(id, value) { const el = $(id); if (el) el.textContent = value; }
+
+    function toggleSection(id, visible) {
+        const el = $(id);
+        if (el) el.style.display = visible ? '' : 'none';
+    }
+
+    function openModalShell() {
+        if (!modal) return;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        const body = modal.querySelector('.modal-body');
+        if (body) body.scrollTop = 0;
+    }
+
     function showModal(projectId) {
         const project = PROJECTS[projectId];
         if (!project || !modal) return;
 
-        const modalIcon = $('#modalProjectIcon');
-        const modalName = $('#modalProjectName');
-        const modalType = $('#modalProjectType');
-        const modalDescription = $('#modalDescription');
+        setText('#modalProjectIcon', project.icon);
+        setText('#modalProjectName', project.name);
+        setText('#modalProjectType', project.type);
+        setText('#modalDescription', project.description);
+
+        setText('#modalFeaturesLabel', 'Key Features');
         const modalFeatures = $('#modalFeatures');
-        const modalTech = $('#modalTech');
-        const modalHighlights = $('#modalHighlights');
-
-        if (modalIcon) modalIcon.textContent = project.icon;
-        if (modalName) modalName.textContent = project.name;
-        if (modalType) modalType.textContent = project.type;
-        if (modalDescription) modalDescription.textContent = project.description;
-
         if (modalFeatures) {
-            modalFeatures.innerHTML = project.features.map(feature =>
-                `<li>${feature}</li>`
-            ).join('');
+            modalFeatures.innerHTML = project.features.map(f => `<li>${f}</li>`).join('');
         }
+        toggleSection('#modalFeaturesSection', true);
 
+        setText('#modalTechLabel', 'Technologies');
+        const modalTech = $('#modalTech');
         if (modalTech) {
-            modalTech.innerHTML = project.tech.map(tech =>
-                `<span class="tag">${tech}</span>`
-            ).join('');
+            modalTech.innerHTML = project.tech.map(t => `<span class="tag">${t}</span>`).join('');
         }
+        toggleSection('#modalTechSection', true);
 
+        setText('#modalHighlightsLabel', 'Project Highlights');
+        const modalHighlights = $('#modalHighlights');
         if (modalHighlights) {
             modalHighlights.innerHTML = `<p>${project.highlights}</p>`;
         }
+        toggleSection('#modalHighlightsSection', true);
 
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
+        openModalShell();
+    }
+
+    function showSkill(skillId) {
+        const skill = SKILLS[skillId];
+        if (!skill || !modal) return;
+
+        setText('#modalProjectIcon', skill.icon);
+        setText('#modalProjectName', skill.name);
+        setText('#modalProjectType', skill.type);
+        setText('#modalDescription', skill.description);
+
+        setText('#modalFeaturesLabel', 'Where I use it');
+        const modalFeatures = $('#modalFeatures');
+        if (modalFeatures) {
+            modalFeatures.innerHTML = (skill.usedIn || []).map(u => `<li>${u}</li>`).join('');
+        }
+        toggleSection('#modalFeaturesSection', !!(skill.usedIn && skill.usedIn.length));
+
+        setText('#modalTechLabel', 'Related');
+        const modalTech = $('#modalTech');
+        if (modalTech) {
+            modalTech.innerHTML = (skill.related || []).map(t => `<span class="tag">${t}</span>`).join('');
+        }
+        toggleSection('#modalTechSection', !!(skill.related && skill.related.length));
+
+        // Skills have no "highlights" section
+        toggleSection('#modalHighlightsSection', false);
+
+        openModalShell();
     }
 
     function hideModal() {
@@ -377,6 +469,14 @@
         if (projectId) {
             e.preventDefault();
             showModal(projectId);
+        }
+    }
+
+    function handleSkillClick(e) {
+        const skillId = e.currentTarget.getAttribute('data-skill');
+        if (skillId) {
+            e.preventDefault();
+            showSkill(skillId);
         }
     }
 
@@ -430,6 +530,14 @@
             if (card) {
                 card.addEventListener('click', handleProjectClick);
                 card.style.cursor = 'pointer';
+            }
+        });
+
+        // Skill row click handlers
+        $$('.skill-tappable').forEach(row => {
+            if (row) {
+                row.addEventListener('click', handleSkillClick);
+                row.style.cursor = 'pointer';
             }
         });
         
