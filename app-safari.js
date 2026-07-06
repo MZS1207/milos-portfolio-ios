@@ -322,6 +322,55 @@
         }
     };
 
+    /* ---------- Experience Data ---------- */
+    const EXPERIENCE = {
+        'endava-senior': {
+            name: 'Senior iOS Developer & AI Champion', type: 'Endava · 2022 – Present', icon: '🏢',
+            description: 'Leading development of high-impact iOS applications for insurance and telecommunications clients, and driving AI adoption across teams as Endava\'s AI Champion.',
+            contributions: [
+                'Own app lifecycles end-to-end, from concept to production',
+                'Apply MVVM / Clean Architecture with SwiftUI, UIKit & Combine',
+                'Drive AI project integration, monitoring and delivery automation',
+                'Mentor developers in AI-assisted development',
+                'Collaborate across cross-functional teams in an agile setup'
+            ],
+            focus: ['Swift', 'SwiftUI', 'Combine', 'AI/ML', 'CI/CD', 'Leadership']
+        },
+        'endava-coach': {
+            name: 'Career Coach', type: 'Endava · 2024 – Present', icon: '🎓',
+            description: 'Mentoring and coaching iOS developers across the organisation — establishing standards, growing talent and building a supportive engineering culture.',
+            contributions: [
+                'Structured growth plans and regular 1:1 mentoring',
+                'Conduct technical interviews and set coding standards',
+                'Run workshops and knowledge-sharing sessions',
+                'Support professional development and career guidance'
+            ],
+            focus: ['Mentoring', 'Career Development', 'Technical Leadership', 'Team Building']
+        },
+        'darwin': {
+            name: 'Senior iOS Developer', type: 'DarwinDigital · 2019 – 2022', icon: '🏥',
+            description: 'Built healthcare technology applications with secure, HIPAA-compliant data handling, working closely with research teams, data scientists and backend developers.',
+            contributions: [
+                'Delivered HIPAA-compliant apps for pain detection in infants & the elderly',
+                'Refactored legacy codebases, improving stability and performance',
+                'Optimised app responsiveness and memory usage',
+                'Turned complex medical requirements into intuitive experiences'
+            ],
+            focus: ['Swift', 'HealthKit', 'Core Data', 'HIPAA', 'Charts']
+        },
+        'comit': {
+            name: 'iOS Developer', type: 'Comit International · 2015 – 2019', icon: '💼',
+            description: 'Grew from junior to mid-level building apps across social, logistics, on-demand and betting verticals in Objective-C and Swift.',
+            contributions: [
+                'Shipped apps across social, logistics, on-demand and gaming domains',
+                'Adapted to clean, well-structured and complex inherited codebases alike',
+                'Progressed from junior to mid-level through consistent delivery',
+                'Built strong fundamentals in UIKit and mobile architecture'
+            ],
+            focus: ['Objective-C', 'Swift', 'UIKit', 'Firebase']
+        }
+    };
+
     /* ---------- State ---------- */
     let current = 0;
     let track, tabs, header, modal, modalClose;
@@ -395,66 +444,66 @@
         if (body) body.scrollTop = 0;
     }
 
-    function showModal(projectId) {
-        const project = PROJECTS[projectId];
-        if (!project || !modal) return;
+    /* Generic detail renderer — one modal, reused by projects, skills & experience.
+       d = { icon, name, type, description,
+             listLabel, list:[], tagsLabel, tags:[], highlightLabel, highlight } */
+    function renderDetail(d) {
+        if (!d || !modal) return;
 
-        setText('#modalProjectIcon', project.icon);
-        setText('#modalProjectName', project.name);
-        setText('#modalProjectType', project.type);
-        setText('#modalDescription', project.description);
+        setText('#modalProjectIcon', d.icon || '');
+        setText('#modalProjectName', d.name || '');
+        setText('#modalProjectType', d.type || '');
+        setText('#modalDescription', d.description || '');
 
-        setText('#modalFeaturesLabel', 'Key Features');
+        const list = d.list || [];
+        setText('#modalFeaturesLabel', d.listLabel || '');
         const modalFeatures = $('#modalFeatures');
-        if (modalFeatures) {
-            modalFeatures.innerHTML = project.features.map(f => `<li>${f}</li>`).join('');
-        }
-        toggleSection('#modalFeaturesSection', true);
+        if (modalFeatures) modalFeatures.innerHTML = list.map(x => `<li>${x}</li>`).join('');
+        toggleSection('#modalFeaturesSection', list.length > 0);
 
-        setText('#modalTechLabel', 'Technologies');
+        const tags = d.tags || [];
+        setText('#modalTechLabel', d.tagsLabel || '');
         const modalTech = $('#modalTech');
-        if (modalTech) {
-            modalTech.innerHTML = project.tech.map(t => `<span class="tag">${t}</span>`).join('');
-        }
-        toggleSection('#modalTechSection', true);
+        if (modalTech) modalTech.innerHTML = tags.map(t => `<span class="tag">${t}</span>`).join('');
+        toggleSection('#modalTechSection', tags.length > 0);
 
-        setText('#modalHighlightsLabel', 'Project Highlights');
+        setText('#modalHighlightsLabel', d.highlightLabel || '');
         const modalHighlights = $('#modalHighlights');
-        if (modalHighlights) {
-            modalHighlights.innerHTML = `<p>${project.highlights}</p>`;
-        }
-        toggleSection('#modalHighlightsSection', true);
+        if (modalHighlights) modalHighlights.innerHTML = d.highlight ? `<p>${d.highlight}</p>` : '';
+        toggleSection('#modalHighlightsSection', !!d.highlight);
 
         openModalShell();
     }
 
+    function showModal(projectId) {
+        const p = PROJECTS[projectId];
+        if (!p) return;
+        renderDetail({
+            icon: p.icon, name: p.name, type: p.type, description: p.description,
+            listLabel: 'Key Features', list: p.features,
+            tagsLabel: 'Technologies', tags: p.tech,
+            highlightLabel: 'Project Highlights', highlight: p.highlights
+        });
+    }
+
     function showSkill(skillId) {
-        const skill = SKILLS[skillId];
-        if (!skill || !modal) return;
+        const s = SKILLS[skillId];
+        if (!s) return;
+        renderDetail({
+            icon: s.icon, name: s.name, type: s.type, description: s.description,
+            listLabel: 'Where I use it', list: s.usedIn,
+            tagsLabel: 'Related', tags: s.related
+        });
+    }
 
-        setText('#modalProjectIcon', skill.icon);
-        setText('#modalProjectName', skill.name);
-        setText('#modalProjectType', skill.type);
-        setText('#modalDescription', skill.description);
-
-        setText('#modalFeaturesLabel', 'Where I use it');
-        const modalFeatures = $('#modalFeatures');
-        if (modalFeatures) {
-            modalFeatures.innerHTML = (skill.usedIn || []).map(u => `<li>${u}</li>`).join('');
-        }
-        toggleSection('#modalFeaturesSection', !!(skill.usedIn && skill.usedIn.length));
-
-        setText('#modalTechLabel', 'Related');
-        const modalTech = $('#modalTech');
-        if (modalTech) {
-            modalTech.innerHTML = (skill.related || []).map(t => `<span class="tag">${t}</span>`).join('');
-        }
-        toggleSection('#modalTechSection', !!(skill.related && skill.related.length));
-
-        // Skills have no "highlights" section
-        toggleSection('#modalHighlightsSection', false);
-
-        openModalShell();
+    function showExp(expId) {
+        const x = EXPERIENCE[expId];
+        if (!x) return;
+        renderDetail({
+            icon: x.icon, name: x.name, type: x.type, description: x.description,
+            listLabel: 'Key contributions', list: x.contributions,
+            tagsLabel: 'Focus areas', tags: x.focus
+        });
     }
 
     function hideModal() {
@@ -477,6 +526,14 @@
         if (skillId) {
             e.preventDefault();
             showSkill(skillId);
+        }
+    }
+
+    function handleExpClick(e) {
+        const expId = e.currentTarget.getAttribute('data-exp');
+        if (expId) {
+            e.preventDefault();
+            showExp(expId);
         }
     }
 
@@ -537,6 +594,14 @@
         $$('.skill-tappable').forEach(row => {
             if (row) {
                 row.addEventListener('click', handleSkillClick);
+                row.style.cursor = 'pointer';
+            }
+        });
+
+        // Experience card click handlers
+        $$('.exp-tappable').forEach(row => {
+            if (row) {
+                row.addEventListener('click', handleExpClick);
                 row.style.cursor = 'pointer';
             }
         });
