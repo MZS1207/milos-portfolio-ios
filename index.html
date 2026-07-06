@@ -60,7 +60,21 @@
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://mzs1207.github.io/milos-portfolio-ios/">
-    <link rel="stylesheet" href="styles.css?v=20260707e">
+
+    <!-- Resolve theme before first paint (saved choice, else system) to avoid a flash -->
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (t !== 'dark' && t !== 'light') {
+                    t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                }
+                document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
+
+    <link rel="stylesheet" href="styles.css?v=20260708a">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -79,6 +93,12 @@
         <!-- App Header -->
         <header class="app-header" id="appHeader">
             <h1 class="header-title" id="headerTitle">About</h1>
+            <button class="theme-toggle" id="themeToggle" type="button" role="switch" aria-label="Toggle dark mode" title="Toggle dark mode">
+                <span class="theme-knob">
+                    <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+                    <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </span>
+            </button>
         </header>
 
         <!-- Screens -->
@@ -105,8 +125,8 @@
 
                         <div class="stats-row">
                             <div class="stat-pill"><span class="stat-value">10+</span><span class="stat-label">Years</span></div>
-                            <div class="stat-pill"><span class="stat-value">25+</span><span class="stat-label">Apps</span></div>
-                            <div class="stat-pill"><span class="stat-value">100%</span><span class="stat-label">Satisfaction</span></div>
+                            <div class="stat-pill"><span class="stat-value">25+</span><span class="stat-label">Apps Shipped</span></div>
+                            <div class="stat-pill"><span class="stat-value">6</span><span class="stat-label">Industries</span></div>
                         </div>
 
                         <div class="card">
@@ -756,6 +776,6 @@
         </div>
     </div>
     
-    <script src="app-safari.js?v=20260707e"></script>
+    <script src="app-safari.js?v=20260708a"></script>
 </body>
 </html>

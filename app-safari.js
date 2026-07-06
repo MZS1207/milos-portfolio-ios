@@ -428,6 +428,47 @@
         }
     }
 
+    /* ---------- Theme (light / dark) ---------- */
+    function currentThemeIsDark() {
+        const attr = document.documentElement.getAttribute('data-theme');
+        if (attr === 'dark') return true;
+        if (attr === 'light') return false;
+        return !!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    }
+
+    function applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        const meta = $('meta[name="theme-color"]');
+        if (meta) meta.setAttribute('content', theme === 'dark' ? '#000000' : '#F2F2F7');
+        const btn = $('#themeToggle');
+        if (btn) btn.setAttribute('aria-checked', theme === 'dark' ? 'true' : 'false');
+    }
+
+    function toggleTheme() {
+        const next = currentThemeIsDark() ? 'light' : 'dark';
+        try { localStorage.setItem('theme', next); } catch (e) {}
+        applyTheme(next);
+    }
+
+    function setupTheme() {
+        applyTheme(currentThemeIsDark() ? 'dark' : 'light');
+        const btn = $('#themeToggle');
+        if (btn) btn.addEventListener('click', toggleTheme);
+        // Follow the OS only while the user hasn't made an explicit choice
+        if (window.matchMedia) {
+            const mq = window.matchMedia('(prefers-color-scheme: dark)');
+            const onChange = function () {
+                let saved = null;
+                try { saved = localStorage.getItem('theme'); } catch (e) {}
+                if (saved !== 'light' && saved !== 'dark') {
+                    applyTheme(mq.matches ? 'dark' : 'light');
+                }
+            };
+            if (mq.addEventListener) mq.addEventListener('change', onChange);
+            else if (mq.addListener) mq.addListener(onChange);
+        }
+    }
+
     /* ---------- Modal Functions ---------- */
     function setText(id, value) { const el = $(id); if (el) el.textContent = value; }
 
@@ -618,6 +659,9 @@
                 }
             });
         }
+
+        // Theme toggle
+        setupTheme();
     }
 
     /* ---------- Error Handling ---------- */
