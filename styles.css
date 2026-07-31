@@ -39,7 +39,7 @@
     --shadow-float: 0 8px 30px rgba(0,0,0,0.08);
 
     /* Layout */
-    --header-h: 52px;
+    --header-h: 64px;
     --tab-h: 82px;
     --safe-bottom: env(safe-area-inset-bottom, 0px);
     --safe-top: env(safe-area-inset-top, 0px);
@@ -1916,4 +1916,183 @@ html[data-theme="dark"] .theme-icon-moon { opacity: 1; transform: rotate(0deg) s
 @keyframes gridMove {
     0% { transform: translate(0, 0); }
     100% { transform: translate(50px, 50px); }
+}
+
+/* ---------- Gallery (iOS Photos-style) ---------- */
+.gallery-filters {
+    display: flex;
+    gap: var(--sp-2);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    flex-shrink: 0;
+}
+.gallery-filters::-webkit-scrollbar { display: none; }
+
+.gallery-chip {
+    padding: 6px 14px;
+    border-radius: var(--r-full);
+    background: var(--color-fill);
+    color: var(--color-text);
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: background 0.2s, color 0.2s;
+}
+.gallery-chip.active { background: var(--color-primary); color: #fff; }
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+    border-radius: var(--r-lg);
+    overflow: hidden;
+}
+
+.gallery-item {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    padding: 0;
+    background: var(--color-fill);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.gallery-item img,
+.gallery-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.25s ease, opacity 0.15s;
+}
+
+.gallery-item:active img,
+.gallery-item:active video { opacity: 0.7; }
+
+@media (hover: hover) {
+    .gallery-item:hover img,
+    .gallery-item:hover video { transform: scale(1.05); }
+}
+
+.gallery-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.55);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.gallery-empty-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--sp-2);
+    padding: var(--sp-4) 0;
+}
+.gallery-empty-inner strong { font-size: 16px; }
+.gallery-empty-inner small {
+    font-size: 13px;
+    color: var(--color-secondary);
+    max-width: 260px;
+    line-height: 1.5;
+}
+
+/* ---------- Gallery Lightbox ---------- */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 20000;
+    background: rgba(0, 0, 0, 0.93);
+    display: none;
+    flex-direction: column;
+}
+.lightbox.active { display: flex; }
+
+.lightbox-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: calc(var(--safe-top) + 14px) var(--sp-4) var(--sp-2);
+}
+
+.lightbox-counter {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.lightbox-close {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.14);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-stage {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 var(--sp-2);
+}
+
+.lightbox-stage img,
+.lightbox-stage video {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: var(--r-md);
+    object-fit: contain;
+}
+
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.14);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+.lightbox-prev { left: var(--sp-3); }
+.lightbox-next { right: var(--sp-3); }
+
+@media (hover: none) and (pointer: coarse) {
+    .lightbox-nav { display: none; } /* touch users swipe between items */
+}
+
+.lightbox-meta {
+    text-align: center;
+    padding: var(--sp-3) var(--sp-5) calc(var(--safe-bottom) + 20px);
+    color: #fff;
+}
+.lightbox-meta strong {
+    display: block;
+    font-size: 15px;
+    letter-spacing: -0.2px;
+}
+.lightbox-meta small {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.65);
 }

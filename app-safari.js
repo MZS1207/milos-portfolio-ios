@@ -7,7 +7,7 @@
     'use strict';
 
     /* ---------- Constants ---------- */
-    const TABS = ['about', 'skills', 'experience', 'projects', 'contact'];
+    const TABS = ['about', 'skills', 'experience', 'projects', 'gallery'];
     const SWIPE = { THRESHOLD: 50, RESTRAINT: 100 };
 
     /* ---------- Project Data ---------- */
@@ -325,19 +325,29 @@
     /* ---------- Experience Data ---------- */
     const EXPERIENCE = {
         'endava-senior': {
-            name: 'Senior iOS Developer & AI Champion', type: 'Endava · 2022 – Present', icon: '🏢',
-            description: 'Leading development of high-impact iOS applications for insurance and telecommunications clients, and driving AI adoption across teams as Endava\'s AI Champion.',
+            name: 'Senior iOS Developer (Senior Engineer)', type: 'Endava · Jan 2022 – Present', icon: '🏢',
+            description: 'Leading development of high-impact iOS applications for insurance and telecommunications clients, owning app lifecycles from concept to production.',
             contributions: [
                 'Own app lifecycles end-to-end, from concept to production',
                 'Apply MVVM / Clean Architecture with SwiftUI, UIKit & Combine',
-                'Drive AI project integration, monitoring and delivery automation',
-                'Mentor developers in AI-assisted development',
+                'Ensure performance, scalability and maintainability at scale',
                 'Collaborate across cross-functional teams in an agile setup'
             ],
-            focus: ['Swift', 'SwiftUI', 'Combine', 'AI/ML', 'CI/CD', 'Leadership']
+            focus: ['Swift', 'SwiftUI', 'Combine', 'CI/CD', 'Leadership']
+        },
+        'endava-ai': {
+            name: 'AI Champion', type: 'Endava · Dec 2025 – Present', icon: '🤖',
+            description: 'Appointed AI Champion, driving AI adoption across delivery — from project integration and monitoring to developer enablement and workflow automation.',
+            contributions: [
+                'Drive AI project integration, monitoring and delivery automation',
+                'Enable and mentor developers in AI-assisted development',
+                'Champion AI code review and multi-agent workflows',
+                'Build internal tooling on Claude Code and agent orchestration'
+            ],
+            focus: ['Claude Code', 'Multi-Agent Orchestration', 'AI Code Review', 'Prompt Engineering']
         },
         'endava-coach': {
-            name: 'Career Coach', type: 'Endava · 2024 – Present', icon: '🎓',
+            name: 'Career Coach', type: 'Endava · Mar 2024 – Present', icon: '🎓',
             description: 'Mentoring and coaching iOS developers across the organisation — establishing standards, growing talent and building a supportive engineering culture.',
             contributions: [
                 'Structured growth plans and regular 1:1 mentoring',
@@ -348,7 +358,7 @@
             focus: ['Mentoring', 'Career Development', 'Technical Leadership', 'Team Building']
         },
         'darwin': {
-            name: 'Senior iOS Developer', type: 'DarwinDigital · 2019 – 2022', icon: '🏥',
+            name: 'Senior iOS Developer', type: 'Darwin Digital · Nov 2019 – Jan 2022', icon: '🏥',
             description: 'Built healthcare technology applications with secure, HIPAA-compliant data handling, working closely with research teams, data scientists and backend developers.',
             contributions: [
                 'Delivered HIPAA-compliant apps for pain detection in infants & the elderly',
@@ -359,7 +369,7 @@
             focus: ['Swift', 'HealthKit', 'Core Data', 'HIPAA', 'Charts']
         },
         'comit': {
-            name: 'iOS Developer', type: 'Comit International · 2015 – 2019', icon: '💼',
+            name: 'iOS Developer', type: 'Comit International · Jul 2015 – Nov 2019', icon: '💼',
             description: 'Grew from junior to mid-level building apps across social, logistics, on-demand and betting verticals in Objective-C and Swift.',
             contributions: [
                 'Shipped apps across social, logistics, on-demand and gaming domains',
@@ -578,6 +588,149 @@
         }
     }
 
+    /* ---------- Gallery (iOS Photos-style) ---------- */
+    let galleryFilter = 'All';
+    let galleryView = [];
+    let lightboxIndex = -1;
+
+    function galleryItems() {
+        return (window.GALLERY_ITEMS && Array.isArray(window.GALLERY_ITEMS)) ? window.GALLERY_ITEMS : [];
+    }
+
+    function galleryProjects() {
+        const seen = [];
+        galleryItems().forEach(function (it) {
+            if (it.project && seen.indexOf(it.project) === -1) seen.push(it.project);
+        });
+        return seen;
+    }
+
+    function renderGalleryFilters() {
+        const bar = $('#galleryFilters');
+        if (!bar) return;
+        if (galleryItems().length === 0) { bar.style.display = 'none'; return; }
+        bar.style.display = '';
+        const chips = ['All'].concat(galleryProjects());
+        bar.innerHTML = chips.map(function (name) {
+            return '<button class="gallery-chip' + (name === galleryFilter ? ' active' : '') + '" data-filter="' + name + '">' + name + '</button>';
+        }).join('');
+        $$('.gallery-chip').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                galleryFilter = this.getAttribute('data-filter');
+                renderGalleryFilters();
+                renderGalleryGrid();
+            });
+        });
+    }
+
+    function renderGalleryGrid() {
+        const grid = $('#galleryGrid');
+        const empty = $('#galleryEmpty');
+        if (!grid) return;
+        const all = galleryItems();
+        if (all.length === 0) {
+            grid.style.display = 'none';
+            if (empty) empty.style.display = '';
+            return;
+        }
+        grid.style.display = '';
+        if (empty) empty.style.display = 'none';
+        galleryView = galleryFilter === 'All' ? all.slice() : all.filter(function (it) { return it.project === galleryFilter; });
+        grid.innerHTML = galleryView.map(function (it, i) {
+            const isVideo = it.type === 'video';
+            const thumb = isVideo ? (it.poster || '') : it.src;
+            const alt = (it.project || 'Gallery item') + (it.caption ? ' — ' + it.caption : '');
+            const media = thumb
+                ? '<img src="' + thumb + '" alt="' + alt + '" loading="lazy">'
+                : '<video src="' + it.src + '" muted playsinline preload="metadata"></video>';
+            const badge = isVideo
+                ? '<span class="gallery-play"><svg width="15" height="15" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></span>'
+                : '';
+            return '<button class="gallery-item" data-index="' + i + '" aria-label="Open: ' + alt + '">' + media + badge + '</button>';
+        }).join('');
+        $$('.gallery-item').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                openLightbox(parseInt(this.getAttribute('data-index'), 10));
+            });
+        });
+    }
+
+    function isLightboxOpen() {
+        const lb = $('#lightbox');
+        return !!(lb && lb.classList.contains('active'));
+    }
+
+    function renderLightbox() {
+        const it = galleryView[lightboxIndex];
+        if (!it) return;
+        const stage = $('#lightboxStage');
+        if (stage) {
+            stage.innerHTML = it.type === 'video'
+                ? '<video src="' + it.src + '"' + (it.poster ? ' poster="' + it.poster + '"' : '') + ' controls autoplay playsinline></video>'
+                : '<img src="' + it.src + '" alt="' + (it.project || 'Gallery item') + '">';
+        }
+        setText('#lightboxCounter', (lightboxIndex + 1) + ' / ' + galleryView.length);
+        setText('#lightboxProject', it.project || '');
+        setText('#lightboxCaption', it.caption || '');
+    }
+
+    function openLightbox(i) {
+        const lb = $('#lightbox');
+        if (!lb || !galleryView[i]) return;
+        lightboxIndex = i;
+        renderLightbox();
+        lb.classList.add('active');
+        lb.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        const lb = $('#lightbox');
+        if (!lb) return;
+        const stage = $('#lightboxStage');
+        if (stage) stage.innerHTML = '';
+        lb.classList.remove('active');
+        lb.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        lightboxIndex = -1;
+    }
+
+    function stepLightbox(dir) {
+        if (!galleryView.length || lightboxIndex < 0) return;
+        lightboxIndex = (lightboxIndex + dir + galleryView.length) % galleryView.length;
+        renderLightbox();
+    }
+
+    function setupGallery() {
+        renderGalleryFilters();
+        renderGalleryGrid();
+        const close = $('#lightboxClose');
+        if (close) close.addEventListener('click', closeLightbox);
+        const prev = $('#lightboxPrev');
+        if (prev) prev.addEventListener('click', function () { stepLightbox(-1); });
+        const next = $('#lightboxNext');
+        if (next) next.addEventListener('click', function () { stepLightbox(1); });
+        const lb = $('#lightbox');
+        if (lb) {
+            lb.addEventListener('click', function (e) {
+                if (e.target === lb || (e.target && e.target.id === 'lightboxStage')) closeLightbox();
+            });
+            lb.addEventListener('touchstart', function (e) {
+                lb._sx = e.changedTouches[0].clientX;
+                lb._sy = e.changedTouches[0].clientY;
+            }, { passive: true });
+            lb.addEventListener('touchend', function (e) {
+                if (lb._sx == null) return;
+                const dx = e.changedTouches[0].clientX - lb._sx;
+                const dy = e.changedTouches[0].clientY - lb._sy;
+                lb._sx = null;
+                if (Math.abs(dx) > SWIPE.THRESHOLD && Math.abs(dy) < SWIPE.RESTRAINT) {
+                    stepLightbox(dx < 0 ? 1 : -1);
+                }
+            }, { passive: true });
+        }
+    }
+
     /* ---------- Event Handlers ---------- */
     function handleSwipe(e) {
         if (!e.isSwiping) return;
@@ -614,6 +767,12 @@
         
         // Keyboard navigation
         document.addEventListener('keydown', function(e) {
+            if (isLightboxOpen()) {
+                if (e.key === 'ArrowRight') stepLightbox(1);
+                if (e.key === 'ArrowLeft') stepLightbox(-1);
+                if (e.key === 'Escape') closeLightbox();
+                return;
+            }
             if (e.key === 'ArrowRight') switchTab(current + 1);
             if (e.key === 'ArrowLeft') switchTab(current - 1);
             if (e.key === 'Escape') hideModal();
@@ -662,6 +821,9 @@
 
         // Theme toggle
         setupTheme();
+
+        // Gallery
+        setupGallery();
     }
 
     /* ---------- Error Handling ---------- */
