@@ -1,84 +1,53 @@
-# Milo Stevanoviç - iOS Developer Portfolio
+# Miloš Stevanović — iOS Developer Portfolio
 
-A modern, iOS-inspired portfolio website showcasing Milo Stevanoviç's work as an iOS developer.
+A single-page portfolio styled as a native iOS app, built with plain HTML/CSS/JS — no framework, no build step.
 
-## Features
+**Live**: https://mzs1207.github.io/milos-portfolio-ios/
 
-- **iOS Design Language**: Clean, modern design inspired by Apple's design principles
-- **Responsive Layout**: Optimized for mobile, tablet, and desktop devices
-- **Interactive Elements**: Smooth animations, parallax effects, and micro-interactions
-- **Contact Form**: Functional contact form with validation
-- **Modern Tech Stack**: HTML5, CSS3, JavaScript with no external dependencies
+## What's inside
 
-## Sections
+Five tab "screens" with swipe, keyboard and tab-bar navigation, a light/dark theme (remembers your choice), and iOS-style detail sheets:
 
-- **Hero**: Eye-catching introduction with profile card
-- **About**: Personal background and approach
-- **Skills**: Technical expertise and technologies
-- **Projects**: Featured iOS development projects
-- **Experience**: Professional timeline
-- **Contact**: Get in touch information and form
+- **About** — profile, stats, iMessage-style intro, quick actions (email, phone, LinkedIn, GitHub, CV download), education
+- **Skills** — core expertise, architecture, AI tooling and practices, each tappable for details
+- **Experience** — timeline with per-role detail modals
+- **Projects** — 16 selected apps across enterprise, healthcare, fintech and AI-assisted personal work
+- **Gallery** — iOS Photos-style grid of real app screenshots with per-project filters and a fullscreen viewer (images & video)
 
-## Design System
+On phones the app runs edge-to-edge; on tablets and desktops it renders as a centred iPhone mockup on a glassmorphism backdrop.
 
-The site uses an iOS-inspired color palette:
-- Primary Blue: `#007AFF`
-- Secondary Purple: `#5856D6`
-- Accent Red: `#FF3B30`
-- System Gray: `#8E8E93`
+## Project structure
 
-Typography uses Inter font for clean, modern readability.
+```
+index.html          markup for all screens + SEO meta & JSON-LD
+styles.css          design tokens (iOS palette, spacing, radii) + components
+app-safari.js       app logic: tabs, theme, modals, gallery, lightbox
+content-data.js     EDIT HERE — projects / skills / experience content
+gallery-data.js     EDIT HERE — gallery media registry
+gallery/            optimized screenshots (max 1600px)
+.github/workflows/  GitHub Pages deployment (Actions)
+```
 
-## Getting Started
+## Editing content
 
-1. Clone or download the project
-2. Open `index.html` in your web browser
-3. No build process required - it's a static website
+- **Text content** (projects, skills, experience): edit `content-data.js` — logic in `app-safari.js` never needs to change.
+- **Gallery media**: drop a file into `gallery/` and add one entry to `gallery-data.js` (`type`, `src`, optional `poster` for video, `project`, `caption`). Keep images ≤ ~1600px; videos as H.264 MP4.
+- After changing `styles.css`, `app-safari.js` or `content-data.js`, bump its `?v=` query parameter in `index.html` to bust caches.
 
-## Customization
+## Running locally
 
-### Personal Information
-Update the following in `index.html`:
-- Name and title in the hero section
-- Contact email address
-- LinkedIn profile URL
-- Project details and descriptions
-- Experience timeline
+No build required — open `index.html` in a browser, or serve the folder:
 
-### Styling
-Modify `styles.css` to:
-- Adjust colors and spacing
-- Change animations and transitions
-- Update responsive breakpoints
-
-### Functionality
-Enhance `script.js` to:
-- Add new interactive features
-- Modify form handling
-- Update animation timing
-
-## Browser Support
-
-- Chrome 60+
-- Firefox 55+
-- Safari 12+
-- Edge 79+
-
-## Performance
-
-- Optimized images and assets
-- Minimal JavaScript footprint
-- CSS animations using transforms
-- Lazy loading for sections
+```
+python3 -m http.server 8899
+```
 
 ## Deployment
 
-This is a static website and can be deployed to:
-- Netlify
-- Vercel
-- GitHub Pages
-- Any static hosting service
+Pushing to `main` triggers `.github/workflows/deploy-pages.yml`, which publishes the site to GitHub Pages via Actions (the legacy Jekyll branch builder is not used). The workflow can also be run manually from the Actions tab (`workflow_dispatch`).
 
----
+Day-to-day flow: work on `develop`, then `git push origin develop develop:main`.
 
-Created with love for showcasing iOS development expertise.
+## Design notes
+
+iOS-inspired design tokens live at the top of `styles.css`: system palette (`#007AFF` blue, `#34C759` green, `#FF9500` orange, `#5856D6` indigo), 4px spacing scale, SF-like typography via Inter. Dark mode tokens mirror iOS dark palette; theme resolves before first paint to avoid a flash.
