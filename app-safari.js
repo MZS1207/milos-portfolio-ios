@@ -130,7 +130,7 @@
         if (body) body.scrollTop = 0;
     }
 
-    /* Generic detail renderer — one modal, reused by projects, skills & experience.
+    /* Generic detail renderer - one modal, reused by projects, skills & experience.
        d = { icon, name, type, description,
              listLabel, list:[], tagsLabel, tags:[], highlightLabel, highlight } */
     function renderDetail(d) {
@@ -274,7 +274,7 @@
         grid.innerHTML = galleryView.map(function (it, i) {
             const isVideo = it.type === 'video';
             const thumb = isVideo ? (it.poster || '') : it.src;
-            const alt = (it.project || 'Gallery item') + (it.caption ? ' — ' + it.caption : '');
+            const alt = (it.project || 'Gallery item') + (it.caption ? ' - ' + it.caption : '');
             const media = thumb
                 ? '<img src="' + thumb + '" alt="' + alt + '" loading="lazy">'
                 : '<video src="' + it.src + '" muted playsinline preload="metadata"></video>';

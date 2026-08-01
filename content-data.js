@@ -1,5 +1,5 @@
 /* ============================================================
-   CONTENT DATA — projects, skills & experience
+   CONTENT DATA - projects, skills & experience
    ------------------------------------------------------------
    This is the single place to edit site content shown in the
    detail modals. Logic lives in app-safari.js and reads from
@@ -152,7 +152,7 @@ window.CONTENT_DATA = {
                 'Service History Tracking'
             ],
             tech: ['Swift', 'Core Data', 'WebSocket', 'Stripe', 'Core Location', 'Push Notifications'],
-            highlights: 'Two-sided marketplace mechanics — matching, ratings, cancellations — plus WebSocket chat and Stripe. A lot of product in one app.'
+            highlights: 'Two-sided marketplace mechanics - matching, ratings, cancellations - plus WebSocket chat and Stripe. A lot of product in one app.'
         },
         ding: {
             name: 'Ding',
@@ -279,12 +279,12 @@ window.CONTENT_DATA = {
         swiftui: {
             name: 'SwiftUI', type: 'Modern declarative UI', icon: '🔷',
             description: 'Declarative UI framework I reach for on new features and greenfield products, combined with UIKit where fine-grained control is needed.',
-            usedIn: ['DXP hybrid insurance platform at Endava', 'Personal apps — Bug Corp Duel, BeamBike', 'New feature modules in mixed UIKit/SwiftUI apps'],
+            usedIn: ['DXP hybrid insurance platform at Endava', 'Personal apps - Bug Corp Duel, BeamBike', 'New feature modules in mixed UIKit/SwiftUI apps'],
             related: ['Combine', 'Swift Concurrency', 'MVVM']
         },
         uikit: {
             name: 'UIKit', type: 'Deep custom UI & legacy expertise', icon: '🟣',
-            description: 'Years of imperative UI work — custom controls, complex animations, and performance-critical screens. My go-to for pixel-perfect and legacy codebases.',
+            description: 'Years of imperative UI work - custom controls, complex animations, and performance-critical screens. My go-to for pixel-perfect and legacy codebases.',
             usedIn: ['Most production apps 2015–2022', 'Custom components & advanced animations', 'Refactoring and stabilising inherited UI'],
             related: ['Core Animation', 'Auto Layout', 'Objective-C']
         },
@@ -302,43 +302,43 @@ window.CONTENT_DATA = {
         },
         concurrency: {
             name: 'Swift Concurrency', type: 'async/await, actors, strict concurrency', icon: '⚡',
-            description: 'Modern structured concurrency — async/await, actors and task isolation — for safe, readable asynchronous code without callback pyramids or data races.',
-            usedIn: ['Bug Corp Duel — Swift 6 strict concurrency', 'Modernising callback- and closure-heavy code', 'Actor-isolated networking & game state'],
+            description: 'Modern structured concurrency - async/await, actors and task isolation - for safe, readable asynchronous code without callback pyramids or data races.',
+            usedIn: ['Bug Corp Duel - Swift 6 strict concurrency', 'Modernising callback- and closure-heavy code', 'Actor-isolated networking & game state'],
             related: ['Swift', 'Combine']
         },
         combine: {
             name: 'Combine / RxSwift', type: 'Reactive data flow', icon: '🔗',
-            description: 'Reactive frameworks for binding data through the app — network streams, form state and UI updates — pairing naturally with MVVM.',
+            description: 'Reactive frameworks for binding data through the app - network streams, form state and UI updates - pairing naturally with MVVM.',
             usedIn: ['Data binding in MVVM view models', 'Network and event streams', 'Debounced search & form validation'],
             related: ['SwiftUI', 'MVVM']
         },
         viper: {
             name: 'VIPER / VIP', type: 'Large modular codebases', icon: '🧩',
-            description: 'Highly modular architectures with strict boundaries between components — useful on large apps with multiple teams where clear ownership matters.',
+            description: 'Highly modular architectures with strict boundaries between components - useful on large apps with multiple teams where clear ownership matters.',
             usedIn: ['Large multi-team enterprise codebases', 'Strict module boundaries & routing', 'Independently testable components'],
             related: ['MVVM', 'Clean Architecture']
         },
         multiagent: {
             name: 'Multi-Agent Orchestration', type: 'The Hive · fleets of coding agents', icon: '🐝',
-            description: 'Designing and directing fleets of autonomous coding agents that ship complete products — an architect / delegate / worker hierarchy working from a frozen contract, with parallel task dispatch and automated build & test gates.',
-            usedIn: ['The Hive — my orchestration framework for Claude Code', 'Bug Corp Duel — 116 orchestrated agent tasks, green build & test gate', 'BeamBike — contract-first monorepo: 101 endpoints, 114 models, 4 platforms'],
+            description: 'Designing and directing fleets of autonomous coding agents that ship complete products - an architect / delegate / worker hierarchy working from a frozen contract, with parallel task dispatch and automated build & test gates.',
+            usedIn: ['The Hive - my orchestration framework for Claude Code', 'Bug Corp Duel - 116 orchestrated agent tasks, green build & test gate', 'BeamBike - contract-first monorepo: 101 endpoints, 114 models, 4 platforms'],
             related: ['Claude Code', 'JSON Schema', 'Codegen', 'CI gates']
         },
         aidelivery: {
             name: 'AI-Assisted Delivery', type: 'AI Champion · Endava', icon: '🚀',
-            description: 'Driving AI adoption across delivery as AI Champion — project integration and monitoring, developer enablement, AI-assisted code review and workflow automation.',
+            description: 'Driving AI adoption across delivery as AI Champion - project integration and monitoring, developer enablement, AI-assisted code review and workflow automation.',
             usedIn: ['AI initiatives across insurance & telecom projects', 'Mentoring developers in AI-assisted development', 'Automated review and delivery workflows'],
             related: ['AI Code Review', 'Workflow Automation', 'Mentoring']
         },
         llm: {
             name: 'LLM Integration', type: 'Claude Code · prompt engineering', icon: '🧠',
-            description: 'Building with LLMs daily — from prompt design and tool-calling agents to integrating model-driven features into products and internal tooling.',
+            description: 'Building with LLMs daily - from prompt design and tool-calling agents to integrating model-driven features into products and internal tooling.',
             usedIn: ['Claude Code as a daily driver for product delivery', 'Prompt engineering for reliable agent behaviour', 'Internal AI tooling and automations'],
             related: ['Claude Code', 'Prompt Engineering', 'AI Agents']
         },
         coreml: {
             name: 'On-Device ML', type: 'Core ML · Vision', icon: '👁️',
-            description: 'On-device inference with Core ML and Vision — practical, privacy-friendly ML features inside iOS apps.',
+            description: 'On-device inference with Core ML and Vision - practical, privacy-friendly ML features inside iOS apps.',
             usedIn: ['AI-supported pain-detection healthcare apps (Darwin Digital)', 'Vision-based features in production apps'],
             related: ['Core ML', 'Vision', 'HealthKit']
         }

@@ -1,5 +1,5 @@
 /* ============================================================
-   CV APP — Design System
+   CV APP - Design System
    Inspired by Apple iOS / Messages
    ============================================================ */
 
@@ -1151,7 +1151,7 @@ html[data-theme="dark"] .theme-icon-moon { opacity: 1; transform: rotate(0deg) s
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
     }
-    /* Modal header/info intentionally use modern flexbox (see base rules) —
+    /* Modal header/info intentionally use modern flexbox (see base rules) -
        the legacy -webkit-box model ignores flex:1 and forces icon centering. */
 }
 
