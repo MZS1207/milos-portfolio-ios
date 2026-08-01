@@ -14,7 +14,7 @@ window.CONTENT_DATA = {
             name: 'Schueco SmartTouch',
             type: 'Smart Door Control',
             icon: '🏢',
-            description: 'Advanced smart door control system for Schueco featuring Bluetooth connectivity, Touch ID authentication, and remote access capabilities with real-time monitoring.',
+            description: 'Companion app for Schüco smart door systems: Bluetooth unlock, Touch ID, remote access and live door status. Came to me as a struggling legacy codebase.',
             features: [
                 'Bluetooth Smart Lock Integration',
                 'Touch ID Authentication',
@@ -24,13 +24,13 @@ window.CONTENT_DATA = {
                 'Security Analytics'
             ],
             tech: ['Swift', 'Core Bluetooth', 'Touch ID', 'Push Notifications', 'Security'],
-            highlights: 'Developed enterprise-grade smart lock system with military-grade encryption and seamless mobile integration.'
+            highlights: 'A freelance rescue job: revived and stabilised an inherited app and made a smart-lock flow people can trust with their front door.'
         },
         beleen: {
             name: 'Saand',
             type: 'Delivery System',
             icon: '📦',
-            description: 'Advanced delivery optimization system featuring route optimization algorithms, real-time driver tracking, and performance-based rewards system with token/bonus incentives.',
+            description: 'Delivery ops app: route planning, live driver tracking and a token/bonus system that pays drivers for good performance.',
             features: [
                 'Route Optimization Algorithms',
                 'Real-time Driver Tracking',
@@ -40,13 +40,13 @@ window.CONTENT_DATA = {
                 'Analytics Dashboard'
             ],
             tech: ['Swift', 'Core Location', 'MapKit', 'Core Data', 'Algorithms', 'Analytics'],
-            highlights: 'Developed intelligent delivery system that reduced delivery times by 35% and increased driver efficiency through gamification and performance incentives.'
+            highlights: 'The interesting part was the incentive design: scoring, streaks and bonuses drivers actually cared about, on top of solid MapKit routing.'
         },
         footballerista: {
             name: 'Footballerista',
             type: 'Social Sports Platform',
             icon: '⚽',
-            description: 'Comprehensive social networking platform for athletes featuring player profiles, highlights sharing, and community interactions with Firebase integration and real-time push notifications.',
+            description: 'Social network for footballers: player profiles, match highlights, messaging and a community feed, all on Firebase.',
             features: [
                 'Player Profiles & Stats Tracking',
                 'Real-time Messaging System',
@@ -56,13 +56,13 @@ window.CONTENT_DATA = {
                 'Firebase Backend Integration'
             ],
             tech: ['Swift', 'Firebase', 'Push Notifications', 'Core Data', 'Cloud Functions'],
-            highlights: 'Built scalable social platform supporting 10K+ concurrent users with real-time messaging and media sharing capabilities.'
+            highlights: 'One of my formative Comit projects: real-time chat, media upload pipelines and a feed for a niche athletic community.'
         },
         openjobs: {
             name: 'Open Jobs',
             type: 'Job Search Platform',
             icon: '💼',
-            description: 'Mobile application connecting job seekers with employers, featuring advanced search filters, real-time notifications, and streamlined application process with SQLite database integration.',
+            description: 'Job board app connecting seekers with employers: search filters, alerts, saved applications and profiles, with a local SQLite cache.',
             features: [
                 'Advanced Search Filters',
                 'Real-time Job Notifications',
@@ -72,13 +72,13 @@ window.CONTENT_DATA = {
                 'REST API Integration'
             ],
             tech: ['Swift', 'SQLite', 'REST API', 'Push Notifications', 'Core Data'],
-            highlights: 'Developed efficient job matching algorithm reducing application time by 60% and increasing placement rates.'
+            highlights: 'The goal was to cut the distance between seeing an ad and applying to a couple of taps. Filters and alerts did most of that work.'
         },
         chaty: {
             name: 'Chaty',
             type: 'Messaging Platform',
             icon: '💬',
-            description: 'Real-time messaging application with end-to-end encryption, group chats, file sharing, and voice/video calling capabilities using WebRTC and Socket.io integration.',
+            description: 'Messaging app with E2E encryption, group chats, file sharing and WebRTC voice/video calls over Socket.io.',
             features: [
                 'End-to-End Encryption',
                 'Group Chats & Channels',
@@ -88,13 +88,13 @@ window.CONTENT_DATA = {
                 'Socket.io Real-time'
             ],
             tech: ['Swift', 'Socket.io', 'WebRTC', 'Core Data', 'Encryption'],
-            highlights: 'Implemented secure messaging protocol with E2E encryption and real-time sync across multiple devices.'
+            highlights: 'Encryption and multi-device sync were the hard parts; getting both right without slowing message delivery took most of the effort.'
         },
         paincheck: {
             name: 'PainCheck',
             type: 'Healthcare App',
             icon: '🏥',
-            description: 'HIPAA-compliant healthcare tracking application for pain management and medication reminders, featuring symptom tracking, doctor appointments, and health analytics.',
+            description: 'App for chronic pain patients: symptom tracking, medication reminders, appointments and readable health charts, with HIPAA-compliant data handling.',
             features: [
                 'Pain Tracking & Analytics',
                 'Medication Reminders',
@@ -104,13 +104,13 @@ window.CONTENT_DATA = {
                 'HealthKit Integration'
             ],
             tech: ['Swift', 'HealthKit', 'Core Data', 'Charts', 'HIPAA'],
-            highlights: 'Created HIPAA-compliant system with secure data storage and advanced health analytics for chronic pain management.'
+            highlights: 'Healthcare data is unforgiving. Secure storage, audit-friendly flows and charts a patient can actually read were the priorities.'
         },
         caregiver: {
             name: 'Caregiver',
             type: 'Elder Care App',
             icon: '🤝',
-            description: 'Comprehensive caregiving application for elderly care management, featuring medication schedules, emergency alerts, activity monitoring, and family coordination.',
+            description: 'Elder-care app: medication schedules, emergency alerts, activity monitoring and coordination between family members.',
             features: [
                 'Medication Schedules',
                 'Emergency Alerts System',
@@ -120,13 +120,13 @@ window.CONTENT_DATA = {
                 'Fall Detection'
             ],
             tech: ['Swift', 'Core Location', 'HealthKit', 'Push Notifications', 'Core Motion'],
-            highlights: 'Developed AI-powered fall detection system with 95% accuracy and emergency response coordination.'
+            highlights: 'Fall detection on Core Motion plus an emergency escalation chain. That combination was the feature families bought the app for.'
         },
         fss: {
             name: 'FSS',
             type: 'Financial System',
             icon: '🏦',
-            description: 'Enterprise financial management system with real-time analytics, automated reporting, and multi-currency support for businesses requiring comprehensive financial tracking.',
+            description: 'Enterprise finance app: real-time analytics, automated reporting and multi-currency support for compliance-heavy businesses.',
             features: [
                 'Real-time Financial Analytics',
                 'Automated Reporting System',
@@ -136,13 +136,13 @@ window.CONTENT_DATA = {
                 'Data Visualization'
             ],
             tech: ['Swift', 'Core Data', 'Charts', 'Security', 'Analytics'],
-            highlights: 'Built enterprise-grade financial system processing $1M+ daily transactions with real-time analytics.'
+            highlights: 'Numbers people stare at all day have to be right, and fast. Most of the work went into data correctness and chart performance.'
         },
         vquarter: {
             name: 'Vquarter',
             type: 'Service Provider Platform',
             icon: '🏠',
-            description: 'Platform connecting property renters with service providers including cleaning, transportation, and other essential services for rental properties with booking and payment management.',
+            description: 'Marketplace connecting renters with cleaning, transport and other home services: booking, chat and Stripe payments in one flow.',
             features: [
                 'Service Provider Matching',
                 'Booking & Scheduling System',
@@ -152,13 +152,13 @@ window.CONTENT_DATA = {
                 'Service History Tracking'
             ],
             tech: ['Swift', 'Core Data', 'WebSocket', 'Stripe', 'Core Location', 'Push Notifications'],
-            highlights: 'Developed service marketplace platform connecting 500+ service providers with property renters, processing 2000+ monthly service bookings with integrated payment system.'
+            highlights: 'Two-sided marketplace mechanics — matching, ratings, cancellations — plus WebSocket chat and Stripe. A lot of product in one app.'
         },
         ding: {
             name: 'Ding',
             type: 'Mobile Top-Up Platform',
             icon: '📱',
-            description: 'International mobile top-up platform enabling users to send prepaid mobile recharge to friends and family worldwide with secure payment processing and multi-network support.',
+            description: 'Ding lets people send prepaid mobile credit to family and friends in 150+ countries. I worked on the iOS app at Endava.',
             features: [
                 'International Mobile Top-Up',
                 'Multi-Network Support',
@@ -168,13 +168,13 @@ window.CONTENT_DATA = {
                 'Transaction History'
             ],
             tech: ['Swift', 'Stripe', 'Core Data', 'Network APIs', 'Security', 'Push Notifications'],
-            highlights: 'Built leading international mobile recharge platform processing millions of transactions across 150+ countries with 3-second delivery times and 99.9% uptime.'
+            highlights: 'Business rules change per country and operator, and checkout must never break. A good lesson in defensive design around payments.'
         },
         admiral: {
             name: 'Admiral Insurance',
             type: 'Insurance Management Platform',
             icon: '🛡️',
-            description: 'Comprehensive insurance management app for UK customers enabling policy viewing, document management, emergency assistance, and journey tracking with data control features.',
+            description: 'App for one of the biggest UK insurers: policies, documents, emergency assistance and MyTrips journey tracking.',
             features: [
                 'Policy Management',
                 'Document Storage & Printing',
@@ -184,13 +184,13 @@ window.CONTENT_DATA = {
                 'Customer Support Integration'
             ],
             tech: ['Swift', 'Core Data', 'Core Location', 'Security', 'PDF Generation', 'Push Notifications'],
-            highlights: 'Developed leading UK insurance management app serving millions of customers with comprehensive policy management, emergency assistance, and innovative journey tracking features.'
+            highlights: 'Insurance at UK scale means strict compliance, accessibility and releases that simply cannot break for millions of policyholders.'
         },
         catchase: {
             name: 'CatChase',
             type: 'Mobile Game',
             icon: '🐱',
-            description: 'Private mobile game where players control a cat chasing balloons through various levels with increasing difficulty and fun animations.',
+            description: 'Small private game: a cat chasing balloons through increasingly chaotic levels.',
             features: [
                 'Cat Character Control',
                 'Balloon Chasing Mechanics',
@@ -200,13 +200,13 @@ window.CONTENT_DATA = {
                 'Level Progression'
             ],
             tech: ['Swift', 'SpriteKit', 'Core Animation', 'Game Physics', 'Sound Effects', 'Game Center'],
-            highlights: 'Developed entertaining mobile game with smooth cat animations, engaging balloon-chasing gameplay, and progressive difficulty system for casual gaming enjoyment.'
+            highlights: 'A pure fun project. SpriteKit physics, springy animations and difficulty tuning until the cat felt just right.'
         },
         endava: {
             name: 'Endava Projects',
             type: 'Enterprise Solutions',
             icon: '🏢',
-            description: 'Multiple enterprise mobile solutions for global clients including team collaboration, project management, real-time communication, and performance analytics platforms.',
+            description: 'Enterprise iOS work for global insurance and telecom clients: collaboration tools, real-time features and analytics.',
             features: [
                 'Team Collaboration Tools',
                 'Project Management System',
@@ -216,7 +216,7 @@ window.CONTENT_DATA = {
                 'Multi-platform Support'
             ],
             tech: ['Swift', 'SwiftUI', 'Combine', 'Core Data', 'CI/CD'],
-            highlights: 'Led development of enterprise solutions serving Fortune 500 companies with 99.9% uptime and scalability.'
+            highlights: 'Long-lived codebases, strict compliance and cross-functional teams. The craft here is shipping predictably, release after release.'
         },
         thehive: {
             name: 'The Hive',
@@ -348,18 +348,18 @@ window.CONTENT_DATA = {
     experience: {
         'endava-senior': {
             name: 'Senior iOS Developer (Senior Engineer)', type: 'Endava · Jan 2022 – Present', icon: '🏢',
-            description: 'Leading development of high-impact iOS applications for insurance and telecommunications clients, owning app lifecycles from concept to production.',
+            description: 'I lead iOS development for insurance and telecom clients at Endava, owning apps from first concept to production.',
             contributions: [
                 'Own app lifecycles end-to-end, from concept to production',
                 'Apply MVVM / Clean Architecture with SwiftUI, UIKit & Combine',
-                'Ensure performance, scalability and maintainability at scale',
+                'Keep large codebases fast and maintainable as teams grow',
                 'Collaborate across cross-functional teams in an agile setup'
             ],
             focus: ['Swift', 'SwiftUI', 'Combine', 'CI/CD', 'Leadership']
         },
         'endava-ai': {
             name: 'AI Champion', type: 'Endava · Dec 2025 – Present', icon: '🤖',
-            description: 'Appointed AI Champion, driving AI adoption across delivery — from project integration and monitoring to developer enablement and workflow automation.',
+            description: 'As AI Champion I make AI adoption real across delivery: project integration, monitoring, developer enablement and workflow automation.',
             contributions: [
                 'Drive AI project integration, monitoring and delivery automation',
                 'Enable and mentor developers in AI-assisted development',
@@ -370,7 +370,7 @@ window.CONTENT_DATA = {
         },
         'endava-coach': {
             name: 'Career Coach', type: 'Endava · Mar 2024 – Present', icon: '🎓',
-            description: 'Mentoring and coaching iOS developers across the organisation — establishing standards, growing talent and building a supportive engineering culture.',
+            description: 'Coaching iOS developers across the organisation: growth plans, 1:1 sessions, technical interviews and coding standards.',
             contributions: [
                 'Structured growth plans and regular 1:1 mentoring',
                 'Conduct technical interviews and set coding standards',
@@ -386,7 +386,7 @@ window.CONTENT_DATA = {
                 'Delivered HIPAA-compliant apps for pain detection in infants & the elderly',
                 'Refactored legacy codebases, improving stability and performance',
                 'Optimised app responsiveness and memory usage',
-                'Turned complex medical requirements into intuitive experiences'
+                'Translated messy medical requirements into apps clinicians could use'
             ],
             focus: ['Swift', 'HealthKit', 'Core Data', 'HIPAA', 'Charts']
         },
