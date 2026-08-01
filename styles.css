@@ -1685,3 +1685,107 @@ html[data-theme="dark"] .theme-icon-moon { opacity: 1; transform: rotate(0deg) s
     font-size: 13px;
     color: rgba(255, 255, 255, 0.65);
 }
+
+/* ---------- Skills: AI hero card ---------- */
+.ai-card {
+    background:
+        linear-gradient(135deg, rgba(88, 86, 214, 0.10), rgba(0, 122, 255, 0.05)),
+        var(--color-surface);
+    border: 1px solid rgba(88, 86, 214, 0.18);
+}
+
+html[data-theme="dark"] .ai-card {
+    background:
+        linear-gradient(135deg, rgba(94, 92, 230, 0.22), rgba(0, 122, 255, 0.08)),
+        var(--color-surface);
+    border-color: rgba(94, 92, 230, 0.35);
+}
+
+@media (prefers-color-scheme: dark) {
+    html:not([data-theme="light"]) .ai-card {
+        background:
+            linear-gradient(135deg, rgba(94, 92, 230, 0.22), rgba(0, 122, 255, 0.08)),
+            var(--color-surface);
+        border-color: rgba(94, 92, 230, 0.35);
+    }
+}
+
+.ai-badge {
+    display: inline-block;
+    margin-left: var(--sp-1);
+    padding: 2px 8px 3px;
+    border-radius: var(--r-full);
+    background: linear-gradient(135deg, var(--indigo), var(--blue));
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    vertical-align: middle;
+}
+
+.list-icon.ai-gradient {
+    background: linear-gradient(135deg, var(--indigo), var(--blue));
+}
+
+/* keep the dark icon square visible on dark surfaces */
+html[data-theme="dark"] .list-icon.dark {
+    background: #2C2C2E;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+}
+
+@media (prefers-color-scheme: dark) {
+    html:not([data-theme="light"]) .list-icon.dark {
+        background: #2C2C2E;
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+    }
+}
+
+/* ---------- Skills: toolbox group headers ---------- */
+.tool-group-head {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-2);
+    margin-bottom: var(--sp-2);
+}
+
+.tool-group-head .tag-group-title {
+    margin-bottom: 0;
+}
+
+.tool-group-icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.tool-group-icon.blue   { background: var(--blue); }
+.tool-group-icon.green  { background: var(--green); }
+.tool-group-icon.orange { background: var(--orange); }
+.tool-group-icon.indigo { background: var(--indigo); }
+
+/* ---------- Skills: quality checklist ---------- */
+.check-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-3) var(--sp-3);
+}
+
+.check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--sp-2);
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.35;
+}
+
+.check-item svg {
+    flex-shrink: 0;
+    color: var(--green);
+    margin-top: 1px;
+}

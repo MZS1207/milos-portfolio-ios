@@ -317,6 +317,30 @@ window.CONTENT_DATA = {
             description: 'Highly modular architectures with strict boundaries between components — useful on large apps with multiple teams where clear ownership matters.',
             usedIn: ['Large multi-team enterprise codebases', 'Strict module boundaries & routing', 'Independently testable components'],
             related: ['MVVM', 'Clean Architecture']
+        },
+        multiagent: {
+            name: 'Multi-Agent Orchestration', type: 'The Hive · fleets of coding agents', icon: '🐝',
+            description: 'Designing and directing fleets of autonomous coding agents that ship complete products — an architect / delegate / worker hierarchy working from a frozen contract, with parallel task dispatch and automated build & test gates.',
+            usedIn: ['The Hive — my orchestration framework for Claude Code', 'Bug Corp Duel — 116 orchestrated agent tasks, green build & test gate', 'BeamBike — contract-first monorepo: 101 endpoints, 114 models, 4 platforms'],
+            related: ['Claude Code', 'JSON Schema', 'Codegen', 'CI gates']
+        },
+        aidelivery: {
+            name: 'AI-Assisted Delivery', type: 'AI Champion · Endava', icon: '🚀',
+            description: 'Driving AI adoption across delivery as AI Champion — project integration and monitoring, developer enablement, AI-assisted code review and workflow automation.',
+            usedIn: ['AI initiatives across insurance & telecom projects', 'Mentoring developers in AI-assisted development', 'Automated review and delivery workflows'],
+            related: ['AI Code Review', 'Workflow Automation', 'Mentoring']
+        },
+        llm: {
+            name: 'LLM Integration', type: 'Claude Code · prompt engineering', icon: '🧠',
+            description: 'Building with LLMs daily — from prompt design and tool-calling agents to integrating model-driven features into products and internal tooling.',
+            usedIn: ['Claude Code as a daily driver for product delivery', 'Prompt engineering for reliable agent behaviour', 'Internal AI tooling and automations'],
+            related: ['Claude Code', 'Prompt Engineering', 'AI Agents']
+        },
+        coreml: {
+            name: 'On-Device ML', type: 'Core ML · Vision', icon: '👁️',
+            description: 'On-device inference with Core ML and Vision — practical, privacy-friendly ML features inside iOS apps.',
+            usedIn: ['AI-supported pain-detection healthcare apps (Darwin Digital)', 'Vision-based features in production apps'],
+            related: ['Core ML', 'Vision', 'HealthKit']
         }
     },
 
