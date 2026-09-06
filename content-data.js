@@ -5,6 +5,13 @@
    detail modals. Logic lives in app-safari.js and reads from
    window.CONTENT_DATA; media for the Gallery tab is registered
    separately in gallery-data.js.
+
+   Optional project fields:
+     gallery  exact `project` name used in gallery-data.js -
+              adds a "View screenshots" button to the modal
+              that opens the Gallery tab pre-filtered.
+     links    [{ label, url }] - external links (GitHub repo,
+              App Store, demo video, write-up) shown as buttons.
    ============================================================ */
 window.CONTENT_DATA = {
 
@@ -232,7 +239,8 @@ window.CONTENT_DATA = {
                 'Deterministic conflict resolution'
             ],
             tech: ['Claude Code', 'Python', 'JSON Schema', 'Codegen', 'AI Agents'],
-            highlights: 'Personal framework used to deliver several complete products end-to-end with fleets of AI agents working in parallel.'
+            highlights: 'Personal framework used to deliver several complete products end-to-end with fleets of AI agents working in parallel - Bug Corp Duel, BeamBike, Football Manager, VaskoTaxi, ServiceHub, Kuvar and iMovo all came out of it.',
+            links: []
         },
         bugcorpduel: {
             name: 'Bug Corp Duel',
@@ -264,7 +272,98 @@ window.CONTENT_DATA = {
                 'i18n across 7 languages incl. full RTL'
             ],
             tech: ['SwiftUI', 'Kotlin', 'Node.js', 'PostgreSQL', 'Redis', 'WebSocket', 'MapLibre'],
-            highlights: 'Contract-first monorepo: 101 endpoints and 114 models generated for 4 platforms from one frozen schema.'
+            highlights: 'Contract-first monorepo: 101 endpoints and 114 models generated for 4 platforms from one frozen schema.',
+            links: []
+        },
+        footballmanager: {
+            name: 'Football Manager',
+            type: 'iOS Sports Management Game',
+            icon: '⚽',
+            description: 'Club-management game for iPhone: pick a club, run the squad, tactics and staff, negotiate contracts and transfers, then watch matches play out in a live 2D simulation with commentary.',
+            features: [
+                'Live 2D match engine with play-by-play commentary',
+                'League tables, fixtures and multi-division seasons',
+                'Squad, tactics, staff and club-hub management',
+                'Dressing-room team talks that affect morale',
+                'Inbox with news, contract and transfer negotiations',
+                'Save / load careers with persistent game state'
+            ],
+            tech: ['SwiftUI', 'SpriteKit', 'Swift Concurrency', 'Core Data', 'Game Simulation'],
+            highlights: 'The match engine was the hard part: a deterministic simulation that stays believable at 2x speed, rendered in SpriteKit on top of a SwiftUI shell. Built with The Hive.',
+            gallery: 'Football Manager',
+            links: []
+        },
+        vaskotaxi: {
+            name: 'VaskoTaxi',
+            type: 'iOS Ride-Hailing App',
+            icon: '🚕',
+            description: 'Ride-hailing app for Belgrade with passenger and driver modes: route and fare preview on the map, ride classes (Standard / Comfort / Van), extras, and live tracking of the driver on the way.',
+            features: [
+                'Passenger & driver roles in one app',
+                'Route, ETA and upfront fare on Apple Maps',
+                'Ride classes and paid extras (pet, child seat, luggage)',
+                'Live driver tracking during the ride',
+                'Onboarding flow and ride history',
+                'Localised for Serbian and English'
+            ],
+            tech: ['SwiftUI', 'MapKit', 'Core Location', 'Swift Concurrency', 'Localization'],
+            highlights: 'Two apps in one codebase with a shared domain layer - the same booking model drives both the passenger and the driver screens. Built with The Hive.',
+            gallery: 'VaskoTaxi',
+            links: []
+        },
+        servicehub: {
+            name: 'ServiceHub',
+            type: 'iOS Local Services Marketplace',
+            icon: '🛠️',
+            description: 'Marketplace for local service providers: customers find verified pros on a map within a chosen radius, book them and chat; providers manage their profile, bookings and reviews.',
+            features: [
+                'Customer / provider mode with in-app switching',
+                'Map search with adjustable radius',
+                'Verified provider profiles with ratings',
+                'Bookings, favourites and messaging',
+                'Onboarding tailored per role',
+                'Multi-language UI'
+            ],
+            tech: ['SwiftUI', 'MapKit', 'Core Location', 'Swift Concurrency', 'Localization'],
+            highlights: 'A two-sided marketplace where one account can be both customer and provider - role switching without duplicating screens. Built with The Hive.',
+            gallery: 'ServiceHub',
+            links: []
+        },
+        kuvar: {
+            name: 'Kuvar',
+            type: 'iOS Cooking & Meal-Planning App',
+            icon: '🍳',
+            description: 'Ingredient-first cooking assistant: tell it what is in your fridge and it suggests recipes, builds a daily meal plan with calories, and keeps a cookbook of recipe packs (Serbian traditional table included).',
+            features: [
+                'Recipes from the ingredients you already have',
+                'Daily meal plan with calorie totals per meal',
+                'Recipe packs and a searchable cookbook',
+                'Quick filters: time, difficulty, calories',
+                'Saved recipes and cooking history',
+                'Dark-mode-first UI'
+            ],
+            tech: ['SwiftUI', 'Swift Concurrency', 'Core Data', 'Localization'],
+            highlights: 'Small product, lots of data modelling - ingredients, recipes, plans and nutrition all had to stay consistent. Built with The Hive.',
+            gallery: 'Kuvar',
+            links: []
+        },
+        imovo: {
+            name: 'iMovo',
+            type: 'Real-Estate Web Platform',
+            icon: '🏠',
+            description: 'Property portal for Serbia: sale and rental listings with faceted filters, map search with price pins, new-development showcases, agency pages, a mortgage calculator and an admin panel for agents.',
+            features: [
+                'Faceted search: type, price, area, rooms, floor, year',
+                'Map search with price pins and draw-your-own-area',
+                'New developments and agency showcases',
+                'Mortgage calculator with bank-offer request form',
+                'Admin panel for listings and agents',
+                'Serbian / English localisation'
+            ],
+            tech: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'OpenStreetMap', 'i18n'],
+            highlights: 'The one web product in the set - same contract-first approach as BeamBike, with the listing schema driving both the API and the UI. Built with The Hive.',
+            gallery: 'iMovo',
+            links: []
         }
     },
 
@@ -320,7 +419,7 @@ window.CONTENT_DATA = {
         },
         multiagent: {
             name: 'Multi-Agent Orchestration', type: 'The Hive · fleets of coding agents', icon: '🐝',
-            description: 'Designing and directing fleets of autonomous coding agents that ship complete products - an architect / delegate / worker hierarchy working from a frozen contract, with parallel task dispatch and automated build & test gates.',
+            description: 'Designing and directing fleets of autonomous coding agents that ship complete products - an architect / delegate / worker hierarchy working from a frozen contract, with parallel task dispatch and automated build & test gates. This is what "Type 5" means on the AI-engineering scale: not using AI as autocomplete, but running it as a delivery team.',
             usedIn: ['The Hive - my orchestration framework for Claude Code', 'Bug Corp Duel - 116 orchestrated agent tasks, green build & test gate', 'BeamBike - contract-first monorepo: 101 endpoints, 114 models, 4 platforms'],
             related: ['Claude Code', 'JSON Schema', 'Codegen', 'CI gates']
         },

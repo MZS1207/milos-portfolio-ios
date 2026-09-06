@@ -1789,3 +1789,87 @@ html[data-theme="dark"] .list-icon.dark {
     color: var(--green);
     margin-top: 1px;
 }
+
+/* ============================================================
+   Modal action buttons (View screenshots / external links)
+   ============================================================ */
+.modal-links-section { margin-bottom: 0; }
+
+.modal-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-2);
+    padding-top: var(--sp-2);
+    border-top: 0.5px solid var(--color-separator);
+}
+
+.modal-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 14px;
+    border-radius: var(--r-full);
+    background: var(--color-fill);
+    color: var(--color-text);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.15s, opacity 0.15s;
+}
+
+.modal-link.primary {
+    background: var(--color-primary);
+    color: #fff;
+}
+
+.modal-link:active { transform: scale(0.97); opacity: 0.85; }
+
+@media (hover: hover) {
+    .modal-link:hover { opacity: 0.85; }
+}
+
+.card-intro {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--color-secondary);
+    margin: calc(-1 * var(--sp-2)) 0 var(--sp-4);
+}
+
+/* ============================================================
+   Accessibility: visible keyboard focus, reduced motion
+   ============================================================ */
+:focus { outline: none; }
+
+:focus-visible,
+.list-item:focus-visible,
+.project-card:focus-visible,
+.exp-item:focus-visible,
+.tab:focus-visible,
+.gallery-chip:focus-visible,
+.gallery-item:focus-visible,
+.modal-link:focus-visible,
+.modal-close:focus-visible,
+.theme-toggle:focus-visible,
+.lightbox-nav:focus-visible,
+.lightbox-close:focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: var(--r-sm);
+}
+
+.modal-content:focus-visible { outline: none; }
+
+.gallery-item:focus-visible { outline-offset: -3px; }
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+    .card { animation: none; opacity: 1; transform: none; }
+}

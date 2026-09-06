@@ -19,6 +19,8 @@
     /* ---------- State ---------- */
     let current = 0;
     let track, tabs, header, modal, modalClose;
+    let lastFocused = null;          // element to restore focus to when a dialog closes
+    let modalActions = {};           // id -> handler for in-modal action buttons
 
     /* ---------- Core Functions ---------- */
     function $(sel) { 
@@ -71,6 +73,20 @@
         if (screen) {
             screen.scrollTop = 0;
         }
+
+        // Deep link: keep the URL hash in sync so a tab can be shared (#projects)
+        if (window.history && window.history.replaceState) {
+            try {
+                const hash = index === 0 ? ' ' : '#' + TABS[index];
+                window.history.replaceState(null, '', hash.trim() || window.location.pathname);
+            } catch (e) {}
+        }
+    }
+
+    function tabFromHash() {
+        const h = (window.location.hash || '').replace('#', '').toLowerCase();
+        const i = TABS.indexOf(h);
+        return i >= 0 ? i : 0;
     }
 
     /* ---------- Theme (light / dark) ---------- */
@@ -117,6 +133,20 @@
     /* ---------- Modal Functions ---------- */
     function setText(id, value) { const el = $(id); if (el) el.textContent = value; }
 
+    function esc(str) {
+        return String(str == null ? '' : str)
+            .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+    }
+
+    const ICON_PHOTOS = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>';
+    const ICON_LINK = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>';
+    const ICON_GITHUB = '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6.02 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.81 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.21.69.82.57A12 12 0 0 0 12 .3"/></svg>';
+
+    function linkIcon(url) {
+        return /github\.com/i.test(url) ? ICON_GITHUB : ICON_LINK;
+    }
+
     function toggleSection(id, visible) {
         const el = $(id);
         if (el) el.style.display = visible ? '' : 'none';
@@ -124,10 +154,39 @@
 
     function openModalShell() {
         if (!modal) return;
+        lastFocused = document.activeElement;
         modal.classList.add('active');
+        modal.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
         const body = modal.querySelector('.modal-body');
         if (body) body.scrollTop = 0;
+        const content = modal.querySelector('.modal-content');
+        if (content) content.focus({ preventScroll: true });
+    }
+
+    function isModalOpen() {
+        return !!(modal && modal.classList.contains('active'));
+    }
+
+    function restoreFocus() {
+        if (lastFocused && typeof lastFocused.focus === 'function') {
+            try { lastFocused.focus({ preventScroll: true }); } catch (e) {}
+        }
+        lastFocused = null;
+    }
+
+    /* Keep Tab inside an open dialog */
+    function trapFocus(container, e) {
+        const focusable = Array.from(container.querySelectorAll(
+            'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"]), video[controls]'
+        )).filter(function (el) { return el.offsetParent !== null; });
+        if (!focusable.length) { e.preventDefault(); return; }
+        const first = focusable[0], last = focusable[focusable.length - 1];
+        if (e.shiftKey && (document.activeElement === first || document.activeElement === container)) {
+            e.preventDefault(); last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+            e.preventDefault(); first.focus();
+        }
     }
 
     /* Generic detail renderer - one modal, reused by projects, skills & experience.
@@ -158,17 +217,49 @@
         if (modalHighlights) modalHighlights.innerHTML = d.highlight ? `<p>${d.highlight}</p>` : '';
         toggleSection('#modalHighlightsSection', !!d.highlight);
 
+        // Action buttons: in-app actions (e.g. open Gallery filtered) + external links
+        modalActions = {};
+        const actions = d.actions || [];
+        const links = (d.links || []).filter(function (l) { return l && l.url; });
+        const modalLinks = $('#modalLinks');
+        if (modalLinks) {
+            modalLinks.innerHTML = actions.map(function (a, i) {
+                const id = 'act' + i;
+                modalActions[id] = a.onClick;
+                return '<button type="button" class="modal-link primary" data-action="' + id + '">' + (a.icon || '') + '<span>' + esc(a.label) + '</span></button>';
+            }).join('') + links.map(function (l) {
+                return '<a class="modal-link" href="' + esc(l.url) + '" target="_blank" rel="noopener noreferrer">' + linkIcon(l.url) + '<span>' + esc(l.label || l.url) + '</span></a>';
+            }).join('');
+            $$('#modalLinks [data-action]').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    const fn = modalActions[this.getAttribute('data-action')];
+                    if (typeof fn === 'function') fn();
+                });
+            });
+        }
+        toggleSection('#modalLinksSection', actions.length + links.length > 0);
+
         openModalShell();
     }
 
     function showModal(projectId) {
         const p = PROJECTS[projectId];
         if (!p) return;
+        const actions = [];
+        if (p.gallery && galleryHasProject(p.gallery)) {
+            const n = galleryCountFor(p.gallery);
+            actions.push({
+                label: 'View screenshots' + (n ? ' (' + n + ')' : ''),
+                icon: ICON_PHOTOS,
+                onClick: function () { openGalleryFor(p.gallery); }
+            });
+        }
         renderDetail({
             icon: p.icon, name: p.name, type: p.type, description: p.description,
             listLabel: 'Key Features', list: p.features,
             tagsLabel: 'Technologies', tags: p.tech,
-            highlightLabel: 'Project Highlights', highlight: p.highlights
+            highlightLabel: 'Project Highlights', highlight: p.highlights,
+            actions: actions, links: p.links
         });
     }
 
@@ -192,10 +283,12 @@
         });
     }
 
-    function hideModal() {
-        if (modal) {
+    function hideModal(opts) {
+        if (modal && modal.classList.contains('active')) {
             modal.classList.remove('active');
+            modal.setAttribute('aria-hidden', 'true');
             document.body.style.overflow = '';
+            if (!(opts && opts.keepFocus)) restoreFocus();
         }
     }
 
@@ -240,6 +333,28 @@
         return seen;
     }
 
+    function galleryHasProject(name) {
+        return galleryItems().some(function (it) { return it.project === name; });
+    }
+
+    function galleryCountFor(name) {
+        return galleryItems().filter(function (it) { return it.project === name; }).length;
+    }
+
+    /* Open the Gallery tab pre-filtered to one project (from a project modal) */
+    function openGalleryFor(project) {
+        hideModal({ keepFocus: true });
+        galleryFilter = galleryHasProject(project) ? project : 'All';
+        renderGalleryFilters();
+        renderGalleryGrid();
+        switchTab(TABS.indexOf('gallery'));
+        const chip = $('.gallery-chip.active');
+        if (chip) {
+            try { chip.scrollIntoView({ block: 'nearest', inline: 'center' }); } catch (e) {}
+            chip.focus({ preventScroll: true });
+        }
+    }
+
     function renderGalleryFilters() {
         const bar = $('#galleryFilters');
         if (!bar) return;
@@ -247,7 +362,8 @@
         bar.style.display = '';
         const chips = ['All'].concat(galleryProjects());
         bar.innerHTML = chips.map(function (name) {
-            return '<button class="gallery-chip' + (name === galleryFilter ? ' active' : '') + '" data-filter="' + name + '">' + name + '</button>';
+            const on = name === galleryFilter;
+            return '<button type="button" class="gallery-chip' + (on ? ' active' : '') + '" data-filter="' + esc(name) + '" aria-pressed="' + on + '">' + esc(name) + '</button>';
         }).join('');
         $$('.gallery-chip').forEach(function (btn) {
             btn.addEventListener('click', function () {
@@ -276,12 +392,12 @@
             const thumb = isVideo ? (it.poster || '') : it.src;
             const alt = (it.project || 'Gallery item') + (it.caption ? ' - ' + it.caption : '');
             const media = thumb
-                ? '<img src="' + thumb + '" alt="' + alt + '" loading="lazy">'
+                ? '<img src="' + esc(thumb) + '" alt="' + esc(alt) + '" loading="lazy" decoding="async">'
                 : '<video src="' + it.src + '" muted playsinline preload="metadata"></video>';
             const badge = isVideo
                 ? '<span class="gallery-play"><svg width="15" height="15" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></span>'
                 : '';
-            return '<button class="gallery-item" data-index="' + i + '" aria-label="Open: ' + alt + '">' + media + badge + '</button>';
+            return '<button type="button" class="gallery-item" data-index="' + i + '" aria-label="Open: ' + esc(alt) + '">' + media + badge + '</button>';
         }).join('');
         $$('.gallery-item').forEach(function (btn) {
             btn.addEventListener('click', function () {
@@ -302,7 +418,7 @@
         if (stage) {
             stage.innerHTML = it.type === 'video'
                 ? '<video src="' + it.src + '"' + (it.poster ? ' poster="' + it.poster + '"' : '') + ' controls autoplay playsinline></video>'
-                : '<img src="' + it.src + '" alt="' + (it.project || 'Gallery item') + '">';
+                : '<img src="' + esc(it.src) + '" alt="' + esc((it.project || 'Gallery item') + (it.caption ? ' - ' + it.caption : '')) + '" decoding="async">';
         }
         setText('#lightboxCounter', (lightboxIndex + 1) + ' / ' + galleryView.length);
         setText('#lightboxProject', it.project || '');
@@ -313,10 +429,13 @@
         const lb = $('#lightbox');
         if (!lb || !galleryView[i]) return;
         lightboxIndex = i;
+        lastFocused = document.activeElement;
         renderLightbox();
         lb.classList.add('active');
         lb.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
+        const close = $('#lightboxClose');
+        if (close) close.focus({ preventScroll: true });
     }
 
     function closeLightbox() {
@@ -328,6 +447,7 @@
         lb.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = '';
         lightboxIndex = -1;
+        restoreFocus();
     }
 
     function stepLightbox(dir) {
@@ -406,40 +526,46 @@
                 if (e.key === 'ArrowRight') stepLightbox(1);
                 if (e.key === 'ArrowLeft') stepLightbox(-1);
                 if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'Tab') trapFocus($('#lightbox'), e);
                 return;
             }
+            if (isModalOpen()) {
+                if (e.key === 'Escape') hideModal();
+                if (e.key === 'Tab') trapFocus(modal.querySelector('.modal-content'), e);
+                return;
+            }
+            if (e.altKey || e.ctrlKey || e.metaKey) return;
             if (e.key === 'ArrowRight') switchTab(current + 1);
             if (e.key === 'ArrowLeft') switchTab(current - 1);
-            if (e.key === 'Escape') hideModal();
+        });
+
+        // Follow back/forward navigation between tab hashes
+        window.addEventListener('hashchange', function () {
+            const i = tabFromHash();
+            if (i !== current) switchTab(i);
         });
         
         // Modal initialization
         modal = $('#projectModal');
         modalClose = $('#modalClose');
 
-        // Project card click handlers
-        $$('.project-card').forEach(card => {
-            if (card) {
-                card.addEventListener('click', handleProjectClick);
-                card.style.cursor = 'pointer';
-            }
-        });
-
-        // Skill row click handlers
-        $$('.skill-tappable').forEach(row => {
-            if (row) {
-                row.addEventListener('click', handleSkillClick);
-                row.style.cursor = 'pointer';
-            }
-        });
-
-        // Experience card click handlers
-        $$('.exp-tappable').forEach(row => {
-            if (row) {
-                row.addEventListener('click', handleExpClick);
-                row.style.cursor = 'pointer';
-            }
-        });
+        // Tappable rows: mouse/touch + keyboard (Enter / Space), exposed as buttons
+        function makeTappable(el, handler) {
+            if (!el) return;
+            el.addEventListener('click', handler);
+            el.style.cursor = 'pointer';
+            if (!el.hasAttribute('tabindex')) el.setAttribute('tabindex', '0');
+            if (!el.hasAttribute('role')) el.setAttribute('role', 'button');
+            el.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+                    e.preventDefault();
+                    handler(e);
+                }
+            });
+        }
+        $$('.project-card').forEach(card => makeTappable(card, handleProjectClick));
+        $$('.skill-tappable').forEach(row => makeTappable(row, handleSkillClick));
+        $$('.exp-tappable').forEach(row => makeTappable(row, handleExpClick));
         
         // Modal close handlers
         if (modalClose) {
@@ -510,7 +636,7 @@
             // Safari-specific initialization delay
             setTimeout(function() {
                 initEvents();
-                switchTab(0);
+                switchTab(tabFromHash());
             }, 50);
 
         } catch (error) {
@@ -523,6 +649,7 @@
     window.CVApp = {
         init: init,
         switchTab: switchTab,
+        openGalleryFor: openGalleryFor,
         getCurrentTab: function() {
             return { index: current, name: TABS[current] };
         },
