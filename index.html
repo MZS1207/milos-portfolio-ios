@@ -98,7 +98,7 @@
         })();
     </script>
 
-    <link rel="stylesheet" href="styles.css?v=20260906a">
+    <link rel="stylesheet" href="styles.css?v=20260916b">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -615,11 +615,11 @@
                             <div class="project-card" data-project="catchase">
                                 <div class="project-header">
                                     <span class="project-icon"> 🐱</span>
-                                    <div><h4 class="project-name">CatChase</h4><small class="project-type">Mobile Game</small></div>
+                                    <div><h4 class="project-name">Bubble Chase (CatChase)</h4><small class="project-type">iOS Arcade Game</small></div>
                                     <svg class="list-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
                                 </div>
-                                <p class="project-desc">Small private game: a cat chasing balloons through increasingly chaotic levels. SpriteKit fun.</p>
-                                <div class="tag-cloud compact"><span class="tag">Swift</span><span class="tag">SpriteKit</span><span class="tag">Core Animation</span><span class="tag">Game Physics</span></div>
+                                <p class="project-desc">Pop bouncing balls, dodge danger and collect power-ups. A SpriteKit arcade game with daily challenges.</p>
+                                <div class="tag-cloud compact"><span class="tag">Swift</span><span class="tag">SpriteKit</span><span class="tag">Core Animation</span><span class="tag">Game Physics</span><span class="tag">📷 4 shots</span></div>
                             </div>
 
                             <div class="project-card" data-project="endava">
@@ -724,8 +724,8 @@
                                     <div><h4 class="project-name">Bug Corp Duel</h4><small class="project-type">iOS P2P Card Game</small></div>
                                     <svg class="list-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
                                 </div>
-                                <p class="project-desc">Yu-Gi-Oh-style card duel game with deterministic seeded engine, 100-card catalogue and serverless P2P multiplayer - built end-to-end by an AI agent fleet.</p>
-                                <div class="tag-cloud compact"><span class="tag">SwiftUI</span><span class="tag">SpriteKit</span><span class="tag">P2P</span><span class="tag">Swift 6</span></div>
+                                <p class="project-desc">Yu-Gi-Oh-style card duel game with deterministic seeded engine, 132-card catalogue and serverless P2P multiplayer - built end-to-end by an AI agent fleet.</p>
+                                <div class="tag-cloud compact"><span class="tag">SwiftUI</span><span class="tag">SpriteKit</span><span class="tag">P2P</span><span class="tag">Swift 6</span><span class="tag">📷 4 shots</span></div>
                             </div>
 
                             <div class="project-card" data-project="beambike">
@@ -735,7 +735,7 @@
                                     <svg class="list-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
                                 </div>
                                 <p class="project-desc">Full-stack mobility MVP - native iOS &amp; Android apps, realtime Node.js backend, geofenced maps, admin dashboard and IoT simulator.</p>
-                                <div class="tag-cloud compact"><span class="tag">SwiftUI</span><span class="tag">Kotlin</span><span class="tag">Node.js</span><span class="tag">WebSocket</span></div>
+                                <div class="tag-cloud compact"><span class="tag">SwiftUI</span><span class="tag">Kotlin</span><span class="tag">Node.js</span><span class="tag">WebSocket</span><span class="tag">📷 1 shot</span></div>
                             </div>
 
                             <div class="project-card" data-project="footballmanager">
@@ -805,7 +805,13 @@
                 <section class="screen" id="screen-gallery">
                     <div class="screen-scroll">
 
-                        <div class="gallery-filters" id="galleryFilters"></div>
+                        <div class="gallery-intro">
+                            <span class="gallery-eyebrow">SELECTED WORK</span>
+                            <h2>A closer look.</h2>
+                            <p>From arcade games to everyday apps. Explore real screens, gameplay and the details behind each project.</p>
+                            <span class="gallery-summary" id="gallerySummary" role="status"></span>
+                        </div>
+                        <div class="gallery-filters" id="galleryFilters" role="group" aria-label="Filter by project"></div>
 
                         <div class="gallery-grid" id="galleryGrid"></div>
 
@@ -814,7 +820,7 @@
                                 <div class="gallery-empty-inner">
                                     <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
                                     <strong>No media yet</strong>
-                                    <small>Drop screenshots &amp; demo videos into the gallery/ folder and list them in gallery-data.js.</small>
+                                    <small>Project screenshots and demos will appear here soon.</small>
                                 </div>
                             </div>
                         </div>
@@ -905,7 +911,7 @@
     </div>
 
     <!-- Gallery Lightbox (iOS Photos-style) -->
-    <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Media viewer">
+    <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Media viewer">
         <div class="lightbox-top">
             <span class="lightbox-counter" id="lightboxCounter"></span>
             <button class="lightbox-close" id="lightboxClose" aria-label="Close viewer">
@@ -919,14 +925,14 @@
         <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
         </button>
-        <div class="lightbox-meta">
+        <div class="lightbox-meta" aria-live="polite">
             <strong id="lightboxProject"></strong>
             <small id="lightboxCaption"></small>
         </div>
     </div>
 
-    <script src="content-data.js?v=20260906a"></script>
-    <script src="gallery-data.js?v=20260801a"></script>
-    <script src="app-safari.js?v=20260906a"></script>
+    <script src="content-data.js?v=20260916b"></script>
+    <script src="gallery-data.js?v=20260916b"></script>
+    <script src="app-safari.js?v=20260916b"></script>
 </body>
 </html>

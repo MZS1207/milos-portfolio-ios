@@ -194,19 +194,20 @@ window.CONTENT_DATA = {
             highlights: 'Insurance at UK scale means strict compliance, accessibility and releases that simply cannot break for millions of policyholders.'
         },
         catchase: {
-            name: 'CatChase',
-            type: 'Mobile Game',
+            name: 'Bubble Chase (CatChase)',
+            type: 'iOS Arcade Game',
             icon: '🐱',
-            description: 'Small private game: a cat chasing balloons through increasingly chaotic levels.',
+            description: 'A SpriteKit arcade game: move your cat, pop bouncing balls and dodge danger. Includes daily challenges, collectible cosmetics and a guided introduction to power-ups.',
             features: [
                 'Cat Character Control',
-                'Balloon Chasing Mechanics',
+                'Ball-Popping & Dodging Mechanics',
                 'Progressive Difficulty Levels',
                 'Fun Animations & Effects',
                 'Score Tracking System',
                 'Level Progression'
             ],
             tech: ['Swift', 'SpriteKit', 'Core Animation', 'Game Physics', 'Sound Effects', 'Game Center'],
+            gallery: 'Bubble Chase',
             highlights: 'A pure fun project. SpriteKit physics, springy animations and difficulty tuning until the cat felt just right.'
         },
         endava: {
@@ -246,16 +247,17 @@ window.CONTENT_DATA = {
             name: 'Bug Corp Duel',
             type: 'iOS P2P Card Game',
             icon: '🃏',
-            description: 'Yu-Gi-Oh-style card duel game with an IT-office parody theme: deterministic seeded game engine, 100-card catalogue with reaction/trap windows, and serverless peer-to-peer multiplayer.',
+            description: 'Yu-Gi-Oh-style card duel game with an IT-office parody theme: deterministic seeded game engine, 132-card catalogue with reaction/trap windows, and serverless peer-to-peer multiplayer.',
             features: [
                 'Deterministic seeded game engine',
-                '100-card catalogue & trap/reaction windows',
+                '132-card catalogue & trap/reaction windows',
                 'Serverless P2P multiplayer (MultipeerConnectivity)',
                 'Simulation-driven balance tuning (400 auto-matches)',
                 '100+ unit & integration tests',
                 'Swift 6 strict concurrency'
             ],
             tech: ['SwiftUI', 'SpriteKit', 'MultipeerConnectivity', 'Network.framework', 'SwiftPM', 'XcodeGen'],
+            gallery: 'Bug Corp Duel',
             highlights: 'Built end-to-end through The Hive: 116 orchestrated AI-agent tasks, full green build & test gate.'
         },
         beambike: {
@@ -272,6 +274,7 @@ window.CONTENT_DATA = {
                 'i18n across 7 languages incl. full RTL'
             ],
             tech: ['SwiftUI', 'Kotlin', 'Node.js', 'PostgreSQL', 'Redis', 'WebSocket', 'MapLibre'],
+            gallery: 'BeamBike',
             highlights: 'Contract-first monorepo: 101 endpoints and 114 models generated for 4 platforms from one frozen schema.',
             links: []
         },

@@ -363,12 +363,16 @@
         const chips = ['All'].concat(galleryProjects());
         bar.innerHTML = chips.map(function (name) {
             const on = name === galleryFilter;
-            return '<button type="button" class="gallery-chip' + (on ? ' active' : '') + '" data-filter="' + esc(name) + '" aria-pressed="' + on + '">' + esc(name) + '</button>';
+            return '<button type="button" class="gallery-chip' + (on ? ' active' : '') + '" data-filter="' + esc(name) + '" aria-pressed="' + on + '">' + esc(name) + '<span class="gallery-chip-count">' + (name === 'All' ? galleryItems().length : galleryCountFor(name)) + '</span></button>';
         }).join('');
         $$('.gallery-chip').forEach(function (btn) {
             btn.addEventListener('click', function () {
                 galleryFilter = this.getAttribute('data-filter');
-                renderGalleryFilters();
+                $$('.gallery-chip').forEach(function (chip) {
+                    const active = chip.getAttribute('data-filter') === galleryFilter;
+                    chip.classList.toggle('active', active);
+                    chip.setAttribute('aria-pressed', String(active));
+                });
                 renderGalleryGrid();
             });
         });
@@ -387,18 +391,38 @@
         grid.style.display = '';
         if (empty) empty.style.display = 'none';
         galleryView = galleryFilter === 'All' ? all.slice() : all.filter(function (it) { return it.project === galleryFilter; });
-        grid.innerHTML = galleryView.map(function (it, i) {
-            const isVideo = it.type === 'video';
-            const thumb = isVideo ? (it.poster || '') : it.src;
-            const alt = (it.project || 'Gallery item') + (it.caption ? ' - ' + it.caption : '');
-            const media = thumb
-                ? '<img src="' + esc(thumb) + '" alt="' + esc(alt) + '" loading="lazy" decoding="async">'
-                : '<video src="' + it.src + '" muted playsinline preload="metadata"></video>';
-            const badge = isVideo
-                ? '<span class="gallery-play"><svg width="15" height="15" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></span>'
-                : '';
-            return '<button type="button" class="gallery-item" data-index="' + i + '" aria-label="Open: ' + esc(alt) + '">' + media + badge + '</button>';
+        const projects = galleryFilter === 'All' ? galleryProjects() : [galleryFilter];
+        setText('#gallerySummary', galleryView.length + (galleryView.length === 1 ? ' screen · ' : ' screens · ') + projects.length + (projects.length === 1 ? ' project' : ' projects'));
+        grid.innerHTML = projects.map(function (name, groupIndex) {
+            const projectKey = Object.keys(PROJECTS).find(function (key) { return PROJECTS[key].gallery === name; });
+            const project = PROJECTS[projectKey];
+            const cards = galleryView.map(function (it, i) {
+                if (it.project !== name) return '';
+                const isVideo = it.type === 'video';
+                const thumb = isVideo ? it.poster : it.src;
+                const alt = name + (it.caption ? ' - ' + it.caption : '');
+                const media = thumb
+                    ? '<img src="' + esc(thumb) + '"' + (it.width && it.height ? ' width="' + Number(it.width) + '" height="' + Number(it.height) + '"' : '') + ' alt="' + esc(alt) + '" loading="lazy" decoding="async">'
+                    : '<video src="' + esc(it.src) + '" muted playsinline preload="metadata"></video>';
+                return '<button type="button" class="gallery-item' + (it.width > it.height ? ' gallery-item-wide' : '') + '" data-index="' + i + '" aria-label="Open: ' + esc(alt) + '"><span class="gallery-preview">' + media +
+                    '<span class="gallery-open" aria-hidden="true">' + (isVideo ? '▶' : '↗') + '</span></span><span class="gallery-caption">' + esc(it.caption || name) + '</span></button>';
+            }).join('');
+            return '<section class="gallery-album" aria-labelledby="album-' + groupIndex + '"><div class="gallery-album-heading"><div><h3 id="album-' + groupIndex + '">' + esc(name) + '</h3>' +
+                (project ? '<p>' + esc(project.type) + '</p>' : '') + '</div><span class="gallery-album-count">' + galleryCountFor(name) + (galleryCountFor(name) === 1 ? ' screen' : ' screens') + '</span></div>' +
+                '<div class="gallery-album-grid">' + cards + '</div></section>';
         }).join('');
+        grid.querySelectorAll('img').forEach(function (img) {
+            img.addEventListener('load', function () {
+                img.closest('.gallery-item').classList.toggle('gallery-item-wide', img.naturalWidth > img.naturalHeight);
+            });
+            if (img.complete && img.naturalWidth > img.naturalHeight) img.closest('.gallery-item').classList.add('gallery-item-wide');
+            img.addEventListener('error', function () {
+                const fallback = document.createElement('span');
+                fallback.className = 'gallery-media-error';
+                fallback.textContent = 'Preview unavailable';
+                img.replaceWith(fallback);
+            });
+        });
         $$('.gallery-item').forEach(function (btn) {
             btn.addEventListener('click', function () {
                 openLightbox(parseInt(this.getAttribute('data-index'), 10));
@@ -417,7 +441,7 @@
         const stage = $('#lightboxStage');
         if (stage) {
             stage.innerHTML = it.type === 'video'
-                ? '<video src="' + it.src + '"' + (it.poster ? ' poster="' + it.poster + '"' : '') + ' controls autoplay playsinline></video>'
+                ? '<video src="' + esc(it.src) + '"' + (it.poster ? ' poster="' + esc(it.poster) + '"' : '') + ' controls autoplay playsinline></video>'
                 : '<img src="' + esc(it.src) + '" alt="' + esc((it.project || 'Gallery item') + (it.caption ? ' - ' + it.caption : '')) + '" decoding="async">';
         }
         setText('#lightboxCounter', (lightboxIndex + 1) + ' / ' + galleryView.length);
@@ -433,6 +457,7 @@
         renderLightbox();
         lb.classList.add('active');
         lb.setAttribute('aria-hidden', 'false');
+        if ($('#app')) $('#app').inert = true;
         document.body.style.overflow = 'hidden';
         const close = $('#lightboxClose');
         if (close) close.focus({ preventScroll: true });
@@ -445,6 +470,7 @@
         if (stage) stage.innerHTML = '';
         lb.classList.remove('active');
         lb.setAttribute('aria-hidden', 'true');
+        if ($('#app')) $('#app').inert = false;
         document.body.style.overflow = '';
         lightboxIndex = -1;
         restoreFocus();
@@ -471,6 +497,7 @@
                 if (e.target === lb || (e.target && e.target.id === 'lightboxStage')) closeLightbox();
             });
             lb.addEventListener('touchstart', function (e) {
+                if (e.touches.length !== 1 || e.target.closest('video, button')) { lb._sx = null; return; }
                 lb._sx = e.changedTouches[0].clientX;
                 lb._sy = e.changedTouches[0].clientY;
             }, { passive: true });

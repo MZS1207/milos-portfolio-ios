@@ -1507,80 +1507,33 @@ html[data-theme="dark"] .theme-icon-moon { opacity: 1; transform: rotate(0deg) s
     100% { transform: translate(50px, 50px); }
 }
 
-/* ---------- Gallery (iOS Photos-style) ---------- */
-.gallery-filters {
-    display: flex;
-    gap: var(--sp-2);
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    flex-shrink: 0;
-}
+/* ---------- Project gallery ---------- */
+.gallery-intro { padding: 8px 0 4px; }
+.gallery-eyebrow { color: var(--color-primary); font-size: 10px; font-weight: 700; letter-spacing: 1.8px; }
+.gallery-intro h2 { margin: 8px 0; font-size: 30px; letter-spacing: -1.2px; line-height: 1.1; }
+.gallery-intro p { font-size: 14px; line-height: 1.6; max-width: 310px; opacity: .75; }
+.gallery-summary { display: block; margin-top: 14px; font-size: 12px; color: var(--color-primary); font-weight: 600; }
+.gallery-filters { display: flex; gap: 8px; overflow-x: auto; padding: 3px 2px 8px; scrollbar-width: none; flex-shrink: 0; }
 .gallery-filters::-webkit-scrollbar { display: none; }
-
-.gallery-chip {
-    padding: 6px 14px;
-    border-radius: var(--r-full);
-    background: var(--color-fill);
-    color: var(--color-text);
-    font-size: 13px;
-    font-weight: 600;
-    white-space: nowrap;
-    flex-shrink: 0;
-    transition: background 0.2s, color 0.2s;
-}
-.gallery-chip.active { background: var(--color-primary); color: #fff; }
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3px;
-    border-radius: var(--r-lg);
-    overflow: hidden;
-}
-
-.gallery-item {
-    position: relative;
-    aspect-ratio: 1 / 1;
-    padding: 0;
-    background: var(--color-fill);
-    overflow: hidden;
-    cursor: pointer;
-}
-
-.gallery-item img,
-.gallery-item video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.25s ease, opacity 0.15s;
-}
-
-.gallery-item:active img,
-.gallery-item:active video { opacity: 0.7; }
-
-@media (hover: hover) {
-    .gallery-item:hover img,
-    .gallery-item:hover video { transform: scale(1.05); }
-}
-
-.gallery-play {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: rgba(0, 0, 0, 0.55);
-    -webkit-backdrop-filter: blur(4px);
-    backdrop-filter: blur(4px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    pointer-events: none;
-}
+.gallery-chip { display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 8px 14px; border-radius: var(--r-full); background: var(--color-surface); color: var(--color-text); border: 1px solid var(--color-separator); font-size: 12px; font-weight: 600; white-space: nowrap; flex-shrink: 0; transition: background .2s, color .2s; }
+.gallery-chip-count { font-size: 10px; opacity: .75; }
+.gallery-chip.active { background: var(--color-primary); color: #fff; border-color: transparent; }
+.gallery-grid { display: flex; flex-direction: column; gap: 28px; }
+.gallery-album { min-width: 0; }
+.gallery-album-heading { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 12px; }
+.gallery-album-heading h3 { font-size: 18px; letter-spacing: -.5px; }
+.gallery-album-heading p { margin-top: 4px; font-size: 11px; opacity: .7; }
+.gallery-album-count { font-size: 10px; white-space: nowrap; padding: 5px 8px; border: 1px solid var(--color-separator); border-radius: var(--r-full); }
+.gallery-album-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; align-items: start; }
+.gallery-item { min-width: 0; padding: 0; background: var(--color-surface); color: var(--color-text); border: 1px solid var(--color-separator); border-radius: var(--r-lg); overflow: hidden; text-align: left; cursor: pointer; box-shadow: var(--shadow-card); }
+.gallery-preview { position: relative; display: flex; align-items: center; justify-content: center; padding: 12px; aspect-ratio: 3 / 5; background: linear-gradient(145deg, rgba(88,86,214,.10), rgba(0,122,255,.03)); overflow: hidden; }
+.gallery-preview img, .gallery-preview video { display: block; width: 100%; height: 100%; object-fit: contain; border-radius: 6px; transition: transform .25s ease; }
+.gallery-item-wide { grid-column: 1 / -1; }
+.gallery-item-wide .gallery-preview { aspect-ratio: 16 / 10; }
+.gallery-caption { display: block; padding: 10px 11px 12px; font-size: 11px; font-weight: 500; line-height: 1.5; }
+.gallery-open { position: absolute; bottom: 8px; right: 8px; display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: var(--color-surface); color: var(--color-primary); box-shadow: var(--shadow-card); font-size: 15px; }
+.gallery-media-error { font-size: 12px; text-align: center; opacity: .7; }
+@media (hover: hover) { .gallery-item:hover img { transform: scale(1.025); } .gallery-item:hover { border-color: var(--color-primary); } }
 
 .gallery-empty-inner {
     display: flex;
@@ -1623,8 +1576,8 @@ html[data-theme="dark"] .theme-icon-moon { opacity: 1; transform: rotate(0deg) s
 }
 
 .lightbox-close {
-    width: 36px;
-    height: 36px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.14);
     color: #fff;
@@ -1639,7 +1592,7 @@ html[data-theme="dark"] .theme-icon-moon { opacity: 1; transform: rotate(0deg) s
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 var(--sp-2);
+    padding: 0 68px;
 }
 
 .lightbox-stage img,
@@ -1667,9 +1620,7 @@ html[data-theme="dark"] .theme-icon-moon { opacity: 1; transform: rotate(0deg) s
 .lightbox-prev { left: var(--sp-3); }
 .lightbox-next { right: var(--sp-3); }
 
-@media (hover: none) and (pointer: coarse) {
-    .lightbox-nav { display: none; } /* touch users swipe between items */
-}
+
 
 .lightbox-meta {
     text-align: center;
@@ -1684,6 +1635,12 @@ html[data-theme="dark"] .theme-icon-moon { opacity: 1; transform: rotate(0deg) s
 .lightbox-meta small {
     font-size: 13px;
     color: rgba(255, 255, 255, 0.65);
+}
+
+@media (max-width: 600px) {
+    .lightbox-stage { padding: 0 12px; }
+    .lightbox-nav { top: auto; bottom: calc(var(--safe-bottom) + 26px); transform: none; }
+    .lightbox-meta { min-height: 110px; padding-left: 66px; padding-right: 66px; }
 }
 
 /* ---------- Skills: AI hero card ---------- */

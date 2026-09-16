@@ -12,7 +12,7 @@ Five tab "screens" with swipe, keyboard and tab-bar navigation, deep links per t
 - **Skills** - core expertise, architecture, AI tooling and practices, each tappable for details
 - **Experience** - timeline with per-role detail modals
 - **Projects** - 21 selected apps across enterprise, healthcare, fintech and AI-built personal work; project sheets can jump straight to their screenshots in the Gallery
-- **Gallery** - iOS Photos-style grid of real app screenshots with per-project filters and a fullscreen viewer (images & video)
+- **Gallery** - project albums with uncropped screenshots, captions, counted project filters and a fullscreen viewer (images & video). Landscape screenshots span the full album width; viewer controls support touch and keyboard
 
 On phones the app runs edge-to-edge; on tablets and desktops it renders as a centred iPhone mockup on a glassmorphism backdrop.
 
@@ -57,3 +57,7 @@ Every tappable row is a keyboard-operable button (Tab / Enter / Space), dialogs 
 ## Design notes
 
 iOS-inspired design tokens live at the top of `styles.css`: system palette (`#007AFF` blue, `#34C759` green, `#FF9500` orange, `#5856D6` indigo), 4px spacing scale, SF-like typography via Inter. Dark mode tokens mirror iOS dark palette; theme resolves before first paint to avoid a flash.
+
+## Screenshot provenance
+
+Gallery additions and simulator build notes are recorded in [docs/gallery-captures.md](docs/gallery-captures.md). The gallery currently includes 31 screens across 8 projects, including Bubble Chase, Bug Corp Duel and BeamBike.
