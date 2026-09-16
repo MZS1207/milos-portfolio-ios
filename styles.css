@@ -1830,3 +1830,8 @@ html[data-theme="dark"] .list-icon.dark {
     }
     .card { animation: none; opacity: 1; transform: none; }
 }
+
+/* Current availability */
+.availability-badge { display: inline-flex; align-items: center; gap: 7px; margin-top: 12px; padding: 8px 13px; min-height: 44px; border-radius: var(--r-full); background: var(--color-fill); color: var(--color-text); font-size: 12px; font-weight: 600; text-decoration: none; }
+.availability-badge::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
+.availability-badge:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; }

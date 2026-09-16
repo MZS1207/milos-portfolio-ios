@@ -61,3 +61,7 @@ iOS-inspired design tokens live at the top of `styles.css`: system palette (`#00
 ## Screenshot provenance
 
 Gallery additions and simulator build notes are recorded in [docs/gallery-captures.md](docs/gallery-captures.md). The gallery currently includes 31 screens across 8 projects, including Bubble Chase, Bug Corp Duel and BeamBike.
+
+## Updating the downloadable CV
+
+The website and PDF reflect freelance availability from 1 September 2026; Endava roles end in August 2026. Edit `cv/build_resume.py` and run `python3 cv/build_resume.py` with ReportLab and Arial or Liberation Sans installed to regenerate `MilosStevanovicResume.pdf`. Render and review both pages after edits. Bump the PDF download query version in `index.html`.

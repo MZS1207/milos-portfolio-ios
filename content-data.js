@@ -422,13 +422,13 @@ window.CONTENT_DATA = {
         },
         multiagent: {
             name: 'Multi-Agent Orchestration', type: 'The Hive · fleets of coding agents', icon: '🐝',
-            description: 'Designing and directing fleets of autonomous coding agents that ship complete products - an architect / delegate / worker hierarchy working from a frozen contract, with parallel task dispatch and automated build & test gates. This is what "Type 5" means on the AI-engineering scale: not using AI as autocomplete, but running it as a delivery team.',
+            description: 'Designing and directing fleets of autonomous coding agents that ship complete products - an architect / delegate / worker hierarchy working from a frozen contract, with parallel task dispatch and automated build & test gates. I define the architecture and contracts, review the output and use build and test checks to validate the result.',
             usedIn: ['The Hive - my orchestration framework for Claude Code', 'Bug Corp Duel - 116 orchestrated agent tasks, green build & test gate', 'BeamBike - contract-first monorepo: 101 endpoints, 114 models, 4 platforms'],
             related: ['Claude Code', 'JSON Schema', 'Codegen', 'CI gates']
         },
         aidelivery: {
-            name: 'AI-Assisted Delivery', type: 'AI Champion · Endava', icon: '🚀',
-            description: 'Driving AI adoption across delivery as AI Champion - project integration and monitoring, developer enablement, AI-assisted code review and workflow automation.',
+            name: 'AI-Assisted Delivery', type: 'Former AI Champion · Endava', icon: '🚀',
+            description: 'Experience supporting AI adoption across delivery as AI Champion at Endava - project integration and monitoring, developer enablement, AI-assisted code review and workflow automation.',
             usedIn: ['AI initiatives across insurance & telecom projects', 'Mentoring developers in AI-assisted development', 'Automated review and delivery workflows'],
             related: ['AI Code Review', 'Workflow Automation', 'Mentoring']
         },
@@ -448,36 +448,47 @@ window.CONTENT_DATA = {
 
     /* ---------- Experience ---------- */
     experience: {
-        'endava-senior': {
-            name: 'Senior iOS Developer (Senior Engineer)', type: 'Endava · Jan 2022 – Present', icon: '🏢',
-            description: 'I lead iOS development for insurance and telecom clients at Endava, owning apps from first concept to production.',
+        freelance: {
+            name: 'Freelance Senior iOS Developer', type: 'Self-employed · Sep 2026 – Present', icon: '💻',
+            description: 'Independent since 1 September 2026 and open to new opportunities. I bring 10+ years of iOS experience, from enterprise and healthcare apps to independent games and product MVPs.',
             contributions: [
-                'Own app lifecycles end-to-end, from concept to production',
-                'Apply MVVM / Clean Architecture with SwiftUI, UIKit & Combine',
-                'Keep large codebases fast and maintainable as teams grow',
-                'Collaborate across cross-functional teams in an agile setup'
+                'Available for native iOS development with Swift, SwiftUI and UIKit',
+                'Product architecture, legacy-code improvements and performance work',
+                'AI-assisted development with hands-on review and build/test validation',
+                'Based in Belgrade; open to remote and on-site opportunities'
+            ],
+            focus: ['Swift', 'SwiftUI', 'UIKit', 'Clean Architecture', 'AI-Assisted Delivery']
+        },
+        'endava-senior': {
+            name: 'Senior iOS Developer (Senior Engineer)', type: 'Endava · Jan 2022 – Aug 2026', icon: '🏢',
+            description: 'I led iOS development for insurance and telecom clients at Endava, owning apps from first concept to production.',
+            contributions: [
+                'Owned app lifecycles end-to-end, from concept to production',
+                'Applied MVVM / Clean Architecture with SwiftUI, UIKit & Combine',
+                'Kept large codebases fast and maintainable as teams grow',
+                'Collaborated across cross-functional teams in an agile setup'
             ],
             focus: ['Swift', 'SwiftUI', 'Combine', 'CI/CD', 'Leadership']
         },
         'endava-ai': {
-            name: 'AI Champion', type: 'Endava · Dec 2025 – Present', icon: '🤖',
-            description: 'As AI Champion I make AI adoption real across delivery: project integration, monitoring, developer enablement and workflow automation.',
+            name: 'AI Champion', type: 'Endava · Dec 2025 – Aug 2026', icon: '🤖',
+            description: 'As AI Champion I supported AI adoption across delivery: project integration, monitoring, developer enablement and workflow automation.',
             contributions: [
-                'Drive AI project integration, monitoring and delivery automation',
-                'Enable and mentor developers in AI-assisted development',
-                'Champion AI code review and multi-agent workflows',
-                'Build internal tooling on Claude Code and agent orchestration'
+                'Drove AI project integration, monitoring and delivery automation',
+                'Enabled and mentored developers in AI-assisted development',
+                'Championed AI code review and multi-agent workflows',
+                'Built internal tooling on Claude Code and agent orchestration'
             ],
             focus: ['Claude Code', 'Multi-Agent Orchestration', 'AI Code Review', 'Prompt Engineering']
         },
         'endava-coach': {
-            name: 'Career Coach', type: 'Endava · Mar 2024 – Present', icon: '🎓',
-            description: 'Coaching iOS developers across the organisation: growth plans, 1:1 sessions, technical interviews and coding standards.',
+            name: 'Career Coach', type: 'Endava · Mar 2024 – Aug 2026', icon: '🎓',
+            description: 'Coached iOS developers across the organisation: growth plans, 1:1 sessions, technical interviews and coding standards.',
             contributions: [
                 'Structured growth plans and regular 1:1 mentoring',
-                'Conduct technical interviews and set coding standards',
-                'Run workshops and knowledge-sharing sessions',
-                'Support professional development and career guidance'
+                'Conducted technical interviews and set coding standards',
+                'Ran workshops and knowledge-sharing sessions',
+                'Supported professional development and career guidance'
             ],
             focus: ['Mentoring', 'Career Development', 'Technical Leadership', 'Team Building']
         },
