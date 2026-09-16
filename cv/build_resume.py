@@ -12,7 +12,9 @@ from reportlab.pdfbase.ttfonts import TTFont
 ROOT = Path(__file__).resolve().parents[1]
 args = argparse.ArgumentParser()
 args.add_argument('--output', default=str(ROOT / 'MilosStevanovicResume.pdf'))
-output = args.parse_args().output
+args.add_argument('--variant', choices=['product', 'platform'], default='product')
+options = args.parse_args()
+output = options.output
 font_dirs = [Path('/System/Library/Fonts/Supplemental'), Path('/usr/share/fonts/truetype/liberation2')]
 for d in font_dirs:
     regular = d / ('Arial.ttf' if 'System' in str(d) else 'LiberationSans-Regular.ttf')
@@ -46,12 +48,17 @@ def project(title,context,text,tech):
     flow.append(KeepTogether([p(title,'title'),p(context,'small'),p(text),p(tech,'small'),Spacer(1,3)]))
 
 add('Miloš Stevanović','name')
-add('Senior iOS Developer | Freelancer','role')
-add('<b>Open to work</b> | Independent since 1 September 2026 | Belgrade, Serbia','small')
-add('Remote &amp; on-site | +381 60 316 1917 | <link href="mailto:milosstevanovic12@yahoo.com" color="#1764AC">milosstevanovic12@yahoo.com</link>','small')
+add('Senior iOS Engineer | Swift · SwiftUI · UIKit','role')
+add('<b>Open to full-time and contract opportunities</b> | Belgrade, Serbia','small')
+add('Open to relocation and remote work | Employer visa / work permit sponsorship required for relocation','small')
+add('+381 60 316 1917 | <link href="mailto:milosstevanovic12@yahoo.com" color="#1764AC">milosstevanovic12@yahoo.com</link>','small')
 add('<link href="https://www.linkedin.com/in/milo%C5%A1-stevanovi%C4%87-a8b932ba/" color="#1764AC">LinkedIn</link>  |  <link href="https://mzs1207.github.io/milos-portfolio-ios/" color="#1764AC">Portfolio &amp; app gallery</link>  |  <link href="https://github.com/MZS1207" color="#1764AC">GitHub</link>','small')
 section('Profile')
-add('Senior iOS developer with 10+ years of experience and 25+ shipped apps across insurance, healthcare, fintech, telecom and consumer products. Builds with Swift, SwiftUI and UIKit; experienced in product delivery, legacy-code recovery, performance and maintainable architecture. Previously Senior Engineer, AI Champion and Career Coach at Endava. Combines hands-on engineering with AI-assisted workflows, code review and build/test validation.')
+profiles = {
+ 'product': 'Senior iOS engineer with 10+ years of experience and 25+ shipped apps across insurance, healthcare, fintech, telecom and consumer products. Delivers native applications with Swift, SwiftUI and UIKit, from concept to production. Experience includes payment and account flows, healthcare applications and recovery of inherited codebases. Former Senior Engineer at Endava, with mentoring and technical interviewing responsibilities.',
+ 'platform': 'Senior iOS engineer with 10+ years of experience in native app delivery, maintainable architecture and legacy-code recovery. Works with Swift, SwiftUI, UIKit, Combine and MVVM / Clean Architecture. Experience includes stabilising inherited apps, improving responsiveness and memory use, and supporting engineering standards through mentoring and code review. Interested in iOS platform roles focused on architecture, reliability and developer workflows.'
+}
+add(profiles[options.variant])
 section('Core expertise')
 for label, value in [
  ('Native iOS','Swift, Objective-C, SwiftUI, UIKit, Auto Layout, SpriteKit, Core Animation'),
@@ -63,11 +70,11 @@ for label, value in [
 section('Professional experience')
 role('Freelance Senior iOS Developer','Self-employed','Sep 2026 - Present',[
  'Available for native iOS product development, architecture, legacy-app improvements and performance work.',
- 'Open to new opportunities; brings enterprise delivery experience and practical AI-assisted development workflows.'
+ 'Open to full-time employment and contract engagements, remote or with relocation.'
 ])
 role('Senior iOS Developer (Senior Engineer)','Endava','Jan 2022 - Aug 2026',[
  'Led iOS development for insurance and telecom clients, owning application lifecycles from concept to production with SwiftUI, UIKit, Combine and MVVM / Clean Architecture.',
- 'As AI Champion, supported AI adoption through developer enablement, code review, project integration and workflow automation.',
+ 'Worked on Ding payment and account flows and the DXP insurance platform; see selected client projects.',
  'As Career Coach, mentored iOS developers through growth plans and 1:1 sessions, conducted technical interviews and contributed to coding standards.'
 ], 'Additional roles: AI Champion, Dec 2025 - Aug 2026; Career Coach, Mar 2024 - Aug 2026.')
 role('Senior iOS Developer','Darwin Digital','Nov 2019 - Jan 2022',[
@@ -82,18 +89,20 @@ add('<b>VPTS, Užice - Information Technology:</b> Specialist of Applied Studies
 add('<b>Languages:</b> Serbian (native) · English (full professional proficiency)','small')
 flow.append(PageBreak())
 add('Selected work','name')
-add('Client delivery, independent products &amp; games','role')
+add('Client delivery &amp; iOS engineering','role')
 add('Screenshots and project details: <link href="https://mzs1207.github.io/milos-portfolio-ios/#gallery" color="#1764AC">mzs1207.github.io/milos-portfolio-ios</link>','small')
 section('Client projects')
 project('DXP - Hybrid Insurance Platform','Endava | 2024 - Aug 2026','Contributed to mobile and cross-platform implementation for an insurance platform, with a focus on a consistent experience across devices.','Swift · SwiftUI · Combine · CI/CD')
 project('Ding - Global Mobile Recharge','Endava | 2023 - 2024','Worked on the iOS app for a platform serving 150+ countries, including secure payments, user accounts and evolving business requirements.','Swift · Stripe SDK · Core Data')
 project('Schüco SmartTouch - Smart Door Control','Freelance project | 2024 - 2025','Revived and stabilised an inherited smart-door application with Bluetooth unlock, Touch ID, remote access and live door status.','Swift · Core Bluetooth · Touch ID · Push Notifications')
-section('Independent products & games')
-project('The Hive - Coding-Agent Orchestration','Personal development framework','Designed an architect / delegate / worker workflow around Claude Code, with shared schema contracts, cross-platform code generation and automated build/test checks. Used across independent product builds.','Claude Code · Python · JSON Schema · Code generation')
-project('Bug Corp Duel - Strategy Card Game','Independent iOS project','Built a corporate-satire card game with a deterministic engine, a 132-card library, local AI duels and peer-to-peer multiplayer architecture.','SwiftUI · SpriteKit · MultipeerConnectivity · Swift Concurrency')
-project('Bubble Chase (CatChase) - Arcade Game','Independent iOS project','Created a SpriteKit game with ball-popping and dodging mechanics, power-ups, daily challenges and collectible cosmetics, with an illustrated in-game guide.','Swift · SpriteKit · Game physics · Animation')
+section('Selected independent engineering')
 project('BeamBike - E-Bike Sharing MVP','Independent multi-platform project','Built a mobility MVP spanning native iOS and Android apps, a backend, admin dashboard and IoT simulator, with geofenced maps and realtime fleet updates.','SwiftUI · Kotlin · Node.js · PostgreSQL · Redis · WebSocket')
-add('<b>More work:</b> Football Manager (club management and live match simulation), VaskoTaxi (ride-hailing), ServiceHub (local services), Kuvar (meal planning) and iMovo (real-estate web platform).','small')
+project('Bug Corp Duel - Strategy Card Game','Independent iOS project','Built a deterministic game engine with a 132-card library, local AI duels and peer-to-peer multiplayer architecture.','SwiftUI · SpriteKit · MultipeerConnectivity · Swift Concurrency')
+section('Engineering leadership & workflows')
+add('At Endava, supported AI adoption through developer enablement, code review, project integration and workflow automation. Mentored iOS developers and conducted technical interviews.')
+add('Built The Hive, a personal coding-agent workflow with shared schema contracts, code generation and automated build/test checks. Uses AI-assisted development with hands-on engineering review.')
+section('Additional portfolio work')
+add('Bubble Chase (CatChase), a SpriteKit arcade game with physics, power-ups and daily challenges. More applications and games, with screenshots, are available in the portfolio.','small')
 
 def footer(canvas,doc):
     canvas.setStrokeColor(colors.HexColor('#D9E3EB'));canvas.line(40,35,A4[0]-40,35)
@@ -101,6 +110,6 @@ def footer(canvas,doc):
     canvas.drawString(40,23,'Miloš Stevanović | Senior iOS Developer | Open to work')
     canvas.drawRightString(A4[0]-40,23,str(doc.page))
 Path(output).parent.mkdir(parents=True,exist_ok=True)
-doc=SimpleDocTemplate(output,pagesize=A4,rightMargin=40,leftMargin=40,topMargin=35,bottomMargin=45,title='Miloš Stevanović - Freelance Senior iOS Developer',author='Miloš Stevanović')
+doc=SimpleDocTemplate(output,pagesize=A4,rightMargin=40,leftMargin=40,topMargin=35,bottomMargin=45,title='Miloš Stevanović - Senior iOS Engineer - ' + options.variant.title(),author='Miloš Stevanović')
 doc.build(flow,onFirstPage=footer,onLaterPages=footer)
 print(output)

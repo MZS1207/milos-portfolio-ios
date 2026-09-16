@@ -451,12 +451,12 @@ window.CONTENT_DATA = {
         freelance: {
             listLabel: 'Available for',
             name: 'Freelance Senior iOS Developer', type: 'Self-employed · 1 Sep 2026 – Present', icon: '💻',
-            description: 'Independent since 1 September 2026 and open to new opportunities. I bring 10+ years of iOS experience, from enterprise and healthcare apps to independent games and product MVPs.',
+            description: 'Independent since 1 September 2026. Open to full-time and contract roles, remote work and relocation. I bring 10+ years of iOS experience, from enterprise and healthcare apps to independent games and product MVPs.',
             contributions: [
                 'Available for native iOS development with Swift, SwiftUI and UIKit',
                 'Product architecture, legacy-code improvements and performance work',
                 'AI-assisted development with hands-on review and build/test validation',
-                'Based in Belgrade; open to remote and on-site opportunities'
+                'Based in Belgrade; open to relocation and remote work. Employer visa / work permit sponsorship required for relocation'
             ],
             focus: ['Swift', 'SwiftUI', 'UIKit', 'Clean Architecture', 'AI-Assisted Delivery']
         },
