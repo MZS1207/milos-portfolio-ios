@@ -301,10 +301,19 @@ html[data-theme="dark"] .theme-icon-moon { opacity: 1; transform: rotate(0deg) s
 }
 
 .profile-role {
+    display: grid;
+    justify-items: center;
+    gap: var(--sp-1);
     font-size: 15px;
     color: var(--color-primary);
     font-weight: 600;
     margin-bottom: var(--sp-2);
+}
+
+.profile-stack {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--color-secondary);
 }
 
 .profile-location {
@@ -314,6 +323,21 @@ html[data-theme="dark"] .theme-icon-moon { opacity: 1; transform: rotate(0deg) s
     align-items: center;
     justify-content: center;
     gap: var(--sp-1);
+    line-height: 1.5;
+}
+
+.profile-location svg { flex-shrink: 0; }
+
+.profile-card .availability-badge { margin-bottom: var(--sp-2); }
+.profile-card .availability-badge::before { flex-shrink: 0; }
+
+.profile-mobility {
+    margin-top: var(--sp-1);
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--color-secondary);
+    text-align: center;
+    text-wrap: balance;
 }
 
 /* ---------- Stats Row ---------- */
