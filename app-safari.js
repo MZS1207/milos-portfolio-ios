@@ -409,6 +409,7 @@
             }).join('');
             return '<section class="gallery-album" aria-labelledby="album-' + groupIndex + '"><div class="gallery-album-heading"><div><h3 id="album-' + groupIndex + '">' + esc(name) + '</h3>' +
                 (project ? '<p>' + esc(project.type) + '</p>' : '') + '</div><span class="gallery-album-count">' + galleryCountFor(name) + (galleryCountFor(name) === 1 ? ' screen' : ' screens') + '</span></div>' +
+                (project && project.gallerySummary ? '<p class="gallery-album-description">' + esc(project.gallerySummary) + '</p>' : '') +
                 '<div class="gallery-album-grid">' + cards + '</div></section>';
         }).join('');
         grid.querySelectorAll('img').forEach(function (img) {

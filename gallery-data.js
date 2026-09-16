@@ -16,6 +16,14 @@
      width, height image dimensions; reserve layout before lazy loading
    ============================================================ */
 window.GALLERY_ITEMS = [
+    /* Native productivity, pet care and bilingual web */
+    {"type": "image", "src": "gallery/orbit-macos.jpg", "width": 1199, "height": 768, "project": "Orbit", "caption": "Native macOS workspace — cross-project metrics and activity"},
+    {"type": "image", "src": "gallery/orbit-ios.jpg", "width": 736, "height": 1600, "project": "Orbit", "caption": "iPhone dashboard — project switching, priorities and personal focus"},
+    {"type": "image", "src": "gallery/orbit-settings.jpg", "width": 650, "height": 785, "project": "Orbit", "caption": "Project settings — team, schedule and archive controls"},
+    {"type": "image", "src": "gallery/zoopal-stories.jpg", "width": 736, "height": 1600, "project": "ZooPal", "caption": "Stories home — daily pet-care facts, quiz and reading suggestions"},
+    {"type": "image", "src": "gallery/karolina-home.jpg", "width": 1280, "height": 720, "project": "Karolina Prevodi", "caption": "Serbian landing page — typography, identity and service discovery"},
+    {"type": "image", "src": "gallery/karolina-services.jpg", "width": 1280, "height": 720, "project": "Karolina Prevodi", "caption": "English service catalog — live language switching"},
+
     /* --- Bubble Chase / CatChase (iOS game) --- */
     { type: 'image', src: 'gallery/catchase-home.jpg', width: 1600, height: 736, project: 'Bubble Chase', caption: 'Little paws. Big adventures. — home & daily challenge' },
     { type: 'image', src: 'gallery/catchase-gameplay.jpg', width: 1600, height: 736, project: 'Bubble Chase', caption: 'Pop & dodge — live SpriteKit gameplay' },

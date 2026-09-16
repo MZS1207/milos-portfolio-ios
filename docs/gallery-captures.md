@@ -17,3 +17,17 @@ All nine additions are real application captures, not generated mockups. Exporte
 - BeamBike builds and launches successfully. Its authenticated screens require a backend/session, so no synthetic map or ride screenshots were added.
 
 These build checks and captures do not represent a full application regression test.
+
+## Expanded selection — 2026-09-16
+
+Six additional images bring the gallery to 37 screens across 11 projects.
+
+| Gallery files | Source | Capture |
+| --- | --- | --- |
+| `orbit-ios`, `orbit-macos`, `orbit-settings` | `Desktop/MyProjects/LocalJira/docs/screenshots/{home,macos-home,macos-project-management}.png` | Existing real screenshots documented in the project README. Bundled demo workspace; local persistence, no cross-device sync or Jira integration implied. |
+| `zoopal-stories` | PetDiary / ZooPal current source | New Debug simulator capture, iPhone 18 Pro / iOS 27, launched with the existing `--uitesting` argument. Shows built-in stories home without a signed-in account. No backend or health-workflow verification implied. |
+| `karolina-home`, `karolina-services` | `Desktop/MyProjects/karolina-prevodi/karolina-prevodi` | New browser captures of the local site, Serbian hero and English service catalog. Language switch exercised; no form submitted. |
+
+Images exported as JPEG, quality 88, maximum dimension 1600 px, preserving complete source frames and aspect ratios. No generated mockups or UI retouching.
+
+ZooPal and ManagerMacOS both built successfully into `/tmp` using Xcode. Native macOS UI capture timed out; Football Director was therefore not added from an unverified design preview. Original application source files were not edited. This was capture preparation, not a full regression test.

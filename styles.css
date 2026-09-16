@@ -1844,3 +1844,6 @@ html[data-theme="dark"] .list-icon.dark {
 .experience-availability a { display: flex; align-items: center; justify-content: space-between; min-height: 44px; padding: 12px 16px; border-radius: var(--r-md); background: var(--color-primary); color: #fff; font-size: 14px; font-weight: 600; text-decoration: none; }
 .experience-availability a:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; }
 .experience-history-title { margin: 4px 4px 0; }
+
+/* Context for the workflows shown in each album. */
+.gallery-album-description { margin: 0 0 14px; font-size: 13px; line-height: 1.55; color: var(--color-text); opacity: .75; }
