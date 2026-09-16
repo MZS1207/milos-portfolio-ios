@@ -278,7 +278,7 @@
         if (!x) return;
         renderDetail({
             icon: x.icon, name: x.name, type: x.type, description: x.description,
-            listLabel: 'Key contributions', list: x.contributions,
+            listLabel: x.listLabel || 'Key contributions', list: x.contributions,
             tagsLabel: 'Focus areas', tags: x.focus
         });
     }

@@ -1835,3 +1835,12 @@ html[data-theme="dark"] .list-icon.dark {
 .availability-badge { display: inline-flex; align-items: center; gap: 7px; margin-top: 12px; padding: 8px 13px; min-height: 44px; border-radius: var(--r-full); background: var(--color-fill); color: var(--color-text); font-size: 12px; font-weight: 600; text-decoration: none; }
 .availability-badge::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
 .availability-badge:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; }
+
+/* Make current freelance availability distinct from past employment. */
+.experience-current { border: 1px solid var(--color-primary); background: linear-gradient(135deg, rgba(0,122,255,.07), transparent), var(--color-surface); }
+.experience-current .card-title { color: var(--color-primary); }
+.experience-availability { padding: 0 4px 8px; }
+.experience-availability p { color: var(--color-text); opacity: .75; font-size: 12px; margin-bottom: 8px; }
+.experience-availability a { display: flex; align-items: center; justify-content: space-between; min-height: 44px; padding: 12px 16px; border-radius: var(--r-md); background: var(--color-primary); color: #fff; font-size: 14px; font-weight: 600; text-decoration: none; }
+.experience-availability a:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; }
+.experience-history-title { margin: 4px 4px 0; }
