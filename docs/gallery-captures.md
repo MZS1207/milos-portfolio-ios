@@ -31,3 +31,14 @@ Six additional images bring the gallery to 37 screens across 11 projects.
 Images exported as JPEG, quality 88, maximum dimension 1600 px, preserving complete source frames and aspect ratios. No generated mockups or UI retouching.
 
 ZooPal and ManagerMacOS both built successfully into `/tmp` using Xcode. Native macOS UI capture timed out; Football Director was therefore not added from an unverified design preview. Original application source files were not edited. This was capture preparation, not a full regression test.
+
+## Four-app refresh — 2026-09-24
+
+The featured albums now contain BugCorpGame (4), Kuvar (4), Translato (4), and Cute Bubble Chase (6). Other albums remain available: 43 screens across 12 projects total. Existing source captures were reviewed and reused; no new app build or capture was required in this pass.
+
+- `bugcorp-202609-*`: `Desktop/MyProjects/hiveProjects/the-hive-3/docs/app-store/screenshots/06-duel.png`, `02-collection.png`, `01-store.png`, `05-pack-reveal.png`. Replaces the earlier Debug album with the current duel, collection, pack and card-reveal screens. No real purchase or multiplayer session is claimed.
+- `kuvar-202609-*`: `Desktop/MyProjects/Kuvar/Kuvar/docs/app-store/screenshots/iphone/{01-home,02-recipe-detail,03-cooking}.png` and `ipad/02-recipe-detail.png`. Source README documents native UI-test captures from 2026-09-24 with bundled recipes. Replaces the old gallery set.
+- `translato-*`: `Desktop/MyProjects/Translato/build/qa/{editor,document-preview,translation-memory,find-replace}.png`. Native Mac QA captures showing a sample English-to-Serbian travel guide, not customer documents.
+- `cute-bubble-*`: `Desktop/MyProjects/CatChase/docs/app-store/screenshots/iphone-6.9/{02-home,01-gameplay,03-how-to-play,04-powerups}.png` and `ipad-13/{02-home,01-gameplay}.png`. Existing Release screenshots documented in the source README. Cute Bubble Chase is the portfolio title; the captured game UI says Bubble Chase. These are existing build 3 screens, not a claim of a new capture date.
+
+All 18 selected source images were visually inspected. JPEG delivery assets preserve the full frame and aspect ratio, max dimension 2000 px, quality 90. No UI content was retouched. Prior images remain on disk but the replaced sets are no longer listed in the gallery.

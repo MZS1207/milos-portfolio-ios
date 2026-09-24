@@ -17,6 +17,7 @@ window.CONTENT_DATA = {
 
     /* ---------- Projects ---------- */
     projects: {
+        translato: {"name": "Translato", "type": "Native macOS Translation Workspace", "icon": "🌐", "description": "A native macOS computer-assisted translation app with a bilingual segment editor, local translation memory and document previews.", "features": ["Bilingual segment editing and translation status", "Local translation memory with exact and fuzzy matches", "Side-by-side document preview", "Find and replace across project segments", "Document import, export and on-device OCR"], "tech": ["SwiftUI", "SQLite / GRDB", "PDFKit", "Vision"], "highlights": "Keeps project editing and translation memory local, with optional machine-translation providers. The screenshots show an English-to-Serbian travel-guide sample.", "gallery": "Translato", "gallerySummary": "Translate documents segment by segment, reuse translation memory and review the result in a native Mac workspace."},
         orbit: {"name": "Orbit", "type": "Native iOS & macOS Project Management", "icon": "🪐", "description": "A native SwiftUI workspace for projects and issues, with dedicated iPhone and macOS layouts. The current app stores each workspace locally and starts with demo projects.", "features": ["Cross-project dashboard and personal focus", "Five-state issue board and workspace search", "Project creation, team assignment and scheduling", "Archive and restore project workflows", "Local persistence across app launches"], "tech": ["SwiftUI", "macOS", "iOS", "Local Persistence"], "highlights": "A working local project-management app. The screenshots use bundled demo projects; cloud sync and Jira integration are not part of the current build.", "gallery": "Orbit", "gallerySummary": "Plan projects, track issues and manage teams in native iPhone and Mac layouts. Shown with demo data."},
         zoopal: {"name": "ZooPal", "type": "Pet Care & Diary · iOS", "icon": "🐾", "description": "An iOS pet-care app organised around Home, Diary, Pets and More. The gallery shows its built-in stories home.", "features": ["Daily pet-care facts and quizzes", "Pet profiles and health records", "Diary entries with photos and voice notes", "Medication, symptom and vet-visit tracking"], "tech": ["SwiftUI", "SwiftData", "AVFoundation", "Speech"], "highlights": "Combines pet records and journaling with an approachable daily reading experience. The gallery shows the stories home.", "gallery": "ZooPal", "gallerySummary": "A pet-care companion with diary and health workflows. This capture shows the stories and daily quiz home."},
         karolina: {"name": "Karolina Prevodi", "type": "Bilingual Translation Website", "icon": "✍️", "description": "A responsive translation-services website with Serbian and English content, an editorial visual identity and a guided quote-request form.", "features": ["Live Serbian / English language switching", "Translation service catalog", "Three-step collaboration overview", "Two-step quote-request interface", "Responsive layout and FAQ"], "tech": ["HTML", "CSS", "JavaScript", "Responsive Design"], "highlights": "A consistent visual identity across Serbian and English, with a clear path from exploring services to requesting a quote.", "gallery": "Karolina Prevodi", "gallerySummary": "An editorial website for translation services, with live Serbian / English switching and a guided inquiry flow."},
@@ -198,7 +199,7 @@ window.CONTENT_DATA = {
             highlights: 'Insurance at UK scale means strict compliance, accessibility and releases that simply cannot break for millions of policyholders.'
         },
         catchase: {
-            name: 'Bubble Chase (CatChase)',
+            name: 'Cute Bubble Chase',
             type: 'iOS Arcade Game',
             icon: '🐱',
             description: 'A SpriteKit arcade game: move your cat, pop bouncing balls and dodge danger. Includes daily challenges, collectible cosmetics and a guided introduction to power-ups.',
@@ -211,7 +212,8 @@ window.CONTENT_DATA = {
                 'Level Progression'
             ],
             tech: ['Swift', 'SpriteKit', 'Core Animation', 'Game Physics', 'Sound Effects', 'Game Center'],
-            gallery: 'Bubble Chase',
+            gallerySummary: 'A SpriteKit arcade game with daily challenges, illustrated guides and power-ups on iPhone and iPad.',
+            gallery: 'Cute Bubble Chase',
             highlights: 'A pure fun project. SpriteKit physics, springy animations and difficulty tuning until the cat felt just right.'
         },
         endava: {
@@ -248,20 +250,21 @@ window.CONTENT_DATA = {
             links: []
         },
         bugcorpduel: {
-            name: 'Bug Corp Duel',
+            name: 'BugCorpGame',
             type: 'iOS P2P Card Game',
             icon: '🃏',
-            description: 'Yu-Gi-Oh-style card duel game with an IT-office parody theme: deterministic seeded game engine, 132-card catalogue with reaction/trap windows, and serverless peer-to-peer multiplayer.',
+            description: 'Yu-Gi-Oh-style card duel game with an IT-office parody theme: deterministic seeded game engine, collectible card catalogue with reaction/trap windows, and serverless peer-to-peer multiplayer.',
             features: [
                 'Deterministic seeded game engine',
-                '132-card catalogue & trap/reaction windows',
+                'collectible card catalogue & trap/reaction windows',
                 'Serverless P2P multiplayer (MultipeerConnectivity)',
                 'Simulation-driven balance tuning (400 auto-matches)',
                 '100+ unit & integration tests',
                 'Swift 6 strict concurrency'
             ],
             tech: ['SwiftUI', 'SpriteKit', 'MultipeerConnectivity', 'Network.framework', 'SwiftPM', 'XcodeGen'],
-            gallery: 'Bug Corp Duel',
+            gallerySummary: 'Corporate-satire card battles, collectible characters and pack reveals.',
+            gallery: 'BugCorpGame',
             highlights: 'Built end-to-end through The Hive: 116 orchestrated AI-agent tasks, full green build & test gate.'
         },
         beambike: {
@@ -347,10 +350,11 @@ window.CONTENT_DATA = {
                 'Recipe packs and a searchable cookbook',
                 'Quick filters: time, difficulty, calories',
                 'Saved recipes and cooking history',
-                'Dark-mode-first UI'
+                'Guided cooking with step timers on iPhone and iPad'
             ],
             tech: ['SwiftUI', 'Swift Concurrency', 'Core Data', 'Localization'],
             highlights: 'Small product, lots of data modelling - ingredients, recipes, plans and nutrition all had to stay consistent. Built with The Hive.',
+            gallerySummary: 'Discover recipes, explore ingredients and cook step by step with timers. Shown on iPhone and iPad.',
             gallery: 'Kuvar',
             links: []
         },
