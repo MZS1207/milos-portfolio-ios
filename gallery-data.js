@@ -18,35 +18,67 @@
 window.GALLERY_ITEMS = [
     {
         "type": "image",
-        "src": "gallery/bugcorp-202609-duel.jpg",
-        "width": 921,
+        "src": "gallery/slikovnica-20260929-home.jpg",
+        "width": 920,
         "height": 2000,
-        "project": "BugCorpGame",
-        "caption": "Turn-based duel — phases, hand and battlefield"
+        "project": "Slikovnica",
+        "caption": "Illustrated collections — a playful, bilingual coloring book"
     },
     {
         "type": "image",
-        "src": "gallery/bugcorp-202609-collection.jpg",
-        "width": 921,
+        "src": "gallery/slikovnica-20260929-coloring.jpg",
+        "width": 920,
         "height": 2000,
-        "project": "BugCorpGame",
-        "caption": "Card collection — employees, rarity and owned cards"
+        "project": "Slikovnica",
+        "caption": "Coloring canvas — region painting, palette, undo and eraser"
     },
     {
         "type": "image",
-        "src": "gallery/bugcorp-202609-packs.jpg",
-        "width": 921,
+        "src": "gallery/slikovnica-20260929-collection.jpg",
+        "width": 920,
         "height": 2000,
-        "project": "BugCorpGame",
-        "caption": "HR procurement — card packs and progression"
+        "project": "Slikovnica",
+        "caption": "Dinosaur collection — browse illustrated page previews"
     },
     {
         "type": "image",
-        "src": "gallery/bugcorp-202609-reveal.jpg",
-        "width": 921,
+        "src": "gallery/slikovnica-20260929-saved.jpg",
+        "width": 920,
+        "height": 2000,
+        "project": "Slikovnica",
+        "caption": "My drawings — saved colors and one-tap continuation"
+    },
+    {
+        "type": "image",
+        "src": "gallery/bugcorp-20260929-home.jpg",
+        "width": 924,
         "height": 2000,
         "project": "BugCorpGame",
-        "caption": "Pack reveal — character artwork, abilities and stats"
+        "caption": "Redesigned home — choose an opponent and start a duel"
+    },
+    {
+        "type": "image",
+        "src": "gallery/bugcorp-20260929-duel.jpg",
+        "width": 924,
+        "height": 2000,
+        "project": "BugCorpGame",
+        "caption": "Turn-based duel — illustrated cards, battlefield and turn phases"
+    },
+    {
+        "type": "image",
+        "src": "gallery/bugcorp-20260929-collection.jpg",
+        "width": 924,
+        "height": 2000,
+        "project": "BugCorpGame",
+        "caption": "Card collection — executive artwork, rarity and owned cards"
+    },
+    {
+        "type": "image",
+        "src": "gallery/bugcorp-20260929-packs.jpg",
+        "width": 924,
+        "height": 2000,
+        "project": "BugCorpGame",
+        "caption": "Procurement — earned packs, collection progress and card bundles"
     },
     {
         "type": "image",
@@ -66,11 +98,11 @@ window.GALLERY_ITEMS = [
     },
     {
         "type": "image",
-        "src": "gallery/kuvar-202609-cooking.jpg",
-        "width": 921,
+        "src": "gallery/kuvar-20260929-cooking.jpg",
+        "width": 924,
         "height": 2000,
         "project": "Kuvar",
-        "caption": "Guided cooking — step-by-step instructions and timer"
+        "caption": "English cooking mode — guided recipe steps and an active timer"
     },
     {
         "type": "image",

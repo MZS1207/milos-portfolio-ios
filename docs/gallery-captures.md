@@ -42,3 +42,11 @@ The featured albums now contain BugCorpGame (4), Kuvar (4), Translato (4), and C
 - `cute-bubble-*`: `Desktop/MyProjects/CatChase/docs/app-store/screenshots/iphone-6.9/{02-home,01-gameplay,03-how-to-play,04-powerups}.png` and `ipad-13/{02-home,01-gameplay}.png`. Existing Release screenshots documented in the source README. Cute Bubble Chase is the portfolio title; the captured game UI says Bubble Chase. These are existing build 3 screens, not a claim of a new capture date.
 
 All 18 selected source images were visually inspected. JPEG delivery assets preserve the full frame and aspect ratio, max dimension 2000 px, quality 90. No UI content was retouched. Prior images remain on disk but the replaced sets are no longer listed in the gallery.
+
+## Visual refresh — 2026-09-29
+
+- BugCorpGame: replaced all four album images with the September 27 release-candidate captures in `Desktop/MyProjects/hiveProjects/the-hive-3/docs/app-store/rc-2026-09-27/upload-screenshots/rc3-{01-duel,02-collection,03-menu,04-store}.png`. Shows the redesigned home, battlefield, executive artwork and procurement. No purchase or multiplayer verification implied.
+- Slikovnica: added four actual app captures from `Desktop/MyProjects/iOS Slikovnica/Docs/Previews/`: `iphone-playful-English-home.png`, `iphone-playful-English-palette.png`, `iphone-playful-Public-gallery.png`, and `iphone-Saved-drawings.png`. Shows the illustrated home, coloring tools, dinosaur collection and saved drawing. Feature copy checked against the project README; disabled narration is not advertised.
+- Kuvar: replaced the cooking screen with `Desktop/MyProjects/Kuvar/Kuvar/docs/screenshots/localization-english-iphone.png`, demonstrating English localization and the running timer.
+
+All nine selected images visually reviewed. Exported with full frames, EXIF orientation applied, maximum dimension 2000px, JPEG quality 90. Existing source screenshots reused without UI retouching or new builds. Versioned filenames prevent stale image caches. Other albums retained; gallery now contains 47 screens across 13 projects.
