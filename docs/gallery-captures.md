@@ -50,3 +50,7 @@ All 18 selected source images were visually inspected. JPEG delivery assets pres
 - Kuvar: replaced the cooking screen with `Desktop/MyProjects/Kuvar/Kuvar/docs/screenshots/localization-english-iphone.png`, demonstrating English localization and the running timer.
 
 All nine selected images visually reviewed. Exported with full frames, EXIF orientation applied, maximum dimension 2000px, JPEG quality 90. Existing source screenshots reused without UI retouching or new builds. Versioned filenames prevent stale image caches. Other albums retained; gallery now contains 47 screens across 13 projects.
+
+## ZooPal album — 2026-09-29
+
+Expanded ZooPal to five screens: four existing Android development captures (`profile-light.png`, `care-calendar.png`, `measurements.png`, `virtual-companion.png`) from `Desktop/MyProjects/PetDiary/PetDiary/PetDiaryAndroid/docs/screenshots/`, plus the existing iOS stories home. All four additions visually reviewed and exported as full-frame JPEGs, quality 90, max 2000px. Captions explicitly identify platforms; project copy notes Android parity remains in progress. No new build, account login, sync or production verification performed. Gallery now contains 51 screens across 13 projects.

@@ -18,6 +18,46 @@
 window.GALLERY_ITEMS = [
     {
         "type": "image",
+        "src": "gallery/zoopal-20260929-profile.jpg",
+        "width": 1080,
+        "height": 1920,
+        "project": "ZooPal",
+        "caption": "Android — pet profile and care summary"
+    },
+    {
+        "type": "image",
+        "src": "gallery/zoopal-20260929-calendar.jpg",
+        "width": 1080,
+        "height": 1731,
+        "project": "ZooPal",
+        "caption": "Android — care calendar and scheduled records"
+    },
+    {
+        "type": "image",
+        "src": "gallery/zoopal-20260929-measurements.jpg",
+        "width": 1080,
+        "height": 1731,
+        "project": "ZooPal",
+        "caption": "Android — body measurements and weight history"
+    },
+    {
+        "type": "image",
+        "src": "gallery/zoopal-20260929-companion.jpg",
+        "width": 1080,
+        "height": 1731,
+        "project": "ZooPal",
+        "caption": "Android — virtual companion and daily care"
+    },
+    {
+        "type": "image",
+        "src": "gallery/zoopal-stories.jpg",
+        "width": 736,
+        "height": 1600,
+        "project": "ZooPal",
+        "caption": "iOS — stories home and daily quiz"
+    },
+    {
+        "type": "image",
         "src": "gallery/slikovnica-20260929-home.jpg",
         "width": 920,
         "height": 2000,
@@ -215,14 +255,6 @@ window.GALLERY_ITEMS = [
         "height": 785,
         "project": "Orbit",
         "caption": "Project settings — team, schedule and archive controls"
-    },
-    {
-        "type": "image",
-        "src": "gallery/zoopal-stories.jpg",
-        "width": 736,
-        "height": 1600,
-        "project": "ZooPal",
-        "caption": "Stories home — daily pet-care facts, quiz and reading suggestions"
     },
     {
         "type": "image",
