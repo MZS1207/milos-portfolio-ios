@@ -52,7 +52,7 @@ add('Senior iOS Engineer | Swift · SwiftUI · UIKit','role')
 add('<b>Open to full-time and contract opportunities</b> | Belgrade, Serbia','small')
 add('Open to relocation and remote work | Employer visa / work permit sponsorship required for relocation','small')
 add('+381 60 316 1917 | <link href="mailto:milosstevanovic12@yahoo.com" color="#1764AC">milosstevanovic12@yahoo.com</link>','small')
-add('<link href="https://www.linkedin.com/in/milo%C5%A1-stevanovi%C4%87-a8b932ba/" color="#1764AC">LinkedIn</link>  |  <link href="https://mzs1207.github.io/milos-portfolio-ios/" color="#1764AC">Portfolio &amp; app gallery</link>  |  <link href="https://github.com/MZS1207" color="#1764AC">GitHub</link>','small')
+add('<link href="https://www.linkedin.com/in/milo%C5%A1-stevanovi%C4%87-a8b932ba/" color="#1764AC">LinkedIn</link>  |  <link href="https://mzs1207.github.io/milos-portfolio-ios/" color="#1764AC">Portfolio &amp; app gallery</link>  |  <link href="https://github.com/MZS1207" color="#1764AC">GitHub</link>  |  <link href="https://apps.apple.com/rs/developer/milos-stevanovic/id6811582503" color="#1764AC">App Store developer</link>','small')
 section('Profile')
 profiles = {
  'product': 'Senior iOS engineer with 10+ years of experience and 25+ shipped apps across insurance, healthcare, fintech, telecom and consumer products. Delivers native applications with Swift, SwiftUI and UIKit, from concept to production. Experience includes payment and account flows, healthcare applications and recovery of inherited codebases. Former Senior Engineer at Endava, with mentoring and technical interviewing responsibilities.',
@@ -96,6 +96,7 @@ project('DXP - Hybrid Insurance Platform','Endava | 2024 - Aug 2026','Contribute
 project('Ding - Global Mobile Recharge','Endava | 2023 - 2024','Worked on the iOS app for a platform serving 150+ countries, including secure payments, user accounts and evolving business requirements.','Swift · Stripe SDK · Core Data')
 project('Schüco SmartTouch - Smart Door Control','Freelance project | 2024 - 2025','Revived and stabilised an inherited smart-door application with Bluetooth unlock, Touch ID, remote access and live door status.','Swift · Core Bluetooth · Touch ID · Push Notifications')
 section('Selected independent engineering')
+project('Translato - macOS Translation Workspace','Published on the Mac App Store | Independent product','Built a native translation workspace with bilingual segment editing, local translation memory, document previews and OCR. <link href="https://apps.apple.com/rs/app/translato/id6815766459?mt=12" color="#1764AC">View Translato on the App Store</link>.','SwiftUI · SQLite / GRDB · PDFKit · Vision')
 project('BeamBike - E-Bike Sharing MVP','Independent multi-platform project','Built a mobility MVP spanning native iOS and Android apps, a backend, admin dashboard and IoT simulator, with geofenced maps and realtime fleet updates.','SwiftUI · Kotlin · Node.js · PostgreSQL · Redis · WebSocket')
 project('Bug Corp Duel - Strategy Card Game','Independent iOS project','Built a deterministic game engine with a 132-card library, local AI duels and peer-to-peer multiplayer architecture.','SwiftUI · SpriteKit · MultipeerConnectivity · Swift Concurrency')
 section('Engineering leadership & workflows')
