@@ -54,3 +54,9 @@ All nine selected images visually reviewed. Exported with full frames, EXIF orie
 ## ZooPal album — 2026-09-29
 
 Expanded ZooPal to five screens: four existing Android development captures (`profile-light.png`, `care-calendar.png`, `measurements.png`, `virtual-companion.png`) from `Desktop/MyProjects/PetDiary/PetDiary/PetDiaryAndroid/docs/screenshots/`, plus the existing iOS stories home. All four additions visually reviewed and exported as full-frame JPEGs, quality 90, max 2000px. Captions explicitly identify platforms; project copy notes Android parity remains in progress. No new build, account login, sync or production verification performed. Gallery now contains 51 screens across 13 projects.
+
+## Release screenshot refresh — 2026-10-05
+
+Replaced the full Kuvar and Slikovnica albums with visually inspected existing release screenshots. Kuvar now has six images (three iPhone, three landscape iPad), sourced from `Desktop/MyProjects/Kuvar/Kuvar/docs/app-store/releases/1.01/screenshots/{iphone,ipad}/{01-home,02-recipe-detail,03-cooking}.png`, dated October 1. Slikovnica has four images from `Desktop/MyProjects/iOS Slikovnica/Docs/Release/Screenshots/iPhone-6.9/en-{01-home,02-free-drawings,03-coloring,04-dinosaur-previews}.png`, dated September 30.
+
+All ten images preserve the complete frame and EXIF orientation, exported at JPEG quality 90 with a maximum dimension of 2000px. New filenames avoid stale caches. Kuvar is now the first album. Other albums retained where no newer app screenshot set was identified. Gallery contains 53 screens across 13 projects. No new application builds or purchase verification were performed.

@@ -18,6 +18,86 @@
 window.GALLERY_ITEMS = [
     {
         "type": "image",
+        "src": "gallery/kuvar-20261005-iphone-home.jpg",
+        "width": 921,
+        "height": 2000,
+        "project": "Kuvar",
+        "caption": "iPhone cookbook — recipe collections and quick filters"
+    },
+    {
+        "type": "image",
+        "src": "gallery/kuvar-20261005-iphone-recipe.jpg",
+        "width": 921,
+        "height": 2000,
+        "project": "Kuvar",
+        "caption": "iPhone recipe detail — ingredients and preparation"
+    },
+    {
+        "type": "image",
+        "src": "gallery/kuvar-20261005-iphone-cooking.jpg",
+        "width": 921,
+        "height": 2000,
+        "project": "Kuvar",
+        "caption": "iPhone cooking mode — step-by-step instructions and timer"
+    },
+    {
+        "type": "image",
+        "src": "gallery/kuvar-20261005-ipad-home.jpg",
+        "width": 2000,
+        "height": 1500,
+        "project": "Kuvar",
+        "caption": "iPad cookbook — recipe collections and quick filters"
+    },
+    {
+        "type": "image",
+        "src": "gallery/kuvar-20261005-ipad-recipe.jpg",
+        "width": 2000,
+        "height": 1500,
+        "project": "Kuvar",
+        "caption": "iPad recipe detail — ingredients and preparation"
+    },
+    {
+        "type": "image",
+        "src": "gallery/kuvar-20261005-ipad-cooking.jpg",
+        "width": 2000,
+        "height": 1500,
+        "project": "Kuvar",
+        "caption": "iPad cooking mode — step-by-step instructions and timer"
+    },
+    {
+        "type": "image",
+        "src": "gallery/slikovnica-20261005-home.jpg",
+        "width": 921,
+        "height": 2000,
+        "project": "Slikovnica",
+        "caption": "iPhone home — sketchpad and illustrated collections"
+    },
+    {
+        "type": "image",
+        "src": "gallery/slikovnica-20261005-drawings.jpg",
+        "width": 921,
+        "height": 2000,
+        "project": "Slikovnica",
+        "caption": "Free drawing collection — illustrated page browser"
+    },
+    {
+        "type": "image",
+        "src": "gallery/slikovnica-20261005-coloring.jpg",
+        "width": 921,
+        "height": 2000,
+        "project": "Slikovnica",
+        "caption": "Coloring canvas — palette, undo and eraser"
+    },
+    {
+        "type": "image",
+        "src": "gallery/slikovnica-20261005-dinosaurs.jpg",
+        "width": 921,
+        "height": 2000,
+        "project": "Slikovnica",
+        "caption": "Dinosaur collection — preview illustrated pages"
+    },
+    {
+        "type": "image",
         "src": "gallery/zoopal-20260929-profile.jpg",
         "width": 1080,
         "height": 1920,
@@ -58,38 +138,6 @@ window.GALLERY_ITEMS = [
     },
     {
         "type": "image",
-        "src": "gallery/slikovnica-20260929-home.jpg",
-        "width": 920,
-        "height": 2000,
-        "project": "Slikovnica",
-        "caption": "Illustrated collections — a playful, bilingual coloring book"
-    },
-    {
-        "type": "image",
-        "src": "gallery/slikovnica-20260929-coloring.jpg",
-        "width": 920,
-        "height": 2000,
-        "project": "Slikovnica",
-        "caption": "Coloring canvas — region painting, palette, undo and eraser"
-    },
-    {
-        "type": "image",
-        "src": "gallery/slikovnica-20260929-collection.jpg",
-        "width": 920,
-        "height": 2000,
-        "project": "Slikovnica",
-        "caption": "Dinosaur collection — browse illustrated page previews"
-    },
-    {
-        "type": "image",
-        "src": "gallery/slikovnica-20260929-saved.jpg",
-        "width": 920,
-        "height": 2000,
-        "project": "Slikovnica",
-        "caption": "My drawings — saved colors and one-tap continuation"
-    },
-    {
-        "type": "image",
         "src": "gallery/bugcorp-20260929-home.jpg",
         "width": 924,
         "height": 2000,
@@ -119,38 +167,6 @@ window.GALLERY_ITEMS = [
         "height": 2000,
         "project": "BugCorpGame",
         "caption": "Procurement — earned packs, collection progress and card bundles"
-    },
-    {
-        "type": "image",
-        "src": "gallery/kuvar-202609-cookbook.jpg",
-        "width": 921,
-        "height": 2000,
-        "project": "Kuvar",
-        "caption": "iPhone cookbook — recipe collections and quick filters"
-    },
-    {
-        "type": "image",
-        "src": "gallery/kuvar-202609-recipe.jpg",
-        "width": 921,
-        "height": 2000,
-        "project": "Kuvar",
-        "caption": "Recipe detail — preparation time, servings and ingredients"
-    },
-    {
-        "type": "image",
-        "src": "gallery/kuvar-20260929-cooking.jpg",
-        "width": 924,
-        "height": 2000,
-        "project": "Kuvar",
-        "caption": "English cooking mode — guided recipe steps and an active timer"
-    },
-    {
-        "type": "image",
-        "src": "gallery/kuvar-202609-ipad.jpg",
-        "width": 1500,
-        "height": 2000,
-        "project": "Kuvar",
-        "caption": "iPad recipe detail — a layout made for a larger screen"
     },
     {
         "type": "image",
