@@ -290,51 +290,51 @@ window.GALLERY_ITEMS = [
     },
     {
         "type": "image",
-        "src": "gallery/fm-menu.jpg",
-        "width": 736,
-        "height": 1600,
-        "project": "Football Manager",
-        "caption": "Main menu - Build Your Legacy"
+        "src": "gallery/touchline-atlas-20261006-iphone-career-dashboard.png",
+        "width": 1320,
+        "height": 2868,
+        "project": "Touchline Atlas Mobile",
+        "caption": "iPhone — Career dashboard — club news and contract updates"
     },
     {
         "type": "image",
-        "src": "gallery/fm-match-sim.jpg",
-        "width": 736,
-        "height": 1600,
-        "project": "Football Manager",
-        "caption": "Live 2D match simulation"
+        "src": "gallery/touchline-atlas-20261006-iphone-new-career.png",
+        "width": 1320,
+        "height": 2868,
+        "project": "Touchline Atlas Mobile",
+        "caption": "iPhone — New career — choose a club and league"
     },
     {
         "type": "image",
-        "src": "gallery/fm-table.jpg",
-        "width": 736,
-        "height": 1600,
-        "project": "Football Manager",
-        "caption": "League table - Premier Division"
+        "src": "gallery/touchline-atlas-20261006-iphone-fixtures.png",
+        "width": 1320,
+        "height": 2868,
+        "project": "Touchline Atlas Mobile",
+        "caption": "iPhone — Season overview — upcoming fixtures and standings"
     },
     {
         "type": "image",
-        "src": "gallery/fm-dressing-room.jpg",
-        "width": 736,
-        "height": 1600,
-        "project": "Football Manager",
-        "caption": "Dressing room - pre-match team talk"
+        "src": "gallery/touchline-atlas-20261006-iphone-club.png",
+        "width": 1320,
+        "height": 2868,
+        "project": "Touchline Atlas Mobile",
+        "caption": "iPhone — Club hub — squad, tactics, training and transfers"
     },
     {
         "type": "image",
-        "src": "gallery/fm-news.jpg",
-        "width": 736,
-        "height": 1600,
-        "project": "Football Manager",
-        "caption": "Club inbox - news, contracts & transfers"
+        "src": "gallery/touchline-atlas-20261006-ipad-career-dashboard.png",
+        "width": 2064,
+        "height": 2752,
+        "project": "Touchline Atlas Mobile",
+        "caption": "iPad — Career dashboard — expanded news overview"
     },
     {
         "type": "image",
-        "src": "gallery/fm-club.jpg",
-        "width": 736,
-        "height": 1600,
-        "project": "Football Manager",
-        "caption": "Club hub - squad, tactics & staff"
+        "src": "gallery/touchline-atlas-20261006-ipad-club.png",
+        "width": 2064,
+        "height": 2752,
+        "project": "Touchline Atlas Mobile",
+        "caption": "iPad — Club hub — team management and competitions"
     },
     {
         "type": "image",

@@ -287,21 +287,22 @@ window.CONTENT_DATA = {
             links: []
         },
         footballmanager: {
-            name: 'Football Manager',
-            type: 'iOS Sports Management Game',
+            name: 'Touchline Atlas Mobile',
+            type: 'iPhone & iPad Football Management Game',
             icon: '⚽',
-            description: 'Club-management game for iPhone: pick a club, run the squad, tactics and staff, negotiate contracts and transfers, then watch matches play out in a live 2D simulation with commentary.',
+            description: 'A native football club-management game for iPhone and iPad: build a career in a fictional football world, manage your club and follow the season.',
             features: [
-                'Live 2D match engine with play-by-play commentary',
-                'League tables, fixtures and multi-division seasons',
-                'Squad, tactics, staff and club-hub management',
-                'Dressing-room team talks that affect morale',
-                'Inbox with news, contract and transfer negotiations',
-                'Save / load careers with persistent game state'
+                'Career creation with club and league selection',
+                'Club news, board messages and contract updates',
+                'Season overview, upcoming fixtures and league standings',
+                'Club hub for squad, tactics, training and transfers',
+                'Locally saved careers with backup and recovery',
+                'Dedicated iPhone and iPad layouts'
             ],
-            tech: ['SwiftUI', 'SpriteKit', 'Swift Concurrency', 'Core Data', 'Game Simulation'],
-            highlights: 'The match engine was the hard part: a deterministic simulation that stays believable at 2x speed, rendered in SpriteKit on top of a SwiftUI shell. Built with The Hive.',
-            gallery: 'Football Manager',
+            tech: ['SwiftUI', 'Game Simulation', 'Local Persistence'],
+            highlights: 'The gallery shows the 6 October 2026 release-build captures with fictional clubs and players. This build uses the Football Director name in its interface.',
+            gallery: 'Touchline Atlas Mobile',
+            gallerySummary: 'Explore career creation, club news, the season overview and club management across iPhone and iPad.',
             links: []
         },
         vaskotaxi: {
