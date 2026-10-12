@@ -60,3 +60,9 @@ Expanded ZooPal to five screens: four existing Android development captures (`pr
 Replaced the full Kuvar and Slikovnica albums with visually inspected existing release screenshots. Kuvar now has six images (three iPhone, three landscape iPad), sourced from `Desktop/MyProjects/Kuvar/Kuvar/docs/app-store/releases/1.01/screenshots/{iphone,ipad}/{01-home,02-recipe-detail,03-cooking}.png`, dated October 1. Slikovnica has four images from `Desktop/MyProjects/iOS Slikovnica/Docs/Release/Screenshots/iPhone-6.9/en-{01-home,02-free-drawings,03-coloring,04-dinosaur-previews}.png`, dated September 30.
 
 All ten images preserve the complete frame and EXIF orientation, exported at JPEG quality 90 with a maximum dimension of 2000px. New filenames avoid stale caches. Kuvar is now the first album. Other albums retained where no newer app screenshot set was identified. Gallery contains 53 screens across 13 projects. No new application builds or purchase verification were performed.
+
+## Pet Buddy and NoteVita — 2026-10-12
+
+Added ten screenshots per app: five iPhone and five iPad. Pet Buddy uses existing release captures from `.codex/worktrees/petdiary-local/PetDiary/PetDiary/ReleasePreparation/screenshots/{iphone,ipad}/`: home, pets, calendar, Plus report options and Plus trends. NoteVita uses `Desktop/MyProjects/HealthTrackingOffline/Documentation/AppStore/screenshots/{iphone-69,ipad-13}/`: today, diary, health, trends and backup.
+
+All twenty source frames were visually reviewed and exported as full-frame JPEGs at quality 90, maximum 2000px. Screens show sample data. No app rebuild, purchase or production verification was performed. ZooPal's older iOS/Android development album remains separate from the current native Pet Buddy release. Project descriptions and both downloadable CV variants now include the new independent products.

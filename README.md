@@ -11,7 +11,7 @@ Five tab "screens" with swipe, keyboard and tab-bar navigation, deep links per t
 - **About** - profile, stats, iMessage-style intro, quick actions (email, phone, LinkedIn, GitHub, CV download), education
 - **Skills** - core expertise, architecture, AI tooling and practices, each tappable for details
 - **Experience** - timeline with per-role detail modals
-- **Projects** - 21 selected apps across enterprise, healthcare, fintech and AI-built personal work; project sheets can jump straight to their screenshots in the Gallery
+- **Projects** - 28 selected apps across enterprise, healthcare, fintech and AI-built personal work; project sheets can jump straight to their screenshots in the Gallery
 - **Gallery** - project albums with uncropped screenshots, captions, counted project filters and a fullscreen viewer (images & video). Landscape screenshots span the full album width; viewer controls support touch and keyboard
 
 On phones the app runs edge-to-edge; on tablets and desktops it renders as a centred iPhone mockup on a glassmorphism backdrop.
@@ -60,7 +60,7 @@ iOS-inspired design tokens live at the top of `styles.css`: system palette (`#00
 
 ## Screenshot provenance
 
-Gallery additions and simulator build notes are recorded in [docs/gallery-captures.md](docs/gallery-captures.md). The gallery currently includes 31 screens across 8 projects, including Bubble Chase, Bug Corp Duel and BeamBike.
+Gallery additions and simulator build notes are recorded in [docs/gallery-captures.md](docs/gallery-captures.md). The gallery currently includes 73 screens across 15 projects, including Pet Buddy and NoteVita with five iPhone and five iPad captures each.
 
 ## Updating the downloadable CV
 

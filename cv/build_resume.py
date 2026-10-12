@@ -97,13 +97,13 @@ project('Ding - Global Mobile Recharge','Endava | 2023 - 2024','Worked on the iO
 project('Schüco SmartTouch - Smart Door Control','Freelance project | 2024 - 2025','Revived and stabilised an inherited smart-door application with Bluetooth unlock, Touch ID, remote access and live door status.','Swift · Core Bluetooth · Touch ID · Push Notifications')
 section('Selected independent engineering')
 project('Translato - macOS Translation Workspace','Published on the Mac App Store | Independent product','Built a native translation workspace with bilingual segment editing, local translation memory, document previews and OCR. <link href="https://apps.apple.com/rs/app/translato/id6815766459?mt=12" color="#1764AC">View Translato on the App Store</link>.','SwiftUI · SQLite / GRDB · PDFKit · Vision')
-project('BeamBike - E-Bike Sharing MVP','Independent multi-platform project','Built a mobility MVP spanning native iOS and Android apps, a backend, admin dashboard and IoT simulator, with geofenced maps and realtime fleet updates.','SwiftUI · Kotlin · Node.js · PostgreSQL · Redis · WebSocket')
-project('Bug Corp Duel - Strategy Card Game','Independent iOS project','Built a deterministic game engine with a 132-card library, local AI duels and peer-to-peer multiplayer architecture.','SwiftUI · SpriteKit · MultipeerConnectivity · Swift Concurrency')
+project('Pet Buddy - Pet Care Diary','Independent iPhone &amp; iPad product','Built pet profiles, care timelines, reminders and documents, with Plus PDF reports and measurement trends. Preserved existing data and backup compatibility through the app rebrand.','SwiftUI · SwiftData · StoreKit 2 · PDFKit')
+project('NoteVita - Offline Family Health Diary','Independent iPhone &amp; iPad product','Built separate family profiles, health records, medication reminders and PDF sharing. Implemented actor-based local persistence, encrypted backup/import and Plus purchase flows.','SwiftUI · Swift Concurrency · CryptoKit · StoreKit 2')
 section('Engineering leadership & workflows')
 add('At Endava, supported AI adoption through developer enablement, code review, project integration and workflow automation. Mentored iOS developers and conducted technical interviews.')
 add('Built The Hive, a personal coding-agent workflow with shared schema contracts, code generation and automated build/test checks. Uses AI-assisted development with hands-on engineering review.')
 section('Additional portfolio work')
-add('Bubble Chase (CatChase), a SpriteKit arcade game with physics, power-ups and daily challenges. More applications and games, with screenshots, are available in the portfolio.','small')
+add('BeamBike (native mobility MVP), Bug Corp Duel (deterministic strategy card game) and Bubble Chase (SpriteKit arcade game). More projects and iPhone/iPad screenshots are available in the portfolio.','small')
 
 def footer(canvas,doc):
     canvas.setStrokeColor(colors.HexColor('#D9E3EB'));canvas.line(40,35,A4[0]-40,35)

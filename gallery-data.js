@@ -16,6 +16,166 @@
      width, height image dimensions; reserve layout before lazy loading
    ============================================================ */
 window.GALLERY_ITEMS = [
+{
+    "type": "image",
+    "src": "gallery/petbuddy-20261012-iphone-01-home.jpg",
+    "width": 920,
+    "height": 2000,
+    "project": "Pet Buddy",
+    "caption": "iPhone — Home — stories, quizzes and upcoming care"
+},
+{
+    "type": "image",
+    "src": "gallery/petbuddy-20261012-iphone-02-pets.jpg",
+    "width": 920,
+    "height": 2000,
+    "project": "Pet Buddy",
+    "caption": "iPhone — Pet profiles — care categories and timeline"
+},
+{
+    "type": "image",
+    "src": "gallery/petbuddy-20261012-iphone-03-calendar.jpg",
+    "width": 920,
+    "height": 2000,
+    "project": "Pet Buddy",
+    "caption": "iPhone — Care calendar — appointments and grooming"
+},
+{
+    "type": "image",
+    "src": "gallery/petbuddy-20261012-iphone-04-report-plus.jpg",
+    "width": 920,
+    "height": 2000,
+    "project": "Pet Buddy",
+    "caption": "iPhone — Pet Buddy Plus — PDF report options"
+},
+{
+    "type": "image",
+    "src": "gallery/petbuddy-20261012-iphone-05-trends-plus.jpg",
+    "width": 920,
+    "height": 2000,
+    "project": "Pet Buddy",
+    "caption": "iPhone — Pet Buddy Plus — measurement trends"
+},
+{
+    "type": "image",
+    "src": "gallery/petbuddy-20261012-ipad-01-home.jpg",
+    "width": 1500,
+    "height": 2000,
+    "project": "Pet Buddy",
+    "caption": "iPad — Home — stories, quizzes and upcoming care"
+},
+{
+    "type": "image",
+    "src": "gallery/petbuddy-20261012-ipad-02-pets.jpg",
+    "width": 1500,
+    "height": 2000,
+    "project": "Pet Buddy",
+    "caption": "iPad — Pet profiles — care categories and timeline"
+},
+{
+    "type": "image",
+    "src": "gallery/petbuddy-20261012-ipad-03-calendar.jpg",
+    "width": 1500,
+    "height": 2000,
+    "project": "Pet Buddy",
+    "caption": "iPad — Care calendar — appointments and grooming"
+},
+{
+    "type": "image",
+    "src": "gallery/petbuddy-20261012-ipad-04-report-plus.jpg",
+    "width": 1500,
+    "height": 2000,
+    "project": "Pet Buddy",
+    "caption": "iPad — Pet Buddy Plus — PDF report options"
+},
+{
+    "type": "image",
+    "src": "gallery/petbuddy-20261012-ipad-05-trends-plus.jpg",
+    "width": 1500,
+    "height": 2000,
+    "project": "Pet Buddy",
+    "caption": "iPad — Pet Buddy Plus — measurement trends"
+},
+{
+    "type": "image",
+    "src": "gallery/notevita-20261012-iphone-69-01-today-en.jpg",
+    "width": 921,
+    "height": 2000,
+    "project": "NoteVita",
+    "caption": "iPhone — Today — family profiles and quick health entries"
+},
+{
+    "type": "image",
+    "src": "gallery/notevita-20261012-iphone-69-02-diary-en.jpg",
+    "width": 921,
+    "height": 2000,
+    "project": "NoteVita",
+    "caption": "iPhone — Diary — search, bookmarks and health records"
+},
+{
+    "type": "image",
+    "src": "gallery/notevita-20261012-iphone-69-03-health-en.jpg",
+    "width": 921,
+    "height": 2000,
+    "project": "NoteVita",
+    "caption": "iPhone — Health — personal summary and blood pressure"
+},
+{
+    "type": "image",
+    "src": "gallery/notevita-20261012-iphone-69-04-trends-en.jpg",
+    "width": 921,
+    "height": 2000,
+    "project": "NoteVita",
+    "caption": "iPhone — NoteVita Plus — blood-pressure measurement trends"
+},
+{
+    "type": "image",
+    "src": "gallery/notevita-20261012-iphone-69-05-backup-en.jpg",
+    "width": 921,
+    "height": 2000,
+    "project": "NoteVita",
+    "caption": "iPhone — Backup — encrypted family export and verified import"
+},
+{
+    "type": "image",
+    "src": "gallery/notevita-20261012-ipad-13-01-today-en.jpg",
+    "width": 1500,
+    "height": 2000,
+    "project": "NoteVita",
+    "caption": "iPad — Today — family profiles and quick health entries"
+},
+{
+    "type": "image",
+    "src": "gallery/notevita-20261012-ipad-13-02-diary-en.jpg",
+    "width": 1500,
+    "height": 2000,
+    "project": "NoteVita",
+    "caption": "iPad — Diary — search, bookmarks and health records"
+},
+{
+    "type": "image",
+    "src": "gallery/notevita-20261012-ipad-13-03-health-en.jpg",
+    "width": 1500,
+    "height": 2000,
+    "project": "NoteVita",
+    "caption": "iPad — Health — personal summary and blood pressure"
+},
+{
+    "type": "image",
+    "src": "gallery/notevita-20261012-ipad-13-04-trends-en.jpg",
+    "width": 1500,
+    "height": 2000,
+    "project": "NoteVita",
+    "caption": "iPad — NoteVita Plus — blood-pressure measurement trends"
+},
+{
+    "type": "image",
+    "src": "gallery/notevita-20261012-ipad-13-05-backup-en.jpg",
+    "width": 1500,
+    "height": 2000,
+    "project": "NoteVita",
+    "caption": "iPad — Backup — encrypted family export and verified import"
+},
     {
         "type": "image",
         "src": "gallery/kuvar-20261005-iphone-home.jpg",
