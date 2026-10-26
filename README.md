@@ -67,6 +67,6 @@ Gallery additions and simulator build notes are recorded in [docs/gallery-captur
 
 ## Updating the downloadable CV
 
-The website and PDF reflect freelance availability from 1 September 2026; Endava roles end in August 2026. Edit `cv/build_resume.py` and run `python3 cv/build_resume.py` with ReportLab and Arial or Liberation Sans installed to regenerate `MilosStevanovicResume.pdf`. Render and review both pages after edits. Bump the PDF download query version in `index.html`.
+`MilosStevanovicResume.pdf` is the approved default CV: the two-page visual resume with a photo, Senior Software Engineer title, and Admiral Insurance (four years at Endava). The primary **Download CV** action serves this file. Replace it only with an approved updated PDF, preserve its layout, and bump its download query version in `index.html`.
 
-The product CV uses **Senior Software Engineer | iOS, macOS & Web**, with evidence from native products, web platforms and games. The `--variant platform` CV focuses on iOS/macOS architecture while retaining the broader independent work. Both remain two pages. Historical employment titles are preserved; the 10+ years claim refers to native iOS experience, and newer independent web/game work is identified separately.
+`MilosStevanovicResume-Platform.pdf` remains a separate iOS/macOS-focused alternative. `cv/build_resume.py` generates the older text-based variants; it is not the source of the approved visual CV. When using that generator, pass an explicit `--output` path to avoid overwriting the default resume. Render and review both pages after any PDF content edits.
