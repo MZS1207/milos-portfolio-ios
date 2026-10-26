@@ -470,15 +470,16 @@ window.CONTENT_DATA = {
     experience: {
         freelance: {
             listLabel: 'Available for',
-            name: 'Freelance Senior iOS Developer', type: 'Self-employed · 1 Sep 2026 – Present', icon: '💻',
-            description: 'Independent since 1 September 2026. Open to full-time and contract roles, remote work and relocation. I bring 10+ years of iOS experience, from enterprise and healthcare apps to independent games and product MVPs.',
+            name: 'Independent Senior Software Engineer', type: 'Self-employed · 1 Sep 2026 – Present', icon: '💻',
+            description: 'Independent since 1 September 2026. I bring 10+ years in native iOS delivery, with independent work spanning macOS apps, web platforms and games. Open to full-time and contract roles, remote work and relocation.',
             contributions: [
-                'Available for native iOS development with Swift, SwiftUI and UIKit',
-                'Product architecture, legacy-code improvements and performance work',
+                'Native Apple apps, TypeScript web platforms and games',
+                'Product architecture, implementation, API integration and release preparation',
+                'Legacy-code recovery, maintainability and performance work',
                 'AI-assisted development with hands-on review and build/test validation',
                 'Based in Belgrade; open to relocation and remote work. Employer visa / work permit sponsorship required for relocation'
             ],
-            focus: ['Swift', 'SwiftUI', 'UIKit', 'Clean Architecture', 'AI-Assisted Delivery']
+            focus: ['Swift', 'SwiftUI', 'TypeScript', 'React / Next.js', 'Product Engineering', 'AI-Assisted Delivery']
         },
         'endava-senior': {
             name: 'Senior iOS Developer (Senior Engineer)', type: 'Endava · Jan 2022 – Aug 2026', icon: '🏢',
