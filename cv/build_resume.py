@@ -122,7 +122,7 @@ compact_project('Wellness Spot - Responsive Customer Workspace','Built customer 
 compact_project('Touchline Atlas - Football Management Games','Built iPhone/iPad and native macOS experiences for career progression, squad management, tactics and saved games.','Swift · SwiftUI · AppKit · Simulation · Local Persistence')
 compact_project('Cute Bubble Chase, Neon Rebels &amp; BugCorpGame','Arcade gameplay and power-ups; solo/local-network co-op shooter; deterministic card-duel systems. Independent game projects at different release stages.','Swift · SwiftUI · SpriteKit · Network.framework · Gameplay Systems')
 section('Engineering leadership & workflows')
-add('Former Endava AI Champion and Career Coach. Built The Hive, a personal coding-agent workflow with shared schema contracts and automated build/test checks, supported by hands-on engineering review.','small')
+add('Former Endava AI Champion and Career Coach. Built The Hive, a personal AI-assisted development system used across independent apps, web platforms and games, with hands-on engineering review.','small')
 
 def footer(canvas,doc):
     canvas.setStrokeColor(colors.HexColor('#D9E3EB'));canvas.line(40,35,A4[0]-40,35)

@@ -253,19 +253,17 @@ window.CONTENT_DATA = {
         },
         thehive: {
             name: 'The Hive',
-            type: 'Multi-Agent Orchestration Framework',
+            type: 'AI-Assisted Product Development',
             icon: '🐝',
-            description: 'Custom multi-agent development framework built on Claude Code: an architect/delegate/worker agent hierarchy that builds complete multi-platform products from a single frozen contract.',
+            description: 'An AI-assisted development system I built and use in my independent product work. It helps me move from a product idea to working software across native apps, web platforms and games.',
             features: [
-                'Architect / Delegate / Worker agent hierarchy',
-                'Frozen JSON Schema contract as source of truth',
-                'Type generation for Swift, Kotlin, TypeScript & Python',
-                'Parallel task dispatch with disjoint file ownership',
-                'Automated build & test gates per wave',
-                'Deterministic conflict resolution'
+                'From a product idea to working software',
+                'Native apps, web platforms and games',
+                'Hands-on engineering review',
+                'Product quality and release preparation'
             ],
-            tech: ['Claude Code', 'Python', 'JSON Schema', 'Codegen', 'AI Agents'],
-            highlights: 'Personal framework used to deliver several complete products end-to-end with fleets of AI agents working in parallel - Bug Corp Duel, BeamBike, Football Manager, VaskoTaxi, ServiceHub, Kuvar and iMovo all came out of it.',
+            tech: ['AI-Assisted Development', 'Product Engineering', 'Software Quality'],
+            highlights: 'Applied in independent projects including BugCorpGame, VaskoTaxi and Kuvar. These products offer a closer look at what I build with The Hive.',
             links: []
         },
         bugcorpduel: {
@@ -284,7 +282,7 @@ window.CONTENT_DATA = {
             tech: ['SwiftUI', 'SpriteKit', 'MultipeerConnectivity', 'Network.framework', 'SwiftPM', 'XcodeGen'],
             gallerySummary: 'Corporate-satire card battles with a redesigned home, illustrated executives and collectible card packs.',
             gallery: 'BugCorpGame',
-            highlights: 'Built end-to-end through The Hive: 116 orchestrated AI-agent tasks, full green build & test gate.'
+            highlights: 'Developed with The Hive, with hands-on engineering review and gameplay validation.'
         },
         beambike: {
             name: 'BeamBike',
@@ -301,7 +299,7 @@ window.CONTENT_DATA = {
             ],
             tech: ['SwiftUI', 'Kotlin', 'Node.js', 'PostgreSQL', 'Redis', 'WebSocket', 'MapLibre'],
             gallery: 'BeamBike',
-            highlights: 'Contract-first monorepo: 101 endpoints and 114 models generated for 4 platforms from one frozen schema.',
+            highlights: 'A mobility MVP spanning native mobile apps, a shared backend and an admin dashboard. Developed with The Hive.',
             links: []
         },
         footballmanager: {
@@ -392,7 +390,7 @@ window.CONTENT_DATA = {
                 'Serbian / English localisation'
             ],
             tech: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'OpenStreetMap', 'i18n'],
-            highlights: 'The one web product in the set - same contract-first approach as BeamBike, with the listing schema driving both the API and the UI. Built with The Hive.',
+            highlights: 'A web product combining property discovery, agency tools and a mortgage calculator. Developed with The Hive.',
             gallery: 'iMovo',
             links: []
         }
@@ -449,10 +447,10 @@ window.CONTENT_DATA = {
             related: ['MVVM', 'Clean Architecture']
         },
         multiagent: {
-            name: 'Multi-Agent Orchestration', type: 'The Hive · fleets of coding agents', icon: '🐝',
-            description: 'Designing and directing fleets of autonomous coding agents that ship complete products - an architect / delegate / worker hierarchy working from a frozen contract, with parallel task dispatch and automated build & test gates. I define the architecture and contracts, review the output and use build and test checks to validate the result.',
-            usedIn: ['The Hive - my orchestration framework for Claude Code', 'Bug Corp Duel - 116 orchestrated agent tasks, green build & test gate', 'BeamBike - contract-first monorepo: 101 endpoints, 114 models, 4 platforms'],
-            related: ['Claude Code', 'JSON Schema', 'Codegen', 'CI gates']
+            name: 'AI-Assisted Development', type: 'The Hive · Personal development system', icon: '🐝',
+            description: 'Using AI-assisted workflows to build apps, web platforms and games, with hands-on engineering and product decisions. The Hive is the personal system I developed around that work.',
+            usedIn: ['The Hive - my personal development system', 'BugCorpGame - independent card game', 'Kuvar - cooking and meal-planning app'],
+            related: ['Product Engineering', 'Engineering Review', 'Software Quality']
         },
         aidelivery: {
             name: 'AI-Assisted Delivery', type: 'Former AI Champion · Endava', icon: '🚀',
