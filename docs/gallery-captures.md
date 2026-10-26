@@ -66,3 +66,39 @@ All ten images preserve the complete frame and EXIF orientation, exported at JPE
 Added ten screenshots per app: five iPhone and five iPad. Pet Buddy uses existing release captures from `.codex/worktrees/petdiary-local/PetDiary/PetDiary/ReleasePreparation/screenshots/{iphone,ipad}/`: home, pets, calendar, Plus report options and Plus trends. NoteVita uses `Desktop/MyProjects/HealthTrackingOffline/Documentation/AppStore/screenshots/{iphone-69,ipad-13}/`: today, diary, health, trends and backup.
 
 All twenty source frames were visually reviewed and exported as full-frame JPEGs at quality 90, maximum 2000px. Screens show sample data. No app rebuild, purchase or production verification was performed. ZooPal's older iOS/Android development album remains separate from the current native Pet Buddy release. Project descriptions and both downloadable CV variants now include the new independent products.
+
+
+## Recent independent projects — 2026-10-26
+
+Added seven albums and fourteen existing, visually reviewed captures. Delivery files preserve complete source frames, maximum dimension 2000px, JPEG quality 90. No application UI was retouched and no source app was rebuilt. Capture dates are historical; the delivery filenames identify the portfolio update date.
+
+| Album / files | Source | Notes |
+| --- | --- | --- |
+| Nebnik · `nebnik-20261026-*` (3) | `Claude/Projects/Horoskop/store/screenshots/ready/en-US/{01-sky-today,02-myth-library,05-dream-book}.jpg` | Native English iPhone UI: sky, mythology library and dream book. No current App Review or purchase-status claim. |
+| StorageLens · `storagelens-20261026-*` (2) | `Desktop/MyProjects/StorageLens/AppStore/screenshots/en-US/{01-inspect,03-duplicates}.jpg` | Existing Store-edition artwork with actual native app captures. Files belong to the synthetic `/tmp/StorageLens-store-fixture-Sample` dataset. The full unsandboxed tool is not conflated with this edition. |
+| Neon Rebels · `neon-rebels-20261026-*` (2) | `Desktop/MyProjects/Poljoprivreda/metadata/screenshots/en-US/store-build6/{iphone/01-gameplay,ipad/02-boss}.png` | iPhone solo gameplay and iPad boss practice. Release name verified in `docs/app-store-name.md`; prior project name Duo Rescue. No internet multiplayer or co-op-session capture claim. |
+| Touchline Atlas — macOS · `touchline-macos-20261026-*` (2) | `Desktop/MyProjects/ManagerMacOS/ReleasePreparation/Artifacts/appstore-{career,tactics}.png` | Real native Mac release captures, not the repository's design-preview images. Fictional Avelara Athletic career. Former project name Football Director; separate from the existing iPhone/iPad album. |
+| Wellness Spot · `wellness-spot-20261026-*` (2) | `Desktop/wellness-spa-food-center/docs/operations/evidence/customer-workspace-2026-10-25/{chromium-overview-desktop,webkit-pregled-phone}.png` | Responsive web QA captures. The associated evidence document explicitly identifies isolated synthetic customer and measurement fixtures; no live personal health records. |
+| Sjaj · `sjaj-20261026-*` (2) | `Claude/Projects/Sjaj/design/shots/{manager-today/desktop-light,client-booking/mobile-light}.png` | Browser captures of the documented seeded demo business, not production customer jobs. The phone frame is web, not a native app capture. |
+| The Last Inquisitor · `last-inquisitor-20261026-ipad.jpg` (1) | `Desktop/MyProjects/⚔️ THE LAST INQUISITOR/planning/validation/m1-landmarks-ipad-20261025/ipad-m1.png` | Actual iPad development build: forest/chapel environment, touch camera and placeholder hunter. Explicitly marked in development; locomotion and combat are not implemented. |
+
+All seven projects have matching Projects cards, descriptions, technology tags and View screenshots links. New albums lead the gallery. Existing albums remain intact: **87 screens across 22 projects** total. Full source-path manifest is retained locally in `output/duo-qa/gallery-additions-sources.json`.
+
+## Five-image album rule — 2026-10-26
+
+The current gallery is curated to **15 albums × exactly 5 screenshots = 75 images**. Seventeen existing real captures were added after visual inspection. Larger albums were reduced to five representative workflows, retaining iPhone/iPad examples where available. Original media remains on disk.
+
+BeamBike, StorageLens, The Last Inquisitor, Orbit, Karolina Prevodi, ServiceHub and iMovo are excluded until five distinct quality screenshots are ready. Their project descriptions remain in Projects; screenshot badges and gallery buttons are absent. Their existing registry entries are preserved in `docs/gallery-pending.json`, which is not loaded by the page. Incomplete albums are also excluded by the runtime; `node scripts/validate-gallery.mjs` checks the five-image rule, unique paths, metadata and local files.
+
+| Album / additions | Existing source captures | Notes |
+| --- | --- | --- |
+| Nebnik (+2) | `Claude/Projects/Horoskop/store/screenshots/ready/en-US/{03-constellation-story,04-bestiary}.jpg` | Constellation story and bestiary Plus preview. |
+| Neon Rebels (+3) | `Desktop/MyProjects/Poljoprivreda/metadata/screenshots/en-US/iphone-build6/{01-menu,04-garage,07-strider-combat}.png` | Main menu, garage and Iron Strider boss practice; no co-op session implied. |
+| Touchline Atlas — macOS (+3) | `Desktop/MyProjects/ManagerMacOS/ReleasePreparation/Artifacts/{appstore-main-menu-final,appstore-squad,appstore-shop-review-2560x1600}.png` | Real native app release captures, including historical shop UI; no purchase made or current price verification. |
+| Wellness Spot (+3) | `Desktop/wellness-spa-food-center/docs/operations/evidence/customer-workspace-2026-10-25/{chromium-napredak-phone,active-nutrition-portrait-top,webkit-paketi-phone}.png` | Progress, nutrition and packages. Isolated synthetic fixture data as documented by the source evidence. Short landscape QA crops were rejected in favor of useful portrait views. |
+| Sjaj (+3) | `Claude/Projects/Sjaj/design/shots/{manager-job/desktop-light,manager-job-new/desktop-light,client-rate/mobile-light}.png` | Job details, scheduling and rating form; documented seeded demo business. |
+| Slikovnica (+1) | `Desktop/MyProjects/iOS Slikovnica/Docs/Release/Screenshots/iPad-13/en-03-coloring.png` | Existing iPad coloring screen complements four iPhone captures. |
+| BugCorpGame (+1) | `Desktop/MyProjects/hiveProjects/the-hive-3/docs/app-store/rc-2026-09-27/build-4/09-pack-card-detail.png` | Card detail, no transaction performed. |
+| Translato (+1) | `Desktop/MyProjects/Translato/build/qa/paywall-review.png` | Native macOS Pro upgrade view with purchase and restore options; historical capture. |
+
+All additions preserve source frames and aspect ratios, JPEG quality 90, maximum dimension 2000px. No generated screens, retouching, new application builds or production interactions. Local full-path manifest: `output/duo-qa/five-image-addition-sources.json`.

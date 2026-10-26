@@ -1,181 +1,290 @@
-/* ============================================================
-   GALLERY DATA
-   ------------------------------------------------------------
-   How to add media:
-   1. Drop the file into the gallery/ folder
-      (images: jpg/png/webp · videos: mp4, H.264, + optional
-       poster image for the grid thumbnail)
-   2. Add one entry below - grouped by project.
-
-   Fields:
-     type    'image' | 'video'
-     src     path to the file, e.g. 'gallery/fm-menu.jpg'
-     poster  (video only, recommended) thumbnail image
-     project project name - used for the filter chips
-     caption short text shown in the fullscreen viewer
-     width, height image dimensions; reserve layout before lazy loading
-   ============================================================ */
+/* Gallery albums contain exactly five distinct, real screenshots.
+   Add a complete album to this registry; keep incomplete sets in
+   docs/gallery-pending.json. Project descriptions stay in content-data.js.
+   Run: node scripts/validate-gallery.mjs
+   Fields: type ('image'), src, width, height, project, caption.
+   Preserve full frames and aspect ratios; see docs/gallery-captures.md. */
 window.GALLERY_ITEMS = [
-{
-    "type": "image",
-    "src": "gallery/petbuddy-20261012-iphone-01-home.jpg",
-    "width": 920,
-    "height": 2000,
-    "project": "Pet Buddy",
-    "caption": "iPhone — Home — stories, quizzes and upcoming care"
-},
-{
-    "type": "image",
-    "src": "gallery/petbuddy-20261012-iphone-02-pets.jpg",
-    "width": 920,
-    "height": 2000,
-    "project": "Pet Buddy",
-    "caption": "iPhone — Pet profiles — care categories and timeline"
-},
-{
-    "type": "image",
-    "src": "gallery/petbuddy-20261012-iphone-03-calendar.jpg",
-    "width": 920,
-    "height": 2000,
-    "project": "Pet Buddy",
-    "caption": "iPhone — Care calendar — appointments and grooming"
-},
-{
-    "type": "image",
-    "src": "gallery/petbuddy-20261012-iphone-04-report-plus.jpg",
-    "width": 920,
-    "height": 2000,
-    "project": "Pet Buddy",
-    "caption": "iPhone — Pet Buddy Plus — PDF report options"
-},
-{
-    "type": "image",
-    "src": "gallery/petbuddy-20261012-iphone-05-trends-plus.jpg",
-    "width": 920,
-    "height": 2000,
-    "project": "Pet Buddy",
-    "caption": "iPhone — Pet Buddy Plus — measurement trends"
-},
-{
-    "type": "image",
-    "src": "gallery/petbuddy-20261012-ipad-01-home.jpg",
-    "width": 1500,
-    "height": 2000,
-    "project": "Pet Buddy",
-    "caption": "iPad — Home — stories, quizzes and upcoming care"
-},
-{
-    "type": "image",
-    "src": "gallery/petbuddy-20261012-ipad-02-pets.jpg",
-    "width": 1500,
-    "height": 2000,
-    "project": "Pet Buddy",
-    "caption": "iPad — Pet profiles — care categories and timeline"
-},
-{
-    "type": "image",
-    "src": "gallery/petbuddy-20261012-ipad-03-calendar.jpg",
-    "width": 1500,
-    "height": 2000,
-    "project": "Pet Buddy",
-    "caption": "iPad — Care calendar — appointments and grooming"
-},
-{
-    "type": "image",
-    "src": "gallery/petbuddy-20261012-ipad-04-report-plus.jpg",
-    "width": 1500,
-    "height": 2000,
-    "project": "Pet Buddy",
-    "caption": "iPad — Pet Buddy Plus — PDF report options"
-},
-{
-    "type": "image",
-    "src": "gallery/petbuddy-20261012-ipad-05-trends-plus.jpg",
-    "width": 1500,
-    "height": 2000,
-    "project": "Pet Buddy",
-    "caption": "iPad — Pet Buddy Plus — measurement trends"
-},
-{
-    "type": "image",
-    "src": "gallery/notevita-20261012-iphone-69-01-today-en.jpg",
-    "width": 921,
-    "height": 2000,
-    "project": "NoteVita",
-    "caption": "iPhone — Today — family profiles and quick health entries"
-},
-{
-    "type": "image",
-    "src": "gallery/notevita-20261012-iphone-69-02-diary-en.jpg",
-    "width": 921,
-    "height": 2000,
-    "project": "NoteVita",
-    "caption": "iPhone — Diary — search, bookmarks and health records"
-},
-{
-    "type": "image",
-    "src": "gallery/notevita-20261012-iphone-69-03-health-en.jpg",
-    "width": 921,
-    "height": 2000,
-    "project": "NoteVita",
-    "caption": "iPhone — Health — personal summary and blood pressure"
-},
-{
-    "type": "image",
-    "src": "gallery/notevita-20261012-iphone-69-04-trends-en.jpg",
-    "width": 921,
-    "height": 2000,
-    "project": "NoteVita",
-    "caption": "iPhone — NoteVita Plus — blood-pressure measurement trends"
-},
-{
-    "type": "image",
-    "src": "gallery/notevita-20261012-iphone-69-05-backup-en.jpg",
-    "width": 921,
-    "height": 2000,
-    "project": "NoteVita",
-    "caption": "iPhone — Backup — encrypted family export and verified import"
-},
-{
-    "type": "image",
-    "src": "gallery/notevita-20261012-ipad-13-01-today-en.jpg",
-    "width": 1500,
-    "height": 2000,
-    "project": "NoteVita",
-    "caption": "iPad — Today — family profiles and quick health entries"
-},
-{
-    "type": "image",
-    "src": "gallery/notevita-20261012-ipad-13-02-diary-en.jpg",
-    "width": 1500,
-    "height": 2000,
-    "project": "NoteVita",
-    "caption": "iPad — Diary — search, bookmarks and health records"
-},
-{
-    "type": "image",
-    "src": "gallery/notevita-20261012-ipad-13-03-health-en.jpg",
-    "width": 1500,
-    "height": 2000,
-    "project": "NoteVita",
-    "caption": "iPad — Health — personal summary and blood pressure"
-},
-{
-    "type": "image",
-    "src": "gallery/notevita-20261012-ipad-13-04-trends-en.jpg",
-    "width": 1500,
-    "height": 2000,
-    "project": "NoteVita",
-    "caption": "iPad — NoteVita Plus — blood-pressure measurement trends"
-},
-{
-    "type": "image",
-    "src": "gallery/notevita-20261012-ipad-13-05-backup-en.jpg",
-    "width": 1500,
-    "height": 2000,
-    "project": "NoteVita",
-    "caption": "iPad — Backup — encrypted family export and verified import"
-},
+    {
+        "type": "image",
+        "src": "gallery/nebnik-20261026-sky.jpg",
+        "width": 924,
+        "height": 2000,
+        "project": "Nebnik",
+        "caption": "iPhone — The sky today — moon, constellations and daily reading"
+    },
+    {
+        "type": "image",
+        "src": "gallery/nebnik-20261026-myths.jpg",
+        "width": 924,
+        "height": 2000,
+        "project": "Nebnik",
+        "caption": "iPhone — Myths — stories and mythology traditions"
+    },
+    {
+        "type": "image",
+        "src": "gallery/nebnik-20261026-dreams.jpg",
+        "width": 924,
+        "height": 2000,
+        "project": "Nebnik",
+        "caption": "iPhone — Dream Book — symbol search and categories"
+    },
+    {
+        "type": "image",
+        "src": "gallery/nebnik-20261026-story.jpg",
+        "width": 924,
+        "height": 2000,
+        "project": "Nebnik",
+        "caption": "iPhone — Constellation story — Astraea and Virgo"
+    },
+    {
+        "type": "image",
+        "src": "gallery/nebnik-20261026-bestiary.jpg",
+        "width": 924,
+        "height": 2000,
+        "project": "Nebnik",
+        "caption": "iPhone — Bestiary — Mokosh and the Plus content preview"
+    },
+    {
+        "type": "image",
+        "src": "gallery/neon-rebels-20261026-iphone-gameplay.jpg",
+        "width": 2000,
+        "height": 920,
+        "project": "Neon Rebels",
+        "caption": "iPhone — Solo gameplay — cargo depot and touch controls"
+    },
+    {
+        "type": "image",
+        "src": "gallery/neon-rebels-20261026-ipad-boss.jpg",
+        "width": 2000,
+        "height": 1500,
+        "project": "Neon Rebels",
+        "caption": "iPad — Boss practice — Warden encounter"
+    },
+    {
+        "type": "image",
+        "src": "gallery/neon-rebels-20261026-menu.jpg",
+        "width": 2000,
+        "height": 920,
+        "project": "Neon Rebels",
+        "caption": "iPhone — Main menu — heroes, campaign and local co-op options"
+    },
+    {
+        "type": "image",
+        "src": "gallery/neon-rebels-20261026-garage.jpg",
+        "width": 2000,
+        "height": 920,
+        "project": "Neon Rebels",
+        "caption": "iPhone — Garage — character collections and base customization"
+    },
+    {
+        "type": "image",
+        "src": "gallery/neon-rebels-20261026-strider.jpg",
+        "width": 2000,
+        "height": 920,
+        "project": "Neon Rebels",
+        "caption": "iPhone — Boss practice — Iron Strider encounter"
+    },
+    {
+        "type": "image",
+        "src": "gallery/touchline-macos-20261026-career.jpg",
+        "width": 2000,
+        "height": 1250,
+        "project": "Touchline Atlas — macOS",
+        "caption": "macOS — Career workspace — club news and manager inbox"
+    },
+    {
+        "type": "image",
+        "src": "gallery/touchline-macos-20261026-tactics.jpg",
+        "width": 2000,
+        "height": 1250,
+        "project": "Touchline Atlas — macOS",
+        "caption": "macOS — Tactical board — squad shape and player roles"
+    },
+    {
+        "type": "image",
+        "src": "gallery/touchline-macos-20261026-menu.jpg",
+        "width": 2000,
+        "height": 1250,
+        "project": "Touchline Atlas — macOS",
+        "caption": "macOS — Main menu — start, load and watch a match"
+    },
+    {
+        "type": "image",
+        "src": "gallery/touchline-macos-20261026-squad.jpg",
+        "width": 2000,
+        "height": 1250,
+        "project": "Touchline Atlas — macOS",
+        "caption": "macOS — Squad — roster, player condition and tactical plans"
+    },
+    {
+        "type": "image",
+        "src": "gallery/touchline-macos-20261026-shop.jpg",
+        "width": 2000,
+        "height": 1250,
+        "project": "Touchline Atlas — macOS",
+        "caption": "macOS — Club Shop — investment packs, editor and restore options"
+    },
+    {
+        "type": "image",
+        "src": "gallery/wellness-spot-20261026-desktop.jpg",
+        "width": 2000,
+        "height": 1250,
+        "project": "Wellness Spot",
+        "caption": "Web desktop — Customer overview and synthetic measurement trends"
+    },
+    {
+        "type": "image",
+        "src": "gallery/wellness-spot-20261026-phone.jpg",
+        "width": 1124,
+        "height": 2000,
+        "project": "Wellness Spot",
+        "caption": "Web phone — Customer overview and bottom navigation — synthetic data"
+    },
+    {
+        "type": "image",
+        "src": "gallery/wellness-spot-20261026-progress.jpg",
+        "width": 1124,
+        "height": 2000,
+        "project": "Wellness Spot",
+        "caption": "Web phone — Progress — measurement trends using synthetic data"
+    },
+    {
+        "type": "image",
+        "src": "gallery/wellness-spot-20261026-nutrition.jpg",
+        "width": 1124,
+        "height": 2000,
+        "project": "Wellness Spot",
+        "caption": "Web phone — Nutrition — approved plan using synthetic demo data"
+    },
+    {
+        "type": "image",
+        "src": "gallery/wellness-spot-20261026-packages.jpg",
+        "width": 1124,
+        "height": 2000,
+        "project": "Wellness Spot",
+        "caption": "Web phone — Packages — account plan and service options — synthetic data"
+    },
+    {
+        "type": "image",
+        "src": "gallery/sjaj-20261026-manager.jpg",
+        "width": 2000,
+        "height": 1250,
+        "project": "Sjaj",
+        "caption": "Web desktop — Manager day overview — seeded demo business"
+    },
+    {
+        "type": "image",
+        "src": "gallery/sjaj-20261026-customer.jpg",
+        "width": 924,
+        "height": 2000,
+        "project": "Sjaj",
+        "caption": "Web phone — Completed cleaning and customer feedback — demo data"
+    },
+    {
+        "type": "image",
+        "src": "gallery/sjaj-20261026-job.jpg",
+        "width": 2000,
+        "height": 1250,
+        "project": "Sjaj",
+        "caption": "Web desktop — Job detail — checklist and payment status — seeded demo data"
+    },
+    {
+        "type": "image",
+        "src": "gallery/sjaj-20261026-new-job.jpg",
+        "width": 2000,
+        "height": 1250,
+        "project": "Sjaj",
+        "caption": "Web desktop — New job — scheduling, team and price — seeded demo data"
+    },
+    {
+        "type": "image",
+        "src": "gallery/sjaj-20261026-rating.jpg",
+        "width": 924,
+        "height": 2000,
+        "project": "Sjaj",
+        "caption": "Web phone — Customer rating — service feedback — seeded demo data"
+    },
+    {
+        "type": "image",
+        "src": "gallery/petbuddy-20261012-iphone-01-home.jpg",
+        "width": 920,
+        "height": 2000,
+        "project": "Pet Buddy",
+        "caption": "iPhone — Home — stories, quizzes and upcoming care"
+    },
+    {
+        "type": "image",
+        "src": "gallery/petbuddy-20261012-iphone-02-pets.jpg",
+        "width": 920,
+        "height": 2000,
+        "project": "Pet Buddy",
+        "caption": "iPhone — Pet profiles — care categories and timeline"
+    },
+    {
+        "type": "image",
+        "src": "gallery/petbuddy-20261012-iphone-05-trends-plus.jpg",
+        "width": 920,
+        "height": 2000,
+        "project": "Pet Buddy",
+        "caption": "iPhone — Pet Buddy Plus — measurement trends"
+    },
+    {
+        "type": "image",
+        "src": "gallery/petbuddy-20261012-ipad-03-calendar.jpg",
+        "width": 1500,
+        "height": 2000,
+        "project": "Pet Buddy",
+        "caption": "iPad — Care calendar — appointments and grooming"
+    },
+    {
+        "type": "image",
+        "src": "gallery/petbuddy-20261012-ipad-04-report-plus.jpg",
+        "width": 1500,
+        "height": 2000,
+        "project": "Pet Buddy",
+        "caption": "iPad — Pet Buddy Plus — PDF report options"
+    },
+    {
+        "type": "image",
+        "src": "gallery/notevita-20261012-iphone-69-01-today-en.jpg",
+        "width": 921,
+        "height": 2000,
+        "project": "NoteVita",
+        "caption": "iPhone — Today — family profiles and quick health entries"
+    },
+    {
+        "type": "image",
+        "src": "gallery/notevita-20261012-iphone-69-02-diary-en.jpg",
+        "width": 921,
+        "height": 2000,
+        "project": "NoteVita",
+        "caption": "iPhone — Diary — search, bookmarks and health records"
+    },
+    {
+        "type": "image",
+        "src": "gallery/notevita-20261012-iphone-69-05-backup-en.jpg",
+        "width": 921,
+        "height": 2000,
+        "project": "NoteVita",
+        "caption": "iPhone — Backup — encrypted family export and verified import"
+    },
+    {
+        "type": "image",
+        "src": "gallery/notevita-20261012-ipad-13-03-health-en.jpg",
+        "width": 1500,
+        "height": 2000,
+        "project": "NoteVita",
+        "caption": "iPad — Health — personal summary and blood pressure"
+    },
+    {
+        "type": "image",
+        "src": "gallery/notevita-20261012-ipad-13-04-trends-en.jpg",
+        "width": 1500,
+        "height": 2000,
+        "project": "NoteVita",
+        "caption": "iPad — NoteVita Plus — blood-pressure measurement trends"
+    },
     {
         "type": "image",
         "src": "gallery/kuvar-20261005-iphone-home.jpg",
@@ -199,14 +308,6 @@ window.GALLERY_ITEMS = [
         "height": 2000,
         "project": "Kuvar",
         "caption": "iPhone cooking mode — step-by-step instructions and timer"
-    },
-    {
-        "type": "image",
-        "src": "gallery/kuvar-20261005-ipad-home.jpg",
-        "width": 2000,
-        "height": 1500,
-        "project": "Kuvar",
-        "caption": "iPad cookbook — recipe collections and quick filters"
     },
     {
         "type": "image",
@@ -255,6 +356,14 @@ window.GALLERY_ITEMS = [
         "height": 2000,
         "project": "Slikovnica",
         "caption": "Dinosaur collection — preview illustrated pages"
+    },
+    {
+        "type": "image",
+        "src": "gallery/slikovnica-20261026-ipad-coloring.jpg",
+        "width": 1500,
+        "height": 2000,
+        "project": "Slikovnica",
+        "caption": "iPad — Coloring — kitten illustration, palette and drawing controls"
     },
     {
         "type": "image",
@@ -330,6 +439,14 @@ window.GALLERY_ITEMS = [
     },
     {
         "type": "image",
+        "src": "gallery/bugcorp-20261026-card-detail.jpg",
+        "width": 924,
+        "height": 2000,
+        "project": "BugCorpGame",
+        "caption": "iPhone — Card detail — artwork, effect and collection status"
+    },
+    {
+        "type": "image",
         "src": "gallery/translato-editor.jpg",
         "width": 2000,
         "height": 1160,
@@ -359,6 +476,14 @@ window.GALLERY_ITEMS = [
         "height": 1160,
         "project": "Translato",
         "caption": "Find and replace — edit terminology across a project"
+    },
+    {
+        "type": "image",
+        "src": "gallery/translato-20261026-pro.jpg",
+        "width": 2000,
+        "height": 1250,
+        "project": "Translato",
+        "caption": "macOS — Pro upgrade — one-time purchase and restore options"
     },
     {
         "type": "image",
@@ -394,59 +519,11 @@ window.GALLERY_ITEMS = [
     },
     {
         "type": "image",
-        "src": "gallery/cute-bubble-ipad-home.jpg",
-        "width": 2000,
-        "height": 1500,
-        "project": "Cute Bubble Chase",
-        "caption": "iPad home — landscape layout and daily challenge"
-    },
-    {
-        "type": "image",
         "src": "gallery/cute-bubble-ipad-gameplay.jpg",
         "width": 2000,
         "height": 1500,
         "project": "Cute Bubble Chase",
         "caption": "iPad gameplay — arena and touch controls"
-    },
-    {
-        "type": "image",
-        "src": "gallery/orbit-macos.jpg",
-        "width": 1199,
-        "height": 768,
-        "project": "Orbit",
-        "caption": "Native macOS workspace — cross-project metrics and activity"
-    },
-    {
-        "type": "image",
-        "src": "gallery/orbit-ios.jpg",
-        "width": 736,
-        "height": 1600,
-        "project": "Orbit",
-        "caption": "iPhone dashboard — project switching, priorities and personal focus"
-    },
-    {
-        "type": "image",
-        "src": "gallery/orbit-settings.jpg",
-        "width": 650,
-        "height": 785,
-        "project": "Orbit",
-        "caption": "Project settings — team, schedule and archive controls"
-    },
-    {
-        "type": "image",
-        "src": "gallery/karolina-home.jpg",
-        "width": 1280,
-        "height": 720,
-        "project": "Karolina Prevodi",
-        "caption": "Serbian landing page — typography, identity and service discovery"
-    },
-    {
-        "type": "image",
-        "src": "gallery/karolina-services.jpg",
-        "width": 1280,
-        "height": 720,
-        "project": "Karolina Prevodi",
-        "caption": "English service catalog — live language switching"
     },
     {
         "type": "image",
@@ -482,27 +559,11 @@ window.GALLERY_ITEMS = [
     },
     {
         "type": "image",
-        "src": "gallery/touchline-atlas-20261006-ipad-career-dashboard.png",
-        "width": 2064,
-        "height": 2752,
-        "project": "Touchline Atlas Mobile",
-        "caption": "iPad — Career dashboard — expanded news overview"
-    },
-    {
-        "type": "image",
         "src": "gallery/touchline-atlas-20261006-ipad-club.png",
         "width": 2064,
         "height": 2752,
         "project": "Touchline Atlas Mobile",
         "caption": "iPad — Club hub — team management and competitions"
-    },
-    {
-        "type": "image",
-        "src": "gallery/beambike-welcome.jpg",
-        "width": 736,
-        "height": 1600,
-        "project": "BeamBike",
-        "caption": "Welcome to BeamBike — phone & social sign-in"
     },
     {
         "type": "image",
@@ -543,61 +604,5 @@ window.GALLERY_ITEMS = [
         "height": 1600,
         "project": "VaskoTaxi",
         "caption": "Onboarding - your ride in minutes"
-    },
-    {
-        "type": "image",
-        "src": "gallery/servicehub-map.jpg",
-        "width": 736,
-        "height": 1600,
-        "project": "ServiceHub",
-        "caption": "Verified providers on the map (Belgrade)"
-    },
-    {
-        "type": "image",
-        "src": "gallery/servicehub-onboarding.jpg",
-        "width": 736,
-        "height": 1600,
-        "project": "ServiceHub",
-        "caption": "Onboarding - find trusted pros"
-    },
-    {
-        "type": "image",
-        "src": "gallery/servicehub-role.jpg",
-        "width": 736,
-        "height": 1600,
-        "project": "ServiceHub",
-        "caption": "Customer or provider - role selection"
-    },
-    {
-        "type": "image",
-        "src": "gallery/imovo-detail.jpg",
-        "width": 1600,
-        "height": 936,
-        "project": "iMovo",
-        "caption": "Property detail page"
-    },
-    {
-        "type": "image",
-        "src": "gallery/imovo-listings.jpg",
-        "width": 1600,
-        "height": 863,
-        "project": "iMovo",
-        "caption": "Listings with map search"
-    },
-    {
-        "type": "image",
-        "src": "gallery/imovo-novogradnja.jpg",
-        "width": 1600,
-        "height": 878,
-        "project": "iMovo",
-        "caption": "New developments showcase"
-    },
-    {
-        "type": "image",
-        "src": "gallery/imovo-calculator.jpg",
-        "width": 1600,
-        "height": 832,
-        "project": "iMovo",
-        "caption": "Mortgage calculator"
     }
 ];

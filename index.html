@@ -98,7 +98,8 @@
         })();
     </script>
 
-    <link rel="stylesheet" href="styles.css?v=20260916g">
+    <link rel="stylesheet" href="styles.css?v=20261026-duo">
+    <link rel="stylesheet" href="duo.css?v=20261026-duo">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -112,7 +113,12 @@
     <div class="triangle triangle-1"></div>
     <div class="triangle triangle-2"></div>
 
+    <div class="portfolio-wordmark"><span class="portfolio-monogram" aria-hidden="true">ms.</span><div>Milos Stevanovic<small>NATIVE iOS ENGINEER</small></div></div>
+    <div class="portfolio-stage">
+    <div class="duo-device" id="duoDevice">
+    <div class="duo-hinge" aria-hidden="true"></div>
     <div class="app" id="app">
+        <div class="device-status" aria-hidden="true"><span>9:41</span><span class="device-island"></span><span>◒ ▰</span></div>
 
         <!-- App Header -->
         <header class="app-header" id="appHeader">
@@ -595,19 +601,58 @@
                             <p class="summary-text">Enterprise, Healthcare, Fintech, Social &amp; AI-built products</p>
                         </div>
 
+                        <div class="card">
+                            <h3 class="card-title">Recent Projects</h3>
+                            <div class="project-card" data-project="nebnik">
+                                <div class="project-header"><span class="project-icon">🌙</span><div><h4 class="project-name">Nebnik</h4><small class="project-type">Offline Star Almanac · iPhone</small></div><svg class="list-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></div>
+                                <p class="project-desc">A native offline almanac combining an on-device sky overview, mythology, original stories, a bestiary and a dream book. Available in English and Serbian without an account or backend.</p>
+                                <div class="tag-cloud compact"><span class="tag">SwiftUI</span><span class="tag">SwiftPM</span><span class="tag">StoreKit 2</span><span class="tag">📷 5 shots</span></div>
+                            </div>
+                            <div class="project-card" data-project="storagelens">
+                                <div class="project-header"><span class="project-icon">💽</span><div><h4 class="project-name">StorageLens</h4><small class="project-type">Native macOS Storage Utility</small></div><svg class="list-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></div>
+                                <p class="project-desc">A native macOS utility for inspecting user-approved folders, reviewing duplicates and moving individually selected files to Trash after confirmation. The sandboxed Store edition works with user-selected folders and local processing.</p>
+                                <div class="tag-cloud compact"><span class="tag">SwiftUI</span><span class="tag">AppKit</span><span class="tag">SwiftPM</span></div>
+                            </div>
+                            <div class="project-card" data-project="neonrebels">
+                                <div class="project-header"><span class="project-icon">🎮</span><div><h4 class="project-name">Neon Rebels</h4><small class="project-type">Solo &amp; Local Co-op Shooter · iPhone &amp; iPad</small></div><svg class="list-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></div>
+                                <p class="project-desc">A native side-scrolling arcade shooter built with SwiftUI and SpriteKit. Features a solo campaign, local-network two-player co-op, multiple weapons, checkpoint progression and distinct boss encounters.</p>
+                                <div class="tag-cloud compact"><span class="tag">SwiftUI</span><span class="tag">SpriteKit</span><span class="tag">Network.framework</span><span class="tag">📷 5 shots</span></div>
+                            </div>
+                            <div class="project-card" data-project="touchlinemacos">
+                                <div class="project-header"><span class="project-icon">⚽</span><div><h4 class="project-name">Touchline Atlas — macOS</h4><small class="project-type">Native Desktop Football Management Game</small></div><svg class="list-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></div>
+                                <p class="project-desc">A native macOS football-management simulation with a career workspace, club news, squad management, tactics, transfers and saved-game systems. Its desktop interface adapts football-management workflows to a resizable Mac window.</p>
+                                <div class="tag-cloud compact"><span class="tag">Swift</span><span class="tag">SwiftUI</span><span class="tag">AppKit</span><span class="tag">📷 5 shots</span></div>
+                            </div>
+                            <div class="project-card" data-project="wellnessspot">
+                                <div class="project-header"><span class="project-icon">🍃</span><div><h4 class="project-name">Wellness Spot</h4><small class="project-type">Customer Workspace · Web Platform</small></div><svg class="list-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></div>
+                                <p class="project-desc">A responsive customer workspace for a wellness platform, bringing progress, measurements, approved nutrition plans, packages and account details into one interface. Includes dedicated desktop and phone navigation.</p>
+                                <div class="tag-cloud compact"><span class="tag">Next.js</span><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">📷 5 shots</span></div>
+                            </div>
+                            <div class="project-card" data-project="sjaj">
+                                <div class="project-header"><span class="project-icon">✨</span><div><h4 class="project-name">Sjaj</h4><small class="project-type">Cleaning Business Platform · Web &amp; Mobile</small></div><svg class="list-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></div>
+                                <p class="project-desc">A platform for small cleaning businesses, with a manager dashboard, customer booking and service-progress views, a mobile app for cleaners and clients, and a shared API. The gallery focuses on the responsive web experience.</p>
+                                <div class="tag-cloud compact"><span class="tag">Next.js</span><span class="tag">React Native</span><span class="tag">Expo</span><span class="tag">📷 5 shots</span></div>
+                            </div>
+                            <div class="project-card" data-project="lastinquisitor">
+                                <div class="project-header"><span class="project-icon">⚔️</span><div><h4 class="project-name">The Last Inquisitor</h4><small class="project-type">In Development · Mobile 3D Environment Prototype</small></div><svg class="list-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></div>
+                                <p class="project-desc">An early mobile-first dark-fantasy project in Unity. The current playable environment explores an isometric forest and chapel scene, touch camera controls, lighting, scene readability and physical-device performance.</p>
+                                <div class="tag-cloud compact"><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">URP</span></div>
+                            </div>
+                        </div>
+
                         <!-- More selected work -->
                         <div class="card">
                             <h3 class="card-title">Apps &amp; Web Experiences</h3>
                             <div class="project-card" data-project="petbuddy">
                                 <div class="project-header"><span class="project-icon">🐾</span><div><h4 class="project-name">Pet Buddy</h4><small class="project-type">Native iPhone &amp; iPad Pet Care Diary</small></div><svg class="list-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></div>
                                 <p class="project-desc">A native pet-care diary for profiles, daily care records, appointments and documents, with dedicated iPhone and iPad layouts.</p>
-                                <div class="tag-cloud compact"><span class="tag">SwiftUI</span><span class="tag">SwiftData</span><span class="tag">StoreKit 2</span><span class="tag">📷 10 shots</span></div>
+                                <div class="tag-cloud compact"><span class="tag">SwiftUI</span><span class="tag">SwiftData</span><span class="tag">StoreKit 2</span><span class="tag">📷 5 shots</span></div>
                             </div>
 
                             <div class="project-card" data-project="notevita">
                                 <div class="project-header"><span class="project-icon">🌿</span><div><h4 class="project-name">NoteVita</h4><small class="project-type">Offline Family Health Diary · iPhone &amp; iPad</small></div><svg class="list-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></div>
                                 <p class="project-desc">A native, offline health diary with separate family profiles, local health records and encrypted backup, available in Serbian and English.</p>
-                                <div class="tag-cloud compact"><span class="tag">SwiftUI</span><span class="tag">Swift Concurrency</span><span class="tag">CryptoKit</span><span class="tag">📷 10 shots</span></div>
+                                <div class="tag-cloud compact"><span class="tag">SwiftUI</span><span class="tag">Swift Concurrency</span><span class="tag">CryptoKit</span><span class="tag">📷 5 shots</span></div>
                             </div>
 
 
@@ -618,7 +663,7 @@
                                     <svg class="list-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
                                 </div>
                                 <p class="project-desc">Illustrated collections, interactive coloring and locally saved drawings in a playful Serbian and English interface.</p>
-                                <div class="tag-cloud compact"><span class="tag">SwiftUI</span><span class="tag">StoreKit 2</span><span class="tag">iPhone</span><span class="tag">iPad</span><span class="tag">📷 4 shots</span></div>
+                                <div class="tag-cloud compact"><span class="tag">SwiftUI</span><span class="tag">StoreKit 2</span><span class="tag">iPhone</span><span class="tag">iPad</span><span class="tag">📷 5 shots</span></div>
                             </div>
 
                             <div class="project-card" data-project="translato">
@@ -628,7 +673,7 @@
                                     <svg class="list-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
                                 </div>
                                 <p class="project-desc">Bilingual document editing, local translation memory, document previews and terminology search in a native Mac workspace.</p>
-                                <div class="tag-cloud compact"><span class="tag">SwiftUI</span><span class="tag">SQLite</span><span class="tag">PDFKit</span><span class="tag">Vision</span><span class="tag">On the App Store</span><span class="tag">📷 4 shots</span></div>
+                                <div class="tag-cloud compact"><span class="tag">SwiftUI</span><span class="tag">SQLite</span><span class="tag">PDFKit</span><span class="tag">Vision</span><span class="tag">On the App Store</span><span class="tag">📷 5 shots</span></div>
                             </div>
 
                             <div class="project-card" data-project="orbit">
@@ -706,7 +751,7 @@
                                     <svg class="list-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
                                 </div>
                                 <p class="project-desc">Pop bouncing balls, dodge danger and collect power-ups. A SpriteKit arcade game with daily challenges.</p>
-                                <div class="tag-cloud compact"><span class="tag">Swift</span><span class="tag">SpriteKit</span><span class="tag">Core Animation</span><span class="tag">Game Physics</span><span class="tag">📷 6 shots</span></div>
+                                <div class="tag-cloud compact"><span class="tag">Swift</span><span class="tag">SpriteKit</span><span class="tag">Core Animation</span><span class="tag">Game Physics</span><span class="tag">📷 5 shots</span></div>
                             </div>
 
                             <div class="project-card" data-project="endava">
@@ -812,7 +857,7 @@
                                     <svg class="list-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
                                 </div>
                                 <p class="project-desc">Yu-Gi-Oh-style card duel game with deterministic seeded engine, collectible card catalogue and serverless P2P multiplayer - built end-to-end by an AI agent fleet.</p>
-                                <div class="tag-cloud compact"><span class="tag">SwiftUI</span><span class="tag">SpriteKit</span><span class="tag">P2P</span><span class="tag">Swift 6</span><span class="tag">📷 4 shots</span></div>
+                                <div class="tag-cloud compact"><span class="tag">SwiftUI</span><span class="tag">SpriteKit</span><span class="tag">P2P</span><span class="tag">Swift 6</span><span class="tag">📷 5 shots</span></div>
                             </div>
 
                             <div class="project-card" data-project="beambike">
@@ -822,7 +867,7 @@
                                     <svg class="list-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
                                 </div>
                                 <p class="project-desc">Full-stack mobility MVP - native iOS &amp; Android apps, realtime Node.js backend, geofenced maps, admin dashboard and IoT simulator.</p>
-                                <div class="tag-cloud compact"><span class="tag">SwiftUI</span><span class="tag">Kotlin</span><span class="tag">Node.js</span><span class="tag">WebSocket</span><span class="tag">📷 1 shot</span></div>
+                                <div class="tag-cloud compact"><span class="tag">SwiftUI</span><span class="tag">Kotlin</span><span class="tag">Node.js</span><span class="tag">WebSocket</span></div>
                             </div>
 
                             <div class="project-card" data-project="footballmanager">
@@ -832,7 +877,7 @@
                                     <svg class="list-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
                                 </div>
                                 <p class="project-desc">Build a career in a fictional football world. Explore club news, season fixtures and team management on iPhone and iPad.</p>
-                                <div class="tag-cloud compact"><span class="tag">SwiftUI</span><span class="tag">iPhone</span><span class="tag">iPad</span><span class="tag">Simulation</span><span class="tag">📷 6 shots</span></div>
+                                <div class="tag-cloud compact"><span class="tag">SwiftUI</span><span class="tag">iPhone</span><span class="tag">iPad</span><span class="tag">Simulation</span><span class="tag">📷 5 shots</span></div>
                             </div>
 
                             <div class="project-card" data-project="vaskotaxi">
@@ -852,7 +897,7 @@
                                     <svg class="list-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
                                 </div>
                                 <p class="project-desc">Find verified local pros on a map, book and chat - or switch to provider mode and run your own bookings.</p>
-                                <div class="tag-cloud compact"><span class="tag">SwiftUI</span><span class="tag">MapKit</span><span class="tag">Marketplace</span><span class="tag">📷 3 shots</span></div>
+                                <div class="tag-cloud compact"><span class="tag">SwiftUI</span><span class="tag">MapKit</span><span class="tag">Marketplace</span></div>
                             </div>
 
                             <div class="project-card" data-project="kuvar">
@@ -862,7 +907,7 @@
                                     <svg class="list-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
                                 </div>
                                 <p class="project-desc">Ingredient-first cooking assistant - recipes from what's in your fridge, daily meal plans with calories, recipe packs.</p>
-                                <div class="tag-cloud compact"><span class="tag">SwiftUI</span><span class="tag">Core Data</span><span class="tag">Nutrition</span><span class="tag">📷 6 shots</span></div>
+                                <div class="tag-cloud compact"><span class="tag">SwiftUI</span><span class="tag">Core Data</span><span class="tag">Nutrition</span><span class="tag">📷 5 shots</span></div>
                             </div>
 
                             <div class="project-card" data-project="imovo">
@@ -872,7 +917,7 @@
                                     <svg class="list-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
                                 </div>
                                 <p class="project-desc">Property portal for Serbia - faceted search, map with price pins, new developments, mortgage calculator and agent admin.</p>
-                                <div class="tag-cloud compact"><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Node.js</span><span class="tag">📷 4 shots</span></div>
+                                <div class="tag-cloud compact"><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Node.js</span></div>
                             </div>
                         </div>
 
@@ -888,30 +933,15 @@
                     </div>
                 </section>
 
-                <!-- ========== GALLERY ========== -->
-                <section class="screen" id="screen-gallery">
-                    <div class="screen-scroll">
-
-                        <div class="gallery-intro">
-                            <span class="gallery-eyebrow">SELECTED WORK</span>
-                            <h2>A closer look.</h2>
-                            <p>Native iPhone and Mac apps, games and websites. Explore real screens and the workflows behind each project.</p>
-                            <span class="gallery-summary" id="gallerySummary" role="status"></span>
+                <!-- Gallery library occupies the cover display when unfolded. -->
+                <section class="screen" id="screen-library">
+                    <div class="screen-scroll gallery-library">
+                        <div class="library-intro">
+                            <span class="gallery-eyebrow">THE PROJECT LIBRARY</span>
+                            <h2>Made to<br>be explored.</h2>
+                            <p>Pick a project. Take a closer look at the real app.</p>
                         </div>
-                        <div class="gallery-filters" id="galleryFilters" role="group" aria-label="Filter by project"></div>
-
-                        <div class="gallery-grid" id="galleryGrid"></div>
-
-                        <div class="gallery-empty" id="galleryEmpty" style="display: none;">
-                            <div class="card">
-                                <div class="gallery-empty-inner">
-                                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-                                    <strong>No media yet</strong>
-                                    <small>Project screenshots and demos will appear here soon.</small>
-                                </div>
-                            </div>
-                        </div>
-
+                        <div id="galleryFilters" class="gallery-library-list" role="group" aria-label="Choose a project"></div>
                     </div>
                 </section>
 
@@ -919,7 +949,7 @@
         </main>
 
         <!-- Tab Bar -->
-        <nav class="tab-bar" id="tabBar" role="tablist">
+        <nav class="tab-bar" id="tabBar" role="tablist" aria-label="Portfolio sections">
             <button class="tab active" data-tab="about" role="tab" aria-selected="true" aria-label="About">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                 <span>About</span>
@@ -943,7 +973,41 @@
         </nav>
 
     </div>
-    
+    <aside class="duo-wing" id="duoWing" aria-label="Project gallery" inert aria-hidden="true">
+        <div class="wing-status"><span>PROJECT GALLERY</span><button type="button" id="foldGallery" aria-label="Close gallery and fold device">Fold <span aria-hidden="true">↙</span></button></div>
+                <!-- ========== GALLERY ========== -->
+                <section class="screen" id="screen-gallery">
+                    <div class="screen-scroll gallery-workspace">
+
+                        <div class="gallery-intro">
+                            <span class="gallery-eyebrow">SELECTED WORK</span>
+                            <h2 id="galleryHeading" tabindex="-1">A closer look.</h2>
+                            <p id="galleryDescription">Native apps, real screens. Choose a project to explore its details.</p>
+                            <span class="gallery-summary" id="gallerySummary" role="status"></span>
+                        </div>
+                        <label class="gallery-mobile-picker">Project
+                            <select id="galleryProjectSelect" aria-label="Choose gallery project"></select>
+                        </label>
+
+                        <div class="gallery-grid" id="galleryGrid"></div>
+
+                        <div class="gallery-empty" id="galleryEmpty" style="display: none;">
+                            <div class="card">
+                                <div class="gallery-empty-inner">
+                                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+                                    <strong>No media yet</strong>
+                                    <small>Project screenshots and demos will appear here soon.</small>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+    </aside>
+    </div>
+    <p class="duo-hint" id="duoHint"><span aria-hidden="true">◫</span> A portfolio with a different perspective. <button type="button" id="unfoldGallery">Open gallery <span aria-hidden="true">↗</span></button></p>
+    </div>
     <!-- Project Detail Modal -->
     <div class="modal-overlay" id="projectModal" aria-hidden="true">
         <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalProjectName" tabindex="-1">
@@ -1012,14 +1076,15 @@
         <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
         </button>
+        <div class="lightbox-filmstrip" id="lightboxFilmstrip" aria-label="Screenshots"></div>
         <div class="lightbox-meta" aria-live="polite">
             <strong id="lightboxProject"></strong>
             <small id="lightboxCaption"></small>
         </div>
     </div>
 
-    <script src="content-data.js?v=20261012a"></script>
-    <script src="gallery-data.js?v=20261012a"></script>
-    <script src="app-safari.js?v=20261006a"></script>
+    <script src="content-data.js?v=20261026-five"></script>
+    <script src="gallery-data.js?v=20261026-five"></script>
+    <script src="app-safari.js?v=20261026-five"></script>
 </body>
 </html>

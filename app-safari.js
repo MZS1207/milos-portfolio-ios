@@ -18,9 +18,22 @@
 
     /* ---------- State ---------- */
     let current = 0;
+    let initialized = false;
     let track, tabs, header, modal, modalClose;
     let lastFocused = null;          // element to restore focus to when a dialog closes
     let modalActions = {};           // id -> handler for in-modal action buttons
+    let galleryReturnTab = 3;
+    const duoLayout = window.matchMedia('(min-width: 840px)');
+
+    function syncDuoLayout() {
+        const open = current === TABS.indexOf('gallery');
+        $('#duoDevice').classList.toggle('duo-open', open);
+        $('#duoWing').inert = !open;
+        $('#duoWing').setAttribute('aria-hidden', String(!open));
+        $('#screen-library').inert = !open || !duoLayout.matches;
+        $('#unfoldGallery').setAttribute('aria-expanded', String(open));
+        $('#unfoldGallery').textContent = open ? 'Fold gallery ↙' : 'Open gallery ↗';
+    }
 
     /* ---------- Core Functions ---------- */
     function $(sel) { 
@@ -43,7 +56,14 @@
 
     function switchTab(index) {
         if (index < 0 || index >= TABS.length) return;
+        if (index === 4 && current !== 4) galleryReturnTab = current;
         current = index;
+        syncDuoLayout();
+        TABS.forEach(function (name, i) {
+            const panel = $('#screen-' + (name === 'gallery' ? 'library' : name));
+            panel.inert = i !== index || (i === 4 && !duoLayout.matches);
+            panel.setAttribute('aria-hidden', String(i !== index));
+        });
         
         // Safari-compatible transform
         if (track) {
@@ -60,6 +80,7 @@
                     t.classList.remove('active');
                 }
                 t.setAttribute('aria-selected', i === index);
+                t.tabIndex = i === index ? 0 : -1;
             }
         });
         
@@ -157,6 +178,7 @@
         lastFocused = document.activeElement;
         modal.classList.add('active');
         modal.setAttribute('aria-hidden', 'false');
+        $('.portfolio-stage').inert = true;
         document.body.style.overflow = 'hidden';
         const body = modal.querySelector('.modal-body');
         if (body) body.scrollTop = 0;
@@ -287,6 +309,7 @@
         if (modal && modal.classList.contains('active')) {
             modal.classList.remove('active');
             modal.setAttribute('aria-hidden', 'true');
+            $('.portfolio-stage').inert = false;
             document.body.style.overflow = '';
             if (!(opts && opts.keepFocus)) restoreFocus();
         }
@@ -320,9 +343,26 @@
     let galleryFilter = 'All';
     let galleryView = [];
     let lightboxIndex = -1;
+    const GALLERY_ALBUM_SIZE = 5;
 
     function galleryItems() {
-        return (window.GALLERY_ITEMS && Array.isArray(window.GALLERY_ITEMS)) ? window.GALLERY_ITEMS : [];
+        const items = Array.isArray(window.GALLERY_ITEMS) ? window.GALLERY_ITEMS : [];
+        const albums = new Map();
+        items.forEach(function (item) {
+            if (!item || !item.project) return;
+            if (!albums.has(item.project)) albums.set(item.project, []);
+            albums.get(item.project).push(item);
+        });
+        // Incomplete albums stay out of filters, covers and project links.
+        const ready = new Set();
+        albums.forEach(function (album, name) {
+            if (album.length === GALLERY_ALBUM_SIZE &&
+                album.every(function (item) { return item.type === 'image' && item.src; }) &&
+                new Set(album.map(function (item) { return item.src; })).size === GALLERY_ALBUM_SIZE) {
+                ready.add(name);
+            }
+        });
+        return items.filter(function (item) { return item && ready.has(item.project); });
     }
 
     function galleryProjects() {
@@ -348,7 +388,7 @@
         renderGalleryFilters();
         renderGalleryGrid();
         switchTab(TABS.indexOf('gallery'));
-        const chip = $('.gallery-chip.active');
+        const chip = duoLayout.matches ? $('.gallery-chip.active') : $('#galleryProjectSelect');
         if (chip) {
             try { chip.scrollIntoView({ block: 'nearest', inline: 'center' }); } catch (e) {}
             chip.focus({ preventScroll: true });
@@ -361,21 +401,32 @@
         if (galleryItems().length === 0) { bar.style.display = 'none'; return; }
         bar.style.display = '';
         const chips = ['All'].concat(galleryProjects());
+        const select = $('#galleryProjectSelect');
+        if (select) select.innerHTML = chips.map(function (name) {
+            return '<option value="' + esc(name) + '"' + (name === galleryFilter ? ' selected' : '') + '>' + esc(name === 'All' ? 'All projects' : name) + '</option>';
+        }).join('');
         bar.innerHTML = chips.map(function (name) {
             const on = name === galleryFilter;
-            return '<button type="button" class="gallery-chip' + (on ? ' active' : '') + '" data-filter="' + esc(name) + '" aria-pressed="' + on + '">' + esc(name) + '<span class="gallery-chip-count">' + (name === 'All' ? galleryItems().length : galleryCountFor(name)) + '</span></button>';
+            const project = Object.values(PROJECTS).find(function (p) { return p.gallery === name; });
+            return '<button type="button" class="gallery-chip' + (on ? ' active' : '') + '" data-filter="' + esc(name) + '" aria-pressed="' + on + '"><span class="library-icon" aria-hidden="true">' + esc(project ? project.icon : '◫') + '</span><span class="library-name">' + esc(name === 'All' ? 'All projects' : name) + '</span><span class="gallery-chip-count">' + (name === 'All' ? galleryProjects().length : galleryCountFor(name)) + '</span></button>';
         }).join('');
         $$('.gallery-chip').forEach(function (btn) {
             btn.addEventListener('click', function () {
-                galleryFilter = this.getAttribute('data-filter');
-                $$('.gallery-chip').forEach(function (chip) {
-                    const active = chip.getAttribute('data-filter') === galleryFilter;
-                    chip.classList.toggle('active', active);
-                    chip.setAttribute('aria-pressed', String(active));
-                });
-                renderGalleryGrid();
+                selectGalleryProject(this.getAttribute('data-filter'));
             });
         });
+    }
+
+    function selectGalleryProject(name) {
+        galleryFilter = galleryHasProject(name) ? name : 'All';
+        $$('.gallery-chip').forEach(function (chip) {
+            const active = chip.getAttribute('data-filter') === galleryFilter;
+            chip.classList.toggle('active', active);
+            chip.setAttribute('aria-pressed', String(active));
+        });
+        $('#galleryProjectSelect').value = galleryFilter;
+        renderGalleryGrid();
+        $('#screen-gallery .screen-scroll').scrollTop = 0;
     }
 
     function renderGalleryGrid() {
@@ -392,7 +443,35 @@
         if (empty) empty.style.display = 'none';
         galleryView = galleryFilter === 'All' ? all.slice() : all.filter(function (it) { return it.project === galleryFilter; });
         const projects = galleryFilter === 'All' ? galleryProjects() : [galleryFilter];
+        const selected = Object.values(PROJECTS).find(function (p) { return p.gallery === galleryFilter; });
+        setText('#galleryHeading', galleryFilter === 'All' ? 'A closer look.' : galleryFilter);
+        setText('#galleryDescription', selected ? (selected.gallerySummary || selected.description) : 'A collection of native apps, games and web experiences. Pick a project to explore its real screens.');
         setText('#gallerySummary', galleryView.length + (galleryView.length === 1 ? ' screen · ' : ' screens · ') + projects.length + (projects.length === 1 ? ' project' : ' projects'));
+        grid.classList.toggle('gallery-overview', galleryFilter === 'All');
+        if (galleryFilter === 'All') {
+            grid.innerHTML = projects.map(function (name) {
+                const project = Object.values(PROJECTS).find(function (p) { return p.gallery === name; });
+                const items = all.filter(function (it) { return it.project === name; });
+                const previews = items.slice(0, 2).map(function (it) {
+                    return '<img src="' + esc(it.poster || it.src) + '" alt="" loading="lazy" decoding="async" width="' + (it.width || 400) + '" height="' + (it.height || 800) + '">';
+                }).join('');
+                return '<button type="button" class="album-cover" data-project-filter="' + esc(name) + '" aria-label="Explore ' + esc(name) + ', ' + items.length + (items.length === 1 ? ' screen' : ' screens') + '"><span class="album-cover-images">' + previews + '</span><span class="album-cover-info"><strong>' + esc(name) + '</strong><small>' + esc(project ? project.type : 'Selected project') + '</small><span>' + items.length + (items.length === 1 ? ' screen' : ' screens') + ' <span aria-hidden="true">↗</span></span></span></button>';
+            }).join('');
+            grid.querySelectorAll('[data-project-filter]').forEach(function (button) {
+                button.addEventListener('click', function () {
+                    selectGalleryProject(button.getAttribute('data-project-filter'));
+                    $('#galleryHeading').focus({ preventScroll: true });
+                });
+            });
+            grid.querySelectorAll('img').forEach(function (img) {
+                img.addEventListener('error', function () {
+                    const cover = img.parentElement;
+                    img.remove();
+                    if (!cover.querySelector('img')) cover.innerHTML = '<span class="gallery-media-error">Preview unavailable</span>';
+                });
+            });
+            return;
+        }
         grid.innerHTML = projects.map(function (name, groupIndex) {
             const projectKey = Object.keys(PROJECTS).find(function (key) { return PROJECTS[key].gallery === name; });
             const project = PROJECTS[projectKey];
@@ -441,13 +520,40 @@
         if (!it) return;
         const stage = $('#lightboxStage');
         if (stage) {
+            stage.setAttribute('aria-busy', 'true');
             stage.innerHTML = it.type === 'video'
                 ? '<video src="' + esc(it.src) + '"' + (it.poster ? ' poster="' + esc(it.poster) + '"' : '') + ' controls autoplay playsinline></video>'
                 : '<img src="' + esc(it.src) + '" alt="' + esc((it.project || 'Gallery item') + (it.caption ? ' - ' + it.caption : '')) + '" decoding="async">';
+            const media = stage.querySelector('img, video');
+            media.addEventListener(it.type === 'video' ? 'loadeddata' : 'load', function () {
+                stage.setAttribute('aria-busy', 'false');
+            });
+            media.addEventListener('error', function () {
+                stage.setAttribute('aria-busy', 'false');
+                stage.innerHTML = '<div class="viewer-error"><p>This preview could not be loaded.</p><button type="button">Try again</button></div>';
+                stage.querySelector('button').addEventListener('click', renderLightbox);
+            });
         }
         setText('#lightboxCounter', (lightboxIndex + 1) + ' / ' + galleryView.length);
         setText('#lightboxProject', it.project || '');
         setText('#lightboxCaption', it.caption || '');
+        const strip = $('#lightboxFilmstrip');
+        if (!strip.children.length) {
+            strip.innerHTML = galleryView.map(function (item, i) {
+                return '<button type="button" data-frame="' + i + '" aria-label="Show screenshot ' + (i + 1) + ': ' + esc(item.caption || item.project) + '"><img src="' + esc(item.poster || item.src) + '" alt="" loading="lazy"></button>';
+            }).join('');
+            strip.querySelectorAll('button').forEach(function (button) {
+                button.addEventListener('click', function () {
+                    lightboxIndex = Number(button.getAttribute('data-frame'));
+                    renderLightbox();
+                });
+            });
+        }
+        strip.querySelectorAll('button').forEach(function (button, i) {
+            button.setAttribute('aria-current', String(i === lightboxIndex));
+        });
+        const frame = strip.children[lightboxIndex];
+        if (frame) strip.scrollLeft = frame.offsetLeft - strip.clientWidth / 2 + frame.clientWidth / 2;
     }
 
     function openLightbox(i) {
@@ -458,7 +564,7 @@
         renderLightbox();
         lb.classList.add('active');
         lb.setAttribute('aria-hidden', 'false');
-        if ($('#app')) $('#app').inert = true;
+        $('.portfolio-stage').inert = true;
         document.body.style.overflow = 'hidden';
         const close = $('#lightboxClose');
         if (close) close.focus({ preventScroll: true });
@@ -469,9 +575,10 @@
         if (!lb) return;
         const stage = $('#lightboxStage');
         if (stage) stage.innerHTML = '';
+        $('#lightboxFilmstrip').innerHTML = '';
         lb.classList.remove('active');
         lb.setAttribute('aria-hidden', 'true');
-        if ($('#app')) $('#app').inert = false;
+        $('.portfolio-stage').inert = false;
         document.body.style.overflow = '';
         lightboxIndex = -1;
         restoreFocus();
@@ -486,6 +593,25 @@
     function setupGallery() {
         renderGalleryFilters();
         renderGalleryGrid();
+        $('#galleryProjectSelect').addEventListener('change', function (event) {
+            selectGalleryProject(event.target.value);
+        });
+        $('#unfoldGallery').addEventListener('click', function () {
+            const destination = current === 4 ? galleryReturnTab : 4;
+            switchTab(destination);
+            tabs[destination].focus({ preventScroll: true });
+        });
+        $('#foldGallery').addEventListener('click', function () {
+            switchTab(galleryReturnTab);
+            tabs[galleryReturnTab].focus({ preventScroll: true });
+        });
+        const onLayout = function () {
+            const wasInLibrary = $('#screen-library').contains(document.activeElement);
+            syncDuoLayout();
+            if (!duoLayout.matches && wasInLibrary) $('#galleryProjectSelect').focus({ preventScroll: true });
+        };
+        if (duoLayout.addEventListener) duoLayout.addEventListener('change', onLayout);
+        else duoLayout.addListener(onLayout);
         const close = $('#lightboxClose');
         if (close) close.addEventListener('click', closeLightbox);
         const prev = $('#lightboxPrev');
@@ -530,6 +656,11 @@
         // Tab clicks with Safari compatibility
         tabs.forEach((tab, i) => {
             if (tab) {
+                tab.id = 'tab-' + TABS[i];
+                const panel = $('#screen-' + (i === 4 ? 'library' : TABS[i]));
+                tab.setAttribute('aria-controls', i === 4 ? 'screen-library screen-gallery' : panel.id);
+                panel.setAttribute('role', 'tabpanel');
+                panel.setAttribute('aria-labelledby', tab.id);
                 tab.addEventListener('click', function(e) {
                     e.preventDefault();
                     switchTab(i);
@@ -539,13 +670,16 @@
         
         // Touch gestures with Safari support
         if (track) {
+            let swipeStart = null;
             track.addEventListener('touchstart', function(e) {
-                e.startX = e.changedTouches[0].clientX;
-                e.startY = e.changedTouches[0].clientY;
-                e.isSwiping = true;
+                swipeStart = e.target.closest('button, a, select, input') ? null : e.changedTouches[0];
             }, { passive: true });
-            
-            track.addEventListener('touchend', handleSwipe, { passive: true });
+            track.addEventListener('touchend', function (event) {
+                if (!swipeStart) return;
+                handleSwipe({ isSwiping: true, startX: swipeStart.clientX, startY: swipeStart.clientY, changedTouches: event.changedTouches });
+                swipeStart = null;
+            }, { passive: true });
+            track.addEventListener('touchcancel', function () { swipeStart = null; }, { passive: true });
         }
         
         // Keyboard navigation
@@ -563,8 +697,17 @@
                 return;
             }
             if (e.altKey || e.ctrlKey || e.metaKey) return;
-            if (e.key === 'ArrowRight') switchTab(current + 1);
-            if (e.key === 'ArrowLeft') switchTab(current - 1);
+            if (e.target.closest('[role="tablist"]')) {
+                let index = current;
+                if (e.key === 'ArrowRight') index = (current + 1) % TABS.length;
+                else if (e.key === 'ArrowLeft') index = (current + TABS.length - 1) % TABS.length;
+                else if (e.key === 'Home') index = 0;
+                else if (e.key === 'End') index = TABS.length - 1;
+                else return;
+                e.preventDefault();
+                switchTab(index);
+                tabs[index].focus({ preventScroll: true });
+            }
         });
 
         // Follow back/forward navigation between tab hashes
@@ -646,13 +789,8 @@
 
     /* ---------- Initialize ---------- */
     function init() {
+        if (initialized) return;
         try {
-            // Safari-specific DOM ready check
-            if (document.readyState !== 'complete') {
-                setTimeout(init, 100);
-                return;
-            }
-
             track = $('#screensTrack');
             tabs = $$('.tab');
             header = $('#headerTitle');
@@ -661,11 +799,9 @@
                 throw new Error('Required DOM elements not found');
             }
 
-            // Safari-specific initialization delay
-            setTimeout(function() {
-                initEvents();
-                switchTab(tabFromHash());
-            }, 50);
+            initEvents();
+            switchTab(tabFromHash());
+            initialized = true;
 
         } catch (error) {
             console.error('CV App: Initialization failed', error);
@@ -688,7 +824,7 @@
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', init);
     } else {
-        setTimeout(init, 100);
+        init();
     }
 
 })();

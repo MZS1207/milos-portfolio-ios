@@ -1,0 +1,133 @@
+{
+  "note": "Not loaded by the site. Add an album to gallery-data.js only after curating five distinct quality screenshots. Keep descriptions in Projects.",
+  "items": [
+    {
+      "type": "image",
+      "src": "gallery/storagelens-20261026-inspect.jpg",
+      "width": 2000,
+      "height": 1250,
+      "project": "StorageLens",
+      "caption": "macOS — Store artwork — inspect an approved folder with sample files"
+    },
+    {
+      "type": "image",
+      "src": "gallery/storagelens-20261026-duplicates.jpg",
+      "width": 2000,
+      "height": 1250,
+      "project": "StorageLens",
+      "caption": "macOS — Store artwork — compare duplicates and keep a protected copy"
+    },
+    {
+      "type": "image",
+      "src": "gallery/last-inquisitor-20261026-ipad.jpg",
+      "width": 2000,
+      "height": 1499,
+      "project": "The Last Inquisitor",
+      "caption": "iPad development build — Forest and chapel environment — placeholder hunter"
+    },
+    {
+      "type": "image",
+      "src": "gallery/orbit-macos.jpg",
+      "width": 1199,
+      "height": 768,
+      "project": "Orbit",
+      "caption": "Native macOS workspace — cross-project metrics and activity"
+    },
+    {
+      "type": "image",
+      "src": "gallery/orbit-ios.jpg",
+      "width": 736,
+      "height": 1600,
+      "project": "Orbit",
+      "caption": "iPhone dashboard — project switching, priorities and personal focus"
+    },
+    {
+      "type": "image",
+      "src": "gallery/orbit-settings.jpg",
+      "width": 650,
+      "height": 785,
+      "project": "Orbit",
+      "caption": "Project settings — team, schedule and archive controls"
+    },
+    {
+      "type": "image",
+      "src": "gallery/karolina-home.jpg",
+      "width": 1280,
+      "height": 720,
+      "project": "Karolina Prevodi",
+      "caption": "Serbian landing page — typography, identity and service discovery"
+    },
+    {
+      "type": "image",
+      "src": "gallery/karolina-services.jpg",
+      "width": 1280,
+      "height": 720,
+      "project": "Karolina Prevodi",
+      "caption": "English service catalog — live language switching"
+    },
+    {
+      "type": "image",
+      "src": "gallery/beambike-welcome.jpg",
+      "width": 736,
+      "height": 1600,
+      "project": "BeamBike",
+      "caption": "Welcome to BeamBike — phone & social sign-in"
+    },
+    {
+      "type": "image",
+      "src": "gallery/servicehub-map.jpg",
+      "width": 736,
+      "height": 1600,
+      "project": "ServiceHub",
+      "caption": "Verified providers on the map (Belgrade)"
+    },
+    {
+      "type": "image",
+      "src": "gallery/servicehub-onboarding.jpg",
+      "width": 736,
+      "height": 1600,
+      "project": "ServiceHub",
+      "caption": "Onboarding - find trusted pros"
+    },
+    {
+      "type": "image",
+      "src": "gallery/servicehub-role.jpg",
+      "width": 736,
+      "height": 1600,
+      "project": "ServiceHub",
+      "caption": "Customer or provider - role selection"
+    },
+    {
+      "type": "image",
+      "src": "gallery/imovo-detail.jpg",
+      "width": 1600,
+      "height": 936,
+      "project": "iMovo",
+      "caption": "Property detail page"
+    },
+    {
+      "type": "image",
+      "src": "gallery/imovo-listings.jpg",
+      "width": 1600,
+      "height": 863,
+      "project": "iMovo",
+      "caption": "Listings with map search"
+    },
+    {
+      "type": "image",
+      "src": "gallery/imovo-novogradnja.jpg",
+      "width": 1600,
+      "height": 878,
+      "project": "iMovo",
+      "caption": "New developments showcase"
+    },
+    {
+      "type": "image",
+      "src": "gallery/imovo-calculator.jpg",
+      "width": 1600,
+      "height": 832,
+      "project": "iMovo",
+      "caption": "Mortgage calculator"
+    }
+  ]
+}
