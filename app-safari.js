@@ -356,9 +356,11 @@
         // Incomplete albums stay out of filters, covers and project links.
         const ready = new Set();
         albums.forEach(function (album, name) {
-            if (album.length === GALLERY_ALBUM_SIZE &&
+            const project = Object.values(PROJECTS).find(function (entry) { return entry.gallery === name; });
+            const size = project && project.gallerySize ? project.gallerySize : GALLERY_ALBUM_SIZE;
+            if (album.length === size &&
                 album.every(function (item) { return item.type === 'image' && item.src; }) &&
-                new Set(album.map(function (item) { return item.src; })).size === GALLERY_ALBUM_SIZE) {
+                new Set(album.map(function (item) { return item.src; })).size === size) {
                 ready.add(name);
             }
         });

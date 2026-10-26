@@ -7,6 +7,7 @@
    separately in gallery-data.js.
 
    Optional project fields:
+     gallerySize  owner-approved album size exception; default is five
      gallery  exact `project` name used in gallery-data.js -
               adds a "View screenshots" button to the modal
               that opens the Gallery tab pre-filtered.
@@ -191,13 +192,16 @@ window.CONTENT_DATA = {
                 'Transaction History'
             ],
             tech: ['Swift', 'Stripe', 'Core Data', 'Network APIs', 'Security', 'Push Notifications'],
-            highlights: 'Business rules change per country and operator, and checkout must never break. A good lesson in defensive design around payments.'
+            highlights: 'Business rules change per country and operator, and checkout must never break. A good lesson in defensive design around payments.',
+            gallery: 'Ding',
+            gallerySummary: 'I contributed to the iOS app at Endava. These official App Store promotional images are supplied by ezetop and show the current public listing.',
+            links: [{ label: 'View on the App Store', url: 'https://apps.apple.com/us/app/ding-top-up-mobile-recharge/id425228767' }]
         },
         admiral: {
             name: 'Admiral Insurance',
             type: 'Insurance Management Platform',
             icon: '🛡️',
-            description: 'App for one of the biggest UK insurers: policies, documents, emergency assistance and MyTrips journey tracking.',
+            description: 'I contributed to the Admiral Insurance iOS app: policy management, documents, emergency assistance and MyTrips journey tracking.',
             features: [
                 'Policy Management',
                 'Document Storage & Printing',
@@ -207,7 +211,11 @@ window.CONTENT_DATA = {
                 'Customer Support Integration'
             ],
             tech: ['Swift', 'Core Data', 'Core Location', 'Security', 'PDF Generation', 'Push Notifications'],
-            highlights: 'Insurance at UK scale means strict compliance, accessibility and releases that simply cannot break for millions of policyholders.'
+            highlights: 'Insurance at UK scale means strict compliance, accessibility and releases that simply cannot break for millions of policyholders.',
+            gallery: 'Admiral Insurance',
+            gallerySize: 4, // Owner-approved exception: the official App Store listing has four images.
+            gallerySummary: 'A client iOS project I contributed to. These four official App Store promotional images are supplied by Admiral group and show the current public listing.',
+            links: [{ label: 'View on the App Store', url: 'https://apps.apple.com/gb/app/admiral-insurance/id1461457136' }]
         },
         catchase: {
             name: 'Cute Bubble Chase',

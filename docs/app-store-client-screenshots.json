@@ -1,0 +1,87 @@
+{
+  "retrieved": "2026-10-26",
+  "note": "Official public App Store promotional images. Project contribution is confirmed by the portfolio owner; current listing visuals do not imply authorship of every depicted feature or the marketing artwork. Files preserve the full Apple CDN frames without retouching.",
+  "listings": {
+    "admiral": "https://apps.apple.com/gb/app/admiral-insurance/id1461457136",
+    "ding": "https://apps.apple.com/us/app/ding-top-up-mobile-recharge/id425228767"
+  },
+  "publishers": {
+    "admiral": "Admiral group / EUI Limited",
+    "ding": "ezetop / ezetop ltd"
+  },
+  "admiral_exception": "Owner explicitly approved four official images instead of the default five.",
+  "screenshots": [
+    {
+      "project": "admiral",
+      "position": 1,
+      "source_url": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a7/ba/81/a7ba819b-c682-8d28-0314-3f3b5fa774ce/iOS_-_Home.png/2000x2000bb.jpg",
+      "width": 923,
+      "height": 2000,
+      "gallery_file": "gallery/admiral-appstore-20261026-home.jpg"
+    },
+    {
+      "project": "admiral",
+      "position": 2,
+      "source_url": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/5d/bf/6e/5dbf6eed-1b7d-7b7d-0065-25137d662073/iOS_-_Log_In.png/2000x2000bb.jpg",
+      "width": 923,
+      "height": 2000,
+      "gallery_file": "gallery/admiral-appstore-20261026-login.jpg"
+    },
+    {
+      "project": "admiral",
+      "position": 3,
+      "source_url": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/54/25/31/54253156-2f00-96d9-ca63-053d215e4b4e/iOS_-_Upsells.png/2000x2000bb.jpg",
+      "width": 923,
+      "height": 2000,
+      "gallery_file": "gallery/admiral-appstore-20261026-cover.jpg"
+    },
+    {
+      "project": "admiral",
+      "position": 4,
+      "source_url": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/83/42/9b/83429b2e-9bea-5d84-80d2-3378e7f73495/iOS_-_Drawer.png/2000x2000bb.jpg",
+      "width": 923,
+      "height": 2000,
+      "gallery_file": "gallery/admiral-appstore-20261026-policy.jpg"
+    },
+    {
+      "project": "ding",
+      "position": 1,
+      "source_url": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d3/38/e5/d338e5c9-285b-7d10-2ae3-d6902f7fadd8/6.5__English_106.png/2000x2000bb.jpg",
+      "width": 924,
+      "height": 2000,
+      "gallery_file": "gallery/ding-appstore-20261026-home.jpg"
+    },
+    {
+      "project": "ding",
+      "position": 2,
+      "source_url": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/37/eb/02/37eb0271-f5c8-3025-711c-75e319cb52b5/6.5__English_110.png/2000x2000bb.jpg",
+      "width": 924,
+      "height": 2000,
+      "gallery_file": "gallery/ding-appstore-20261026-amount.jpg"
+    },
+    {
+      "project": "ding",
+      "position": 3,
+      "source_url": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/05/62/83/056283b5-bf35-e725-9094-4f8d457cf18f/6.5__English_109.png/2000x2000bb.jpg",
+      "width": 924,
+      "height": 2000,
+      "gallery_file": "gallery/ding-appstore-20261026-products.jpg"
+    },
+    {
+      "project": "ding",
+      "position": 4,
+      "source_url": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/00/ad/af/00adaff9-0bd9-9005-4d45-5f9aac376d06/6.5__English_108.png/2000x2000bb.jpg",
+      "width": 924,
+      "height": 2000,
+      "gallery_file": "gallery/ding-appstore-20261026-history.jpg"
+    },
+    {
+      "project": "ding",
+      "position": 5,
+      "source_url": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/23/ed/80/23ed8025-8e57-7527-e273-185f641952b4/6.5__English_107.png/2000x2000bb.jpg",
+      "width": 924,
+      "height": 2000,
+      "gallery_file": "gallery/ding-appstore-20261026-confirmation.jpg"
+    }
+  ]
+}

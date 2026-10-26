@@ -1,10 +1,83 @@
-/* Gallery albums contain exactly five distinct, real screenshots.
+/* Gallery albums default to five distinct screenshots. Owner-approved
+   exceptions use gallerySize in content-data.js (Admiral Insurance: four).
    Add a complete album to this registry; keep incomplete sets in
    docs/gallery-pending.json. Project descriptions stay in content-data.js.
    Run: node scripts/validate-gallery.mjs
    Fields: type ('image'), src, width, height, project, caption.
    Preserve full frames and aspect ratios; see docs/gallery-captures.md. */
 window.GALLERY_ITEMS = [
+    {
+        "type": "image",
+        "src": "gallery/admiral-appstore-20261026-home.jpg",
+        "width": 923,
+        "height": 2000,
+        "project": "Admiral Insurance",
+        "caption": "iPhone — Official App Store image — Policy overview and emergency assistance"
+    },
+    {
+        "type": "image",
+        "src": "gallery/admiral-appstore-20261026-login.jpg",
+        "width": 923,
+        "height": 2000,
+        "project": "Admiral Insurance",
+        "caption": "iPhone — Official App Store image — MyAccount login and registration"
+    },
+    {
+        "type": "image",
+        "src": "gallery/admiral-appstore-20261026-cover.jpg",
+        "width": 923,
+        "height": 2000,
+        "project": "Admiral Insurance",
+        "caption": "iPhone — Official App Store image — Additional insurance products"
+    },
+    {
+        "type": "image",
+        "src": "gallery/admiral-appstore-20261026-policy.jpg",
+        "width": 923,
+        "height": 2000,
+        "project": "Admiral Insurance",
+        "caption": "iPhone — Official App Store image — Policy details, documents and changes"
+    },
+    {
+        "type": "image",
+        "src": "gallery/ding-appstore-20261026-home.jpg",
+        "width": 924,
+        "height": 2000,
+        "project": "Ding",
+        "caption": "iPhone — Official App Store image — Top-up and voucher home"
+    },
+    {
+        "type": "image",
+        "src": "gallery/ding-appstore-20261026-amount.jpg",
+        "width": 924,
+        "height": 2000,
+        "project": "Ding",
+        "caption": "iPhone — Official App Store image — Choose a top-up amount"
+    },
+    {
+        "type": "image",
+        "src": "gallery/ding-appstore-20261026-products.jpg",
+        "width": 924,
+        "height": 2000,
+        "project": "Ding",
+        "caption": "iPhone — Official App Store image — Products and gift vouchers"
+    },
+    {
+        "type": "image",
+        "src": "gallery/ding-appstore-20261026-history.jpg",
+        "width": 924,
+        "height": 2000,
+        "project": "Ding",
+        "caption": "iPhone — Official App Store image — History and repeat top-ups"
+    },
+    {
+        "type": "image",
+        "src": "gallery/ding-appstore-20261026-confirmation.jpg",
+        "width": 924,
+        "height": 2000,
+        "project": "Ding",
+        "caption": "iPhone — Official App Store image — Completed top-up and receipt"
+    },
     {
         "type": "image",
         "src": "gallery/nebnik-20261026-sky.jpg",

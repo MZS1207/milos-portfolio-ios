@@ -26,6 +26,10 @@ for (const item of items) {
     albums.set(item.project, (albums.get(item.project) || 0) + 1);
 }
 for (const [project, count] of albums) {
-    assert.equal(count, 5, `${project} must have exactly 5 distinct screenshots (has ${count})`);
+    const metadata = projects.find(entry => entry.gallery === project);
+    const expected = metadata.gallerySize ?? 5;
+    assert(Number.isInteger(expected) && expected >= 4 && expected <= 5, `Invalid approved album size: ${project}`);
+    assert.equal(count, expected, `${project} must have exactly ${expected} distinct screenshots (has ${count})`);
 }
-console.log(`Gallery valid: ${albums.size} albums, ${items.length} screenshots, exactly 5 per album.`);
+const exceptions = projects.filter(project => project.gallerySize && project.gallerySize !== 5);
+console.log(`Gallery valid: ${albums.size} albums, ${items.length} screenshots; default 5 per album, ${exceptions.length} approved exception(s).`);

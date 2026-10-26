@@ -102,3 +102,12 @@ BeamBike, StorageLens, The Last Inquisitor, Orbit, Karolina Prevodi, ServiceHub 
 | Translato (+1) | `Desktop/MyProjects/Translato/build/qa/paywall-review.png` | Native macOS Pro upgrade view with purchase and restore options; historical capture. |
 
 All additions preserve source frames and aspect ratios, JPEG quality 90, maximum dimension 2000px. No generated screens, retouching, new application builds or production interactions. Local full-path manifest: `output/duo-qa/five-image-addition-sources.json`.
+
+## Admiral Insurance and Ding — 2026-10-26
+
+Added nine official iPhone App Store promotional images as two client-project albums. The owner confirmed contribution to both iOS projects. App Store artwork is attributed to its publishers; current public visuals are not presented as personal screen captures or authorship of every shown feature.
+
+- Admiral Insurance: [UK listing, ID 1461457136](https://apps.apple.com/gb/app/admiral-insurance/id1461457136), Admiral group / EUI Limited. All four published iPhone images: policy overview, login, additional cover and policy actions. The owner explicitly approved a four-image exception to the five-image rule; `gallerySize: 4` is shared by runtime eligibility and the validator. No duplicate or invented fifth image.
+- Ding Top-up: Mobile Recharge: [US listing, ID 425228767](https://apps.apple.com/us/app/ding-top-up-mobile-recharge/id425228767), ezetop / ezetop ltd. All five published iPhone images: home, amount selection, products, history/repeat top-up and confirmation.
+
+Apple Lookup API provided the image URLs. Downloaded Apple CDN JPEG renditions at a maximum dimension of 2000px (Admiral 923×2000, Ding 924×2000), preserving the complete promotional artwork. All nine images visually inspected; bytes copied into the gallery without retouching or cropping. Complete source URL/publisher manifest: `docs/app-store-client-screenshots.json`. Both existing project cards now link to their albums and official App Store pages. Total: **17 albums / 84 images**; all other albums retain their five-image rule.
