@@ -67,6 +67,6 @@ Gallery additions and simulator build notes are recorded in [docs/gallery-captur
 
 ## Updating the downloadable CV
 
-`MilosStevanovicResume.pdf` is the approved default CV: the two-page visual resume with a photo, Senior Software Engineer title, and Admiral Insurance (four years at Endava). The primary **Download CV** action serves this file. Replace it only with an approved updated PDF, preserve its layout, and bump its download query version in `index.html`.
+`MilosStevanovicResume.pdf` is the approved default CV: the two-page visual resume with a photo, Senior Mobile Engineer title, and native iOS, Android and web projects. The primary **Download CV** action serves this file. Replace it only with an approved updated PDF, preserve its layout, and bump its download query version in `index.html`.
 
 `MilosStevanovicResume-Platform.pdf` remains a separate iOS/macOS-focused alternative. `cv/build_resume.py` generates the older text-based variants; it is not the source of the approved visual CV. When using that generator, pass an explicit `--output` path to avoid overwriting the default resume. Render and review both pages after any PDF content edits.
