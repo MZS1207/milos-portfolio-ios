@@ -111,3 +111,7 @@ Added nine official iPhone App Store promotional images as two client-project al
 - Ding Top-up: Mobile Recharge: [US listing, ID 425228767](https://apps.apple.com/us/app/ding-top-up-mobile-recharge/id425228767), ezetop / ezetop ltd. All five published iPhone images: home, amount selection, products, history/repeat top-up and confirmation.
 
 Apple Lookup API provided the image URLs. Downloaded Apple CDN JPEG renditions at a maximum dimension of 2000px (Admiral 923×2000, Ding 924×2000), preserving the complete promotional artwork. All nine images visually inspected; bytes copied into the gallery without retouching or cropping. Complete source URL/publisher manifest: `docs/app-store-client-screenshots.json`. Both existing project cards now link to their albums and official App Store pages. Total: **17 albums / 84 images**; all other albums retain their five-image rule.
+
+## 2026-11-24 — Wellness Spot, ZooPal and FitPilot
+
+Refreshed Wellness Spot and ZooPal with native mobile/tablet captures and retained one synthetic web overview. Added five actual FitPilot simulator screenshots captured from the running development build; sample data, not a release claim. Sources are recorded in `gallery-refresh-20261124.json`. Full frames preserved, JPEG quality 90, maximum dimension 2000 px. No promotional concept art used.

@@ -8,6 +8,126 @@
 window.GALLERY_ITEMS = [
     {
         "type": "image",
+        "src": "gallery/wellness-spot-20261124-ios-home.jpg",
+        "width": 920,
+        "height": 2000,
+        "project": "Wellness Spot",
+        "caption": "iPhone — Native welcome and wellness journey"
+    },
+    {
+        "type": "image",
+        "src": "gallery/wellness-spot-20261124-ios-food.jpg",
+        "width": 920,
+        "height": 2000,
+        "project": "Wellness Spot",
+        "caption": "iPhone — Food catalog with illustrative demo prices"
+    },
+    {
+        "type": "image",
+        "src": "gallery/wellness-spot-20261124-ios-path.jpg",
+        "width": 920,
+        "height": 2000,
+        "project": "Wellness Spot",
+        "caption": "iPhone — Wellness journey and analysis booking"
+    },
+    {
+        "type": "image",
+        "src": "gallery/wellness-spot-20261124-android-onboarding.jpg",
+        "width": 900,
+        "height": 2000,
+        "project": "Wellness Spot",
+        "caption": "Android — Native onboarding for stay, analysis and food"
+    },
+    {
+        "type": "image",
+        "src": "gallery/wellness-spot-20261124-web.jpg",
+        "width": 2000,
+        "height": 1250,
+        "project": "Wellness Spot",
+        "caption": "Desktop web — Customer overview with synthetic measurements"
+    },
+    {
+        "type": "image",
+        "src": "gallery/zoopal-20261124-iphone-home.jpg",
+        "width": 920,
+        "height": 2000,
+        "project": "ZooPal",
+        "caption": "iPhone — Stories and daily pet-care learning"
+    },
+    {
+        "type": "image",
+        "src": "gallery/zoopal-20261124-iphone-profile.jpg",
+        "width": 920,
+        "height": 2000,
+        "project": "ZooPal",
+        "caption": "iPhone — Pet profile and care records with demo data"
+    },
+    {
+        "type": "image",
+        "src": "gallery/zoopal-20261124-iphone-diary.jpg",
+        "width": 920,
+        "height": 2000,
+        "project": "ZooPal",
+        "caption": "iPhone — Diary with fictional sample entries"
+    },
+    {
+        "type": "image",
+        "src": "gallery/zoopal-20261124-ipad-home.jpg",
+        "width": 1500,
+        "height": 2000,
+        "project": "ZooPal",
+        "caption": "iPad — Adaptive stories and pet-care dashboard"
+    },
+    {
+        "type": "image",
+        "src": "gallery/zoopal-20261124-android-profile.jpg",
+        "width": 1125,
+        "height": 2000,
+        "project": "ZooPal",
+        "caption": "Android — Native pet profile; development build"
+    },
+    {
+        "type": "image",
+        "src": "gallery/fitpilot-20261124-today.jpg",
+        "width": 920,
+        "height": 2000,
+        "project": "FitPilot",
+        "caption": "iPhone simulator — Development build with sample data — Daily overview"
+    },
+    {
+        "type": "image",
+        "src": "gallery/fitpilot-20261124-food.jpg",
+        "width": 920,
+        "height": 2000,
+        "project": "FitPilot",
+        "caption": "iPhone simulator — Development build with sample data — Food diary"
+    },
+    {
+        "type": "image",
+        "src": "gallery/fitpilot-20261124-move.jpg",
+        "width": 920,
+        "height": 2000,
+        "project": "FitPilot",
+        "caption": "iPhone simulator — Development build with sample data — Movement planning"
+    },
+    {
+        "type": "image",
+        "src": "gallery/fitpilot-20261124-progress.jpg",
+        "width": 920,
+        "height": 2000,
+        "project": "FitPilot",
+        "caption": "iPhone simulator — Development build with sample data — Weight trends"
+    },
+    {
+        "type": "image",
+        "src": "gallery/fitpilot-20261124-review.jpg",
+        "width": 920,
+        "height": 2000,
+        "project": "FitPilot",
+        "caption": "iPhone simulator — Development build with sample data — Weekly review"
+    },
+    {
+        "type": "image",
         "src": "gallery/admiral-appstore-20261026-home.jpg",
         "width": 923,
         "height": 2000,
@@ -197,46 +317,6 @@ window.GALLERY_ITEMS = [
         "height": 1250,
         "project": "Touchline Atlas — macOS",
         "caption": "macOS — Club Shop — investment packs, editor and restore options"
-    },
-    {
-        "type": "image",
-        "src": "gallery/wellness-spot-20261026-desktop.jpg",
-        "width": 2000,
-        "height": 1250,
-        "project": "Wellness Spot",
-        "caption": "Web desktop — Customer overview and synthetic measurement trends"
-    },
-    {
-        "type": "image",
-        "src": "gallery/wellness-spot-20261026-phone.jpg",
-        "width": 1124,
-        "height": 2000,
-        "project": "Wellness Spot",
-        "caption": "Web phone — Customer overview and bottom navigation — synthetic data"
-    },
-    {
-        "type": "image",
-        "src": "gallery/wellness-spot-20261026-progress.jpg",
-        "width": 1124,
-        "height": 2000,
-        "project": "Wellness Spot",
-        "caption": "Web phone — Progress — measurement trends using synthetic data"
-    },
-    {
-        "type": "image",
-        "src": "gallery/wellness-spot-20261026-nutrition.jpg",
-        "width": 1124,
-        "height": 2000,
-        "project": "Wellness Spot",
-        "caption": "Web phone — Nutrition — approved plan using synthetic demo data"
-    },
-    {
-        "type": "image",
-        "src": "gallery/wellness-spot-20261026-packages.jpg",
-        "width": 1124,
-        "height": 2000,
-        "project": "Wellness Spot",
-        "caption": "Web phone — Packages — account plan and service options — synthetic data"
     },
     {
         "type": "image",
@@ -437,46 +517,6 @@ window.GALLERY_ITEMS = [
         "height": 2000,
         "project": "Slikovnica",
         "caption": "iPad — Coloring — kitten illustration, palette and drawing controls"
-    },
-    {
-        "type": "image",
-        "src": "gallery/zoopal-20260929-profile.jpg",
-        "width": 1080,
-        "height": 1920,
-        "project": "ZooPal",
-        "caption": "Android — pet profile and care summary"
-    },
-    {
-        "type": "image",
-        "src": "gallery/zoopal-20260929-calendar.jpg",
-        "width": 1080,
-        "height": 1731,
-        "project": "ZooPal",
-        "caption": "Android — care calendar and scheduled records"
-    },
-    {
-        "type": "image",
-        "src": "gallery/zoopal-20260929-measurements.jpg",
-        "width": 1080,
-        "height": 1731,
-        "project": "ZooPal",
-        "caption": "Android — body measurements and weight history"
-    },
-    {
-        "type": "image",
-        "src": "gallery/zoopal-20260929-companion.jpg",
-        "width": 1080,
-        "height": 1731,
-        "project": "ZooPal",
-        "caption": "Android — virtual companion and daily care"
-    },
-    {
-        "type": "image",
-        "src": "gallery/zoopal-stories.jpg",
-        "width": 736,
-        "height": 1600,
-        "project": "ZooPal",
-        "caption": "iOS — stories home and daily quiz"
     },
     {
         "type": "image",

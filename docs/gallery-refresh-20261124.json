@@ -1,0 +1,77 @@
+[
+  {
+    "project": "Wellness Spot",
+    "source": "/Users/milosstevanovic/Desktop/Desktop - Unknown/wellness-spa-food-center/native/shots/s012/home--en--light.png",
+    "output": "gallery/wellness-spot-20261124-ios-home.jpg"
+  },
+  {
+    "project": "Wellness Spot",
+    "source": "/Users/milosstevanovic/Desktop/Desktop - Unknown/wellness-spa-food-center/native/shots/s012/food--en--light.png",
+    "output": "gallery/wellness-spot-20261124-ios-food.jpg"
+  },
+  {
+    "project": "Wellness Spot",
+    "source": "/Users/milosstevanovic/Desktop/Desktop - Unknown/wellness-spa-food-center/native/shots/s012/path--en--light.png",
+    "output": "gallery/wellness-spot-20261124-ios-path.jpg"
+  },
+  {
+    "project": "Wellness Spot",
+    "source": "/Users/milosstevanovic/Desktop/Desktop - Unknown/wellness-spa-food-center/native/shots-android/a026/onboarding-1--en--light.png",
+    "output": "gallery/wellness-spot-20261124-android-onboarding.jpg"
+  },
+  {
+    "project": "Wellness Spot",
+    "source": "/Users/milosstevanovic/CascadeProjects/milos-portfolio-ios/gallery/wellness-spot-20261026-desktop.jpg",
+    "output": "gallery/wellness-spot-20261124-web.jpg"
+  },
+  {
+    "project": "ZooPal",
+    "source": "/Users/milosstevanovic/Desktop/Desktop - Unknown/MyProjects/PetDiary/PetDiary/screenshots/raw/en-US/iphone/01-home.png",
+    "output": "gallery/zoopal-20261124-iphone-home.jpg"
+  },
+  {
+    "project": "ZooPal",
+    "source": "/Users/milosstevanovic/Desktop/Desktop - Unknown/MyProjects/PetDiary/PetDiary/screenshots/raw/en-US/iphone/03-profile.png",
+    "output": "gallery/zoopal-20261124-iphone-profile.jpg"
+  },
+  {
+    "project": "ZooPal",
+    "source": "/Users/milosstevanovic/Desktop/Desktop - Unknown/MyProjects/PetDiary/PetDiary/screenshots/raw/en-US/iphone/04-diary.png",
+    "output": "gallery/zoopal-20261124-iphone-diary.jpg"
+  },
+  {
+    "project": "ZooPal",
+    "source": "/Users/milosstevanovic/Desktop/Desktop - Unknown/MyProjects/PetDiary/PetDiary/ReleasePreparation/TabletDesign/ipad-home.png",
+    "output": "gallery/zoopal-20261124-ipad-home.jpg"
+  },
+  {
+    "project": "ZooPal",
+    "source": "/Users/milosstevanovic/Desktop/Desktop - Unknown/MyProjects/PetDiary/PetDiary/PetDiaryAndroid/docs/screenshots/profile-light.png",
+    "output": "gallery/zoopal-20261124-android-profile.jpg"
+  },
+  {
+    "project": "FitPilot",
+    "source": "/tmp/portfolio-fitpilot/today.png",
+    "output": "gallery/fitpilot-20261124-today.jpg"
+  },
+  {
+    "project": "FitPilot",
+    "source": "/tmp/portfolio-fitpilot/food.png",
+    "output": "gallery/fitpilot-20261124-food.jpg"
+  },
+  {
+    "project": "FitPilot",
+    "source": "/tmp/portfolio-fitpilot/move.png",
+    "output": "gallery/fitpilot-20261124-move.jpg"
+  },
+  {
+    "project": "FitPilot",
+    "source": "/tmp/portfolio-fitpilot/progress.png",
+    "output": "gallery/fitpilot-20261124-progress.jpg"
+  },
+  {
+    "project": "FitPilot",
+    "source": "/tmp/portfolio-fitpilot/review.png",
+    "output": "gallery/fitpilot-20261124-review.jpg"
+  }
+]
