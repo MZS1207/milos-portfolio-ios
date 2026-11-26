@@ -63,10 +63,10 @@ iOS-inspired design tokens live at the top of `styles.css`: system palette (`#00
 
 ## Screenshot provenance
 
-Gallery additions and simulator build notes are recorded in [docs/gallery-captures.md](docs/gallery-captures.md). The gallery currently includes **84 screenshots across 17 projects: sixteen albums of five and Admiral Insurance with four**. Client-app sources are recorded in [docs/app-store-client-screenshots.json](docs/app-store-client-screenshots.json). BeamBike and six other incomplete albums are hidden until five quality screenshots are available. Their project descriptions and original media are preserved.
+Gallery additions and simulator build notes are recorded in [docs/gallery-captures.md](docs/gallery-captures.md). The gallery currently includes **89 screenshots across 18 projects: seventeen albums of five and Admiral Insurance with four**. Client-app sources are recorded in [docs/app-store-client-screenshots.json](docs/app-store-client-screenshots.json). BeamBike and six other incomplete albums are hidden until five quality screenshots are available. Their project descriptions and original media are preserved.
 
 ## Updating the downloadable CV
 
-`MilosStevanovicResume.pdf` is the approved default CV: the two-page visual resume with a photo, Senior Mobile Engineer title, and native iOS, Android and web projects. The primary **Download CV** action serves this file. Replace it only with an approved updated PDF, preserve its layout, and bump its download query version in `index.html`.
+`MilosStevanovicResume.pdf` is the approved default CV: the two-page visual resume with a photo, Senior Software Engineer title, and native iOS, Android and web projects. The primary **Download CV** action serves this file. Replace it only with an approved updated PDF, preserve its layout, and bump its download query version in `index.html`.
 
 `MilosStevanovicResume-Platform.pdf` remains a separate iOS/macOS-focused alternative. `cv/build_resume.py` generates the older text-based variants; it is not the source of the approved visual CV. When using that generator, pass an explicit `--output` path to avoid overwriting the default resume. Render and review both pages after any PDF content edits.

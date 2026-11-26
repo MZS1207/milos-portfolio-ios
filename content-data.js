@@ -23,8 +23,28 @@ window.CONTENT_DATA = {
         storagelens: {"name": "StorageLens", "type": "Native macOS Storage Utility", "icon": "💽", "description": "A native macOS utility for inspecting user-approved folders, reviewing duplicates and moving individually selected files to Trash after confirmation. The sandboxed Store edition works with user-selected folders and local processing.", "features": ["User-selected folder inspection and ranked results", "Exact-content duplicate review with a protected copy", "Explicit selection and confirmation before moving files to Trash", "Local processing and native macOS file access"], "tech": ["SwiftUI", "AppKit", "SwiftPM", "macOS Sandbox"], "highlights": "Built separate inspection and cleanup access paths. Store-edition artwork was prepared with synthetic files under a temporary fixture directory.", "gallery": "StorageLens", "gallerySummary": "macOS Store-edition artwork: folder inspection and duplicate review using synthetic sample files."},
         neonrebels: {"name": "Neon Rebels", "type": "Solo & Local Co-op Shooter · iPhone & iPad", "icon": "🎮", "description": "A native side-scrolling arcade shooter built with SwiftUI and SpriteKit. Features a solo campaign, local-network two-player co-op, multiple weapons, checkpoint progression and distinct boss encounters.", "features": ["Solo play and local-network two-player co-op", "Campaign missions, checkpoints and boss practice", "Multiple weapons, shields and partner revival", "Landscape controls for iPhone and iPad"], "tech": ["SwiftUI", "SpriteKit", "Network.framework", "StoreKit 2"], "highlights": "Independent game, originally developed as Duo Rescue. These build-6 captures show solo gameplay and boss practice; internet multiplayer is not implemented.", "gallery": "Neon Rebels", "gallerySummary": "Five real game captures: menu, garage, solo gameplay and boss practice on iPhone and iPad. Local co-op options are visible; no co-op session is shown."},
         touchlinemacos: {"name": "Touchline Atlas — macOS", "type": "Native Desktop Football Management Game", "icon": "⚽", "description": "A native macOS football-management simulation with a career workspace, club news, squad management, tactics, transfers and saved-game systems. Its desktop interface adapts football-management workflows to a resizable Mac window.", "features": ["Career dashboard, club news and manager inbox", "Squad, tactics and player roles", "Transfers, scouting and club finances", "Native desktop navigation and save-game systems"], "tech": ["Swift", "SwiftUI", "AppKit", "macOS"], "highlights": "The macOS project was originally named Football Director. Existing release screenshots carry the Touchline Atlas identity and show fictional Avelara Athletic career data.", "gallery": "Touchline Atlas — macOS", "gallerySummary": "Five native macOS release captures: career, tactics, main menu, squad and Club Shop. Career data is fictional."},
-        wellnessspot: {"name": "Wellness Spot", "type": "Wellness Platform · Native iOS, Android & Web", "icon": "🍃", "description": "A wellness platform connecting stay, analysis and food through native mobile apps and a responsive customer workspace.", "features": ["Native onboarding and guided wellness journey", "Food discovery and analysis booking", "Web customer overview and measurement trends", "Dedicated interfaces for iOS, Android and desktop web"], "tech": ["SwiftUI", "Kotlin", "Jetpack Compose", "Next.js", "TypeScript"], "highlights": "The refreshed gallery pairs native iPhone and Android development captures with the web customer workspace. Demonstration content and synthetic measurements do not represent medical outcomes.", "gallery": "Wellness Spot", "gallerySummary": "Native iPhone flows, Android onboarding and the desktop customer workspace. Demo and synthetic data only."},
-        sjaj: {"name": "Sjaj", "type": "Cleaning Business Platform · Web & Mobile", "icon": "✨", "description": "A platform for small cleaning businesses, with a manager dashboard, customer booking and service-progress views, a mobile app for cleaners and clients, and a shared API. The gallery focuses on the responsive web experience.", "features": ["Manager day overview, team assignments and exceptions", "Cleaning-job progress and checklists", "Customer service review and booking status", "Shared web/mobile domain and API contracts"], "tech": ["Next.js", "React Native", "Expo", "NestJS"], "highlights": "Existing browser captures show the seeded Sjaj Demo Cleaning business. Names, jobs, addresses and amounts belong to the documented demo dataset.", "gallery": "Sjaj", "gallerySummary": "Five seeded demo web views: manager dashboard, job detail, scheduling, service completion and customer rating."},
+        wellnessspot: {
+            name: "Wellness Spot",
+            type: "Wellness Platform · Native iOS, Android & Web",
+            icon: "🍃",
+            description: "I built features for the native iOS and Android clients for wellness plans, packages and progress, and a separate Next.js portal for operations.",
+            features: ["Native onboarding and guided wellness plans", "Food discovery and analysis booking", "Web customer overview and measurement trends", "Separate operations portal for staff"],
+            tech: ["SwiftUI", "Kotlin", "Jetpack Compose", "Next.js", "TypeScript"],
+            highlights: "The gallery shows the iPhone and Android apps and the customer-facing web workspace. It uses demo data and simulated measurements.",
+            gallery: "Wellness Spot",
+            gallerySummary: "iPhone and Android development captures and the desktop customer workspace, shown with demo data."
+        },
+        sjaj: {
+            name: "Sjaj",
+            type: "Cleaning Business Platform · Web & Mobile",
+            icon: "✨",
+            description: "I built booking and job-management workflows across a Next.js manager dashboard, an Expo mobile app for cleaners and clients, and a shared NestJS API backed by PostgreSQL.",
+            features: ["Manager day overview, team assignments and exceptions", "Cleaning-job progress and checklists", "Customer service review and booking status", "Shared web/mobile domain and API contracts"],
+            tech: ["Next.js", "React Native", "Expo", "NestJS", "PostgreSQL"],
+            highlights: "The web gallery shows the seeded Sjaj Demo Cleaning business, with demo names, jobs, addresses and amounts.",
+            gallery: "Sjaj",
+            gallerySummary: "Five demo web views covering scheduling, job details, service completion and customer ratings."
+        },
         lastinquisitor: {"name": "The Last Inquisitor", "type": "In Development · Mobile 3D Environment Prototype", "icon": "⚔️", "description": "An early mobile-first dark-fantasy project in Unity. The current playable environment explores an isometric forest and chapel scene, touch camera controls, lighting, scene readability and physical-device performance.", "features": ["Isometric forest and chapel environment", "Pan, pinch-to-zoom and accessible camera buttons", "Original chapel and graveyard scene dressing", "Physical-device lighting and performance validation"], "tech": ["Unity", "C#", "URP", "Blender"], "highlights": "Work in progress: the hunter marker is a placeholder and locomotion/combat are not implemented. The screenshot is an actual iPad development build, not a finished-game claim.", "gallery": "The Last Inquisitor", "gallerySummary": "Actual iPad development-build capture of the forest and chapel art prototype. Placeholder character; combat is not implemented."},
         petbuddy: {"name": "Pet Buddy", "type": "Native iPhone & iPad Pet Care Diary", "icon": "🐾", "description": "A native pet-care diary for profiles, daily care records, appointments and documents, with dedicated iPhone and iPad layouts.", "features": ["Multiple pet profiles and care timelines", "Medication, preventive care, diet and vet records", "Care calendar and local reminders", "Daily stories and pet-care quizzes", "PDF reports and measurement trends with Pet Buddy Plus", "Backup and restore with compatible .petdiary archives"], "tech": ["SwiftUI", "SwiftData", "StoreKit 2", "PDFKit"], "highlights": "Built the native care experience and Plus purchase flows while preserving existing pets, attachments and backup compatibility through the Pet Buddy rebrand. Release screenshots show sample pets and care records.", "gallery": "Pet Buddy", "gallerySummary": "Explore the home, pet profiles, care calendar, Plus report options and measurement trends on iPhone and iPad."},
         notevita: {"name": "NoteVita", "type": "Offline Family Health Diary · iPhone & iPad", "icon": "🌿", "description": "A native, offline health diary with separate family profiles, local health records and encrypted backup, available in Serbian and English.", "features": ["Separate family profiles and searchable health diaries", "Blood pressure, pulse and other measurements", "Medication courses, dose tracking and local reminders", "Health summary, document attachments and PDF sharing", "Password-protected encrypted backup and verified import", "StoreKit 2 Plus access for trends and advanced reports"], "tech": ["SwiftUI", "Swift Concurrency", "CryptoKit", "StoreKit 2"], "highlights": "Designed an offline data architecture with actor-based persistence, atomic protected snapshots and authenticated encrypted backups. No account or backend is needed. Release screenshots show sample family data.", "gallery": "NoteVita", "gallerySummary": "Today, diary, health summary, blood-pressure trends and encrypted backup, with adaptive iPhone and iPad layouts."},
@@ -32,7 +52,17 @@ window.CONTENT_DATA = {
         slikovnica: {"name": "Slikovnica", "type": "Native iPhone & iPad Coloring App", "icon": "🎨", "description": "A playful SwiftUI coloring app with illustrated collections, independent region painting and locally saved drawings.", "features": ["110 illustrated pages across six collections", "Region coloring with zoom, undo and eraser", "Locally saved drawings and progress", "Serbian and English interface", "Parental gate and StoreKit 2 collection access"], "tech": ["SwiftUI", "StoreKit 2", "MVVM", "Local Persistence"], "highlights": "A complete native coloring experience with a data-driven illustration catalog and layouts for iPhone and iPad.", "gallery": "Slikovnica", "gallerySummary": "Browse illustrated collections and color each region with a playful palette, undo and eraser. Shown in the English interface."},
         translato: {"name": "Translato", "type": "Native macOS Translation Workspace", "icon": "🌐", "description": "A native macOS computer-assisted translation app with a bilingual segment editor, local translation memory and document previews.", "features": ["Bilingual segment editing and translation status", "Local translation memory with exact and fuzzy matches", "Side-by-side document preview", "Find and replace across project segments", "Document import, export and on-device OCR"], "tech": ["SwiftUI", "SQLite / GRDB", "PDFKit", "Vision"], "highlights": "Published on the Mac App Store under my developer account. Keeps project editing and translation memory local, with optional machine-translation providers. The screenshots show an English-to-Serbian travel-guide sample.", "gallery": "Translato", "gallerySummary": "Translate documents segment by segment, reuse translation memory and review the result in a native Mac workspace.", "links": [{"label": "Translato on the App Store", "url": "https://apps.apple.com/rs/app/translato/id6815766459?mt=12"}, {"label": "My App Store developer profile", "url": "https://apps.apple.com/rs/developer/milos-stevanovic/id6811582503"}]},
         orbit: {"name": "Orbit", "type": "Native iOS & macOS Project Management", "icon": "🪐", "description": "A native SwiftUI workspace for projects and issues, with dedicated iPhone and macOS layouts. The current app stores each workspace locally and starts with demo projects.", "features": ["Cross-project dashboard and personal focus", "Five-state issue board and workspace search", "Project creation, team assignment and scheduling", "Archive and restore project workflows", "Local persistence across app launches"], "tech": ["SwiftUI", "macOS", "iOS", "Local Persistence"], "highlights": "A working local project-management app. The screenshots use bundled demo projects; cloud sync and Jira integration are not part of the current build.", "gallery": "Orbit", "gallerySummary": "Plan projects, track issues and manage teams in native iPhone and Mac layouts. Shown with demo data."},
-        zoopal: {"name": "ZooPal", "type": "Pet Care & Diary · iPhone, iPad & Android", "icon": "🐾", "description": "A native pet-care companion for stories, profiles, care records and journaling, with an adaptive iPad experience and a separate Android implementation.", "features": ["Daily pet-care stories and learning", "Pet profiles and health records", "Diary entries and care history", "Adaptive iPhone and iPad layouts", "Native Android interface"], "tech": ["SwiftUI", "SwiftData", "Kotlin", "Jetpack Compose"], "highlights": "Updated iPhone release captures show fictional pet data, alongside the iPad dashboard and an Android development capture. Android feature parity remains in progress.", "gallery": "ZooPal", "gallerySummary": "Updated iPhone home, pet profile and diary, plus iPad and Android layouts. Screens identify their platform."},
+        zoopal: {
+            name: "ZooPal",
+            type: "Pet Care & Diary · iPhone, iPad & Android",
+            icon: "🐾",
+            description: "ZooPal is a pet-care app for iPhone and iPad with a separate Android client. I built Android pet profiles, photo diaries and health records using Kotlin and Jetpack Compose.",
+            features: ["Pet profiles and health records", "Photo diaries and care history", "Offline storage with Room", "Backend requests with OkHttp", "Adaptive iPhone and iPad layouts"],
+            tech: ["Kotlin", "Jetpack Compose", "Coroutines", "Room", "OkHttp", "SwiftUI", "SwiftData"],
+            highlights: "The gallery uses fictional pet data and shows iPhone and iPad release captures alongside the Android client in development.",
+            gallery: "ZooPal",
+            gallerySummary: "Updated iPhone home, pet profile and diary, plus iPad and Android layouts. Screens identify their platform."
+        },
         karolina: {"name": "Karolina Prevodi", "type": "Bilingual Translation Website", "icon": "✍️", "description": "A responsive translation-services website with Serbian and English content, an editorial visual identity and a guided quote-request form.", "features": ["Live Serbian / English language switching", "Translation service catalog", "Three-step collaboration overview", "Two-step quote-request interface", "Responsive layout and FAQ"], "tech": ["HTML", "CSS", "JavaScript", "Responsive Design"], "highlights": "A consistent visual identity across Serbian and English, with a clear path from exploring services to requesting a quote.", "gallery": "Karolina Prevodi", "gallerySummary": "An editorial website for translation services, with live Serbian / English switching and a guided inquiry flow."},
 
         schueco: {
@@ -116,20 +146,17 @@ window.CONTENT_DATA = {
             highlights: 'Encryption and multi-device sync were the hard parts; getting both right without slowing message delivery took most of the effort.'
         },
         paincheck: {
-            name: 'PainCheck',
-            type: 'Healthcare App',
+            name: 'PainChek',
+            type: 'Camera-Based Pain Assessment · iOS',
             icon: '🏥',
-            description: 'App for chronic pain patients: symptom tracking, medication reminders, appointments and readable health charts, with HIPAA-compliant data handling.',
+            description: 'I worked on the iOS app for PainChek at Darwin Digital. It combines camera-based facial analysis with carer observations to support pain assessment for people who have difficulty communicating it.',
             features: [
-                'Pain Tracking & Analytics',
-                'Medication Reminders',
-                'Doctor Appointments',
-                'Health Analytics Dashboard',
-                'HIPAA Compliance',
-                'HealthKit Integration'
+                'Camera-based facial analysis',
+                'Digital checklists for carer observations',
+                'Assessment results recorded in the app'
             ],
-            tech: ['Swift', 'HealthKit', 'Core Data', 'Charts', 'HIPAA'],
-            highlights: 'Healthcare data is unforgiving. Secure storage, audit-friendly flows and charts a patient can actually read were the priorities.'
+            tech: ['Swift', 'iOS', 'Digital Health'],
+            links: [{ label: 'How PainChek works', url: 'https://www.painchek.com/us/how-it-works/' }]
         },
         caregiver: {
             name: 'Caregiver',
@@ -183,7 +210,7 @@ window.CONTENT_DATA = {
             name: 'Ding',
             type: 'Mobile Top-Up Platform',
             icon: '📱',
-            description: 'Ding lets people send prepaid mobile credit to family and friends in 150+ countries. I worked on the iOS app at Endava.',
+            description: 'I worked on payments and account flows for Ding’s iOS app at Endava. Ding lets people send prepaid mobile credit to family and friends in more than 150 countries.',
             features: [
                 'International Mobile Top-Up',
                 'Multi-Network Support',
@@ -193,7 +220,7 @@ window.CONTENT_DATA = {
                 'Transaction History'
             ],
             tech: ['Swift', 'Stripe', 'Core Data', 'Network APIs', 'Security', 'Push Notifications'],
-            highlights: 'Business rules change per country and operator, and checkout must never break. A good lesson in defensive design around payments.',
+            highlights: 'Checkout handles payment rules that vary by country and mobile operator.',
             gallery: 'Ding',
             gallerySummary: 'I contributed to the iOS app at Endava. These official App Store promotional images are supplied by ezetop and show the current public listing.',
             links: [{ label: 'View on the App Store', url: 'https://apps.apple.com/us/app/ding-top-up-mobile-recharge/id425228767' }]
@@ -202,7 +229,7 @@ window.CONTENT_DATA = {
             name: 'Admiral Insurance',
             type: 'Insurance Management Platform',
             icon: '🛡️',
-            description: 'I contributed to the Admiral Insurance iOS app: policy management, documents, emergency assistance and MyTrips journey tracking.',
+            description: 'I contributed to the Admiral Insurance iOS app over four years at Endava. The app covers policy management, documents, emergency assistance and MyTrips journey tracking.',
             features: [
                 'Policy Management',
                 'Document Storage & Printing',
@@ -212,7 +239,7 @@ window.CONTENT_DATA = {
                 'Customer Support Integration'
             ],
             tech: ['Swift', 'Core Data', 'Core Location', 'Security', 'PDF Generation', 'Push Notifications'],
-            highlights: 'Insurance at UK scale means strict compliance, accessibility and releases that simply cannot break for millions of policyholders.',
+            highlights: 'The iOS team maintained a long-lived production app while delivering new work.',
             gallery: 'Admiral Insurance',
             gallerySize: 4, // Owner-approved exception: the official App Store listing has four images.
             gallerySummary: 'A client iOS project I contributed to. These four official App Store promotional images are supplied by Admiral group and show the current public listing.',
@@ -256,15 +283,15 @@ window.CONTENT_DATA = {
             name: 'The Hive',
             type: 'AI-Assisted Product Development',
             icon: '🐝',
-            description: 'An AI-assisted development system I built and use in my independent product work. It helps me move from a product idea to working software across native apps, web platforms and games.',
+            description: 'My development setup for using coding agents across native apps, web platforms and games. I use it to investigate issues, draft changes and prepare tests.',
             features: [
-                'From a product idea to working software',
-                'Native apps, web platforms and games',
-                'Hands-on engineering review',
-                'Product quality and release preparation'
+                'Issue investigation and implementation drafts',
+                'Test preparation',
+                'Manual review of code changes',
+                'Build and test checks before release'
             ],
             tech: ['AI-Assisted Development', 'Product Engineering', 'Software Quality'],
-            highlights: 'Applied in independent projects including BugCorpGame, VaskoTaxi and Kuvar. These products offer a closer look at what I build with The Hive.',
+            highlights: 'I used this workflow on independent projects including BugCorpGame, VaskoTaxi and Kuvar.',
             links: []
         },
         bugcorpduel: {
@@ -423,6 +450,18 @@ window.CONTENT_DATA = {
             usedIn: ['Inherited codebases at Comit International', 'Swift ↔ Objective-C interop & bridging', 'Incremental migration of legacy apps to Swift'],
             related: ['Swift', 'UIKit']
         },
+        android: {
+            name: 'Android', type: 'Kotlin · Jetpack Compose', icon: '📱',
+            description: 'I build native Android features in Kotlin and Jetpack Compose, including offline data and API integration.',
+            usedIn: ['Wellness Spot’s native Android wellness flows', 'ZooPal’s Android pet profiles, photo diaries and health records'],
+            related: ['Coroutines', 'Room', 'OkHttp']
+        },
+        webapi: {
+            name: 'Web & APIs', type: 'Next.js · NestJS · PostgreSQL', icon: '🌐',
+            description: 'I build web dashboards and APIs that support customer and staff workflows alongside the mobile apps.',
+            usedIn: ['Wellness Spot’s Next.js operations portal', 'Sjaj’s dashboard, bookings and shared API'],
+            related: ['TypeScript', 'Next.js', 'NestJS', 'PostgreSQL', 'React Native']
+        },
         mvvm: {
             name: 'MVVM / Clean Architecture', type: 'Default for greenfield products', icon: '🏛️',
             description: 'My default architecture: clear separation of concerns, testable view models, and a domain layer independent of frameworks. Keeps large apps maintainable as teams grow.',
@@ -449,13 +488,13 @@ window.CONTENT_DATA = {
         },
         multiagent: {
             name: 'AI-Assisted Development', type: 'The Hive · Personal development system', icon: '🐝',
-            description: 'Using AI-assisted workflows to build apps, web platforms and games, with hands-on engineering and product decisions. The Hive is the personal system I developed around that work.',
+            description: 'I use coding agents to investigate issues, draft changes and prepare tests. I built The Hive around that workflow and review changes and verify the behavior myself.',
             usedIn: ['The Hive - my personal development system', 'BugCorpGame - independent card game', 'Kuvar - cooking and meal-planning app'],
             related: ['Product Engineering', 'Engineering Review', 'Software Quality']
         },
         aidelivery: {
             name: 'AI-Assisted Delivery', type: 'Former AI Champion · Endava', icon: '🚀',
-            description: 'Experience supporting AI adoption across delivery as AI Champion at Endava - project integration and monitoring, developer enablement, AI-assisted code review and workflow automation.',
+            description: 'As AI Champion at Endava, I helped engineers adopt coding agents and AI-assisted review in their development and delivery workflows.',
             usedIn: ['AI initiatives across insurance & telecom projects', 'Mentoring developers in AI-assisted development', 'Automated review and delivery workflows'],
             related: ['AI Code Review', 'Workflow Automation', 'Mentoring']
         },
@@ -476,39 +515,35 @@ window.CONTENT_DATA = {
     /* ---------- Experience ---------- */
     experience: {
         freelance: {
-            listLabel: 'Available for',
             name: 'Independent Senior Software Engineer', type: 'Self-employed · 1 Sep 2026 – Present', icon: '💻',
-            description: 'Independent since 1 September 2026. I bring 10+ years in native iOS delivery, with independent work spanning macOS apps, web platforms and games. Open to full-time and contract roles, remote work and relocation.',
+            description: 'I build native iOS and Android features and the web tools and APIs that support them, from implementation through release.',
             contributions: [
-                'Native Apple apps, TypeScript web platforms and games',
-                'Product architecture, implementation, API integration and release preparation',
-                'Legacy-code recovery, maintainability and performance work',
-                'AI-assisted development with hands-on review and build/test validation',
-                'Based in Belgrade; open to relocation and remote work. Employer visa / work permit sponsorship required for relocation'
+                'Wellness Spot: native iOS and Android features and a separate Next.js operations portal',
+                'Sjaj: booking and job management across web, mobile and a shared API',
+                'ZooPal: Android pet profiles, photo diaries and health records with offline storage and API integration'
             ],
-            focus: ['Swift', 'SwiftUI', 'TypeScript', 'React / Next.js', 'Product Engineering', 'AI-Assisted Delivery']
+            focus: ['Swift', 'Kotlin', 'Jetpack Compose', 'Next.js', 'React Native', 'NestJS', 'PostgreSQL']
         },
         'endava-senior': {
             name: 'Senior iOS Developer (Senior Engineer)', type: 'Endava · Jan 2022 – Aug 2026', icon: '🏢',
-            description: 'I led iOS development for insurance and telecom clients at Endava, owning apps from first concept to production.',
+            description: 'I led iOS delivery for insurance and telecom clients at Endava, from concept to production, and mentored iOS engineers.',
             contributions: [
                 'Owned app lifecycles end-to-end, from concept to production',
                 'Applied MVVM / Clean Architecture with SwiftUI, UIKit & Combine',
-                'Kept large codebases fast and maintainable as teams grow',
-                'Collaborated across cross-functional teams in an agile setup'
+                'Worked on iOS payments and account flows for Ding',
+                'Contributed to the Admiral Insurance iOS app over four years'
             ],
             focus: ['Swift', 'SwiftUI', 'Combine', 'CI/CD', 'Leadership']
         },
         'endava-ai': {
             name: 'AI Champion', type: 'Endava · Dec 2025 – Aug 2026', icon: '🤖',
-            description: 'As AI Champion I supported AI adoption across delivery: project integration, monitoring, developer enablement and workflow automation.',
+            description: 'As AI Champion, I helped engineers adopt coding agents and AI-assisted code review across delivery teams.',
             contributions: [
-                'Drove AI project integration, monitoring and delivery automation',
-                'Enabled and mentored developers in AI-assisted development',
-                'Championed AI code review and multi-agent workflows',
-                'Built internal tooling on Claude Code and agent orchestration'
+                'Helped engineers integrate coding agents into their daily work',
+                'Introduced AI-assisted code review workflows',
+                'Built internal tooling for automation and delivery'
             ],
-            focus: ['Claude Code', 'Multi-Agent Orchestration', 'AI Code Review', 'Prompt Engineering']
+            focus: ['Coding Agents', 'Code Review', 'Automation', 'Mentoring']
         },
         'endava-coach': {
             name: 'Career Coach', type: 'Endava · Mar 2024 – Aug 2026', icon: '🎓',
@@ -523,9 +558,9 @@ window.CONTENT_DATA = {
         },
         'darwin': {
             name: 'Senior iOS Developer', type: 'Darwin Digital · Nov 2019 – Jan 2022', icon: '🏥',
-            description: 'Built healthcare technology applications with secure, HIPAA-compliant data handling, working closely with research teams, data scientists and backend developers.',
+            description: 'Built healthcare iOS apps including PainChek, working with research teams, data scientists and backend developers.',
             contributions: [
-                'Delivered HIPAA-compliant apps for pain detection in infants & the elderly',
+                'Worked on iOS features for camera-based pain assessment and secure handling of patient data',
                 'Refactored legacy codebases, improving stability and performance',
                 'Optimised app responsiveness and memory usage',
                 'Translated messy medical requirements into apps clinicians could use'

@@ -48,6 +48,46 @@ window.GALLERY_ITEMS = [
     },
     {
         "type": "image",
+        "src": "gallery/sjaj-20261026-manager.jpg",
+        "width": 2000,
+        "height": 1250,
+        "project": "Sjaj",
+        "caption": "Web desktop — Manager day overview — seeded demo business"
+    },
+    {
+        "type": "image",
+        "src": "gallery/sjaj-20261026-customer.jpg",
+        "width": 924,
+        "height": 2000,
+        "project": "Sjaj",
+        "caption": "Web phone — Completed cleaning and customer feedback — demo data"
+    },
+    {
+        "type": "image",
+        "src": "gallery/sjaj-20261026-job.jpg",
+        "width": 2000,
+        "height": 1250,
+        "project": "Sjaj",
+        "caption": "Web desktop — Job detail — checklist and payment status — seeded demo data"
+    },
+    {
+        "type": "image",
+        "src": "gallery/sjaj-20261026-new-job.jpg",
+        "width": 2000,
+        "height": 1250,
+        "project": "Sjaj",
+        "caption": "Web desktop — New job — scheduling, team and price — seeded demo data"
+    },
+    {
+        "type": "image",
+        "src": "gallery/sjaj-20261026-rating.jpg",
+        "width": 924,
+        "height": 2000,
+        "project": "Sjaj",
+        "caption": "Web phone — Customer rating — service feedback — seeded demo data"
+    },
+    {
+        "type": "image",
         "src": "gallery/zoopal-20261124-iphone-home.jpg",
         "width": 920,
         "height": 2000,
@@ -88,78 +128,6 @@ window.GALLERY_ITEMS = [
     },
     {
         "type": "image",
-        "src": "gallery/fitpilot-20261124-today.jpg",
-        "width": 920,
-        "height": 2000,
-        "project": "FitPilot",
-        "caption": "iPhone simulator — Development build with sample data — Daily overview"
-    },
-    {
-        "type": "image",
-        "src": "gallery/fitpilot-20261124-food.jpg",
-        "width": 920,
-        "height": 2000,
-        "project": "FitPilot",
-        "caption": "iPhone simulator — Development build with sample data — Food diary"
-    },
-    {
-        "type": "image",
-        "src": "gallery/fitpilot-20261124-move.jpg",
-        "width": 920,
-        "height": 2000,
-        "project": "FitPilot",
-        "caption": "iPhone simulator — Development build with sample data — Movement planning"
-    },
-    {
-        "type": "image",
-        "src": "gallery/fitpilot-20261124-progress.jpg",
-        "width": 920,
-        "height": 2000,
-        "project": "FitPilot",
-        "caption": "iPhone simulator — Development build with sample data — Weight trends"
-    },
-    {
-        "type": "image",
-        "src": "gallery/fitpilot-20261124-review.jpg",
-        "width": 920,
-        "height": 2000,
-        "project": "FitPilot",
-        "caption": "iPhone simulator — Development build with sample data — Weekly review"
-    },
-    {
-        "type": "image",
-        "src": "gallery/admiral-appstore-20261026-home.jpg",
-        "width": 923,
-        "height": 2000,
-        "project": "Admiral Insurance",
-        "caption": "iPhone — Official App Store image — Policy overview and emergency assistance"
-    },
-    {
-        "type": "image",
-        "src": "gallery/admiral-appstore-20261026-login.jpg",
-        "width": 923,
-        "height": 2000,
-        "project": "Admiral Insurance",
-        "caption": "iPhone — Official App Store image — MyAccount login and registration"
-    },
-    {
-        "type": "image",
-        "src": "gallery/admiral-appstore-20261026-cover.jpg",
-        "width": 923,
-        "height": 2000,
-        "project": "Admiral Insurance",
-        "caption": "iPhone — Official App Store image — Additional insurance products"
-    },
-    {
-        "type": "image",
-        "src": "gallery/admiral-appstore-20261026-policy.jpg",
-        "width": 923,
-        "height": 2000,
-        "project": "Admiral Insurance",
-        "caption": "iPhone — Official App Store image — Policy details, documents and changes"
-    },
-    {
-        "type": "image",
         "src": "gallery/ding-appstore-20261026-home.jpg",
         "width": 924,
         "height": 2000,
@@ -197,6 +165,78 @@ window.GALLERY_ITEMS = [
         "height": 2000,
         "project": "Ding",
         "caption": "iPhone — Official App Store image — Completed top-up and receipt"
+    },
+    {
+        "type": "image",
+        "src": "gallery/admiral-appstore-20261026-home.jpg",
+        "width": 923,
+        "height": 2000,
+        "project": "Admiral Insurance",
+        "caption": "iPhone — Official App Store image — Policy overview and emergency assistance"
+    },
+    {
+        "type": "image",
+        "src": "gallery/admiral-appstore-20261026-login.jpg",
+        "width": 923,
+        "height": 2000,
+        "project": "Admiral Insurance",
+        "caption": "iPhone — Official App Store image — MyAccount login and registration"
+    },
+    {
+        "type": "image",
+        "src": "gallery/admiral-appstore-20261026-cover.jpg",
+        "width": 923,
+        "height": 2000,
+        "project": "Admiral Insurance",
+        "caption": "iPhone — Official App Store image — Additional insurance products"
+    },
+    {
+        "type": "image",
+        "src": "gallery/admiral-appstore-20261026-policy.jpg",
+        "width": 923,
+        "height": 2000,
+        "project": "Admiral Insurance",
+        "caption": "iPhone — Official App Store image — Policy details, documents and changes"
+    },
+    {
+        "type": "image",
+        "src": "gallery/fitpilot-20261124-today.jpg",
+        "width": 920,
+        "height": 2000,
+        "project": "FitPilot",
+        "caption": "iPhone simulator — Development build with sample data — Daily overview"
+    },
+    {
+        "type": "image",
+        "src": "gallery/fitpilot-20261124-food.jpg",
+        "width": 920,
+        "height": 2000,
+        "project": "FitPilot",
+        "caption": "iPhone simulator — Development build with sample data — Food diary"
+    },
+    {
+        "type": "image",
+        "src": "gallery/fitpilot-20261124-move.jpg",
+        "width": 920,
+        "height": 2000,
+        "project": "FitPilot",
+        "caption": "iPhone simulator — Development build with sample data — Movement planning"
+    },
+    {
+        "type": "image",
+        "src": "gallery/fitpilot-20261124-progress.jpg",
+        "width": 920,
+        "height": 2000,
+        "project": "FitPilot",
+        "caption": "iPhone simulator — Development build with sample data — Weight trends"
+    },
+    {
+        "type": "image",
+        "src": "gallery/fitpilot-20261124-review.jpg",
+        "width": 920,
+        "height": 2000,
+        "project": "FitPilot",
+        "caption": "iPhone simulator — Development build with sample data — Weekly review"
     },
     {
         "type": "image",
@@ -317,46 +357,6 @@ window.GALLERY_ITEMS = [
         "height": 1250,
         "project": "Touchline Atlas — macOS",
         "caption": "macOS — Club Shop — investment packs, editor and restore options"
-    },
-    {
-        "type": "image",
-        "src": "gallery/sjaj-20261026-manager.jpg",
-        "width": 2000,
-        "height": 1250,
-        "project": "Sjaj",
-        "caption": "Web desktop — Manager day overview — seeded demo business"
-    },
-    {
-        "type": "image",
-        "src": "gallery/sjaj-20261026-customer.jpg",
-        "width": 924,
-        "height": 2000,
-        "project": "Sjaj",
-        "caption": "Web phone — Completed cleaning and customer feedback — demo data"
-    },
-    {
-        "type": "image",
-        "src": "gallery/sjaj-20261026-job.jpg",
-        "width": 2000,
-        "height": 1250,
-        "project": "Sjaj",
-        "caption": "Web desktop — Job detail — checklist and payment status — seeded demo data"
-    },
-    {
-        "type": "image",
-        "src": "gallery/sjaj-20261026-new-job.jpg",
-        "width": 2000,
-        "height": 1250,
-        "project": "Sjaj",
-        "caption": "Web desktop — New job — scheduling, team and price — seeded demo data"
-    },
-    {
-        "type": "image",
-        "src": "gallery/sjaj-20261026-rating.jpg",
-        "width": 924,
-        "height": 2000,
-        "project": "Sjaj",
-        "caption": "Web phone — Customer rating — service feedback — seeded demo data"
     },
     {
         "type": "image",
